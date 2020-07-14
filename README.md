@@ -1,4 +1,11 @@
 # Codemo
+[![CODEMO powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/gigamaster/codemo)
+[![codemo](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/gigamaster/codemo)
+[![Creative Commons cc-sa](http://ForTheBadge.com/images/badges/cc-sa.svg)](https://creativecommons.org/licenses/by-sa/4.0)  
+
+[![Codemo uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](https://github.com/gigamaster/codemo)
+[![Codemo uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](https://github.com/gigamaster/codemo)
+[![Codemo uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](https://github.com/gigamaster/codemo)
 
 ### Code and Design Samples - XCL User Interface Components
 
