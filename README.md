@@ -1,24 +1,36 @@
 # Codemo
+[![Creative Commons cc-sa](http://ForTheBadge.com/images/badges/cc-sa.svg)](https://creativecommons.org/licenses/by-sa/4.0) 
 [![CODEMO powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/gigamaster/codemo)
 [![codemo](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/gigamaster/codemo)
-[![Creative Commons cc-sa](http://ForTheBadge.com/images/badges/cc-sa.svg)](https://creativecommons.org/licenses/by-sa/4.0)  
+ 
 
 [![Codemo uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](https://github.com/gigamaster/codemo)
 [![Codemo uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](https://github.com/gigamaster/codemo)
 [![Codemo uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](https://github.com/gigamaster/codemo)
 
-### Code and Design Samples - XCL User Interface Components
+### /////////////////////////// — CODEMO
 
-XCL Web Application Platform UI-Components for humans and machines to build  
-simple, secure, and scalable n Progressive Web Apps and responsive web sites. 
+Code and Design Samples - XCL User Interface Components
+
+XCL Web Application Platform UI-Components for humans to create responsive web sites. 
+You can use your favorite CSS, Javascript and PHP framework with an existing project or start fresh with a new project, using a Quick-start theme from below.   
+  
+### ///////////////////////////  — Table of Contents  
 
 - **Codesign [ sandbox ]**  
-:game_die: Demo  
-:triangular_ruler: Desktop, Android, iOS  
+:game_die: Installation 
+:triangular_ruler: Usage  
 :beginner: Tutorials  
-:construction: Boilerplate Theme Starter  
-:package: Modules Templates  
-:iphone: Responsive Mobile  
+:construction: Contributing  
+:package: Credits  
+:iphone: License  
+
+### ///////////////////////////  — Installation  
+
+quickstarts are boilerplates front-end themes and templates (components) that give you everything you need to make your XCL-based site ready for any browser. 
+The following quickstarts are paired with guides and a button-link to deploy from the dashboard. The installation is based on the examples found in the Github repository, to help you customize your web application platform, CMS or personal project as fast as possible.
+
+### /////////////////////////// — Usage
 
 
 **User Interface elements include but are not limited to**
@@ -43,9 +55,9 @@ simple, secure, and scalable n Progressive Web Apps and responsive web sites.
 
 :file_folder: icons
 
-### Templates demos with XCube Base Components
+### Themes and Templates
 
-Installation of Module XCube Base Required !
+XCube Base installation is required for XCL components!
 
 - Colors
 - Icons
@@ -74,7 +86,13 @@ Installation of Module XCube Base Required !
 - Progress Semicircle
 - Chart Bar
 
-### License
+### /////////////////////////// — Contributing
+
+### /////////////////////////// — Credits
+
+This section is for credits in order to highlight and link to the authors of open source frameworks.
+
+### /////////////////////////// — License
 
 UI-Components and ressources are open source and most projects use the MIT license, the Apache license, and the GPL or their variants.
 
