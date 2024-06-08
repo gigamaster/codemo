@@ -13,7 +13,7 @@ jobs:
         with:
           ref: dummy-data
 
-      - name: Generate Directory Listings
+      - name: Generate Directory Listing
         uses: gigamaster/codemo@main
         with:
           FOLDER: data
