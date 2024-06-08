@@ -9,12 +9,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
-          FOLDER: docs    #checkout different branch
+          sparse-checkout: |
+                .github
+                src
+                docs
 
       - name: Generate Directory Listings
         uses: jayanta525/github-pages-directory-listing@v4.0.0
         with:
-          FOLDER: data      #directory to generate index
+          FOLDER: src      #directory to generate index
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
