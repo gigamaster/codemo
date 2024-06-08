@@ -2,7 +2,7 @@
 name: 'Github Pages Directory Listing'
 description: 'Github Action to generate directory listing index for Github Pages'
 
-author: 'gigamaster'
+author: 'jayanta525'
 branding:
   color: 'green'
   icon: 'upload-cloud'
