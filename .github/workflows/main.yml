@@ -12,7 +12,7 @@ jobs:
           ref: main    #checkout different branch
 
       - name: Generate Directory Listings
-        uses: giganaster/codemo@main
+        uses: gigamaster/codemo@main
         with:
           FOLDER: data      #directory to generate index
 
