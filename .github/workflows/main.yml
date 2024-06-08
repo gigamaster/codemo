@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: data
+          ref: main
 
       - name: Generate Directory Listings
         uses: gigamaster/codemo@main
