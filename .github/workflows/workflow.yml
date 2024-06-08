@@ -8,11 +8,12 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
+
         with:
           ref: data    #checkout different branch
 
       - name: Generate Directory Listings
-        uses: gigamaster/codemo@v4.0.0
+        uses: gigamaster/codemo/data/action.yml@dummy-data
         with:
           FOLDER: data      #directory to generate index
 
