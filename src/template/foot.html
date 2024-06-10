@@ -1,10 +1,451 @@
+<!-- /render -->
 </tbody>
 </table>
 </div>
-<footer>
-<p class="m-2 lg:m-4 text-sm">generated with <a href="/"
-        target="_blank" class="text-blue-700">Github Directory Listing</a> {{buildtime}}</p>
-</footer>
-</body>
 
+
+</main>
+
+<!-- Main footer -->
+<footer
+class="flex items-center justify-between p-4 bg-white dark:bg-darker"
+>
+<div><p class="m-2 lg:m-4 text-sm">@uto generated with <a href={{giturl}}"
+target="_blank" class="text-blue-700">Github Directory Index Listing</a> {{buildtime}}</p></div>
+<div>
+<p class="m-2 lg:m-4 text-sm">Made by
+<a href="https://github.com/gigamaster" target="_blank" class="text-blue-500 hover:underline"
+  > {{author}}</a>
+</p>
+</div>
+</footer>
+
+</div>
+
+<!-- Panels Github and Settings -->
+
+<!-- Settings Panel -->
+<!-- overlay -->
+<div
+x-transition:enter="transition duration-300 ease-in-out"
+x-transition:enter-start="opacity-0"
+x-transition:enter-end="opacity-100"
+x-transition:leave="transition duration-300 ease-in-out"
+x-transition:leave-start="opacity-100"
+x-transition:leave-end="opacity-0"
+x-show="isSettingsPanelOpen"
+@click="isSettingsPanelOpen = false"
+class="fixed inset-0 z-10 bg-primary-darker"
+style="opacity: 0.5"
+aria-hidden="true"
+></div>
+<!-- Panel -->
+<section
+x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
+x-transition:enter-start="translate-x-full"
+x-transition:enter-end="translate-x-0"
+x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+x-transition:leave-start="translate-x-0"
+x-transition:leave-end="translate-x-full"
+x-ref="settingsPanel"
+tabindex="-1"
+x-show="isSettingsPanelOpen"
+@keydown.escape="isSettingsPanelOpen = false"
+class="fixed inset-y-0 right-0 z-20 w-full max-w-xs bg-white shadow-xl dark:bg-darker dark:text-light sm:max-w-md focus:outline-none"
+aria-labelledby="settinsPanelLabel"
+>
+<div class="absolute left-0 p-2 transform -translate-x-full">
+<!-- Close button -->
+<button
+  @click="isSettingsPanelOpen = false"
+  class="p-2 text-white rounded-md focus:outline-none focus:ring"
+>
+  <svg
+    class="w-5 h-5"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+</button>
+</div>
+<!-- Panel content -->
+<div class="flex flex-col h-screen">
+<!-- Panel header -->
+<div
+  class="flex flex-col items-center justify-center flex-shrink-0 px-4 py-8 space-y-4 border-b dark:border-primary-dark"
+>
+  <span aria-hidden="true" class="text-gray-500 dark:text-primary">
+    Server Directory Index
+  </span>
+  <h2 id="settinsPanelLabel" class="flex flex-row text-xl font-medium text-gray-500 dark:text-light">
+    <svg class="w-8 h-8 nr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h9m4 0h3m-9 8h9M4 16h3"/><circle cx="9" cy="16" r="2"/><circle cx="15" cy="8" r="2"/></g></svg> 
+    Settings
+  </h2>
+</div>
+<!-- Content -->
+<div class="flex-1 overflow-hidden hover:overflow-y-auto">
+  <!-- Theme -->
+  <div class="p-4 space-y-4 md:p-8">
+    <h6 class="text-gray-400 dark:text-light">Mode</h6>
+    <div class="flex items-center space-x-8">
+      <!-- Light button -->
+      <button
+        @click="setLightTheme"
+        class="flex items-center justify-center px-4 py-2 space-x-4 transition-colors border rounded-md hover:text-gray-900 hover:border-gray-900 dark:border-primary dark:hover:text-primary-100 dark:hover:border-primary-light focus:outline-none focus:ring focus:ring-primary-lighter focus:ring-offset-2 dark:focus:ring-offset-dark dark:focus:ring-primary-dark"
+        :class="{ 'border-gray-900 text-gray-900 dark:border-primary-light dark:text-primary-100': !isDark, 'text-gray-500 dark:text-primary-light': isDark }"
+      >
+        <span>
+          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4V1h2v3zm0 19v-3h2v3zm9-10v-2h3v2zM1 13v-2h3v2zm17.7-6.3l-1.4-1.4l1.75-1.8l1.45 1.45zM4.95 20.5L3.5 19.05l1.8-1.75l1.4 1.4zm14.1 0l-1.75-1.8l1.4-1.4l1.8 1.75zM5.3 6.7L3.5 4.95L4.95 3.5L6.7 5.3zM12 18q-2.5 0-4.25-1.75T6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18"/></svg>
+        </span>
+        <span>Light</span>
+      </button>
+
+      <!-- Dark button -->
+      <button
+        @click="setDarkTheme"
+        class="flex items-center justify-center px-4 py-2 space-x-4 transition-colors border rounded-md hover:text-gray-900 hover:border-gray-900 dark:border-primary dark:hover:text-primary-100 dark:hover:border-primary-light focus:outline-none focus:ring focus:ring-primary-lighter focus:ring-offset-2 dark:focus:ring-offset-dark dark:focus:ring-primary-dark"
+        :class="{ 'border-gray-900 text-gray-900 dark:border-primary-light dark:text-primary-100': isDark, 'text-gray-500 dark:text-primary-light': !isDark }"
+      >
+        <span>
+          <svg
+            class="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+        </span>
+        <span>Dark</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Colors -->
+  <div class="p-4 space-y-4 md:p-8">
+    <h6 class="text-gray-400 dark:text-light">Colors</h6>
+    <div>
+      <button
+        @click="setColors('cyan')"
+        class="mr-2 w-9 h-9 rounded-lg"
+        style="background-color: var(--color-cyan)"
+      ></button>
+      <button
+        @click="setColors('green')"
+        class="mr-2 w-9 h-9 rounded-lg"
+        style="background-color: var(--color-green)"
+      ></button>
+      <button
+        @click="setColors('red')"
+        class="mr-2 w-9 h-9 rounded-lg"
+        style="background-color: var(--color-red)"
+      ></button>
+      <button
+        @click="setColors('blue')"
+        class="mr-2 w-9 h-9 rounded-lg"
+        style="background-color: var(--color-blue)"
+      ></button>
+      <button
+        @click="setColors('violet')"
+        class="mr-2 w-9 h-9 rounded-lg"
+        style="background-color: var(--color-violet)"
+      ></button>
+    </div>
+  </div>
+
+  <span aria-hidden="true" class="text-gray-500 dark:text-primary">
+    Resources
+  </span>
+
+</div>
+</div>
+</section>
+
+<!-- GitHub Notification panel -->
+<!-- overlay -->
+<div
+x-transition:enter="transition duration-300 ease-in-out"
+x-transition:enter-start="opacity-0"
+x-transition:enter-end="opacity-100"
+x-transition:leave="transition duration-300 ease-in-out"
+x-transition:leave-start="opacity-100"
+x-transition:leave-end="opacity-0"
+x-show="isNotificationsPanelOpen"
+@click="isNotificationsPanelOpen = false"
+class="fixed inset-0 z-10 bg-primary-darker"
+style="opacity: 0.5"
+aria-hidden="true"
+></div>
+<!-- Panel -->
+<section
+x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
+x-transition:enter-start="-translate-x-full"
+x-transition:enter-end="translate-x-0"
+x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+x-transition:leave-start="translate-x-0"
+x-transition:leave-end="-translate-x-full"
+x-ref="notificationsPanel"
+x-show="isNotificationsPanelOpen"
+@keydown.escape="isNotificationsPanelOpen = false"
+tabindex="-1"
+aria-labelledby="notificationPanelLabel"
+class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-darker dark:text-light sm:max-w-md focus:outline-none"
+>
+<div class="absolute right-0 p-2 transform translate-x-full">
+<!-- Close button -->
+<button
+  @click="isNotificationsPanelOpen = false"
+  class="p-2 text-white rounded-md focus:outline-none focus:ring"
+>
+  <svg
+    class="w-5 h-5"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+  </svg>
+</button>
+</div>
+
+<div class="flex flex-col h-screen" x-data="{ activeTabe: 'action' }">
+
+<!-- Github Panel header -->
+<div class="flex-shrink-0">
+  <div class="flex items-center justify-between px-4 pt-4 border-b dark:border-primary-darker">
+    <h2 id="notificationPanelLabel" class="pb-4 font-semibold">Notifications</h2>
+    <div class="space-x-2">
+      <button
+        @click.prevent="activeTabe = 'action'"
+        class="px-px pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
+        :class="{'border-primary-dark dark:border-primary': activeTabe == 'action', 'border-transparent': activeTabe != 'action'}"
+      >
+        Action
+      </button>
+      <button
+        @click.prevent="activeTabe = 'user'"
+        class="px-px pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
+        :class="{'border-primary-dark dark:border-primary': activeTabe == 'user', 'border-transparent': activeTabe != 'user'}"
+      >
+        User
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Github Panel tabs -->
+<div class="flex-1 pt-4 overflow-y-hidden hover:overflow-y-auto">
+
+  <!-- Commit Action tab -->
+  <div class="space-y-4 block" x-show.transition.in="activeTabe == 'action'">
+
+  <div class="relative"
+  x-data="commitsData()"
+  x-init="init()"
+  >
+
+<template x-for="commit in commits" x-key="commit">
+<div class="flex px-4 space-x-4">
+<div class="relative flex-shrink-0">
+  <span class="inline-block p-2 overflow-visible rounded-full bg-primary-50 text-primary-light dark:bg-primary-darker">
+    <!-- <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none"><path fill="currentColor" d="M12 16a4 4 0 1 1 0-8a4 4 0 0 1 0 8"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16a4 4 0 0 1 0-8m0 8a4 4 0 0 0 0-8m0 8v5m0-13V3"/></g></svg> -->
+    <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" d="M7.5 10.5a3 3 0 0 1 0-6m0 6a3 3 0 0 0 0-6m0 6V15m0-10.5V0"/></svg>
+  </span>
+  <div
+    class="absolute h-24 p-px -mt-3 -ml-px bg-primary-50 left-1/2 dark:bg-primary-darker"
+  ></div>
+</div>
+<div class="flex-1 overflow-hidden">
+  <h5 class="text-sm font-semibold text-gray-600 dark:text-light">
+    <span x-text="commit.commit.message"></span>
+  </h5>
+  <p class="text-sm font-normal text-gray-400 truncate dark:text-primary-lighter">
+    <small x-text="commit.commit.author.name"></small>
+  </p>
+  <span class="text-sm font-normal text-gray-400 dark:text-primary-light"> <small x-text="commit.commit.author.date"></small> </span>
+</div>
+</div>
+</template>
+
+  </div>
+
+  </div><!-- /Commit Action tab -->
+
+  <!-- GitHub Repos tab -->
+  <div class="space-y-4 block" x-show.transition.in="activeTabe == 'user'">
+    
+    <div class="flex px-4 space-x-4">
+      <div class="relative flex-shrink-0">
+        <span class="relative z-10 inline-block overflow-visible rounded-ful">
+          <img
+            class="object-cover rounded-full w-10 h-10"
+            src="https://avatars.githubusercontent.com/u/1905497?v=4"
+            alt="Gigamaster"
+          />
+        </span>
+        <div class="absolute h-24 p-px -mt-3 -ml-px bg-primary-50 left-1/2 dark:bg-primary-darker"></div>
+      </div>
+      <div class="flex-1 overflow-hidden">
+        <h5 class="text-sm font-semibold text-gray-600 dark:text-light">Gigamaster</h5>
+        <p class="text-sm font-normal text-gray-400 truncate dark:text-primary-lighter">
+          Repositories
+        </p>
+        <span class="text-sm font-normal text-gray-400 dark:text-primary-light"> 2d ago </span>
+      </div>
+    </div>
+    
+  </div>
+
+</div>
+
+</div>
+</section>
+
+</div>
+</div>
+
+<script>
+const setup = () => {
+const getTheme = () => {
+if (window.localStorage.getItem('dark')) {
+return JSON.parse(window.localStorage.getItem('dark'))
+}
+
+return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+}
+
+const setTheme = (value) => {
+window.localStorage.setItem('dark', value)
+}
+
+const getColor = () => {
+if (window.localStorage.getItem('color')) {
+return window.localStorage.getItem('color')
+}
+return 'cyan'
+}
+
+const setColors = (color) => {
+const root = document.documentElement
+root.style.setProperty('--color-primary', `var(--color-${color})`)
+root.style.setProperty('--color-primary-50', `var(--color-${color}-50)`)
+root.style.setProperty('--color-primary-100', `var(--color-${color}-100)`)
+root.style.setProperty('--color-primary-light', `var(--color-${color}-light)`)
+root.style.setProperty('--color-primary-lighter', `var(--color-${color}-lighter)`)
+root.style.setProperty('--color-primary-dark', `var(--color-${color}-dark)`)
+root.style.setProperty('--color-primary-darker', `var(--color-${color}-darker)`)
+this.selectedColor = color
+window.localStorage.setItem('color', color)
+}
+return {
+loading: true,
+isDark: getTheme(),
+toggleTheme() {
+this.isDark = !this.isDark
+setTheme(this.isDark)
+},
+setLightTheme() {
+this.isDark = false
+setTheme(this.isDark)
+},
+setDarkTheme() {
+this.isDark = true
+setTheme(this.isDark)
+},
+color: getColor(),
+selectedColor: 'cyan',
+setColors,
+toggleSidbarMenu() {
+this.isSidebarOpen = !this.isSidebarOpen
+},
+isSettingsPanelOpen: false,
+openSettingsPanel() {
+this.isSettingsPanelOpen = true
+this.$nextTick(() => {
+this.$refs.settingsPanel.focus()
+})
+},
+isNotificationsPanelOpen: false,
+openNotificationsPanel() {
+this.isNotificationsPanelOpen = true
+this.$nextTick(() => {
+this.$refs.notificationsPanel.focus()
+})
+},
+isMobileSubMenuOpen: false,
+openMobileSubMenu() {
+this.isMobileSubMenuOpen = true
+this.$nextTick(() => {
+this.$refs.mobileSubMenu.focus()
+})
+},
+isMobileMainMenuOpen: false,
+openMobileMainMenu() {
+this.isMobileMainMenuOpen = true
+this.$nextTick(() => {
+this.$refs.mobileMainMenu.focus()
+})
+}
+}
+}
+
+/* Alpine Fetch GitHub Gigamaster Repo Commits */
+function commitsData() {
+return {
+title: 'Latest Commits',
+commits: [],
+reload() {
+sessionStorage.removeItem("commits");
+this.commits = [];
+this.init();
+},
+init() {
+// Testdata
+/*let commits = [
+{
+"message": "commit",
+"author": "gigamaster",
+"date": "2024-05-27"
+}
+];*/
+
+// Check sessionData to avoid calling the api
+const commits = JSON.parse(sessionStorage.getItem("commits"));
+
+if(commits){
+// storage accessible to x-data
+this.commits = commits;
+console.log('sessionStorage', commits);
+return;
+}
+// get commits latest 10 first page
+fetch('https://api.github.com/repos/gigamaster/codemo/commits?per_page=10&page=1')
+.then(response => response.json())
+.then(response => {
+console.log('fetched',response);
+// removed collect
+let commits = response.map((item) => {
+  // removed parser
+  return item;
+});
+
+this.commits = commits;
+sessionStorage.setItem("commits",JSON.stringify(commits));
+console.log(this,response)
+});
+}
+};
+}
+</script>
+</body>
 </html>

@@ -8,5 +8,4 @@ RUN chmod +x /entrypoint.sh
 
 ADD src /src
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
-#ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

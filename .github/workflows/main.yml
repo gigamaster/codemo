@@ -1,29 +1,32 @@
-name: directory-listing
+name: main
 on: [push]
 
 jobs:
   pages-directory-listing:
     runs-on: ubuntu-latest
-    name: Directory Listings Index
+    name: Run Actions Template
     steps:
-      - name: Checkout Repository
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           sparse-checkout: |
                 .github
                 src
-                docs
+                data
 
       - name: Generate Directory Listings
-        uses: jayanta525/github-pages-directory-listing@v4.0.0
+        uses: gigamaster/codemo@main
         with:
-          FOLDER: src      #directory to generate index
+          FOLDER: data
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'src'      # upload generated folder
-  
+          # Upload generator folder
+          path: 'data'
+
   deploy:
     needs: pages-directory-listing
     permissions:

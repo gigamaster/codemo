@@ -37,20 +37,30 @@ def main():
             with open(os.path.join(dirname, 'index.html'), 'w', encoding="utf-8") as f:
                 f.write("\n".join([
                     get_template_head(dirname),
-                    "<tr class=\"w-2/4 bg-white border-b hover:bg-gray-50\"><th scope=\"row\" class=\" py-2 px-2 lg:px-6 font-medium text-gray-900 whitespace-nowrap flex align-middle\"><img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
-                        "<a class=\"my-auto text-blue-700\" href=\"../\">../</a></th><td>-</td><td>-</td></tr>" if dirname != "." else "",
+                    "<tr class=\"w-2/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
+                        "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
+                        "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
+                        "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
+                        "../</a></th><td>-</td><td>-</td></tr>" if dirname != "." else "",
                         ]))
                 #sort dirnames alphabetically
                 dirnames.sort()
                 for subdirname in dirnames:
-                    f.write("<tr class=\"w-1/4 bg-white border-b hover:bg-gray-50\"><th scope=\"row\" class=\" py-2 px-2 lg:px-6 font-medium text-gray-900 whitespace-nowrap flex align-middle\"><img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + "<a class=\"my-auto text-blue-700\" href=\"" + subdirname + "/\">" +
+                    f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
+                            "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
+                            "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
+                            "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                             subdirname + "/</a></th><td>-</td><td>-</td></tr>\n")
                 #sort filenames alphabetically
                 filenames.sort()
                 for filename in filenames:
                     path = (dirname == '.' and filename or dirname +
                             '/' + filename)
-                    f.write("<tr class=\"w-1/4 bg-white border-b hover:bg-gray-50\"><th scope=\"row\" class=\" py-2 px-2 lg:px-6 font-medium text-gray-900 whitespace-nowrap flex align-middle\"><img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" + "<a class=\"my-auto text-blue-700\" href=\"" + filename + "\">" + filename + "</a></th><td>" +
+                    f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
+                            "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" + 
+                            "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" 
+                            "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
+                            filename + "</a></th><td>" +
                             get_file_size(path) + "</td><td>" + get_file_modified_time(path) + "</td></tr>\n")
 
                 f.write("\n".join([
@@ -81,14 +91,16 @@ def get_file_modified_time(filepath):
     return dt.datetime.fromtimestamp(os.path.getmtime(filepath)).strftime('%Y-%m-%d %H:%M:%S')
     # return time.ctime(os.path.getmtime(filepath)).strftime('%X %x')
 
-
 def get_template_head(foldername):
     """
     get template head
     """
     with open("/src/template/head.html", "r", encoding="utf-8") as file:
         head = file.read()
-    head = head.replace("{{foldername}}", foldername)
+    head = head.replace("{{foldername}}", foldername) 
+    head = head.replace("{{repo}}", os.environ["GITHUB_REPOSITORY"])  
+    head = head.replace("{{owner}}", os.environ["GITHUB_REPOSITORY_OWNER"])  
+    head = head.replace("{{url}}", os.environ["GITHUB_SERVER_URL"] + "/" + os.environ["GITHUB_REPOSITORY"] + "/")  
     return head
 
 
@@ -99,6 +111,9 @@ def get_template_foot():
     with open("/src/template/foot.html", "r", encoding="utf-8") as file:
         foot = file.read()
     foot = foot.replace("{{buildtime}}", "at " + dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+    foot = foot.replace("{{author}}", os.environ["GITHUB_REPOSITORY_OWNER"]) 
+    foot = foot.replace("{{giturl}}", os.environ["GITHUB_SERVER_URL"] + "/" + os.environ["GITHUB_REPOSITORY"] + "/")  
+
     return foot
 
 def get_icon_base64(filename):

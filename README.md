@@ -1,98 +1,69 @@
-# Codemo
-[![Creative Commons cc-sa](http://ForTheBadge.com/images/badges/cc-sa.svg)](https://creativecommons.org/licenses/by-sa/4.0) 
-[![CODEMO powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/gigamaster/codemo)
-[![codemo](https://forthebadge.com/images/badges/built-with-love.svg)](https://github.com/gigamaster/codemo)
+# Github Pages Directory Listing
+
+
+[![HTML CSS JS](html-css-javascript.svg)](https://github.com/gigamaster/codemo) [![CODEMO powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/gigamaster/codemo)  
  
 
-[![Codemo uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](https://github.com/gigamaster/codemo)
-[![Codemo uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](https://github.com/gigamaster/codemo)
-[![Codemo uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](https://github.com/gigamaster/codemo)
 
 ### /////////////////////////// — CODEMO
 
-Code and Design Samples - XCL User Interface Components
+Code and Design Samples - User Interface Components
 
-XCL Web Application Platform UI-Components for humans to create responsive web sites. 
-You can use your favorite CSS, Javascript and PHP framework with an existing project or start fresh with a new project, using a Quick-start theme from below.   
-  
-### ///////////////////////////  — Table of Contents  
+Web Application Platform UI-Components for humans to create responsive web sites.  
+You can use your favorite CSS and Javascript framework with an existing project or   
+start fresh with a new project, using a quick-start theme and components.  
 
-- **Codesign [ sandbox ]**  
-:game_die: Installation 
-:triangular_ruler: Usage  
-:beginner: Tutorials  
-:construction: Contributing  
-:package: Credits  
-:iphone: License  
+---
 
-### ///////////////////////////  — Installation  
+### Resources
 
-quickstarts are boilerplates front-end themes and templates (components) that give you everything you need to make your XCL-based site ready for any browser. 
-The following quickstarts are paired with guides and a button-link to deploy from the dashboard. The installation is based on the examples found in the Github repository, to help you customize your web application platform, CMS or personal project as fast as possible.
+- [Docker](https://www.docker.com/)  
+  Accelerated Container Application Development
+- [Python 3.11-alpine3.17](https://www.python.org/)  
+  An interpreted, object-oriented, high-level programming language with dynamic semantics
+- [GitHub REST API](https://docs.github.com/en/rest?apiVersion=2022-11-28)  
+  Retrieve data and automate workflows
 
-### /////////////////////////// — Usage
+Specify runner and deployment runs-on `ubuntu-latest`   
+ 
 
+### Frontend 
 
-**User Interface elements include but are not limited to**
+- [Alpine.js](https://alpinejs.dev)   
+  A rugged, minimal framework for composing behavior directly in your markup
+- [Tailwind CSS](https://tailwindcss.com/)   
+  A utility-first CSS framework 
 
-:file_folder: **Input Controls**  
-- checkboxes
-- radio buttons
-- dropdown lists
-- list boxes
-- buttons
-- toggles
-- text fields
-- date field
+If I had to do it again today, I would definitely choose something else.
 
-:file_folder: **Navigational Components**  
-- breadcrumb
-- slider
-- search field
-- pagination
-- slider
-- tags  
+### Credits
 
-:file_folder: icons
+- [GitHub Action Checkout](https://github.com/actions/checkout)
+- [GitHub Action Pages Directory Listing](https://github.com/jayanta525/github-pages-directory-listing)
+- [GitHub Action Upload Pages Artifact](https://github.com/actions/upload-pages-artifact)
+- [GitHub Action Deploy Pages](https://github.com/actions/deploy-pages)
 
-### Themes and Templates
+### License
 
-XCube Base installation is required for XCL components!
+MIT License
 
-- Colors
-- Icons
-- Fonts
-- Header
-- Button
-- Input
-- List
-- Tab
-- Card
-- Badge
-- Cover
-- Menu
-- Grid
-- Swiper
-- Page
-- Include
-- Popover
-- Alert
-- Toast
-- Loading
-- Timeline
-- COMPONENTS CHARTS
-- Chartist
-- Progress Circle
-- Progress Semicircle
-- Chart Bar
+Copyright (c) 2024
 
-### /////////////////////////// — Contributing
+Permission is hereby granted, free of charge, to any person obtaining a copy   
+of this software and associated documentation files (the "Software"), to deal   
+in the Software without restriction, including without limitation the rights   
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell   
+copies of the Software, and to permit persons to whom the Software is   
+furnished to do so, subject to the following conditions:   
+   
+The above copyright notice and this permission notice shall be included in all   
+copies or substantial portions of the Software.   
 
-### /////////////////////////// — Credits
-
-This section is for credits in order to highlight and link to the authors of open source frameworks.
-
-### /////////////////////////// — License
-
-UI-Components and ressources are open source and most projects use the MIT license, the Apache license, and the GPL or their variants.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR   
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,   
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE   
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER   
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,   
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE   
+SOFTWARE.   
 
