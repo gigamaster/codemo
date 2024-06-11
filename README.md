@@ -23,6 +23,10 @@ start fresh with a new project, using a quick-start theme and components.
   An interpreted, object-oriented, high-level programming language with dynamic semantics
 - [GitHub REST API](https://docs.github.com/en/rest?apiVersion=2022-11-28)  
   Retrieve data and automate workflows
+- [European Union SPARQL Data Providder](https://data.europa.eu/fr/about/sparql)
+  Provides access to the data of data.europa.eu, a machine-readable SPARQL endpoint
+- [Ontodia - GUI Relational Data Builder](https://gigamaster.github.io/codemo/rd/)
+  Allows to visualize, navigate and explore data in the form of an interactive graph.
 
 Specify runner and deployment runs-on `ubuntu-latest`   
  
