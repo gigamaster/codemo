@@ -15,6 +15,8 @@ start fresh with a new project, using a quick-start theme and components.
 
 ---
 
+[![HCodemo Screenshot](codemo-screen.jpg)](https://gigamaster.github.io/codemo/)
+
 ### Resources
 
 - [Docker](https://www.docker.com/)  
