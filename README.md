@@ -25,8 +25,6 @@ start fresh with a new project, using a quick-start theme and components.
   Retrieve data and automate workflows
 - [European Union SPARQL Data Providder](https://data.europa.eu/fr/about/sparql)   
   Provides access to the data of data.europa.eu, a machine-readable SPARQL endpoint
-- [Ontodia - GUI Relational Data Builder](https://gigamaster.github.io/codemo/rd/)   
-  Allows to visualize, navigate and explore data in the form of an interactive graph.
 
 Specify runner and deployment runs-on `ubuntu-latest`   
  
@@ -36,9 +34,11 @@ Specify runner and deployment runs-on `ubuntu-latest`
 - [Alpine.js](https://alpinejs.dev)   
   A rugged, minimal framework for composing behavior directly in your markup
 - [Tailwind CSS](https://tailwindcss.com/)   
-  A utility-first CSS framework 
+  A utility-first CSS framework
+- [Ontodia - GUI Relational Data Builder](https://gigamaster.github.io/codemo/rd/)   
+  Allows to visualize, navigate and explore data in the form of an interactive graph.
 
-If I had to do it again today, I would definitely choose something else.
+_If I had to do it again today, I would definitely choose jQuery ease of use than Tailwind and Alpine.js_
 
 ### Credits
 
