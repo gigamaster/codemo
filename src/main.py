@@ -54,7 +54,8 @@ def main():
                 #sort filenames alphabetically
                 filenames.sort()
                 for filename in filenames:
-                    path = (dirname == '.' and filename or dirname + filename)
+                    path = (dirname == '.' and filename or dirname +
+                            '/' + filename)
                     f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                             "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" + 
                             "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" 
