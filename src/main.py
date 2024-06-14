@@ -11,6 +11,7 @@ import datetime as dt
 
 with open('/src/icons.json', encoding="utf-8") as json_file:
     data = json.load(json_file)
+    urepo= 'https://github.com/gigamaster/codemo/tree/main/data'
 
 
 def main():
@@ -52,7 +53,8 @@ def main():
                             "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                             "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                             subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
-                            "<td class=\"text-center\"><span class=\"download\"></span></td></tr>\n")
+                            "<td class=\"text-center\">" +
+                            "<a href=\"https://download-directory.github.io/?url=" + urepo + subdirname + "/\"><span class=\"download\"></span></td></a></tr>\n")
                 #sort filenames alphabetically
                 filenames.sort()
                 for filename in filenames:
@@ -64,7 +66,8 @@ def main():
                             "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
                             filename + "</a></th><td class=\"text-center\">" +
                             get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
-                            "<td class=\"text-center\"><span class=\"download\"></span></td></tr>\n")
+                            "<td class=\"text-center\">" +
+                            "<a href=\"https://download-directory.github.io/?url=" + urepo + filename + "/\"><span class=\"download\"></span></td></tr>\n")
 
                 f.write("\n".join([
                     get_template_foot(),
