@@ -67,7 +67,7 @@ def main():
                             filename + "</a></th><td class=\"text-center\">" +
                             get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
                             "<td class=\"text-center\">" +
-                            "<a href=\"https://download-directory.github.io/?url=" + urepo + filename + "/\"><span class=\"download\"></span></td></tr>\n")
+                            "<a href=\"https://download-directory.github.io/?url=" + urepo + filename + "\"><span class=\"download\"></span></td></tr>\n")
 
                 f.write("\n".join([
                     get_template_foot(),
