@@ -41,7 +41,8 @@ def main():
                         "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                         "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                         "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
-                        "../</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td></tr>" if dirname != "." else "",
+                        "<span class=\"updir\"></span></a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
+                        "<td class=\"text-center\">-</td></tr>" if dirname != "." else "",
                         ]))
                 #sort dirnames alphabetically
                 dirnames.sort()
@@ -50,7 +51,8 @@ def main():
                             "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                             "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                             "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
-                            subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td></tr>\n")
+                            subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
+                            "<td class=\"text-center\"><span class=\"download\"></span></td></tr>\n")
                 #sort filenames alphabetically
                 filenames.sort()
                 for filename in filenames:
@@ -61,7 +63,8 @@ def main():
                             "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" 
                             "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
                             filename + "</a></th><td class=\"text-center\">" +
-                            get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td></tr>\n")
+                            get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
+                            "<td class=\"text-center\"><span class=\"download\"></span></td></tr>\n")
 
                 f.write("\n".join([
                     get_template_foot(),
