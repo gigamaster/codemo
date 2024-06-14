@@ -54,7 +54,7 @@ def main():
                             "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                             subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
                             "<td class=\"text-center\">" +
-                            "<a href=\"https://download-directory.github.io/?url=" + urepo + subdirname + "/\" download><span class=\"download\"></span></td></a></tr>\n")
+                            "<a target=\"_parent\" href=\"https://download-directory.github.io/?url=" + urepo + subdirname + "/\" download><span class=\"download\"></span></td></a></tr>\n")
                 #sort filenames alphabetically
                 filenames.sort()
                 for filename in filenames:
@@ -67,7 +67,7 @@ def main():
                             filename + "</a></th><td class=\"text-center\">" +
                             get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
                             "<td class=\"text-center\">" +
-                            "<a href=\"https://download-directory.github.io/?url=" + urepo + filename + "\" download><span class=\"download\"></span></td></tr>\n")
+                            "<a target=\"_parent\" href=\"https://download-directory.github.io/?url=" + urepo + filename + "\" download><span class=\"download\"></span></td></tr>\n")
 
                 f.write("\n".join([
                     get_template_foot(),
