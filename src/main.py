@@ -55,7 +55,7 @@ def main():
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                           subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
                           "<td class=\"text-center\">" +
-                          "<a class=\"download\" onclick=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app/" + subdirname + "');\" title=\"Download Folder\"><span class=\"download\"></span></td></a></tr>\n")
+                          "<a class=\"download\" " + ufolder + subdirname + "');\" title=\"Download Folder\"><span class=\"download\"></span></td></a></tr>\n")
               #sort filenames alphabetically
               filenames.sort()
               for filename in filenames:
