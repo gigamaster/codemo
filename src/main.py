@@ -11,10 +11,12 @@ import datetime as dt
 
 with open('/src/icons.json', encoding="utf-8") as json_file:
   data   = json.load(json_file)
-  
+
   urepo  = "https://github.com/gigamaster/codemo/tree/main/app/"
   ufolder= "onclick=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app/"
   ufile  = "onclick=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app/"
+
+  exclude = set(['asset', 'test'])
 
 def main():
   """
@@ -33,8 +35,10 @@ def main():
       sys.exit()
 
   for dirname, dirnames, filenames in os.walk('.'):
+      dirnames[:] = [d for d in dirnames if d not in exclude] # exclude assets
+      
       if 'index.html' in filenames:
-          print("index.html already exists, skipping...")
+            print("index.html already exists, skipping...")
       else:
           print("index.html does not exist, generating")
           with open(os.path.join(dirname, 'index.html'), 'w', encoding="utf-8") as f:
@@ -99,6 +103,7 @@ def get_file_modified_time(filepath):
     return dt.datetime.fromtimestamp(os.path.getmtime(filepath)).strftime('%Y-%m-%d %H:%M:%S')
     # return time.ctime(os.path.getmtime(filepath)).strftime('%X %x')
 
+
 def get_template_head(foldername):
     """
     get template head
@@ -123,6 +128,7 @@ def get_template_foot():
     foot = foot.replace("{{giturl}}", os.environ["GITHUB_SERVER_URL"] + "/" + os.environ["GITHUB_REPOSITORY"] + "/")  
 
     return foot
+
 
 def get_icon_base64(filename):
     """
