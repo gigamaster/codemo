@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,13 +16,41 @@
   <meta name="twitter:description" content="UI components and templates Open Source." inertia="">
   <meta name="twitter:image" content="{{url}}codemo-screen.jpg" inertia="">
   <meta name="twitter:creator" content="@nunoluciano" inertia="">
-  
+  <!-- font, style, script -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://gigamaster.github.io/codemo/style.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-  <style>[x-cloak] { display: none; }</style>
-
+  <script type="module">
+  const lib = await import('./lib.module.js');
+  const main   = document.querySelector("main");
+  const notify = document.getElementById("notify");
+  const result = document.querySelector(".notify-message");
+  // select all the buttons with the class name "btn"
+  const links = document.querySelectorAll("a.download");
+  // loop through each link and add a click event listener
+  links.forEach(function(link) {
+  // event
+    link.addEventListener("click", function() {
+      // Register callback
+      // check status when the link is clicked 
+      GitZip.registerCallback(function(status, message){
+          if( status == 'done'){
+              result.textContent = message + ' — Complete!' ;
+          } else if (status == 'error') {
+              result.textContent = status ;
+          }
+          notify.className += " show";
+      });
+    });        
+  });
+  // button notify
+  let btn = document.querySelector(".notify-btn")
+  // close notification
+  btn.addEventListener("click", function(e){
+        notify.classList.remove("show");
+  });
+</script>
+<style>[x-cloak] { display: none; }</style>
 </head>
 <body>
     <div x-data="setup()" x-init="$refs.loading.classList.add('hidden'); setColors(color);" :class="{ 'dark': isDark}">
