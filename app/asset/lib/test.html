@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Save File Test</title>
+
+<script type="module">
+
+const lib = await import('./lib.module.js');
+
+const main   = document.querySelector("main");
+const notify = document.getElementById("notify");
+const result = document.querySelector(".notify-message");
+// select all the buttons with the class name "btn"
+const links = document.querySelectorAll("a.download");
+
+// loop through each link and add a click event listener
+links.forEach(function(link) {
+
+  link.addEventListener("click", function() {
+    // Register callback
+    // check status when the link is clicked 
+    GitZip.registerCallback(function(status, message){
+        if( status == 'done'){
+            result.textContent = message + ' — Complete!' ;
+        } else if (status == 'error') {
+            result.textContent = status ;
+        }
+        notify.className += " show";
+	});
+  });        
+});
+  // button notify
+  let btn = document.querySelector(".notify-btn")
+  // close notification
+  btn.addEventListener("click", function(e){
+        notify.classList.remove("show");
+  });
+
+</script>
+</head>
+<style>
+html, body {
+    background: hsl(210, 5%, 15%);
+    box-sizing: border-box;
+    color: #abc;
+    font:normal 16px/1.5 Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: hsl(210, 5%, 19%);
+    border-bottom: 1px solid hsl(210, 5%, 21%);
+    padding: 1em 2em;
+}
+header h1 {
+    margin: 0 auto
+}
+h2, h3 {
+    font-weight: 200;  
+    line-height: 1.5;
+    margin: 1em auto;
+}
+hr { 
+    border: 3px dotted hsl(210, 5%, 19%);
+    margin: 1.5rem auto;
+}
+svg:not('.notify-icon') {vertical-align: middle;}
+main {
+    margin: 0 auto 1rem;
+    padding: 2em;
+}
+xmp {
+    background: hsl(210, 14%, 18%);
+    border:1px solid hsl(210, 14%, 18%);
+    border-radius: 7px;
+    text-wrap: wrap;
+    word-break: break-all;
+}
+a { 
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    color:#abc;
+    background: hsl(210, 5%, 19%);
+    border: 1px solid hsl(223, 99%, 59%);
+    border-radius: 8px;
+    padding: .5em .75em;
+    text-decoration: none;
+    transition: all 500ms ease-in-out;
+}
+a > svg {vertical-align: middle;}
+a:hover {
+    background: hsl(223, 90%, 55%);
+    border: 1px solid hsl(223, 90%, 55%);
+    color: #f1f1f1;
+}
+a[title]:hover::after {
+    content: attr(title);
+    background: hsla(223, 70%, 45%, 0.7);
+    color:#f1f1f1;
+    border: 1px solid hsl(223, 90%, 55%);
+    border-radius: 0.75em;
+    padding:.25em 1em;
+    position: absolute;
+    text-wrap: nowrap;
+    top: -90%;
+    left: -18%;
+}
+.notification {
+    padding-bottom: 0.75em;
+    position: fixed;
+    top: 1.5em;
+    right: 1.5em;
+    width: 18.75em;
+    max-width: calc(100% - 3em);
+    transition: transform 0.5s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    visibility: hidden;
+}
+.show {visibility: visible;}
+.notify-box,
+.notify-content,
+.notify-btns {
+	display: flex;
+}
+.notify-box,
+.notify-content {
+	align-items: center;
+}
+.notify-box {
+	animation: flyIn 0.3s ease-out;
+	background: hsl(210, 20%, 27%);
+    border: 1px solid hsl(210, 30%, 27%);
+	border-radius: 8px;
+	box-shadow: 0 0.5em 1em hsla(210,10%,10%,0.4);
+	height: 4em;
+}
+.notify-out .notify-box {
+	animation: flyOut 0.5s ease-out forwards;
+}
+.notify-content {
+	padding: 0.375em 1em;
+	width: 100%;
+	height: 100%;
+}
+.notify-icon {
+	flex-shrink: 0;
+	margin-right: 0.75em;
+	width: 2em;
+	height: 2em;
+}
+.notify-icon > svg {
+    font-size: 2em;
+}
+.notify-text {
+	line-height: 1.333;
+}
+.notify-title {
+	font-size: 0.85em;
+	font-weight: bold;
+}
+.notify-message {
+	font-size: 0.75em;
+	color:#ff9800
+}
+button.notify-btn {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-width: 4em;
+    height: 100%;
+    place-content: center;
+
+    background-color: hsla(223, 70%, 45%, 0.5);
+    border: 1px solid hsl(223, 90%, 55%);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: inherit;
+    font-size: .85em;
+    font-weight: 400;
+
+    padding: 1rem 0.5rem;
+    transition: all .5s ease-in-out;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+button.notify-btn:hover {
+    background: hsl(223, 90%, 55%);
+    color:#f1f1f1;
+    border: 1px solid hsl(223, 90%, 55%);
+}
+.notify-btn-text {
+	display: inline-block;
+	pointer-events: none;
+}
+/* Animation */
+@keyframes flyIn {
+	from {transform: translateX(calc(100% + 1.5em));}
+	to {transform: translateX(0);}
+}
+@keyframes flyOut {
+	from {transform: translateX(0);}
+	to {transform: translateX(calc(100% + 1.5em));}
+}
+</style>
+<body>
+<header>
+  <h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 50 50"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke="#4b6084" d="M25 25v18.75m-6.48-6.25l6.626 6.625l6.333-6.333"/><path stroke="#306cfe" d="M12.5 31.48a13.73 13.73 0 1 1 20.833-15.084a9.5 9.5 0 0 1 1.73-.167A8.729 8.729 0 0 1 37.5 33.333"/></g></svg>
+    Test Download File and Folder</h1>  
+</header>
+<div id="notify" class="notification">
+<div class="notify-box">
+    <div class="notify-content">
+        <div class="notify-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 50 50"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#6981ab" stroke-width="2" d="M25 18.75v8.333"/><path stroke="#6981ab" stroke-width="3" d="M25.104 35.417h-.208"/><path stroke="#306cfe" stroke-width="2" d="M21.354 8.73L5.48 37.5a4.166 4.166 0 0 0 3.646 6.25h31.75a4.167 4.167 0 0 0 3.646-6.25L28.646 8.73a4.166 4.166 0 0 0-7.292 0"/></g></svg>
+        </div>
+        <div class="notify-text">
+            <div class="notify-title">Download item</div>
+            <div class="notify-message"></div>
+        </div>
+    </div>
+    <button class="notify-btn" type="button">
+      <span class="notify-btn-text">Close</span>
+    </button>
+</div>
+</div>
+<main>
+
+  <h2>Usage</h2>
+  <h4 id="status"></h4>  
+  
+  <xmp>
+    // call GitZip.zipRepo(url) with url path of the github folder
+    // e.g.: GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/gh-pages/js')
+  </xmp> 
+  
+  <h2>Test Save File</h2>
+  
+  <article id="savefile">
+
+  <p>
+    <a class="download" onclick="GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/LICENSE.md');" title="Download File">
+      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 8 8"><path fill="currentColor" d="M3 0v3H1l3 3l3-3H5V0zM0 7v1h8V7z"/></svg>        License</a>
+  </p>
+
+  <xmp>
+    <a 
+    class="download"
+    onclick="GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/LICENSE.md');"
+    title="Download File"
+    >
+  </xmp>
+  </article>
+  
+  <article id="savefolder">
+    <h2>Test Save Folder</h2>
+    <p>
+      <a class="download" onclick="GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/data/css');" title="Download Folder">
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 8 8"><path fill="currentColor" d="M3 0v3H1l3 3l3-3H5V0zM0 7v1h8V7z"/></svg> 
+Folder CSS</a>
+    </p>
+    <h2>Test Error</h2>
+    <p>
+      <a class="download" onclick="GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/data/css2');" title="Download Folder">
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 8 8"><path fill="currentColor" d="M3 0v3H1l3 3l3-3H5V0zM0 7v1h8V7z"/></svg> 
+Folder CSS</a>
+    </p>
+    
+  <xmp>
+    <a 
+    class="download"
+    onclick="GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/data/css');"
+    title="Download Folder"
+    >
+  </xmp>
+  </article>
+
+
+  <hr>
+
+  <h3>GitHub Repository</h3>
+  <p>
+    <a href="https://github.com/gigamaster/codemo/">https://github.com/gigamaster/codemo/</a>
+  </p>
+</main>
+
+
+</body>
+</html>

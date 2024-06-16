@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Save File Test</title>
+  <script type="module">
+    import * as FileSaver from "./filesaver.js";
+    import * as JSZip from "./jszip.min.js";
+    import * as api from "./api.js";
+  </script>
+</head>
+<style>
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: hsl(210, 5%, 15%);
+  color: #abc;
+  font:normal 16px/1.5 Arial, Helvetica, sans-serif;
+}
+header {
+  background: hsl(210, 5%, 19%);
+  border-bottom:1px solid hsl(210, 5%, 21%);
+  padding: 1em 2em;
+}
+header h1 {
+  margin:0 auto
+}
+h2, h3 {
+  font-weight: 200;
+  margin: 1em auto;
+  line-height: 1.5;
+}
+svg {vertical-align: middle;}
+main {
+  margin: 0 auto 1rem;
+  padding: 2em;
+}
+xmp {
+  background: hsl(210, 5%, 19%);
+  border:1px solid hsl(210, 5%, 21%);
+}
+button {
+  color:#abc;
+  background: hsl(210, 5%, 19%);
+  border:1 px solid #306cfe;
+  border-radius:7px;
+  padding:.5em .75em
+}
+button:hover {
+  background: hsl(210, 7%, 21%);
+  color:#306cfe;
+}
+</style>
+<body>
+<header>
+  <h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="1.25em" height="1.25em" viewBox="0 0 50 50"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke="#4b6084" d="M25 25v18.75m-6.48-6.25l6.626 6.625l6.333-6.333"/><path stroke="#306cfe" d="M12.5 31.48a13.73 13.73 0 1 1 20.833-15.084a9.5 9.5 0 0 1 1.73-.167A8.729 8.729 0 0 1 37.5 33.333"/></g></svg>
+    Test Download File and Folder</h1>  
+</header>
+
+<main>
+  <h2>Usage</h2>
+<h4 id="status"></h4>  
+  <xmp>
+    // call GitZip.zipRepo(url) with url path of the github folder
+    // e.g.: GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/gh-pages/js')
+  </xmp> 
+  
+  <h2>Links</h2>
+  
+  <article id="filesaver"></article>
+
+  <p>
+
+    <button onclick="GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/LICENSE.md');">license</button>
+  </p>
+</main>
+
+<script>
+  'use strict';
+  
+  var exampleRx = /^\s*GitZip\.zipRepo\("([^"]+)"\);$/gm;
+
+  var createButtons = function (urls) {
+    urls.forEach(function (url) {
+      var button = document.createElement('button');
+      button.textContent = url;
+
+      button.addEventListener('click', function () {
+        GitZip.zipRepo(url);
+      });
+      // document article id
+      let article = document.getElementById("filesaver");
+      // create p 
+      let newP = document.createElement("p");
+      // add button to p
+      newP.appendChild(button);
+      // add p to article
+      article.appendChild(newP);
+    });
+  };
+
+  // fetches example URLs from the README
+  var req = new XMLHttpRequest();
+  req.open('GET', 'README.md');
+  req.overrideMimeType('text/plain');
+  req.onload = function (ev) {
+    var examples = [];
+    var match;
+    while (match = exampleRx.exec(this.responseText)) {
+      examples.push(match[1]);
+    }
+    createButtons(examples);
+  };
+  req.send();
+
+  </script>
+</body>
+</html>

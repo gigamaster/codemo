@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark" />
   <title>Directory Index of {{foldername}}</title>
@@ -11,16 +10,16 @@
   <meta name="generator" content="{{repo}}">
   <meta name="description" content="Gigamaster Component Playground - Directory Index Listing">
   <!-- Theme color -->
-  <meta name="theme-color" content="#181c25">
-  <meta name="msapplication-TileColor" content="#181c25">
-  <link rel="mask-icon" href="{{url}}favicon/safari-pinned-tab.svg" color="#181c25">
-  <!-- Favicon SVG - default /images/favicon --- -->
-  <link rel="icon" href="{{url}}favicon/favicon.svg" type="image/svg+xml">
-  <!--Favicons located in the root directory --- -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{url}}favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{url}}favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{url}}favicon/favicon-16x16.png">
-  <link rel="shortcut icon" href="{{url}}favicon/favicon.ico">
+  <meta name="theme-color" content="#111213">
+  <!-- Favicon --- -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://gigamaster.github.io/codemo/asset/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://gigamaster.github.io/codemo/asset/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://gigamaster.github.io/codemo/asset/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://gigamaster.github.io/codemo/asset/favicon/site.webmanifest">
+  <link rel="mask-icon" href="https://gigamaster.github.io/codemo/asset/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="https://gigamaster.github.io/codemo/asset/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#111213">
+  <meta name="msapplication-config" content="https://gigamaster.github.io/codemo/asset/favicon/browserconfig.xml">
   <!-- social media -->
   <meta name="twitter:card" content="summary_large_image" inertia="">
   <meta name="twitter:site" content="{{url}}" inertia="">
@@ -33,7 +32,7 @@
   <link rel="stylesheet" href="https://gigamaster.github.io/codemo/style.css" />
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script type="module">
-  const lib = await import('https://github.com/gigamaster/codemo/blob/main/src/js/lib.module.js');
+  const lib = await import('https://gigamaster.github.io/codemo/asset/lib.module.js');
   const main   = document.querySelector("main");
   const notify = document.getElementById("notify");
   const result = document.querySelector(".notify-message");
