@@ -1,0 +1,164 @@
+html, body {
+    background: hsl(210, 5%, 15%);
+    box-sizing: border-box;
+    color: #abc;
+    font:normal 16px/1.5 Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: hsl(210, 5%, 19%);
+    border-bottom: 1px solid hsl(210, 5%, 21%);
+    padding: 1em 2em;
+}
+header h1 {
+    margin: 0 auto
+}
+h2, h3 {
+    font-weight: 200;  
+    line-height: 1.5;
+    margin: 1em auto;
+}
+hr { 
+    border: 3px dotted hsl(210, 5%, 19%);
+    margin: 1.5rem auto;
+}
+svg:not('.notify-icon') {vertical-align: middle;}
+main {
+    margin: 0 auto 1rem;
+    padding: 2em;
+}
+xmp {
+    background: hsl(210, 14%, 18%);
+    border:1px solid hsl(210, 14%, 18%);
+    border-radius: 7px;
+    text-wrap: wrap;
+    word-break: break-all;
+}
+a, 
+button.notify { 
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    color:#abc;
+    background: hsl(210, 5%, 19%);
+    border: 1px solid hsl(223, 99%, 59%);
+    border-radius: 8px;
+    padding: .5em .75em;
+    text-decoration: none;
+    transition: all 500ms ease-in-out;
+}
+a > svg {vertical-align: middle;}
+a:hover {
+    background: hsl(223, 90%, 55%);
+    border: 1px solid hsl(223, 90%, 55%);
+    color: #f1f1f1;
+}
+a[title]:hover::after {
+    content: attr(title);
+    background: hsla(223, 70%, 45%, 0.7);
+    color:#f1f1f1;
+    border: 1px solid hsl(223, 90%, 55%);
+    border-radius: 0.75em;
+    padding:.25em 1em;
+    position: absolute;
+    text-wrap: nowrap;
+    top: -90%;
+    left: -18%;
+}
+/*
+.notification {
+    padding-bottom: 0.75em;
+    position: fixed;
+    top: 1.5em;
+    right: 1.5em;
+    width: 18.75em;
+    
+    max-width: 60vw;
+    width: 12rem;
+    transition: transform 0.5s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    visibility: hidden;
+}
+.show {visibility: visible;}
+*/
+.notify-box {
+    display: flex;
+    align-items: center;
+	animation: flyIn 0.3s ease-out;
+	background: hsl(210, 20%, 27%);
+    border: 1px solid hsl(210, 30%, 27%);
+	border-radius: 8px;
+	box-shadow: 0 0.5em 1em hsla(210,10%,10%,0.4);
+    margin: 1rem 0;
+	height: 4em;
+    width:18rem;
+}
+.notify-in {
+animation: flyIn 0.3s ease-out;
+}
+.notify-out {
+	animation: flyOut 0.5s ease-out forwards;
+}
+.notify-icon {
+	flex-shrink: 0;
+	margin: 0.5em;
+	width: 2em;
+	height: 2em;
+}
+.notify-icon > svg {
+    font-size: 2em;
+}
+.notify-text {
+	/* color:#ff9800; */
+	font-size: 0.85em;
+	font-weight: bold;
+    line-height: 1.5;
+	padding: 0.375em 1em;
+    place-content: center;
+    width: 100%;
+	height: 100%;  
+}
+button.notify-btn {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-width: 4em;
+    height: 100%;
+    place-content: center;
+
+    background-color: hsla(223, 70%, 45%, 0.5);
+    border: 1px solid hsl(223, 90%, 55%);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: inherit;
+    font-size: .85em;
+    font-weight: 400;
+
+    padding: 1rem 0.5rem;
+    transition: all .5s ease-in-out;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+button.notify-btn:hover {
+    background: hsl(223, 90%, 55%);
+    color:#f1f1f1;
+    border: 1px solid hsl(223, 90%, 55%);
+}
+.notify-btn-text {
+	display: inline-block;
+	pointer-events: none;
+}
+/* Animation */
+@keyframes flyIn {
+	from {transform: translateX(calc(100% + 1.5em));}
+	to {transform: translateX(0);}
+}
+@keyframes flyOut {
+	from {transform: translateX(0);}
+	to {transform: translateX(calc(100% + 1.5em));}
+}

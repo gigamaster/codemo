@@ -161,15 +161,17 @@ aria-labelledby="settinsPanelLabel"
       ></button>
     </div>
   </div>
-
-  <span aria-hidden="true" class="text-gray-500 dark:text-primary">
-    Resources
-  </span>
-
+  <!-- logo -->
+  <div class="logo p-4 space-y-4 md:p-8">
+    <button
+    x-on:click="$notify('Hello there, I am a notification!')"
+  >
+    <img src="https://gigamaster.github.io/codemo/asset/img/codemo-logo.png" width="" alt="codemo logo">
+  </button>
+  </div>
 </div>
 </div>
 </section>
-
 <!-- GitHub Notification panel -->
 <!-- overlay -->
 <div
@@ -372,29 +374,25 @@ isSettingsPanelOpen: false,
 openSettingsPanel() {
 this.isSettingsPanelOpen = true
 this.$nextTick(() => {
-this.$refs.settingsPanel.focus()
-})
+this.$refs.settingsPanel.focus()})
 },
 isNotificationsPanelOpen: false,
 openNotificationsPanel() {
 this.isNotificationsPanelOpen = true
 this.$nextTick(() => {
-this.$refs.notificationsPanel.focus()
-})
+this.$refs.notificationsPanel.focus()})
 },
 isMobileSubMenuOpen: false,
 openMobileSubMenu() {
 this.isMobileSubMenuOpen = true
 this.$nextTick(() => {
-this.$refs.mobileSubMenu.focus()
-})
+this.$refs.mobileSubMenu.focus()})
 },
 isMobileMainMenuOpen: false,
 openMobileMainMenu() {
 this.isMobileMainMenuOpen = true
 this.$nextTick(() => {
-this.$refs.mobileMainMenu.focus()
-})
+this.$refs.mobileMainMenu.focus()})
 }
 }
 }

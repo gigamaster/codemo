@@ -29,16 +29,20 @@
   <meta name="twitter:creator" content="@nunoluciano" inertia="">
   <!-- font, style, script -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://gigamaster.github.io/codemo/style.css" />
+  <link rel="stylesheet" href="https://gigamaster.github.io/codemo/asset/css/style.css" />
+  <script defer src='https://unpkg.com/alpinejs-notify@latest/dist/notifications.min.js'></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script type="module">
   const lib = await import('https://gigamaster.github.io/codemo/asset/lib/lib.module.js');
-</script>
+  </script>
 <style>[x-cloak] { display: none; }</style>
 </head>
 <body>
 <div x-data="setup()" x-init="$refs.loading.classList.add('hidden'); setColors(color);" :class="{ 'dark': isDark}">
-
+  <div
+    id="notificationWrapper"
+    class="fixed top-4 w-64 right-4 space-y-2"
+  ></div>
   <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
 
     <!-- Loading -->
