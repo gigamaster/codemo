@@ -14,18 +14,18 @@ jobs:
           sparse-checkout: |
                 .github
                 src
-                data
+                app
 
       - name: Generate Directory Listings
         uses: gigamaster/codemo@main
         with:
-          FOLDER: data
+          FOLDER: app
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload generator folder
-          path: 'data'
+          path: 'app'
 
   deploy:
     needs: pages-directory-listing
