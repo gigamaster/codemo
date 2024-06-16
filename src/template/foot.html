@@ -396,7 +396,12 @@ this.$refs.mobileMainMenu.focus()})
 }
 }
 }
-
+window.notificationOptions = {
+    wrapperId: 'notificationWrapper',
+    templateFile: 'https://gigamaster.github.io/codemo/asset/notification.html',
+    autoClose: 3000,
+    autoRemove: 4000,
+  }
 /* Alpine Fetch GitHub Gigamaster Repo Commits */
 function commitsData() {
 return {
