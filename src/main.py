@@ -13,8 +13,8 @@ with open('/src/icons.json', encoding="utf-8") as json_file:
   data   = json.load(json_file)
 
   urepo  = "https://github.com/gigamaster/codemo/tree/main/app/"
-  ufolder= "onclick=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app/"
-  ufile  = "onclick=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app/"
+  ufolder= "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app/"
+  ufile  = "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app/"
 
   exclude = set(['asset', 'test'])
 
@@ -60,7 +60,7 @@ def main():
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                           subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
                           "<td class=\"text-center\">" +
-                          "<a class=\"download\" " + ufolder + subdirname + "');\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                          "<a class=\"download\" " + ufolder + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
               #sort filenames alphabetically
               filenames.sort()
               for filename in filenames:
@@ -73,7 +73,7 @@ def main():
                           filename + "</a></th><td class=\"text-center\">" +
                           get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"text-center\">" +
-                          "<a class=\"download\" " + ufile + filename + "');\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
+                          "<a class=\"download\" " + ufile + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
                   get_template_foot(),
