@@ -1,21 +1,25 @@
-<div role="alert" class="notification"> 
+<div role="alert"> 
     
-    <div class="notify-box data-[notify-show=true]:notify-in data-[notify-show=false]:notify-out">
-        <div class="notify-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 50 50"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#6981ab" stroke-width="2" d="M25 18.75v8.333"/><path stroke="#6981ab" stroke-width="3" d="M25.104 35.417h-.208"/><path stroke="#306cfe" stroke-width="2" d="M21.354 8.73L5.48 37.5a4.166 4.166 0 0 0 3.646 6.25h31.75a4.167 4.167 0 0 0 3.646-6.25L28.646 8.73a4.166 4.166 0 0 0-7.292 0"/></g></svg>
-        </div>
-        
-        <div role="alert" class="notify-text text-white bg-red-500 p-4">
-        {notificationText}
-        </div>
-            
-        <button x-on:click="$root.setAttribute('data-notify-show', false)" 
-        class="notify-btn">
-        Close
-        </button>        
-    </div>
+    {notificationText} 
 
 </div>
+
+<template id="notificationAlert" class="notification">
+<div class="notify-box data-[notify-show=true]:notify-in data-[notify-show=false]:notify-out">
+    <div class="notify-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 50 50"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#6981ab" stroke-width="2" d="M25 18.75v8.333"/><path stroke="#6981ab" stroke-width="3" d="M25.104 35.417h-.208"/><path stroke="#306cfe" stroke-width="2" d="M21.354 8.73L5.48 37.5a4.166 4.166 0 0 0 3.646 6.25h31.75a4.167 4.167 0 0 0 3.646-6.25L28.646 8.73a4.166 4.166 0 0 0-7.292 0"/></g></svg>
+    </div>
+    
+    <div role="alert" class="notify-text text-white bg-red-500 p-4">
+    {notificationText}
+    </div>
+        
+    <button x-on:click="$root.setAttribute('data-notify-show', false)" 
+    class="notify-btn">
+    Close
+    </button>        
+</div>
+</template>
 <style>
     .notify-box {
     display: flex;

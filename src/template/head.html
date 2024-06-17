@@ -38,19 +38,17 @@
   <script>
     window.notificationOptions = {
       wrapperId: 'notificationWrapper',
-      templateId: 'notificationAlert',
-      autoClose: 3000,
-      autoRemove: 4000,
+      //templateId: 'notificationAlert',
+      templateFile: 'https://gigamaster.github.io/codemo/asset/notification.html',
+      autoClose: false,
+      autoRemove: false,
     }
   </script>
 <style>[x-cloak] { display: none; }</style>
 </head>
 <body>
 <div x-data="setup()" x-init="$refs.loading.classList.add('hidden'); setColors(color);" :class="{ 'dark': isDark}">
-  <div
-    id="notificationWrapper"
-    class="fixed top-4 w-64 right-4 space-y-2"
-  ></div>
+  <div id="notificationWrapper" class="fixed top-4 w-64 right-4 space-y-2"></div>
   <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
 
     <!-- Loading -->
