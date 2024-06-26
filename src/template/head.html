@@ -64,7 +64,7 @@
       <div class="flex flex-col h-full">
         <!-- Sidebar links -->
         <nav aria-label="main" class="flex-1 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto">
-          <!-- Dashboards links -->
+          <!-- Dashboard links -->
           <div x-data="{ isActive: true, open: true}">
             <!-- active & hover classes 'bg-primary-100 dark:bg-primary' -->
             <a
@@ -92,7 +92,7 @@
                   />
                 </svg>
               </span>
-              <span class="ml-2 text-sm"> Dashboards </span>
+              <span class="ml-2 text-sm"> Dashboard </span>
               <span class="ml-auto" aria-hidden="true">
                 <!-- active class 'rotate-180' -->
                 <svg
@@ -107,31 +107,37 @@
                 </svg>
               </span>
             </a>
-            <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" aria-label="Dashboards">
+            <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" aria-label="Dashboard">
               <a
               href="https://gigamaster.github.io/codemo/dataviz/"
               role="menuitem"
-              class="block p-2 text-sm text-gray-700 transition-colors duration-200 rounded-md dark:text-light dark:hover:text-light hover:text-gray-700"
-            >
+              class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              >
               Data Visualization</a>
               <a
-                href="https://gigamaster.github.io/codemo/rd/"
-                role="menuitem"
-                class="block p-2 text-sm text-gray-700 transition-colors duration-200 rounded-md dark:text-light dark:hover:text-light hover:text-gray-700"
+              href="https://gigamaster.github.io/codemo/development/"
+              role="menuitem"
+              class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              >
+              Development Tools</a>
+              <a
+              href="https://gigamaster.github.io/codemo/education/"
+              role="menuitem"
+              class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              >
+              Education</a>
+              <a
+              href="https://gigamaster.github.io/codemo/rd/"
+              role="menuitem"
+              class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
               R&D — RTD</a>
               <a
-                href="https://gigamaster.github.io/codemo/projectmanagement/"
-                role="menuitem"
-                class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              href="https://gigamaster.github.io/codemo/project/"
+              role="menuitem"
+              class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
               Project Mangement</a>
-              <a
-                href="https://gigamaster.github.io/codemo/ecommerce/"
-                role="menuitem"
-                class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
-              >
-              E-Commerce Platform</a>
             </div>
           </div>
 
@@ -792,7 +798,7 @@
                     />
                   </svg>
                 </span>
-                <span class="ml-2 text-sm"> Dashboards </span>
+                <span class="ml-2 text-sm"> Dashboard </span>
                 <span class="ml-auto" aria-hidden="true">
                   <svg
                     class="w-4 h-4 transition-transform transform"
@@ -802,38 +808,38 @@
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </span>
               </a>
-              <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" aria-label="Dashboards">
-                <a
+              <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" aria-label="Dashboard">
+              <a
               href="https://gigamaster.github.io/codemo/dataviz/"
               role="menuitem"
               class="block p-2 text-sm text-gray-700 transition-colors duration-200 rounded-md dark:text-light dark:hover:text-light hover:text-gray-700"
-            >
+              >
               Data Visualization</a>
-                <a
-                  href="https://gigamaster.github.io/codemo/rd/"
-                  role="menuitem"
-                  class="block p-2 text-sm text-gray-700 transition-colors duration-200 rounded-md dark:text-light dark:hover:text-light hover:text-gray-700"
-                >
-                R&D — RTD
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/projectmanagement/"
-                  role="menuitem"
-                  class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
-                >
-                  Project Mangement
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/ecommerce/"
-                  role="menuitem"
-                  class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
-                >
-                E-Commerce Platform
-                </a>
+              <a
+                href="https://gigamaster.github.io/codemo/rd/"
+                role="menuitem"
+                class="block p-2 text-sm text-gray-700 transition-colors duration-200 rounded-md dark:text-light dark:hover:text-light hover:text-gray-700"
+              >
+              R&D — RTD
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/project/"
+                role="menuitem"
+                class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              >
+                Project Mangement
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/ecommerce/"
+                role="menuitem"
+                class="block p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              >
+              E-Commerce Platform
+              </a>
               </div>
             </div>
 
@@ -848,22 +854,22 @@
                 aria-haspopup="true"
                 :aria-expanded="(open || isActive) ? 'true' : 'false'"
               >
-                <span aria-hidden="true">
-                  <svg
-                    class="w-5 h-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                    />
-                  </svg>
-                </span>
+              <span aria-hidden="true">
+                <svg
+                  class="w-5 h-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                  />
+                </svg>
+              </span>
                 <span class="ml-2 text-sm"> Components </span>
                 <span aria-hidden="true" class="ml-auto">
                   <svg
