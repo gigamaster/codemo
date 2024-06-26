@@ -1,5 +1,6 @@
 bak/*
 test/*
+app/test/*
 tests/*
 *.bak
 *.tmp
