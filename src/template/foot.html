@@ -225,14 +225,14 @@ class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-darker dark:text-li
     <div class="space-x-2">
       <button
         @click.prevent="activeTabe = 'action'"
-        class="px-px pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
+        class="text-gray-400 dark:hover:text-light hover:text-gray-700 px-px pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
         :class="{'border-primary-dark dark:border-primary': activeTabe == 'action', 'border-transparent': activeTabe != 'action'}"
       >
         Action
       </button>
       <button
         @click.prevent="activeTabe = 'user'"
-        class="px-px pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
+        class="text-gray-400 dark:hover:text-light hover:text-gray-700 px-px pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
         :class="{'border-primary-dark dark:border-primary': activeTabe == 'user', 'border-transparent': activeTabe != 'user'}"
       >
         User
