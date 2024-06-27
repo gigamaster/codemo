@@ -15,6 +15,8 @@ with open('/src/icons.json', encoding="utf-8") as json_file:
   urepo  = "https://github.com/gigamaster/codemo/tree/main/app/"
   ufolder= "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app/"
   ufile  = "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app/"
+  uraw   = "https://raw.githubusercontent.com/gigamaster/codemo/main/app/"
+  uedit  = "https://github.com/gigamaster/codemo/edit/main/app/"
   
   code   = ["code.png", "css3.png", "js.png", "markdown.png", "php.png", "py.png", "sql.png", "text.png"]
   media  = ["audio.png", "video.png"]
@@ -75,7 +77,8 @@ def main():
                           filename + "</a></th><td class=\"text-center\">" +
                           get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"flex flex-nowrap items-center justify-center\">" +
-                          "<a class=\"preview\" title=\"Preview File\"><span class=\"icon-view\"></span></a>" +
+                          "<a class=\"preview\" href=\"" + uraw + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>" +
+                          "<a class=\"edit\" href=\"" + uedit + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>" +
                           "<a class=\"download\" " + ufile + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
