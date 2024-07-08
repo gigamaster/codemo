@@ -1,0 +1,21 @@
+<!-- Complex XML Example with Attributes -->
+<company>
+    <employee id="1">
+        <name>Alice Johnson</name>
+        <position>Software Engineer</position>
+        <department>Engineering</department>
+        <salary currency="USD">75000</salary>
+    </employee>
+    <employee id="2">
+        <name>Bob Smith</name>
+        <position>Marketing Specialist</position>
+        <department>Marketing</department>
+        <salary currency="EUR">60000</salary>
+    </employee>
+    <employee id="3">
+        <name>Charlie Brown</name>
+        <position>Project Manager</position>
+        <department>Management</department>
+        <salary currency="GBP">80000</salary>
+    </employee>
+</company>

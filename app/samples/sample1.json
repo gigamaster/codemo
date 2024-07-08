@@ -1,0 +1,12 @@
+{
+    "name": "John",
+    "age": 25,
+    "city": "Sampleville",
+    "married": false,
+    "hobbies": ["reading", "traveling", "programming"],
+    "address": {
+      "street": "123 Main Street",
+      "city": "Sample City",
+      "postal_code": "12345"
+    }
+  }

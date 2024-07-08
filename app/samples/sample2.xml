@@ -1,0 +1,21 @@
+<!-- Medium Complexity XML Example -->
+<bookstore>
+    <book>
+        <title>Harry Potter and the Sorcerer's Stone</title>
+        <author>J.K. Rowling</author>
+        <genre>Fantasy</genre>
+        <price>20.00</price>
+    </book>
+    <book>
+        <title>To Kill a Mockingbird</title>
+        <author>Harper Lee</author>
+        <genre>Drama</genre>
+        <price>15.50</price>
+    </book>
+    <book>
+        <title>The Great Gatsby</title>
+        <author>F. Scott Fitzgerald</author>
+        <genre>Classics</genre>
+        <price>18.75</price>
+    </book>
+</bookstore>
