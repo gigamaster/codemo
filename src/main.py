@@ -76,9 +76,11 @@ def main():
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
                           filename + "</a></th><td class=\"text-center\">" +
                           get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
-                          "<td class=\"flex flex-nowrap items-center justify-center\">" +
-                          "<a class=\"preview\" href=\"" + uraw + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>" +
-                          "<a class=\"edit\" href=\"" + uedit + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>" +
+                          "<td class=\"flex flex-nowrap items-center justify-center\">")
+                  path = (dirname == '.' and uraw + filename or uraw + dirname + '/' + filename)
+                  f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
+                  path = (dirname == '.' and uedit + filename or uedit + dirname + '/' + filename)
+                  f.write("<a class=\"edit\" href=\"" + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>" +
                           "<a class=\"download\" " + ufile + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
