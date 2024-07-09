@@ -66,7 +66,7 @@ def main():
               for subdirname in dirnames:
                   
                   # Join Parent and File Name with extension
-                  fName = os.path.join(pDirname, filename)
+                  #fName = os.path.join(pDirname, subdirname)
                   
                   up = os.path.join(pDirname, subdirname)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
