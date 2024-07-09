@@ -47,6 +47,7 @@ def main():
       else:
           print("index.html does not exist, generating")
           with open(os.path.join(dirname, 'index.html'), 'w', encoding="utf-8") as f:
+              
               f.write("\n".join([
                   get_template_head(dirname),
                   "<tr class=\"w-2/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
@@ -65,8 +66,9 @@ def main():
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                           subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
                           "<td class=\"text-center\">")
-                  subdirname = os.path.join(ufolder, subdirname)
-                  f.write("<a class=\"download\" " + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                
+                  urlzip = os.path.join(ufolder, dirname + '/')
+                  f.write("<a class=\"download\" " + urlzip + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
               #sort filenames alphabetically
               filenames.sort()
               for filename in filenames:
@@ -79,13 +81,13 @@ def main():
                           get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
                   # Using os.path.join() 
-                  filename = os.path.join(uraw, filename)
-                  f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
-                  filename = os.path.join(uedit, filename)
-                  f.write("<a class=\"edit\" href=\"" + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
-                  path = (dirname == '.' and filename or dirname + '/' + filename)
-                  filename = os.path.join(ufile, filename)
-                  f.write("<a class=\"download\" " + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
+                  urlraw = os.path.join(uraw, dirname + '/')
+                  f.write("<a class=\"preview\" href=\"" + urlraw + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
+                  urledit = os.path.join(uedit, dirname + '/')
+                  f.write("<a class=\"edit\" href=\"" + urledit + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
+                  # Using os.path.join() 
+                  urlfile = os.path.join(ufile, dirname + '/')
+                  f.write("<a class=\"download\" " + urlfile + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
                   get_template_foot(),
