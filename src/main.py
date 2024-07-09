@@ -99,8 +99,8 @@ def main():
                   rs = os.path.dirname(os.path.abspath(__file__))
                   # fOR THE current working directory
                   cwd = os.path.abspath(os.getcwd())
-
-                  ospath = os.path.join(dirname(dirname(__file__)), os.path.join(uedit, filename))
+                  # dirname(dirname(__file__))
+                  ospath = os.path.join(rs, os.path.join(uedit, filename))
 
                   f.write("<a class=\"edit\" href=\"" + ospath + "\" title=\"Edit File " + rs + cwd + "\"><span class=\"icon-edit\"></span></a>")
                   # Using os.path.join() 
