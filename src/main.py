@@ -13,10 +13,10 @@ with open('/src/icons.json', encoding="utf-8") as json_file:
   data   = json.load(json_file)
 
   urepo  = "https://github.com/gigamaster/codemo/tree/main/app/"
-  ufolder= "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app/"
-  ufile  = "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app/"
-  uraw   = "https://raw.githubusercontent.com/gigamaster/codemo/main/app/"
-  uedit  = "https://github.com/gigamaster/codemo/edit/main/app/"
+  ufolder= "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app"
+  ufile  = "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app"
+  uraw   = "https://raw.githubusercontent.com/gigamaster/codemo/main/app"
+  uedit  = "https://github.com/gigamaster/codemo/edit/main/app"
   
   code   = ["code.png", "css3.png", "js.png", "markdown.png", "php.png", "py.png", "sql.png", "text.png"]
   media  = ["audio.png", "video.png"]
@@ -56,7 +56,7 @@ def main():
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
                       "<span class=\"icon-updir\"></span></a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
-                      "<td class=\"text-center\">-</td></tr>" #if dirname != "." else "",
+                      "<td class=\"text-center\">-</td></tr>" if dirname != "." else "",
                       ]))
               #sort dirnames alphabetically
               dirnames.sort()
@@ -88,8 +88,8 @@ def main():
 
                   #urledit = os.path.join(uedit, dirname + '/')
                   #f.write("<a class=\"edit\" href=\"" + urledit + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
-                  urldir = os.path.dirname(filename)
-                  urledit = os.path.join(uedit, urldir + '/' + filename)
+                  urldir = subdirname = os.path.basename(os.path.dirname(filename))
+                  urledit = os.path.join(uedit, urldir, filename)
                   f.write("<a class=\"edit\" href=\"" + urledit + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
                   # Using os.path.join() 
                   urlfile = os.path.join(ufile, dirname + '/')
