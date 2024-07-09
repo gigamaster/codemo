@@ -65,9 +65,8 @@ def main():
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                           subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
                           "<td class=\"text-center\">")
-                  parent_dir = os.path.split(os.getcwd())[0]
-                  ufolder = os.path.join(ufolder, parent_dir)
-                  f.write("<a class=\"download\" " + ufolder + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"" + parent_dir +" / Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                  subdirname = os.path.join(ufolder, subdirname)
+                  f.write("<a class=\"download\" " + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
               #sort filenames alphabetically
               filenames.sort()
               for filename in filenames:
