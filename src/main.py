@@ -58,24 +58,22 @@ def main():
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
                       "<span class=\"icon-updir\"></span></a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
-                      "<td class=\"text-center\">" + pDirname + "-</td></tr>" #if dirname != "." else "",
+                      "<td class=\"text-center\">" + pDirname + "-</td></tr>" if dirname != "." else "",
                       ]))
               
               #sort dirnames alphabetically
               dirnames.sort()
               for subdirname in dirnames:
                   
-                  # Join Parent and File Name with extension
-                  #fName = os.path.join(pDirname, subdirname)
+                  # Join Parent Directory and Subdirectory
+                  folderZip = os.path.join(pDirname, subdirname)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                           subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
-                          "<td class=\"text-center\">")
-                
-                  folderZip = os.path.join(pDirname, subdirname)
-                  f.write("<a class=\"download\" @click=\"GitZip.zipRepo('" + uFolder + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                          "<td class=\"text-center\">" +
+                          "<a class=\"download\" @click=\"GitZip.zipRepo('" + uFolder + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
               
               #sort filenames alphabetically
               filenames.sort()
@@ -93,8 +91,6 @@ def main():
                   # File Preview - filename relative path
                   f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
                   
-                  # Parent Dirname [1:] remove dot
-                  #pDirname = dirname[1:]
                   # Join Parent and File Name with extension
                   fName = os.path.join(pDirname, filename)
                   # GitHub Link to Edit 
@@ -136,6 +132,7 @@ def get_template_head(foldername):
     get template head
     """
     with open("/src/template/head.html", "r", encoding="utf-8") as file:
+        foldername = foldername[1:]
         head = file.read()
     head = head.replace("{{foldername}}", foldername) 
     head = head.replace("{{repo}}", os.environ["GITHUB_REPOSITORY"])  
