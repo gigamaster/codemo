@@ -52,13 +52,13 @@ def main():
               pDirname = dirname[1:]
               f.write("\n".join([
                   get_template_head(dirname),
-                  #dirname home icon
+                  # Dirname Home Icon
                   "<tr class=\"w-2/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                       "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
                       "<span class=\"icon-updir\"></span></a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
-                      "<td class=\"text-center\">" + pDirname + "-</td></tr>" if dirname != "." else "",
+                      "<td class=\"text-center\">-</td></tr>" #if dirname != "." else "",
                       ]))
               
               #sort dirnames alphabetically
