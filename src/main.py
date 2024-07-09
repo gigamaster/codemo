@@ -55,7 +55,7 @@ def main():
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
                       "<span class=\"icon-updir\"></span></a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
-                      "<td class=\"text-center\">-</td></tr>" if dirname != "." else "",
+                      "<td class=\"text-center\">-</td></tr>" #if dirname != "." else "",
                       ]))
               #sort dirnames alphabetically
               dirnames.sort()
@@ -81,8 +81,9 @@ def main():
                           get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
                   # Using os.path.join() 
-                  urlraw = os.path.join(uraw, dirname + '/')
-                  f.write("<a class=\"preview\" href=\"" + urlraw + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
+                  #urlraw = os.path.join(uraw, dirname + '/')
+                  #f.write("<a class=\"preview\" href=\"" + urlraw + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
+                  f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
                   urledit = os.path.join(uedit, dirname + '/')
                   f.write("<a class=\"edit\" href=\"" + urledit + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
                   # Using os.path.join() 
