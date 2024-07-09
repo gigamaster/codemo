@@ -89,7 +89,7 @@ def main():
                   #urledit = os.path.join(uedit, dirname + '/')
                   #f.write("<a class=\"edit\" href=\"" + urledit + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
                   path = (dirname + '/' + filename)
-                  urledit = r"{}{}{}".format(uedit, path)
+                  urledit = r"{}{}{}".format(uedit, dirname, filename)
                   f.write("<a class=\"edit\" href=\"" + urledit + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
                   # Using os.path.join() 
                   urlfile = os.path.join(ufile, dirname + '/')
