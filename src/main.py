@@ -62,13 +62,14 @@ def main():
               #sort dirnames alphabetically
               dirnames.sort()
               for subdirname in dirnames:
+                  dirname = dirname[1:]
                   parent = os.path.abspath(os.path.join(subdirname, os.pardir))
                   up = os.path.join(parent, subdirname)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
-                          subdirname + "</a></th><td class=\"text-center\">" + parent + "-</td><td class=\"text-center\">" + up + "-</td>" +
+                          subdirname + "</a></th><td class=\"text-center\">" + dirnames + parent + "-</td><td class=\"text-center\">" + up + "-</td>" +
                           "<td class=\"text-center\">")
                 
                   urlzip = os.path.join(ufolder, parent + '/' + subdirname)
@@ -100,9 +101,8 @@ def main():
                   ospath = os.path.abspath(os.path.join(filename, os.pardir))
 
                   f.write("<a class=\"edit\" href=\"" + ospath + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
-                  # Using os.path.join() 
-                  urlfile = os.path.join(ufile, dirname + '/')
-                  f.write("<a class=\"download\" " + urlfile + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
+                  
+                  f.write("<a class=\"download\" @click=\"GitZip.zipRepo('" + filename + "?raw=true'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
                   get_template_foot(),
