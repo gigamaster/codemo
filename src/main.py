@@ -62,7 +62,7 @@ def main():
               #sort dirnames alphabetically
               dirnames.sort()
               for subdirname in dirnames:
-                  parent = os.path.dirname(subdirname)
+                  parent = os.path.abspath(os.path.join(subdirname, os.pardir))
                   up = os.path.join(parent, subdirname)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
@@ -77,7 +77,7 @@ def main():
               #sort filenames alphabetically
               filenames.sort()
               for filename in filenames:
-                  path = (dirname + '/' + filename)
+                  path = os.path.abspath(os.path.join(filename, os.pardir))
                   pathUrl = os.path.join(dirname, filename)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">\n" +
@@ -97,7 +97,7 @@ def main():
                   #urldir = os.path.basename(os.path.dirname(filename))
                   #urledit = os.path.join(uedit, dirname / filename)
 
-                  ospath = os.path.realpath(filename)
+                  ospath = os.path.abspath(os.path.join(filename, os.pardir))
 
                   f.write("<a class=\"edit\" href=\"" + ospath + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
                   # Using os.path.join() 
