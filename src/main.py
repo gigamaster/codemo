@@ -79,7 +79,7 @@ def main():
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
                           filename + "</a></th><td class=\"text-center\">" +
-                          get_file_size(path) + "</td><td class=\"text-center\" title=\" " + root + dirname + path + ""\>" + get_file_modified_time(path) + "</td>" +
+                          get_file_size(path) + "</td><td class=\"text-center\" title=\"" + root + dirname + path + "\">" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
                   # Using os.path.join() 
                   #urlraw = os.path.join(uraw, dirname + '/')
