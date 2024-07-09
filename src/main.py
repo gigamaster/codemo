@@ -57,8 +57,8 @@ def main():
                       "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
-                      "<span class=\"icon-updir\"></span></a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
-                      "<td class=\"text-center\">-</td></tr>" #if dirname != "." else "",
+                      "<span class=\"icon-updir\"></span></a></th><td class=\"text-center\"></td><td class=\"text-center\"></td>" +
+                      "<td class=\"text-center\"></td></tr>" #if dirname != "." else "",
                       ]))
               
               #sort dirnames alphabetically
@@ -84,8 +84,8 @@ def main():
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">\n" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
-                          filename + "</a></th><td class=\"text-center\">" +
-                          get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
+                          filename + "</a></th><td class=\"size\">" +
+                          get_file_size(path) + "</td><td class=\"time\">" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
                   
                   # File Preview - filename relative path
