@@ -39,7 +39,7 @@ def main():
       print("no directory specified")
       sys.exit()
 
-  for dirname, dirnames, filenames in os.walk('.'):
+  for root, dirname, dirnames, filenames in os.walk('.'):
       dirnames[:] = [d for d in dirnames if d not in exclude] # exclude assets
       
       if 'index.html' in filenames:
@@ -55,8 +55,8 @@ def main():
                       "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
-                      "<span class=\"icon-updir\"></span></a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
-                      "<td class=\"text-center\">-</td></tr>" if dirname != "." else "",
+                      "<span class=\"icon-updir\"></span></a></th><td class=\"text-center\">-</td><td class=\"text-center\">" + root + "-</td>" +
+                      "<td class=\"text-center\">" + dirname + "-</td></tr>" if dirname != "." else "",
                       ]))
               #sort dirnames alphabetically
               dirnames.sort()
@@ -69,7 +69,7 @@ def main():
                           "<td class=\"text-center\">")
                 
                   urlzip = os.path.join(ufolder, dirname + '/')
-                  f.write("<a class=\"download\" " + urlzip + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder " + dirname + "\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                  f.write("<a class=\"download\" " + urlzip + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder " + root + dirname + "\"><span class=\"icon-download\"></span></td></a></tr>\n")
               #sort filenames alphabetically
               filenames.sort()
               for filename in filenames:
@@ -79,7 +79,7 @@ def main():
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
                           filename + "</a></th><td class=\"text-center\">" +
-                          get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
+                          get_file_size(path) + "</td><td class=\"text-center\" title=\" " + root + dirname + path + ""\>" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
                   # Using os.path.join() 
                   #urlraw = os.path.join(uraw, dirname + '/')
