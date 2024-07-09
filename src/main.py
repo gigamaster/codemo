@@ -64,8 +64,9 @@ def main():
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                           subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
-                          "<td class=\"text-center\">" +
-                          "<a class=\"download\" " + ufolder + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                          "<td class=\"text-center\">")
+                  subdirname = os.path.join(ufolder, subdirname)
+                  f.write("<a class=\"download\" " + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
               #sort filenames alphabetically
               filenames.sort()
               for filename in filenames:
@@ -77,12 +78,14 @@ def main():
                           filename + "</a></th><td class=\"text-center\">" +
                           get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
-                  path = uraw + (dirname == '.' and filename or dirname + '/' + filename)
+                  # Using os.path.join() 
+                  filename = os.path.join(uraw, filename)
                   f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
-                  path = uedit + (dirname == '.' and filename or dirname + '/' + filename)
+                  filename = os.path.join(uedit, filename)
                   f.write("<a class=\"edit\" href=\"" + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
                   path = (dirname == '.' and filename or dirname + '/' + filename)
-                  f.write("<a class=\"download\" " + ufile + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
+                  filename = os.path.join(ufile, filename)
+                  f.write("<a class=\"download\" " + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
                   get_template_foot(),
