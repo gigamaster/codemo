@@ -99,11 +99,11 @@ def main():
                   #urldir = os.path.basename(os.path.dirname(filename))
                   #urledit = os.path.join(uedit, dirname / filename)
                   pdirname = dirname[1:]
-                  ur = os.path.join(pdirname, subdirname, filename)
+                  ur = os.path.join(pdirname, filename)
                   f.write("<a class=\"edit\" href=\"" + uedit + ur + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
                   gdirname = dirname[1:]
-                  uz = os.path.join(gdirname, subdirname)
-                  f.write("<a class=\"download\" @click=\"GitZip.zipRepo('" + ublob + uz + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
+                  uz = os.path.join(gdirname, filename)
+                  f.write("<a class=\"download\" @click=\"GitZip.zipRepo('" + ublob + uz + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
                   get_template_foot(),
