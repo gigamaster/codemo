@@ -13,11 +13,11 @@ with open('/src/icons.json', encoding="utf-8") as json_file:
   data   = json.load(json_file)
 
   urepo  = "https://github.com/gigamaster/codemo/tree/main/app"
-  ufolder= "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app"
+  uFolder= "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app"
   ufile  = "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app"
-  ublob  = "https://github.com/gigamaster/codemo/blob/main/app"
+  uBlob  = "https://github.com/gigamaster/codemo/blob/main/app"
   uraw   = "https://raw.githubusercontent.com/gigamaster/codemo/main/app"
-  uedit  = "https://github.com/gigamaster/codemo/edit/main/app"
+  uEdit  = "https://github.com/gigamaster/codemo/edit/main/app"
   
   code   = ["code.png", "css3.png", "js.png", "markdown.png", "php.png", "py.png", "sql.png", "text.png"]
   media  = ["audio.png", "video.png"]
@@ -48,7 +48,8 @@ def main():
       else:
           print("index.html does not exist, generating")
           with open(os.path.join(dirname, 'index.html'), 'w', encoding="utf-8") as f:
-              
+              # Parent Dirname [1:] remove dot
+              pDirname = dirname[1:]
               f.write("\n".join([
                   get_template_head(dirname),
                   #dirname home icon
@@ -63,47 +64,45 @@ def main():
               #sort dirnames alphabetically
               dirnames.sort()
               for subdirname in dirnames:
-                  pdirname = dirname[1:]
                   
-                  up = os.path.join(pdirname, subdirname)
+                  # Join Parent and File Name with extension
+                  fName = os.path.join(pDirname, filename)
+                  
+                  up = os.path.join(pDirname, subdirname)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
-                          subdirname + "</a></th><td class=\"text-center\">" + pdirname + "-</td><td class=\"text-center\">" + up + "-</td>" +
+                          subdirname + "</a></th><td class=\"text-center\">" + pDirname + "-</td><td class=\"text-center\">" + up + "-</td>" +
                           "<td class=\"text-center\">")
                 
-                  urlzip = os.path.join(ufolder, pdirname + '/' + subdirname)
-                  f.write("<a class=\"download\" " + urlzip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder " + pdirname + subdirname + "\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                  folderZip = os.path.join(uFolder, pDirname + '/' + subdirname)
+                  f.write("<a class=\"download\"  @click=\"GitZip.zipRepo('" + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
               
               #sort filenames alphabetically
               filenames.sort()
               for filename in filenames:
-                  path = os.path.abspath(os.path.join(filename, os.pardir))
-                  pathUrl = os.path.join(dirname, filename)
+                  # File Icon - Link - Size - Time
+                  path = (dirname == '.' and filename or dirname + '/' + filename)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">\n" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
                           filename + "</a></th><td class=\"text-center\">" +
-                          get_file_size(path) + "</td><td class=\"text-center\" title=\"" + path + pathUrl + "\">" + get_file_modified_time(path) + "</td>" +
+                          get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
                   
-                  # Using os.path.join() 
-                  #urlraw = os.path.join(uraw, dirname + '/')
-                  #f.write("<a class=\"preview\" href=\"" + urlraw + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
+                  # Preview - filename relative path
                   f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
-
-                  #urledit = os.path.join(uedit, dirname + '/')
-                  #f.write("<a class=\"edit\" href=\"" + urledit + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
-                  #urldir = os.path.basename(os.path.dirname(filename))
-                  #urledit = os.path.join(uedit, dirname / filename)
-                  pdirname = dirname[1:]
-                  ur = os.path.join(pdirname, filename)
-                  f.write("<a class=\"edit\" href=\"" + uedit + ur + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
-                  gdirname = dirname[1:]
-                  uz = os.path.join(gdirname, filename)
-                  f.write("<a class=\"download\" @click=\"GitZip.zipRepo('" + ublob + uz + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
+                  
+                  # Parent Dirname [1:] remove dot
+                  #pDirname = dirname[1:]
+                  # Join Parent and File Name with extension
+                  fName = os.path.join(pDirname, filename)
+                  # GitHub Link to Edit 
+                  f.write("<a class=\"edit\" href=\"" + uEdit + fName + "\"  target=\"_blank\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>" +
+                  #Blob URL to Download
+                  "<a class=\"download\" @click=\"GitZip.zipRepo('" + uBlob + fName + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
                   get_template_foot(),
