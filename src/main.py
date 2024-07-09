@@ -91,18 +91,10 @@ def main():
                   #urldir = os.path.basename(os.path.dirname(filename))
                   #urledit = os.path.join(uedit, dirname / filename)
 
-                  #ospath = os.path.split(os.getcwd())[-1]
+                  ospath = os.path.split(os.getcwd())[-1]
+                  osdir = os.path.dirname
 
-                  #osdir=os.path.dirname
-
-                  # For the directory of the script being run
-                  rs = os.path.dirname(os.path.abspath(__file__))
-                  # fOR THE current working directory
-                  cwd = os.path.abspath(os.getcwd())
-                  # dirname(dirname(__file__))
-                  ospath = os.path.join(rs, os.path.join(uedit, filename))
-
-                  f.write("<a class=\"edit\" href=\"" + ospath + "\" title=\"Edit File " + rs + cwd + "\"><span class=\"icon-edit\"></span></a>")
+                  f.write("<a class=\"edit\" href=\"" + ospath + "\" title=\"Edit File " + osdir + "\"><span class=\"icon-edit\"></span></a>")
                   # Using os.path.join() 
                   urlfile = os.path.join(ufile, dirname + '/')
                   f.write("<a class=\"download\" " + urlfile + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
