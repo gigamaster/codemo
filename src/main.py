@@ -13,7 +13,7 @@ with open('/src/icons.json', encoding="utf-8") as json_file:
   data   = json.load(json_file)
 
   urepo  = "https://github.com/gigamaster/codemo/tree/main/app"
-  uFolder= "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app"
+  uFolder= "https://github.com/gigamaster/codemo/tree/main/app"
   ufile  = "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app"
   uBlob  = "https://github.com/gigamaster/codemo/blob/main/app"
   uraw   = "https://raw.githubusercontent.com/gigamaster/codemo/main/app"
@@ -76,7 +76,7 @@ def main():
                           subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
                           "<td class=\"text-center\">")
                 
-                  folderZip = os.path.join(pDirname, subdirname)
+                  folderZip = os.path.join(dirname, subdirname)
                   f.write("<a class=\"download\" @click=\"GitZip.zipRepo('" + uFolder + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
               
               #sort filenames alphabetically
