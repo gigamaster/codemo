@@ -72,7 +72,7 @@ def main():
                           subdirname + "</a></th><td class=\"text-center\">" + pdirname + "-</td><td class=\"text-center\">" + up + "-</td>" +
                           "<td class=\"text-center\">")
                 
-                  urlzip = os.path.join(ufolder, parent + '/' + subdirname)
+                  urlzip = os.path.join(ufolder, pdirname + '/' + subdirname)
                   f.write("<a class=\"download\" " + urlzip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder " + parent + subdirname + "\"><span class=\"icon-download\"></span></td></a></tr>\n")
               
               #sort filenames alphabetically
