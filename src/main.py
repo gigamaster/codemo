@@ -99,9 +99,8 @@ def main():
                   #urledit = os.path.join(uedit, dirname / filename)
                   pdirname = dirname[1:]
                   ur = os.path.join(pdirname, subdirname, filename)
-                  f.write("<a class=\"edit\" href=\"https://github.com/gigamaster/codemo/" + ur + "?raw=true\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
-                  
-                  f.write("<a class=\"download\" @click=\"GitZip.zipRepo('" + filename + "?raw=true'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
+                  f.write("<a class=\"edit\" href=\"" + uedit + ur + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>" +
+                          "<a class=\"download\" @click=\"GitZip.zipRepo('" + uraw + ur + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
                   get_template_foot(),
