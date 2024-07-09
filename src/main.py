@@ -15,6 +15,7 @@ with open('/src/icons.json', encoding="utf-8") as json_file:
   urepo  = "https://github.com/gigamaster/codemo/tree/main/app"
   ufolder= "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/tree/main/app"
   ufile  = "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app"
+  ublob  = "https://github.com/gigamaster/codemo/blob/main/app"
   uraw   = "https://raw.githubusercontent.com/gigamaster/codemo/main/app"
   uedit  = "https://github.com/gigamaster/codemo/edit/main/app"
   
@@ -100,7 +101,7 @@ def main():
                   pdirname = dirname[1:]
                   ur = os.path.join(pdirname, subdirname, filename)
                   f.write("<a class=\"edit\" href=\"" + uedit + ur + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>" +
-                          "<a class=\"download\" @click=\"GitZip.zipRepo('" + urepo + ur + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
+                          "<a class=\"download\" @click=\"GitZip.zipRepo('" + ublob + ur + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
                   get_template_foot(),
