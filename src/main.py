@@ -91,7 +91,7 @@ def main():
                   #urldir = os.path.basename(os.path.dirname(filename))
                   #urledit = os.path.join(uedit, dirname / filename)
 
-                  ospath = os.path.split(os.getcwd())[-1]
+                  ospath = os.path.dirname(filename)
 
                   f.write("<a class=\"edit\" href=\"" + ospath + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
                   # Using os.path.join() 
