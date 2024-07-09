@@ -50,6 +50,7 @@ def main():
               
               f.write("\n".join([
                   get_template_head(dirname),
+                  #dirname home icon
                   "<tr class=\"w-2/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                       "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
@@ -68,7 +69,7 @@ def main():
                           "<td class=\"text-center\">")
                 
                   urlzip = os.path.join(ufolder, dirname + '/')
-                  f.write("<a class=\"download\" " + urlzip + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                  f.write("<a class=\"download\" " + urlzip + subdirname + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder " + foldername + "\"><span class=\"icon-download\"></span></td></a></tr>\n")
               #sort filenames alphabetically
               filenames.sort()
               for filename in filenames:
@@ -84,8 +85,12 @@ def main():
                   #urlraw = os.path.join(uraw, dirname + '/')
                   #f.write("<a class=\"preview\" href=\"" + urlraw + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
                   f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
-                  urledit = os.path.join(uedit, dirname + '/')
-                  f.write("<a class=\"edit\" href=\"" + urledit + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
+
+                  #urledit = os.path.join(uedit, dirname + '/')
+                  #f.write("<a class=\"edit\" href=\"" + urledit + filename + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
+                  path = (dirname + '/' + filename)
+                  urledit = r"{}{}{}".format(uedit, path)
+                  f.write("<a class=\"edit\" href=\"" + urledit + "\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>")
                   # Using os.path.join() 
                   urlfile = os.path.join(ufile, dirname + '/')
                   f.write("<a class=\"download\" " + urlfile + filename + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
