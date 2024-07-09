@@ -69,7 +69,7 @@ def main():
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
-                          subdirname + "</a></th><td class=\"text-center\">" + dirnames + parent + "-</td><td class=\"text-center\">" + up + "-</td>" +
+                          subdirname + "</a></th><td class=\"text-center\">" + dirname + parent + "-</td><td class=\"text-center\">" + up + "-</td>" +
                           "<td class=\"text-center\">")
                 
                   urlzip = os.path.join(ufolder, parent + '/' + subdirname)
