@@ -39,8 +39,7 @@ def main():
       print("no directory specified")
       sys.exit()
 
-  #for dirname, dirnames, filenames in os.walk('.'):
-  for dirname, dirnames, filenames in os.walk(path):
+  for dirname, dirnames, filenames in os.walk('.'):
       dirnames[:] = [d for d in dirnames if d not in exclude] # exclude assets
       
       if 'index.html' in filenames:
@@ -63,16 +62,17 @@ def main():
               #sort dirnames alphabetically
               dirnames.sort()
               for subdirname in dirnames:
-                  up = os.path.join(dirname, subdirname)
+                  parent = os.path.dirname(subdirname)
+                  up = os.path.join(parent, subdirname)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
-                          subdirname + "</a></th><td class=\"text-center\">" + dirname + "-</td><td class=\"text-center\">" + up + "-</td>" +
+                          subdirname + "</a></th><td class=\"text-center\">" + parent + "-</td><td class=\"text-center\">" + up + "-</td>" +
                           "<td class=\"text-center\">")
                 
-                  urlzip = os.path.join(ufolder, dirname + '/' + subdirname)
-                  f.write("<a class=\"download\" " + urlzip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder " + dirname + subdirname + "\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                  urlzip = os.path.join(ufolder, parent + '/' + subdirname)
+                  f.write("<a class=\"download\" " + urlzip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder " + parent + subdirname + "\"><span class=\"icon-download\"></span></td></a></tr>\n")
               
               #sort filenames alphabetically
               filenames.sort()
