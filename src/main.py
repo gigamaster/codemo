@@ -11,17 +11,14 @@ import datetime as dt
 
 with open('/src/icons.json', encoding="utf-8") as json_file:
   data   = json.load(json_file)
-
-  urepo  = "https://github.com/gigamaster/codemo/tree/main/app"
-  uFolder= "https://github.com/gigamaster/codemo/tree/main/app"
-  ufile  = "@click=\"GitZip.zipRepo('https://github.com/gigamaster/codemo/blob/main/app"
+  # GitHub Repository Links
   uBlob  = "https://github.com/gigamaster/codemo/blob/main/app"
-  uraw   = "https://raw.githubusercontent.com/gigamaster/codemo/main/app"
   uEdit  = "https://github.com/gigamaster/codemo/edit/main/app"
-  
+  uFolder= "https://github.com/gigamaster/codemo/tree/main/app"
+  # TODO customize UI preview
   code   = ["code.png", "css3.png", "js.png", "markdown.png", "php.png", "py.png", "sql.png", "text.png"]
   media  = ["audio.png", "video.png"]
-
+  # Exclude directories from UI
   exclude = set(['asset', 'test'])
 
 def main():
@@ -41,14 +38,14 @@ def main():
       sys.exit()
 
   for dirname, dirnames, filenames in os.walk('.'):
-      dirnames[:] = [d for d in dirnames if d not in exclude] # exclude assets
+      dirnames[:] = [d for d in dirnames if d not in exclude] # exclude folders
       
       if 'index.html' in filenames:
             print("index.html already exists, skipping...")
       else:
           print("index.html does not exist, generating")
           with open(os.path.join(dirname, 'index.html'), 'w', encoding="utf-8") as f:
-              # Parent Dirname [1:] remove dot
+              # Parent Dirname [1:] remove first dot from path
               pDirname = dirname[1:]
               f.write("\n".join([
                   get_template_head(dirname),
@@ -57,8 +54,7 @@ def main():
                       "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
-                      "<span class=\"icon-updir\"></span></a></th><td class=\"text-center\"></td><td class=\"text-center\"></td>" +
-                      "<td class=\"text-center\"></td></tr>" #if dirname != "." else "",
+                      "<span class=\"icon-updir\"></span></a></th><td></td><td></td><td></td></tr>" #if dirname != "." else "",
                       ]))
               
               #sort dirnames alphabetically
@@ -71,7 +67,7 @@ def main():
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
-                          subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
+                          subdirname + "</a></th><td></td><td></td>" +
                           "<td class=\"text-center\">" +
                           "<a class=\"download\" @click=\"GitZip.zipRepo('" + uFolder + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
               
@@ -91,11 +87,11 @@ def main():
                   # File Preview - filename relative path
                   f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
                   
-                  # Join Parent and File Name with extension
+                  # Join Parent Directory and File Name with extension
                   fName = os.path.join(pDirname, filename)
                   # GitHub Link to Edit 
                   f.write("<a class=\"edit\" href=\"" + uEdit + fName + "\"  target=\"_blank\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>" +
-                  #Blob URL to Download
+                  # GitHubBlob URL to Download
                   "<a class=\"download\" @click=\"GitZip.zipRepo('" + uBlob + fName + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
 
               f.write("\n".join([
@@ -173,10 +169,10 @@ def get_icon_from_filename(filename):
         if extension in i["extension"]:
             # print(i["icon"])
             return i["icon"] + ".png"
-    # print("no icon found")
+    # no icon found
     return "unknown.png"
 
 
 if __name__ == "__main__":
     main()
-    # get_icon_from_filename("test.txppt")
+    # get_icon_from_filename("test.txt")

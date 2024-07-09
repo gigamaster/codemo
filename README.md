@@ -7,11 +7,29 @@
 
 ### /////////////////////////// — CODEMO
 
-Code and Design Samples - User Interface Components
+GitHub repository web file browser used to preview, edit and download individual files or   
+download a snapshot of a repository's directory as a zip file to your own (local) computer.
 
-Web Application Platform UI-Components for humans to create responsive web sites.  
+
+#### 1. Live Code
+
 You can use your favorite CSS and Javascript framework with an existing project or   
-start fresh with a new project, using a quick-start theme and components.  
+start fresh with a quick-start template of [Livecodes](https://gigamaster.github.io/livecodes/)  
+
+You can import a repository, directory, files, create gists and embed a live code editor in a website with a simple link to see the results in real time.
+
+#### 2. Github.dev web-based editor
+
+You can also open any folder and use the github.dev web-based editor to edit files and commit your changes. Note that you must be signed in to GitHub.com to use the github.dev editor.
+
+On [Codemo](https://gigamaster.github.io/codemo/), navigate to a directory of the repository.   
+
+Click edit to open the file, then, in the same browser tab, press `.` 
+
+Alternativaly, you can open the repository in a new browser tab, press >.
+
+- Change the URL from "github.com" to "github.dev".
+- When viewing a file, select the  dropdown menu and click github.dev.
 
 ---
 
@@ -42,6 +60,11 @@ Specify runner and deployment runs-on `ubuntu-latest`
 
 _If I had to do it again today, I would definitely choose jQuery ease of use than Tailwind and Alpine.js_
 
+### Examples
+
+Web Application Platform UI-Components for humans to create responsive web sites.  
+
+
 ### Credits
 
 - [GitHub Action Checkout](https://github.com/actions/checkout)
@@ -49,6 +72,7 @@ _If I had to do it again today, I would definitely choose jQuery ease of use tha
 - [GitHub Action Upload Pages Artifact](https://github.com/actions/upload-pages-artifact)
 - [GitHub Action Deploy Pages](https://github.com/actions/deploy-pages)
 
+  
 ### License
 
 MIT License
