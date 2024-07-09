@@ -67,8 +67,6 @@ def main():
                   
                   # Join Parent and File Name with extension
                   #fName = os.path.join(pDirname, subdirname)
-                  
-                  
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                           "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
@@ -76,7 +74,7 @@ def main():
                           subdirname + "</a></th><td class=\"text-center\">-</td><td class=\"text-center\">-</td>" +
                           "<td class=\"text-center\">")
                 
-                  folderZip = os.path.join(dirname, subdirname)
+                  folderZip = os.path.join(pDirname, subdirname)
                   f.write("<a class=\"download\" @click=\"GitZip.zipRepo('" + uFolder + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
               
               #sort filenames alphabetically
@@ -92,7 +90,7 @@ def main():
                           get_file_size(path) + "</td><td class=\"text-center\">" + get_file_modified_time(path) + "</td>" +
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
                   
-                  # Preview - filename relative path
+                  # File Preview - filename relative path
                   f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\"><span class=\"icon-view\"></span></a>")
                   
                   # Parent Dirname [1:] remove dot
