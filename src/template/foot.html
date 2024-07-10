@@ -10,8 +10,8 @@
 <footer
 class="flex items-center justify-between p-4 bg-white dark:bg-darker"
 >
-<div><p class="m-2 lg:m-4 text-xs">Auto generated with <a href={{giturl}}"
-target="_blank" class="text-blue-700">Codemo — Github Web File Browser</a> - Directory Index Listing {{buildtime}}</p></div>
+<div><p class="m-2 lg:m-4 text-xs"><a href={{giturl}}"
+target="_blank" class="text-blue-700">Codemo — Github Web File Browser</a> — Auto generated {{buildtime}}</p></div>
 <div>
 <p class="m-2 lg:m-4 text-xs">Made by
 <a href="https://github.com/gigamaster" target="_blank" class="text-blue-500 hover:underline"
@@ -58,7 +58,8 @@ aria-labelledby="settinsPanelLabel"
 <!-- Close button -->
 <button
   @click="isSettingsPanelOpen = false"
-  class="p-2 text-white rounded-md focus:outline-none focus:ring"
+  class="p-2 text-gray-400 rounded-md focus:outline-none focus:ring 
+  dark:border-primary dark:hover:text-primary-100 dark:hover:border-primary-light focus:outline-none focus:ring focus:ring-primary-lighter focus:ring-offset-2 dark:focus:ring-offset-dark dark:focus:ring-primary-dark border-gray-900 text-gray-900 dark:border-primary-light dark:text-primary-100"
 >
   <svg
     class="w-5 h-5"
@@ -78,7 +79,7 @@ aria-labelledby="settinsPanelLabel"
   class="flex flex-col items-center justify-center flex-shrink-0 px-4 py-8 space-y-4 border-b dark:border-primary-dark"
 >
   <span aria-hidden="true" class="text-gray-500 dark:text-primary">
-    Server Directory Index
+    Github Web File Browser
   </span>
   <h2 id="settinsPanelLabel" class="flex flex-row text-xl font-medium text-gray-500 dark:text-light">
     <svg class="w-8 h-8 nr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h9m4 0h3m-9 8h9M4 16h3"/><circle cx="9" cy="16" r="2"/><circle cx="15" cy="8" r="2"/></g></svg> 
@@ -202,7 +203,7 @@ class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-darker dark:text-li
 <!-- Close button -->
 <button
   @click="isNotificationsPanelOpen = false"
-  class="p-2 text-white rounded-md focus:outline-none focus:ring"
+  class="p-2 text-gray-400 rounded-md focus:outline-none focus:ring dark:bg-darker dark:text-light"
 >
   <svg
     class="w-5 h-5"

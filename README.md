@@ -58,7 +58,20 @@ Specify runner and deployment runs-on `ubuntu-latest`
 - [Ontodia - GUI Relational Data Builder](https://gigamaster.github.io/codemo/rd/)   
   Allows to visualize, navigate and explore data in the form of an interactive graph.
 
-_If I had to do it again today, I would definitely choose jQuery ease of use than Tailwind and Alpine.js_
+   
+---
+
+
+  > 
+  > _If I had to do it again today,    
+  > I would definitely choose jQuery   
+  > ease of use than Tailwind and Alpine.js_
+  >
+
+
+--- 
+
+
 
 ### Examples
 
