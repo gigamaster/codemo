@@ -61,6 +61,42 @@ perspective: 100vmin;
 animation: spin-all 4s ease-in-out 0s infinite;
 transform-style: preserve-3d;
 }
+
+.cube {
+background: var(--color);
+width: 20vmin;
+height: 20vmin;
+border-radius: 2vmin;
+transform: rotate(48deg) rotateX(22.5deg) rotateY(-22.5deg);
+left: 14.5vmin;
+position: absolute;
+top: 5vmin;
+transition: all 1s ease 0s;
+}
+.cube, .cube:before, .cube:after {
+animation: spin-cube 2s ease-in-out -3s infinite alternate;
+}
+.cube:before, .cube:after {
+position: absolute;
+content: "";
+background: var(--color);
+width: calc(100% - 2vmin);
+height: calc(100% - 2vmin);
+border-radius: 2vmin;
+transform: rotateY(-90deg);
+transform-origin: right bottom;
+top: 2.5vmin;
+left: 4vmin;
+transition: all 1s ease 0s;
+animation-name: spin-cube-before;
+}
+.cube:after {
+top: 4vmin;
+left: 2.5vmin;
+transform: rotateX(90deg);
+animation-name: spin-cube-after;
+}
+
 .icon-updir {
 --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M19 9v7h-3v-6H6v3L1 8.5L6 4v3h11c1.104 0 2 .897 2 2'/%3E%3C/svg%3E");
 background-color: currentColor;
