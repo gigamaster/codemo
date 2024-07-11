@@ -47,20 +47,32 @@
 <style>[x-cloak] { display: none; }</style>
 </head>
 <body>
-<div x-data="setup()" x-init="$refs.loading.classList.add('hidden'); setColors(color);" :class="{ 'dark': isDark}">
-  <div id="notificationWrapper" class="fixed top-4 w-64 right-4 space-y-2"></div>
-  <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
-
-    <!-- Loading -->
-    <div
-      x-ref="loading"
-      class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-primary-darker"
-    >
-    <div class="cd-content">
-      <div class="cube bg-gray-100 dark:bg-dark"></div>
-    </div>
-    <p>Loading...</p>
-    </div>
+  <div x-data="setup()" x-init="$refs.loading.classList.add('hidden'); setColors(color);" :class="{ 'dark': isDark}">
+    <div id="notificationWrapper" class="fixed top-4 w-64 right-4 space-y-2"></div>
+    <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
+      <!-- Loading -->
+      <div
+        x-ref="loading"
+        class="flex flex-col fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-loader"
+      >
+      <div class="loader">
+          <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="100%" height="100%" overflow="visible">
+            <g stroke="none" fill="none">
+              <rect></rect>
+              <rect></rect>
+              <rect></rect>
+              <rect></rect>
+            </g>
+            <g stroke="none" fill="none">
+              <rect></rect>
+              <rect></rect>
+              <rect></rect>
+              <rect></rect>
+            </g>
+          </svg>
+        </div>
+        <p>Loading...</p>
+      </div>
     
     <!-- Sidebar -->
     <aside class="flex-shrink-0 hidden w-64 bg-white dark:bg-darker md:block">
@@ -69,7 +81,6 @@
         <nav aria-label="main" class="flex-1 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto">
           <!-- Dashboard links -->
           <div x-data="{ isActive: true, open: true}">
-            <!-- active & hover classes 'bg-primary-100 dark:bg-primary' -->
             <a
               href="#"
               @click="$event.preventDefault(); open = !open"
@@ -143,7 +154,6 @@
 
           <!-- Components links -->
           <div x-data="{ isActive: false, open: false }">
-            <!-- active classes 'bg-primary-100 dark:bg-primary' -->
             <a
               href="#"
               @click="$event.preventDefault(); open = !open"
@@ -172,8 +182,6 @@
               </span>
             </a>
             <div x-show="open" class="mt-2 space-y-2" role="menu" arial-label="Components">
-              <!-- active & hover classes 'text-gray-700 dark:text-light' -->
-              <!-- inActive classes 'text-gray-400 dark:text-gray-400' -->
               <a
                 href="https://gigamaster.github.io/codemo/components/animation/"
                 role="menuitem"
@@ -480,10 +488,10 @@
             <!-- Toggle dark theme button -->
             <button aria-hidden="true" class="relative m-3 focus:outline-none" x-cloak @click="toggleTheme">
               <div
-                class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-lighter"
+                class="w-12 h-4 transition rounded-full outline-none bg-primary-100 dark:bg-primary-lighter"
               ></div>
               <div
-                class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-150 transform scale-110 rounded-full shadow-sm"
+                class="absolute -top-1 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-150 transform scale-110 rounded-full shadow-sm"
                 :class="{ 'translate-x-0 -translate-y-px  bg-white text-primary-dark': !isDark, 'translate-x-6 text-primary-100 bg-primary-darker': isDark }"
               >
                 <svg
