@@ -133,3 +133,32 @@ const setup = () => {
     }
     };
     }
+/*
+    Usage Example:
+    openWithSelfMain('https://github.com/xoopscube','XOOPSCube','900','500');
+    Location = null is useless because modern browsers now prevent, by default, 
+    hiding the address bar for security reasons (phishing)
+*/
+function openWithSelfMain(url, title, w, h) {
+  event.preventDefault();
+  // Fixes dual-screen position                         Most browsers      Firefox
+  var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
+  var dualScreenTop = window.screenTop != undefined ? window.screenTop : window.screenY;
+
+  width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+  height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+  var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+  var top = ((height / 2) - (h / 2)) + dualScreenTop;
+  var newWindow = window.open(url, title,
+      'scrollbars=yes, ' +
+      'width=' + w + ', ' +
+      'height=' + h + ', ' +
+      'top=' + top + ', ' +
+      'left=' + left + ',' +
+      'titlebar=no,toolbar=no,directories=no,status=no,menubar=no,resizable=yes,copyhistory=no');
+  // Puts focus on the newWindow
+  if (window.focus) {
+      newWindow.focus();
+  }
+}
