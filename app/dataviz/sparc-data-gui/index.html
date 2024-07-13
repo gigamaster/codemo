@@ -1,18 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - GUI-App-Build-Diagram-Europe-Sparql-Data-Provider</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App GUI for SPARQL Data Provider</title>
+  <meta name="description" content="App GUI for SPARQL Data Provider - European Union">
+  <meta name="robots" content="all">
+  <meta name="keywords" content="app, gui, web, dataviz, sparql, european union, data, provider, diagram, generator, svg">
+  <meta name="rating" content="general">
+  <meta name="author" content="Nuno Luciano">
+  <meta name="copyright" content="Authors">
+  <meta name="generator" content="SPARQL">
+  <link rel="stylesheet" href="./style.css">
+  <!-- <link rel="preload" as="script" href="https://unpkg.com/ontodia@0.8.0/dist/ontodia-full.min.js"> -->
+  <link rel="preload" as="script" href="./ontodia-custom-full.min.js">
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js">
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js">
+  <script>
+  window.addEventListener('load', () => {
+    const preload = document.querySelector('.preloader');
+    setTimeout( function() {
+        preload.classList.add('preloader-done');
+    }, 3000 );
+  });
+</script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
+<div class="preloader">
+  <div class="loading">
+  <h1>SPARQL Data Provider </h1>
+  <h4>European Union :: Data Loading...</h4>
+  </div>
+</div>
 <div id="container"></div>
-<!-- partial -->
-  <script src='https://unpkg.com/ontodia@0.8.0/dist/ontodia-full.min.js'></script>
+<!-- local first -->
+<script src='./ontodia-custom-full.min.js'></script>
+<!-- <script src='https://unpkg.com/ontodia@0.8.0/dist/ontodia-full.min.js'></script> -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js'></script><script  src="./script.js"></script>
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.6.2/react-dom.js'></script>
+<script src="./script.js"></script>
 </body>
 </html>

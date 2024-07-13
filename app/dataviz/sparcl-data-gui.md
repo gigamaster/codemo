@@ -1,8 +1,12 @@
-# GUI-App-Build-Diagram-Europe-Sparql-Data-Provider
+# GUI-App-Build-Diagram
 
-Ontodia needs to have an access to data, therefore you have to provide a SPARQL endpoint URL in environment property.   
+European Union Sparql Data Provider   
+Ontodia needs to have an access to data,  
+therefore you have to provide a SPARQL  
+endpoint URL in environment property.   
 
-We've set European Union Data Provider to use for demonstration purposes. 
+We've set European Union Data Provider   
+to use for demonstration purposes. 
 
 ## Ontodia
 
