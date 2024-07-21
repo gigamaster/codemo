@@ -553,7 +553,7 @@
                           :class="currentIndex == index ? 'bg-primary':''"
                           class="flex justify-between rounded-lg p-2 hover:bg-primary dark:hover:bg-primary cursor-pointer"
                           @click="window.open(item.page_url)" 
-                          @keydown.enter.window="window.open(item.page_url)"                  
+                          @keydown.enter="window.open(item.page_url)"                  
                         >
                           <!-- Page icon -->
                           <span class="flex w-10 h-10 items-center justify-center rounded-lg bg-dark mr-2" :alt="item.page_title">
