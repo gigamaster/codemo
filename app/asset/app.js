@@ -94,7 +94,7 @@ document.addEventListener('alpine:init', () => {
     currentIndex: -1,
     init() {
       // Initialize data
-      fetch('sourceData.json')
+      fetch('./sourceData.json')
           .then(res => res.json())
           .then(data => this.data = data.data);
     },
