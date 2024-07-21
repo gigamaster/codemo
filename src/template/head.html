@@ -8,7 +8,7 @@
   <meta name="application-name" content="{{repo}}">
   <meta name="author" content="{{owner}}">
   <meta name="generator" content="{{repo}}">
-  <meta name="description" content="Gigamaster Component Playground - Directory Index Listing">
+  <meta name="description" content="Codemo GitHub Web File Browser - Directory Index Listing">
   <!-- Theme color -->
   <meta name="theme-color" content="#111213">
   <!-- Favicon --- -->
@@ -24,14 +24,14 @@
   <meta name="twitter:card" content="summary_large_image" inertia="">
   <meta name="twitter:site" content="{{url}}" inertia="">
   <meta name="twitter:title" content="Gigamaster GitHub Web File Browser - Directory Index Listing" inertia="">
-  <meta name="twitter:description" content="Live code editor, UI components and templates Open Source." inertia="">
+  <meta name="twitter:description" content="Live code editor UI components playground and templates Open Source." inertia="">
   <meta name="twitter:image" content="{{url}}codemo-screen.jpg" inertia="">
   <meta name="twitter:creator" content="@nunoluciano" inertia="">
   <!-- font, style, script -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://gigamaster.github.io/codemo/asset/css/style.css" />
-  <script defer src='https://unpkg.com/alpinejs-notify@latest/dist/notifications.min.js'></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://gigamaster.github.io/codemo/asset/css/style.css" rel="stylesheet" />
+  <script defer src='https://gigamaster.github.io/codemo/asset/lib/notifications.min.js'></script>
+  <script defer src="https://gigamaster.github.io/codemo/asset/lib/alpinejs.min.js"></script>
   <script type="module">
   const lib = await import('https://gigamaster.github.io/codemo/asset/lib/lib.module.js');
   </script>
@@ -47,32 +47,37 @@
 <style>[x-cloak] { display: none; }</style>
 </head>
 <body>
-  <div x-data="setup()" x-init="setTimeout(() => $refs.loading.classList.add('hidden') = true, 2000); setColors(color);" :class="{ 'dark': isDark}">
-    <div id="notificationWrapper" class="fixed top-4 w-64 right-4 space-y-2"></div>
-    <div class="flex h-screen antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
-      <!-- Loading -->
-      <div
-        x-ref="loading"
-        class="flex flex-col fixed inset-0 z-50 flex items-center justify-center text-white bg-loader"
-      >
-        <div class="loader">
-          <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="100%" height="100%" overflow="visible">
-            <g stroke="none" fill="none">
-              <rect></rect>
-              <rect></rect>
-              <rect></rect>
-              <rect></rect>
-            </g>
-            <g stroke="none" fill="none">
-              <rect></rect>
-              <rect></rect>
-              <rect></rect>
-              <rect></rect>
-            </g>
-          </svg>
-        </div>
-        <p>Loading...</p>
+<div x-data="setup()" x-init="setColors(color);" :class="{ 'dark': isDark};">
+  <div id="notificationWrapper" class="fixed top-4 w-64 right-4 space-y-2"></div>
+
+  <div class="flex h-screen antialiased text-gray-900 bg-white dark:bg-darker dark:text-light">
+
+    <!-- Loading -->
+    <div x-ref="loading"
+    x-show="loading" 
+    x-on:load.window="loading = false" 
+    x-transition.delay.2000.leave.duration.2000ms  
+    class="flex flex-col fixed inset-0 z-50 flex items-center justify-center text-white bg-loader"
+    >
+      <div class="loader">
+        <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="100%" height="100%" overflow="visible">
+          <g stroke="none" fill="none">
+            <rect></rect>
+            <rect></rect>
+            <rect></rect>
+            <rect></rect>
+          </g>
+          <g stroke="none" fill="none">
+            <rect></rect>
+            <rect></rect>
+            <rect></rect>
+            <rect></rect>
+          </g>
+        </svg>
       </div>
+      <h1 class="text-2xl uppercase">CODEMO</h1>
+      <p>— Loading —</p>
+    </div>
     
     <!-- Sidebar -->
     <aside class="flex-shrink-0 hidden w-64 bg-white dark:bg-darker md:block">
@@ -93,9 +98,8 @@
               <span aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0h-.079c-1.66 0-3.239.349-4.667.978l.074-.029A12.269 12.269 0 0 0 3.52 3.523A12.219 12.219 0 0 0 .978 7.251l-.031.079A11.398 11.398 0 0 0 0 11.919v.086v-.004v.079c0 1.66.349 3.239.978 4.667l-.029-.074a12.276 12.276 0 0 0 2.572 3.807a12.224 12.224 0 0 0 3.729 2.542l.079.031c1.354.6 2.933.949 4.593.949h.083h-.004h.079c1.66 0 3.239-.349 4.667-.978l-.074.029a12.276 12.276 0 0 0 3.809-2.573a12.219 12.219 0 0 0 2.542-3.728l.031-.079c.6-1.354.949-2.932.949-4.593v-.158c0-1.66-.349-3.239-.978-4.667l.029.074a12.286 12.286 0 0 0-2.573-3.806A12.219 12.219 0 0 0 16.754.981L16.675.95C15.321.35 13.741 0 12.08 0h-.083zm.64 22.79v-2.087l5.193-2.633a.421.421 0 0 0 .154-.129l.001-.001a.335.335 0 0 0 .059-.191v-.011v.001v-1.186c.225-.082.412-.226.543-.412l.002-.004c.133-.179.214-.404.214-.648v-.118a1.146 1.146 0 0 0-.366-.746l-.001-.001a1.09 1.09 0 0 0-.75-.297h-.022h.001h-.02c-.308 0-.587.127-.786.332c-.205.2-.332.478-.332.787v.021v-.001v.059c.002.03.011.057.024.081v-.001c.013.222.096.423.227.583l-.001-.002c.133.163.304.289.501.364l.008.003v.949l-4.649 2.372v-1.942l2.039-.949a.533.533 0 0 0 .166-.13l.001-.001a.3.3 0 0 0 .071-.194v-3.233l3.793-2.134a.318.318 0 0 0 .142-.141l.001-.002a.407.407 0 0 0 .047-.189v-.901c.223-.079.409-.218.543-.397l.002-.003c.133-.177.214-.401.214-.644v-.04c0-.308-.127-.587-.332-.786a1.066 1.066 0 0 0-.775-.332H18.4a1.082 1.082 0 0 0-.71.366l-.001.001a1.113 1.113 0 0 0-.285.746v.025v-.001v.02c0 .243.08.466.216.646l-.002-.003c.137.182.322.321.538.397l.008.003v.688l-3.818 2.134a.51.51 0 0 0-.129.129l-.001.002a.338.338 0 0 0-.055.184v.017v-.001v3.2l-1.52.711v-6.972l3.2-1.566a.379.379 0 0 0 .153-.141l.001-.002a.347.347 0 0 0 .059-.189V7.04c.223-.079.409-.218.543-.397l.002-.003c.133-.177.214-.401.214-.644v-.021v.001v-.061a.078.078 0 0 0-.024-.057a1.127 1.127 0 0 0-.366-.719l-.001-.001a1.06 1.06 0 0 0-.738-.297h-.128a1.108 1.108 0 0 0-.719.378l-.001.001a1.103 1.103 0 0 0-.297.754v.123c.032.227.12.428.251.596l-.002-.003c.127.167.301.291.502.354l.007.002v.972l-2.656 1.304V5.288c.225-.082.412-.226.543-.412l.002-.004c.133-.179.214-.404.214-.648V4.2c0-.308-.127-.587-.332-.786a1.095 1.095 0 0 0-.787-.332h-.021h.001h-.02c-.308 0-.587.127-.786.332c-.205.2-.332.478-.332.787v.021v-.001v.118c.03.223.119.421.25.583l-.002-.002c.133.163.304.289.501.364l.008.003v6.569l-1.874-.996V7.865a.292.292 0 0 0-.048-.16l.001.001a.87.87 0 0 0-.095-.119l-1.306-.998a.825.825 0 0 0 .07-.196l.001-.006c.015-.067.024-.143.024-.222v-.024c0-.308-.127-.587-.332-.786a1.097 1.097 0 0 0-.786-.331H7.52h.001h-.02c-.308 0-.587.127-.786.332c-.205.2-.332.478-.332.787v.021v-.001v.024c0 .305.125.581.326.78c.2.205.478.332.787.332h.021h-.001h.015a.858.858 0 0 0 .288-.049l-.006.002c.11-.041.2-.081.287-.125l-.015.007l1.162.925v3.035a.29.29 0 0 0 .06.178l-.001-.001a.42.42 0 0 0 .152.129l.002.001l2.419 1.28V15.1l-4.055-1.874l.071-1.47v-.024a.29.29 0 0 0-.06-.178l.001.001a.42.42 0 0 0-.152-.129l-.002-.001l-1.851-.97a.522.522 0 0 0 .024-.157v-.2a1.127 1.127 0 0 0-.366-.719l-.001-.001a1.093 1.093 0 0 0-.752-.299h-.018h.001h-.007c-.305 0-.58.127-.775.332c-.208.2-.338.481-.338.792v.015v-.001v.118c.029.285.164.534.366.71l.001.001c.193.177.451.285.735.285h.131a1.45 1.45 0 0 0 .33-.083l-.01.003c.104-.04.195-.092.275-.156l-.002.002l1.707.88l-.047 1.47v.008c0 .075.017.145.048.208l-.001-.003a.305.305 0 0 0 .164.142l.002.001l4.577 2.134v6.869q-.308 0-.605-.024l-.605-.047l.071-4.364a.349.349 0 0 0-.06-.191l.001.001a.364.364 0 0 0-.175-.142l-.002-.001l-2.87-1.328v-.125c0-.305-.127-.58-.332-.775a1.095 1.095 0 0 0-.787-.332H6.49h.001h-.114a1.082 1.082 0 0 0-.71.366l-.001.001a1.113 1.113 0 0 0-.285.746v.025v-.001v.007c0 .305.127.58.332.775c.195.205.47.332.775.332h.039c.156 0 .305-.033.439-.094l-.007.003c.14-.067.261-.147.369-.242l-.002.002l2.656 1.21v4.008a10.611 10.611 0 0 1-3.534-1.343l.048.027a10.85 10.85 0 0 1-2.773-2.354l-.014-.017a11.1 11.1 0 0 1-1.824-3.112l-.026-.076a10.267 10.267 0 0 1-.676-3.699v-.111c0-1.494.314-2.915.88-4.201l-.026.067a11.06 11.06 0 0 1 2.324-3.44A11.019 11.019 0 0 1 7.73 2.065l.071-.028a10.269 10.269 0 0 1 4.139-.856h.061h-.003h.064c1.494 0 2.915.314 4.201.88l-.067-.026a11.078 11.078 0 0 1 3.44 2.32a11 11 0 0 1 2.296 3.369l.028.071c.54 1.218.854 2.639.854 4.134v.067v-.003v.064c0 1.444-.292 2.82-.82 4.072l.026-.069a11.1 11.1 0 0 1-2.175 3.373l.005-.006a10.852 10.852 0 0 1-3.172 2.32l-.065.028c-1.16.568-2.516.932-3.948 1.009l-.026.001z"/></svg>
               </span>
-              <span class="ml-2 text-sm"> Codemo </span>
+              <span class="ml-2"> Codemo </span>
               <span class="ml-auto" aria-hidden="true">
-                <!-- active class 'rotate-180' -->
                 <svg
                   class="w-4 h-4 transition-transform transform"
                   :class="{ 'rotate-180': open }"
@@ -112,46 +116,45 @@
               <a
               href="https://gigamaster.github.io/codemo/dataviz/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M3 3v18h18"/><rect width="12" height="4" x="7" y="5" rx="1"/><rect width="7" height="4" x="7" y="13" rx="1"/></g></svg>
-              <span class="ml-2 text-sm"> Data Visualization </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M3 3v18h18"/><rect width="12" height="4" x="7" y="5" rx="1"/><rect width="7" height="4" x="7" y="13" rx="1"/></g></svg>
+                <span class="ml-2"> Data Visualization </span>
               </a>
-              
               <a
               href="https://gigamaster.github.io/codemo/development/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m18 16l4-4l-4-4M6 8l-4 4l4 4m8.5-12l-5 16"/></svg>
-              <span class="ml-2 text-sm"> Development Tools</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m18 16l4-4l-4-4M6 8l-4 4l4 4m8.5-12l-5 16"/></svg>
+                <span class="ml-2"> Development Tools</span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/education/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="8" height="18" x="3" y="3" rx="1"/><path d="M7 3v18m13.4-2.1c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z"/></g></svg>
-              <span class="ml-2 text-sm"> Education </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="8" height="18" x="3" y="3" rx="1"/><path d="M7 3v18m13.4-2.1c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z"/></g></svg>
+                <span class="ml-2"> Education </span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/rd/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M12 5a3 3 0 1 0-5.997.125a4 4 0 0 0-2.526 5.77a4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4M6.003 5.125A3 3 0 0 0 6.401 6.5m-2.924 4.396a4 4 0 0 1 .585-.396M6 18a4 4 0 0 1-1.967-.516M12 13h4m-4 5h6a2 2 0 0 1 2 2v1M12 8h8m-4 0V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></g></svg>
-              <span class="ml-2 text-sm"> R&D — RTD </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M12 5a3 3 0 1 0-5.997.125a4 4 0 0 0-2.526 5.77a4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4M6.003 5.125A3 3 0 0 0 6.401 6.5m-2.924 4.396a4 4 0 0 1 .585-.396M6 18a4 4 0 0 1-1.967-.516M12 13h4m-4 5h6a2 2 0 0 1 2 2v1M12 8h8m-4 0V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></g></svg>
+                <span class="ml-2"> R&D — RTD </span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/project/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2m4 7h4m-4 5h4m-8-5h.01M8 16h.01"/></g></svg>              <span class="ml-2 text-sm"> Project Mangement </span>     
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2m4 7h4m-4 5h4m-8-5h.01M8 16h.01"/></g></svg>
+                <span class="ml-2"> Project Mangement </span>     
               </a>
             </div>
           </div>
-
           <!-- Components links -->
           <div x-data="{ isActive: false, open: false }">
             <a
@@ -166,9 +169,8 @@
               <span aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/></g></svg>
               </span>
-              <span class="ml-2 text-sm"> Components </span>
+              <span class="ml-2"> Components </span>
               <span aria-hidden="true" class="ml-auto">
-                <!-- active class 'rotate-180' -->
                 <svg
                   class="w-4 h-4 transition-transform transform"
                   :class="{ 'rotate-180': open }"
@@ -185,57 +187,55 @@
               <a
                 href="https://gigamaster.github.io/codemo/components/animation/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2m0 12c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><rect width="8" height="8" x="14" y="14" rx="2"/></g></svg> 
-              <span class="ml-2 text-sm"> Animation </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2m0 12c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><rect width="8" height="8" x="14" y="14" rx="2"/></g></svg> 
+                <span class="ml-2"> Animation </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/components/color/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"></path><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7m0-4h.01"></path><path d="m11 8l2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"></path></g></svg>
-              <span class="ml-2 text-sm"> Color scheme </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"></path><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7m0-4h.01"></path><path d="m11 8l2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"></path></g></svg>
+                <span class="ml-2"> Color scheme </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/components/css/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m20 4l-2 14.5l-6 2l-6-2L4 4z"/><path d="M8.5 8h7L11 12h4l-.5 3.5l-2.5.75l-2.5-.75l-.1-.5"/></g></svg>
-              <span class="ml-2 text-sm"> CSS librairies </span>
+              <span class="ml-2"> CSS librairies </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/components/javascript/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m20 4l-2 14.5l-6 2l-6-2L4 4z"/><path d="M7.5 8h3v8l-2-1m8-7H14a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h1.423a.5.5 0 0 1 .495.57L15.5 15.5l-2 .5"/></g></svg>
-              <span class="ml-2 text-sm"> JS librairies </span>
+              <span class="ml-2"> JS librairies </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/components/native/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m20 4l-2 14.5l-6 2l-6-2L4 4z"/><path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5.75l-2.5-.75l-.1-.5"/></g></svg>
-              <span class="ml-2 text-sm"> Web Components </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m20 4l-2 14.5l-6 2l-6-2L4 4z"/><path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5.75l-2.5-.75l-.1-.5"/></g></svg>
+                <span class="ml-2"> Web Components </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/components/typography/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
-              <span class="ml-2 text-sm"> Typography </span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+                <span class="ml-2"> Typography </span>
               </a>
             </div>
           </div>
-
           <!-- Game -->
           <div x-data="{ isActive: false, open: false }">
-            <!-- active classes 'bg-primary-100 dark:bg-primary' -->
             <a
               href="#"
               @click="$event.preventDefault(); open = !open"
@@ -245,9 +245,8 @@
               aria-haspopup="true"
               :aria-expanded="(open || isActive) ? 'true' : 'false'"
             >
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.008 15.81c.223-3.494.88-6.05 1.435-7.535c.281-.75.885-1.308 1.658-1.495c4.3-1.04 9.498-1.04 13.798 0c.773.187 1.377.745 1.658 1.495c.556 1.485 1.212 4.041 1.435 7.534c.133 2.09-1.377 3.241-3.05 4.083c-1.064.537-1.883-1.046-2.427-2.272a1.82 1.82 0 0 0-1.687-1.084H9.172c-.739 0-1.39.415-1.687 1.084c-.544 1.226-1.363 2.809-2.428 2.272c-1.655-.833-3.183-1.976-3.049-4.083M5 4.5L6.963 4M19 4.5L17 4m-8 9l-1.5-1.5m0 0L6 10m1.5 1.5L6 13m1.5-1.5L9 10m6.988 0h.01m1.99 3h.01" color="currentColor"/></svg>
-              </span>
-              <span class="ml-2 text-sm"> Game </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.008 15.81c.223-3.494.88-6.05 1.435-7.535c.281-.75.885-1.308 1.658-1.495c4.3-1.04 9.498-1.04 13.798 0c.773.187 1.377.745 1.658 1.495c.556 1.485 1.212 4.041 1.435 7.534c.133 2.09-1.377 3.241-3.05 4.083c-1.064.537-1.883-1.046-2.427-2.272a1.82 1.82 0 0 0-1.687-1.084H9.172c-.739 0-1.39.415-1.687 1.084c-.544 1.226-1.363 2.809-2.428 2.272c-1.655-.833-3.183-1.976-3.049-4.083M5 4.5L6.963 4M19 4.5L17 4m-8 9l-1.5-1.5m0 0L6 10m1.5 1.5L6 13m1.5-1.5L9 10m6.988 0h.01m1.99 3h.01" color="currentColor"/></svg>
+              <span class="ml-2"> Game </span>
               <span aria-hidden="true" class="ml-auto">
                 <svg
                   class="w-4 h-4 transition-transform transform"
@@ -261,34 +260,33 @@
                 </svg>
               </span>
             </a>
-            <div x-show="open" class="mt-2 space-y-2" role="menu" arial-label="Pages">
+            <div x-show="open" class="mt-2 space-y-2" role="menu" arial-label="game">
               <a
                 href="https://gigamaster.github.io/codemo/game/web/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14l3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6M6 18h.01M10 14h.01M15 6h.01M18 9h.01"/></g></svg>
-              <span class="ml-2 text-sm"> Web Games </span>
+              <span class="ml-2"> Web Games </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/game/tools/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m10.05 10.607l-7.07 7.07a2 2 0 0 0 0 2.83v0a2 2 0 0 0 2.828 0l7.07-7.072m4.315.365l3.878 3.878a2 2 0 0 1 0 2.828v0a2 2 0 0 1-2.828 0l-6.209-6.208M6.733 5.904L4.61 6.61L2.49 3.075l1.414-1.414L7.44 3.782zm0 0l2.83 2.83"/><path d="M10.05 10.607c-.844-2.153-.679-4.978 1.061-6.718s4.95-2.121 6.717-1.06l-3.04 3.04l-.283 3.111l3.111-.282l3.04-3.041c1.062 1.768.68 4.978-1.06 6.717c-1.74 1.74-4.564 1.905-6.717 1.061"/></g></svg>
-              <span class="ml-2 text-sm"> Game Dev Tools </span>
+              <span class="ml-2"> Game Dev Tools </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/game/engine/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 10v6m9-11v3m-2-3h4m-9 8H3m3-3h2l2-2h3.382a1 1 0 0 1 .894.553l1.448 2.894a1 1 0 0 0 .894.553H18v-2h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2v-2h-3v2a1 1 0 0 1-1 1h-3.465a1 1 0 0 1-.832-.445L8 16H6z"/></svg>
-              <span class="ml-2 text-sm"> Game Engine </span>
+              <span class="ml-2"> Game Engine </span>
               </a>
             </div>
           </div>
-
           <!-- Multimedia links -->
           <div x-data="{ isActive: false, open: false}">
             <a
@@ -301,7 +299,7 @@
               :aria-expanded="(open || isActive) ? 'true' : 'false'"
             >
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M3 14V3h11v11zm1-1h9V4H4zm4-1.25L6.8 10.1L5.385 12h6.23L9.7 9.5zM16.502 21q-1.04 0-1.771-.728T14 18.502t.73-1.771T16.5 16q.448 0 .82.146t.68.413V11h3v1h-2v6.5q0 1.042-.728 1.77q-.729.73-1.77.73M4 13V4z"/></svg>
-            <span class="ml-2 text-sm"> Multimedia </span>
+            <span class="ml-2"> Multimedia </span>
               <span aria-hidden="true" class="ml-auto">
                 <svg
                   class="w-4 h-4 transition-transform transform"
@@ -319,38 +317,37 @@
               <a
               href="https://gigamaster.github.io/codemo/multimedia/audio/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></g></svg>
-              <span class="ml-2 text-sm"> Audio </span>
+              <span class="ml-2"> Audio </span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/multimedia/graphic/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></g></svg>
-              <span class="ml-2 text-sm"> Graphic </span>
+              <span class="ml-2"> Graphic </span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/multimedia/photography/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></g></svg>
-              <span class="ml-2 text-sm"> Photography </span>
+              <span class="ml-2"> Photography </span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/multimedia/video/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m16 13l5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect width="14" height="12" x="2" y="6" rx="2"/></g></svg>
-              <span class="ml-2 text-sm"> Video </span>
+              <span class="ml-2"> Video </span>
               </a>
             </div>
           </div>
-
           <!-- Template links -->
           <div x-data="{ isActive: false, open: false}">
             <a
@@ -362,12 +359,8 @@
               aria-haspopup="true"
               :aria-expanded="(open || isActive) ? 'true' : 'false'"
             >
-            <!-- <span aria-hidden="true">
-                class="w-5 h-5"
-                   -->
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></g></svg>
-
-              <span class="ml-2 text-sm"> Template </span>
+              <span class="ml-2"> Template </span>
               <span aria-hidden="true" class="ml-auto">
                 <svg
                   class="w-4 h-4 transition-transform transform"
@@ -383,47 +376,52 @@
             </a>
             <div x-show="open" class="mt-2 space-y-2" role="menu" aria-label="Template">
               <a
-                href="https://gigamaster.github.io/codemo/template/adaptive/"
+                href="https://gigamaster.github.io/codemo/template/adaptative/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8m-2 4v-3.96v3.15M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></g></svg>
-              <span class="ml-2 text-sm"> Adaptive design </span>
+              <span class="ml-2"> Adaptive design </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/template/responsive/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 13.6V21H3.6a.6.6 0 0 1-.6-.6V13h7.4a.6.6 0 0 1 .6.6m0 7.4h3M3 13v-3m3-7H3.6a.6.6 0 0 0-.6.6V6m11-3h-4m11 7v4M18 3h2.4a.6.6 0 0 1 .6.6V6m-3 15h2.4a.6.6 0 0 0 .6-.6V18m-10-8h3v3"/></svg>
-
-              <span class="ml-2 text-sm"> Responsive Layout </span>
+              <span class="ml-2"> Responsive Layout </span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/template/design-tools/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
             >
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 7L8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13m1-7l2-2m8 12l2-2m-3-3l4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497zM15 5l4 4"/></svg>
-            <span class="ml-2 text-sm"> Web Design Tools </span>
+            <span class="ml-2"> Web Design Tools </span>
             </a>
-            
             </div>
           </div>
         </nav>
-
         <!-- Sidebar footer -->
-        <div class="flex-shrink-0 px-2 py-4 space-y-2">
-          <button
-            @click="openSettingsPanel"
-            type="button"
-            class="flex items-center justify-center w-full px-4 py-2 text-sm text-white rounded-md bg-primary hover:bg-primary-dark focus:outline-none focus:ring focus:ring-primary-dark focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark"
+        <div class="flex-shrink-0 px-4 py-3">
+          <a href="https://gigamaster.github.io/livecodes/" target="_blank"
+            class="flex gap-4 items-center w-full p-2
+            transition-colors duration-150 rounded-md
+            bg-primary-100 text-gray-700
+            focus:outline-none focus:ring 
+            focus:ring-primary-dark 
+            focus:ring-offset-1 
+            focus:ring-offset-white 
+            dark:focus:ring-offset-dark 
+            dark:bg-dark dark:text-light dark:hover:bg-primary dark:hover:bg-primary-darker
+            hover:bg-primary hover:text-white
+            "
           >
             <span aria-hidden="true">
-              <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h9m4 0h3m-9 8h9M4 16h3"/><circle cx="9" cy="16" r="2"/><circle cx="15" cy="8" r="2"/></g></svg>
+              <img src="./img/livecodes-logo.svg" class="h-7 px-3" width="auto" height="24px" alt="Live code editor" loading="lazy">
             </span>
-            <span>Customize</span>
-          </button>
+            <span class="text-sm">Live Code Editor</span>
+          </a>
         </div>
       </div>
     </aside>
@@ -431,9 +429,9 @@
     <div class="flex flex-1 flex-col h-full overflow-x-hidden overflow-y-auto">
 
       <!-- Navbar -->
-      <header class="xl:sticky top-0 z-10 bg-white dark:bg-darker">
-        <div class="flex items-center justify-between p-2">
-          <!-- Mobile submenu button -->
+      <header class="xl:sticky top-0 py-2 bg-white dark:bg-darker z-10">
+        <div class="flex items-center justify-between">
+          <!-- Mobile button MainMenu -->
           <button
             @click="isMobileMainMenuOpen = !isMobileMainMenuOpen"
             class="p-1 transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark md:hidden focus:outline-none focus:ring"
@@ -441,7 +439,7 @@
             <span class="sr-only">Open mainmenu</span>
             <span aria-hidden="true">
               <svg
-                class="w-8 h-8"
+                class="w-7 h-7"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -452,47 +450,25 @@
             </span>
           </button>
 
-          <!-- Codemo Title -->
+          <!-- Desktop Codemo Title -->
+          <span class="flex flex-nowrap ">
           <a
             href="https://gigamaster.github.io/codemo/"
-            class="flex flex-nowrap text-1xl tracking-wider text-primary-dark dark:text-light">
+            class="hidden lg:block text-1xl tracking-wider text-primary-dark dark:text-light">
             Github Web File Browser 
           </a>
-
-          <!-- Mobile submenu button -->
-          <button
-            @click="isMobileSubMenuOpen = !isMobileSubMenuOpen"
-            class="p-1 transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark md:hidden focus:outline-none focus:ring"
-          >
-            <span class="sr-only">Open submenu</span>
-            <span aria-hidden="true">
-              <svg
-                class="w-8 h-8"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-                />
-              </svg>
-            </span>
-          </button>
-
+          </span>
           <!-- Desktop Right buttons -->
-          <nav aria-label="Secondary" class="hidden space-x-2 md:flex md:items-center">
+          <nav aria-label="Secondary" class="hidden px-0 md:flex md:items-center">
+          
             <!-- Toggle dark theme button -->
-            <button aria-hidden="true" class="relative m-3 focus:outline-none" x-cloak @click="toggleTheme">
+            <button aria-hidden="true" class="relative mt-1 md:m-2 focus:outline-none" x-cloak @click="toggleTheme">
               <div
-                class="w-12 h-4 transition rounded-full outline-none bg-primary-100 dark:bg-primary-lighter"
+                class="w-12 h-4 transition rounded-full outline-none bg-key"
               ></div>
               <div
                 class="absolute -top-1 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-150 transform scale-110 rounded-full shadow-sm"
-                :class="{ 'translate-x-0 -translate-y-px  bg-white text-primary-dark': !isDark, 'translate-x-6 text-primary-100 bg-primary-darker': isDark }"
+                :class="{ 'translate-x-0 -translate-y-px bg-primary-50 text-primary-dark': !isDark, 'translate-x-6 text-primary-100 bg-primary-darker': isDark }"
               >
                 <svg
                   x-show="!isDark"
@@ -512,36 +488,144 @@
                 <svg x-show="isDark" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4V1h2v3zm0 19v-3h2v3zm9-10v-2h3v2zM1 13v-2h3v2zm17.7-6.3l-1.4-1.4l1.75-1.8l1.45 1.45zM4.95 20.5L3.5 19.05l1.8-1.75l1.4 1.4zm14.1 0l-1.75-1.8l1.4-1.4l1.8 1.75zM5.3 6.7L3.5 4.95L4.95 3.5L6.7 5.3zM12 18q-2.5 0-4.25-1.75T6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18"/></svg>
               </div>
             </button>
+            <!-- Search -->
+            <div x-data="spotlight">
+              <!-- Search Button -->
+              <button 
+              @click="showSearchBar"
+              @keydown.window.prevent.ctrl.k="showSearchBar; $nextTick(() => { setTimeout(() => { $refs.input.focus(); }, 300);});"
+              tabindex="0"
+              class="flex items-center p-1 md:m-2 text-xs transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <span class="px-2">Search</span>
+                <span class="key font-semibold">Ctrl</span>
+                <span class="key font-semibold">K</span>
+              </button>
+              <!-- Search Container -->
+              <div x-show="show" x-transition.opacity.duration.500ms class="fixed top-0 left-0 w-full h-screen flex justify-center items-center">
+                <!-- Search Overlay -->
+                <div  class="fixed top-0 left-0 w-full h-screen overlay z-10"></div>
+                <!-- Search Bar -->
+                <div 
+                @click.outside="closeSearchBar"
+                @keyup.escape.window="closeSearchBar"
+                class="absolute top-24 lg:w-3/5 max-w-xl px-3 bg-black rounded-lg border border-primary-dark shadow-lg z-20">
+                  <!-- Search Input -->
+                  <div class="flex flex-row w-full text-gray-200 justify-center items-center">
+                    <span class="icon-search w-7 h-7"></span> 
+                    <input
+                      @keydown.arrow-down="next"
+                      @keydown.arrow-up="previous"
+                      @keydown.enter="window.open(item.page_url)"
+                      x-ref="input"
+                      x-model="query"
+                      placeholder="Search..."
+                      class="bg-black focus:outline-none py-3 px-4 lg:text-xl md:text-xl text-xl w-full"
+                      type="text">
+                    <!-- Search Esc  -->
+                    <button @click="input = null; $refs.input.value = ''" class="p-1 px-2 text-xs rounded-full bg-dark hover:bg-primary-dark">X</button>
+                  </div>
+                  <!-- Search Query Results -->
+                  <div x-ref="parent"
+                    x-transition.origin.top
+                    x-show="query"
+                    class="relative flex flex-col max-h-96 w-full my-2 rounded-md bg-black overflow-y-auto"
+                  >
+                    <!-- Show if no results found -->
+                    <div
+                      x-show="query && queryFilter.length == 0"
+                      class="flex flex-row items-center rounded-lg py-1 px-3 text-lg text-red-500">
+                      <span class="icon-alert w-7 h-7"></span><h2> No results match your search criteria!</h2>
+                    </div>
+                    <!-- Search results container scroll -->
+                    <div x-show="query != ''" class="w-full pb-4">
+                      <template x-for="(item,index) in queryFilter" :key="index">
+                        <div
+                          :id="'item-'+ index"
+                          :class="currentIndex == index ? 'bg-primary':''"
+                          class="flex justify-between rounded-lg p-2 hover:bg-primary dark:hover:bg-primary cursor-pointer"
+                          @click="window.open(item.page_url)" 
+                          @keydown.enter.window="window.open(item.page_url)"                  
+                        >
+                          <!-- Page icon -->
+                          <span class="flex w-10 h-10 items-center justify-center rounded-lg bg-dark mr-2" :alt="item.page_title">
+                            <span class="icon p-2" :class="item.page_icon"></span>
+                          </span>
+                          <div class="flex-1 flex-col">
+                            <div class="flex flex-row justify-between items-center" py-2>
+                              <h1 class="text-light" x-text="item.page_title"></h1>
+                              <span x-text="item.page_cat" class="p-1 rounded-md text-xs text-primary-lighter dark:bg-dark"></span> 
+                            </div>
+                            <p class="text-gray-300 text-sm" x-text="item.page_desc"></p>
+                          </div>
+                        </div>
+                      </template>
+                    </div><!-- /Results -->
+                  </div><!-- /parent -->
+                  <!-- Search key info -->
+                  <div class="flex flex-row items-center justify-between px-2 py-2 text-xs border-t border-primary-dark">
+                    <span class="flex flex-wrap">
+                      <kbd class="key">↑</kbd> <kbd class="key">↓</kbd>
+                      <span class="mx-2 text-gray-500">Iterate</span> 
+                      <kbd class="key">↵</kbd> 
+                      <span class="mx-2 text-gray-500">Enter</span> 
+                      <kbd class="key">Esc</kbd> 
+                      <span class="mx-2 text-gray-500">Close</span> 
+                    </span>
+                    <span class="flex flex-row text-gray-500">
+                    Search on Codemo 
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path>
+                        <path d="M9 13h-2"></path>
+                        <path d="M13 10h-6"></path>
+                        <path d="M11 7h-4"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div><!-- /SearchBar -->
+              </div><!-- /Show SearchBar -->
+
+            </div>
 
             <!-- GitHub Notification button -->
             <button
               @click="openNotificationsPanel"
-              class="p-1 m-3 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
+              class="p-1 md:m-2 transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
             >
               <span class="sr-only">Open Notification panel</span>
-              <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15"><path fill="currentColor" d="M6.44.854a1.5 1.5 0 0 1 2.12 0l5.586 5.585a1.5 1.5 0 0 1 0 2.122l-5.585 5.585a1.5 1.5 0 0 1-2.122 0L.854 8.561a1.5 1.5 0 0 1 0-2.122L4.793 2.5l1.353 1.353A1.5 1.5 0 0 0 7 5.914v3.171a1.5 1.5 0 1 0 1 0v-3.17c.05-.018.1-.038.147-.061l1 1a1.5 1.5 0 1 0 .707-.707l-1-1a1.5 1.5 0 0 0-2-2L5.5 1.792z"/></svg>
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M15 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0m-4-4a1 1 0 1 0 2 0a1 1 0 1 0-2 0m0 8a1 1 0 1 0 2 0a1 1 0 1 0-2 0m1-1V9m3 2l-2-2m-2-2L9.1 5.1"/><path d="m13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1-2.892 0l-7.955-7.955a2.045 2.045 0 0 1 0-2.892l7.955-7.955a2.045 2.045 0 0 1 2.892 0z"/></g></svg>
             </button>
 
             <!-- Settings button -->
             <button
               @click="openSettingsPanel"
-              class="p-1 m-3 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
+              class="p-1 md:m-2  transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
             >
               <span class="sr-only">Open settings panel</span>
-              <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h9m4 0h3m-9 8h9M4 16h3"/><circle cx="9" cy="16" r="2"/><circle cx="15" cy="8" r="2"/></g></svg>
+              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h9m4 0h3m-9 8h9M4 16h3"/><circle cx="9" cy="16" r="2"/><circle cx="15" cy="8" r="2"/></g></svg>
             </button>
 
             <!-- User avatar button -->
-            <div class="relative" x-data="{ open: false }">
+            <div class="relative mt-2" x-data="{ open: false }">
               <button
                 @click="open = !open; $nextTick(() => { if(open){ $refs.userMenu.focus() } })"
                 type="button"
                 aria-haspopup="true"
                 :aria-expanded="open ? 'true' : 'false'"
-                class="mt-2 transition-opacity duration-200 rounded-full dark:opacity-75 dark:hover:opacity-100 focus:outline-none focus:ring dark:focus:opacity-100"
+                class="md:m-2 transition-opacity duration-200 rounded-full dark:opacity-75 dark:hover:opacity-100 focus:outline-none focus:ring dark:focus:opacity-100"
               >
                 <span class="sr-only">User menu</span>
-                <img class="w-9 h-9 rounded-full" src="https://avatars.githubusercontent.com/u/1905497?v=4" alt="Gigamaster" />
+                <img class="w-7 h-7 rounded-full" src="https://avatars.githubusercontent.com/u/1905497?v=4" alt="Gigamaster" />
               </button>
 
               <!-- User dropdown menu -->
@@ -556,7 +640,7 @@
                 x-transition:leave-end="translate-y-1/2 opacity-0"
                 @click.away="open = false"
                 @keydown.escape="open = false"
-                class="absolute right-0 w-48 py-1 bg-white rounded-md shadow-lg top-12 ring-1 ring-black ring-opacity-5 dark:bg-dark focus:outline-none"
+                class="absolute right-0 w-48 p-2 rounded-lg bg-white rounded-md shadow-lg top-12 ring-1 ring-black ring-opacity-5 dark:bg-dark focus:outline-none"
                 tabindex="-1"
                 role="menu"
                 aria-orientation="vertical"
@@ -565,21 +649,21 @@
                 <a
                   href="https://github.com/gigamaster/codemo"
                   role="menuitem"
-                  class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
+                  class="block px-4 py-2 rounded-lg text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                 >
                   GitHub Codemo
                 </a>
                 <a
                   href="https://github.com/gigamaster"
                   role="menuitem"
-                  class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
+                  class="block px-4 py-2 rounded-lg text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                 >
                   Profile
                 </a>
                 <a
                   href="https://github.com/gigamaster?tab=repositories"
                   role="menuitem"
-                  class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
+                  class="block px-4 py-2 rounded-lg text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                 >
                   Repositories
                 </a>
@@ -587,7 +671,30 @@
             </div>
           </nav>
 
-          <!-- Mobile sub menu -->
+          <!-- Mobile button MobileSubMenu -->
+          <button
+            @click="isMobileSubMenuOpen = !isMobileSubMenuOpen"
+            class="p-1 transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark md:hidden focus:outline-none focus:ring"
+          >
+            <span class="sr-only">Open submenu</span>
+            <span aria-hidden="true">
+              <svg
+                class="w-7 h-7"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                />
+              </svg>
+            </span>
+          </button>          
+          <!-- Mobile SubMenuOpen -->
           <nav
             x-transition:enter="transition duration-200 ease-in-out transform sm:duration-500"
             x-transition:enter-start="-translate-y-full opacity-0"
@@ -597,18 +704,16 @@
             x-transition:leave-end="-translate-y-full opacity-0"
             x-show="isMobileSubMenuOpen"
             @click.away="isMobileSubMenuOpen = false"
-            class="absolute z-50 flex items-center p-4 bg-white rounded-md shadow-lg dark:bg-darker top-16 inset-x-4 md:hidden"
+            class="absolute top-12 inset-x-2 z-50 flex items-center p-2 bg-white border border-gray-900 rounded-md shadow-lg dark:bg-dark dark:border-primary-darker md:hidden"
             aria-label="Secondary"
           >
-            <div class="space-x-2">
+            <div class="px-px">
               <!-- ToggleTheme button -->
-              <button aria-hidden="true" class="relative focus:outline-none" x-cloak @click="toggleTheme">
+              <button aria-hidden="true" class="relative -top-1 m-2 focus:outline-none" x-cloak @click="toggleTheme">
+                <div class="w-12 h-4 transition rounded-full outline-none bg-key"></div>
                 <div
-                  class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-lighter"
-                ></div>
-                <div
-                  class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 transform scale-110 rounded-full shadow-sm"
-                  :class="{ 'translate-x-0 -translate-y-px  bg-white text-primary-dark': !isDark, 'translate-x-6 text-primary-100 bg-primary-darker': isDark }"
+                  class="absolute -top-1 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 transform scale-110 rounded-full shadow-sm"
+                  :class="{ 'translate-x-0 -translate-y-px bg-primary-50 text-primary-dark': !isDark, 'translate-x-6 text-primary-100 bg-primary-darker': isDark }"
                 >
                   <svg
                     x-show="!isDark"
@@ -628,26 +733,23 @@
                   <svg x-show="isDark" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4V1h2v3zm0 19v-3h2v3zm9-10v-2h3v2zM1 13v-2h3v2zm17.7-6.3l-1.4-1.4l1.75-1.8l1.45 1.45zM4.95 20.5L3.5 19.05l1.8-1.75l1.4 1.4zm14.1 0l-1.75-1.8l1.4-1.4l1.8 1.75zM5.3 6.7L3.5 4.95L4.95 3.5L6.7 5.3zM12 18q-2.5 0-4.25-1.75T6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18"/></svg>
                 </div>
               </button>
-
               <!--  GitHub Notification -->
               <button
                 @click="openNotificationsPanel(); $nextTick(() => { isMobileSubMenuOpen = false })"
                 class="p-2 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
               >
                 <span class="sr-only">Open github notifications panel</span>
-                <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15"><path fill="currentColor" d="M6.44.854a1.5 1.5 0 0 1 2.12 0l5.586 5.585a1.5 1.5 0 0 1 0 2.122l-5.585 5.585a1.5 1.5 0 0 1-2.122 0L.854 8.561a1.5 1.5 0 0 1 0-2.122L4.793 2.5l1.353 1.353A1.5 1.5 0 0 0 7 5.914v3.171a1.5 1.5 0 1 0 1 0v-3.17c.05-.018.1-.038.147-.061l1 1a1.5 1.5 0 1 0 .707-.707l-1-1a1.5 1.5 0 0 0-2-2L5.5 1.792z"/></svg>
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M15 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0m-4-4a1 1 0 1 0 2 0a1 1 0 1 0-2 0m0 8a1 1 0 1 0 2 0a1 1 0 1 0-2 0m1-1V9m3 2l-2-2m-2-2L9.1 5.1"/><path d="m13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1-2.892 0l-7.955-7.955a2.045 2.045 0 0 1 0-2.892l7.955-7.955a2.045 2.045 0 0 1 2.892 0z"/></g></svg>
               </button>
-
               <!-- Settings button -->
               <button
                 @click="openSettingsPanel(); $nextTick(() => { isMobileSubMenuOpen = false })"
                 class="p-2 transition-colors duration-200 rounded-full text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
               >
                 <span class="sr-only">Open settings panel</span>
-                <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h9m4 0h3m-9 8h9M4 16h3"/><circle cx="9" cy="16" r="2"/><circle cx="15" cy="8" r="2"/></g></svg>
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h9m4 0h3m-9 8h9M4 16h3"/><circle cx="9" cy="16" r="2"/><circle cx="15" cy="8" r="2"/></g></svg>
               </button>
             </div>
-
             <!-- User avatar button -->
             <div class="relative ml-auto" x-data="{ open: false }">
               <button
@@ -658,7 +760,7 @@
                 class="block transition-opacity duration-200 rounded-full dark:opacity-75 dark:hover:opacity-100 focus:outline-none focus:ring dark:focus:opacity-100"
               >
                 <span class="sr-only">User menu</span>
-                <img class="w-10 h-10 rounded-full" src="https://avatars.githubusercontent.com/u/1905497?v=4" alt="Gigamaster" />
+                <img class="mt-1 w-7 h-7 rounded-full" src="https://avatars.githubusercontent.com/u/1905497?v=4" alt="Gigamaster" />
               </button>
 
               <!-- User dropdown menu -->
@@ -671,7 +773,7 @@
                 x-transition:leave-start="translate-y-0 opacity-100"
                 x-transition:leave-end="translate-y-1/2 opacity-0"
                 @click.away="open = false"
-                class="absolute right-0 w-48 py-1 origin-top-right bg-white rounded-md shadow-lg top-12 ring-1 ring-black ring-opacity-5 dark:bg-dark"
+                class="absolute right-0 w-48 p-2 origin-top-right bg-white rounded-md shadow-lg top-12 ring-1 ring-black ring-opacity-5 dark:bg-dark"
                 role="menu"
                 aria-orientation="vertical"
                 aria-label="User menu"
@@ -679,21 +781,21 @@
                 <a
                   href="https://github.com/gigamaster"
                   role="menuitem"
-                  class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
+                  class="block px-4 py-2 rounded-lg text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                 >
                   Github
                 </a>
                 <a
                   href="https://github.com/gigamaster"
                   role="menuitem"
-                  class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
+                  class="block px-4 py-2 rounded-lg text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                 >
                   Profile
                 </a>
                 <a
                   href="https://github.com/gigamaster?tab=repositories"
                   role="menuitem"
-                  class="block px-4 py-2 text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
+                  class="block px-4 py-2 rounded-lg text-sm text-gray-700 transition-colors hover:bg-gray-100 dark:text-light dark:hover:bg-primary"
                 >
                   Repositories
                 </a>
@@ -701,7 +803,8 @@
             </div>
           </nav>
         </div>
-        <!-- Mobile main manu -->
+
+        <!-- Mobile main menu -->
         <div
           class="border-b md:hidden dark:border-primary-darker"
           x-show="isMobileMainMenuOpen"
@@ -735,7 +838,7 @@
                     />
                   </svg>
                 </span>
-                <span class="ml-2 text-sm"> Dashboard </span>
+                <span class="ml-2"> Dashboard </span>
                 <span class="ml-auto" aria-hidden="true">
                   <svg
                     class="w-4 h-4 transition-transform transform"
@@ -753,35 +856,35 @@
               <a
               href="https://gigamaster.github.io/codemo/dataviz/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               Data Visualization
               </a>
               <a
               href="https://gigamaster.github.io/codemo/development/"
               role="menuitem"
-              class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+              class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               Development Tools
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/education/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               Education 
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/rd/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               R&D — RTD
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/project/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
               >
               Project Mangement
               </a>
@@ -815,7 +918,7 @@
                   />
                 </svg>
               </span>
-                <span class="ml-2 text-sm"> Components </span>
+                <span class="ml-2"> Components </span>
                 <span aria-hidden="true" class="ml-auto">
                   <svg
                     class="w-4 h-4 transition-transform transform"
@@ -833,42 +936,42 @@
                 <a
                   href="https://gigamaster.github.io/codemo/components/animation/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
                 >
                 Animation 
                 </a>
                 <a
                   href="https://gigamaster.github.io/codemo/components/color/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
                 >
                 Color scheme 
                 </a>
                 <a
                   href="https://gigamaster.github.io/codemo/components/css/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                 >
                 CSS librairies 
                 </a>
                 <a
                 href="https://gigamaster.github.io/codemo/components/javascript/"
                 role="menuitem"
-                class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
               >
               JS librairies 
               </a>
                 <a
                   href="https://gigamaster.github.io/codemo/components/native/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                 >
                 Web Components
                 </a>
                 <a
                   href="https://gigamaster.github.io/codemo/components/typography/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                 >
                 Typography 
                 </a>
@@ -902,7 +1005,7 @@
                     />
                   </svg>
                 </span>
-                <span class="ml-2 text-sm"> Game </span>
+                <span class="ml-2"> Game </span>
                 <span aria-hidden="true" class="ml-auto">
                   <svg
                     class="w-4 h-4 transition-transform transform"
@@ -920,21 +1023,21 @@
                 <a
                   href="https://gigamaster.github.io/codemo/game/web/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
                 >
                 Web Games
                 </a>
                 <a
                   href="https://gigamaster.github.io/codemo/game/tools/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
                 >
                 Game Dev Tools 
                 </a>
                 <a
                   href="https://gigamaster.github.io/codemo/game/engine/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
                 >
                 Game Engine 
                 </a>
@@ -968,7 +1071,7 @@
                     />
                   </svg>
                 </span>
-                <span class="ml-2 text-sm"> Multimedia </span>
+                <span class="ml-2"> Multimedia </span>
                 <span aria-hidden="true" class="ml-auto">
                   <svg
                     class="w-4 h-4 transition-transform transform"
@@ -986,14 +1089,14 @@
                 <a
                   href="https://gigamaster.github.io/codemo/multimedia/audio/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                 >
                   Audio
                 </a>
                 <a
                   href="https://gigamaster.github.io/codemo/multimedia/graphic/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                 >
                   Graphic
                 </a>
@@ -1007,7 +1110,7 @@
                 <a
                   href="https://gigamaster.github.io/codemo/multimedia/video/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:hover:text-light hover:text-gray-700"
                 >
                   Video 
                 </a>
@@ -1041,7 +1144,7 @@
                     />
                   </svg>
                 </span>
-                <span class="ml-2 text-sm"> Template </span>
+                <span class="ml-2"> Template </span>
                 <span aria-hidden="true" class="ml-auto">
                   <svg
                     class="w-4 h-4 transition-transform transform"
@@ -1059,21 +1162,21 @@
                 <a
                   href="https://gigamaster.github.io/codemo/template/adaptive/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
                 >
                 Adaptive design 
                 </a>
                 <a
                   href="https://gigamaster.github.io/codemo/template/responsive/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
                 >
                 Responsive Layout 
                 </a>
                 <a
                   href="https://gigamaster.github.io/codemo/template/design-tools/"
                   role="menuitem"
-                  class="flex items-center p-2 text-sm text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
+                  class="flex items-center p-2 ml-2text-gray-400 transition-colors duration-200 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
                 >
                 Web Design Tools 
                 </a>
@@ -1084,10 +1187,10 @@
       </header>
     
       <!-- Main content -->
-      <main class="flex flex-col pl-10 pr-10 md:pl-4 md:pr-4 max-h-full overflow-y-auto">
-
+      <main class="flex flex-col max-h-full sm\:mr-2 md\:mr-8 p-2 lg:p-4 bg-gray-100 dark:bg-dark rounded-lg overflow-y-auto">
+      
       <!-- Path -->
-      <nav class="relative top-5 bg-white dark:border-primary-darker dark:bg-darker dark:text-light shadow-lg sm:rounded-lg mb-4 lg:mb-6 px-4 py-2">
+      <nav class="relative rounded-lg mb-4 p-2 bg-white dark:border-primary-darker dark:bg-darker dark:text-light shadow-sm">
         <span class="flex flex-row tracking-wide text-xl dark:text-light">
           <a href="https://gigamaster.github.io/codemo/" class="flex flex-nowrap" title="Root">
           <svg class="w-6 h-6 mr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M17 11h3a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-3a2 2 0 0 0-2 2v1H9.01V5a2 2 0 0 0-2-2H4c-1.1 0-2 .9-2 2v4a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V8h2v7.01c0 1.65 1.34 2.99 2.99 2.99H15v1a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-3a2 2 0 0 0-2 2v1h-1.01c-.54 0-.99-.45-.99-.99V8h2v1c0 1.1.9 2 2 2"/></svg> 
@@ -1095,14 +1198,14 @@
         </span>
       </nav>
               
-      <div class="relative top-5 shadow-md sm:rounded-lg mb-4 lg:mb-6">
-        <table class="w-full bg-white dark:border-primary-darker dark:bg-darker dark:text-light text-sm text-left text-gray-500">
+      <div class="relative mb-4 shadow-md rounded-lg">
+        <table class="w-full bg-white text-gray-500 outline outline-2 outline-gray-100 dark:outline-darker dark:bg-darker dark:text-light text-sm text-left rounded-lg">
           <thead class="text-xs dark:text-light uppercase">
             <tr>
-              <th scope="col" class="py-4 px-4">Name</th>
-              <th scope="col" class="py-4 px-4">Size</th>
-              <th scope="col" class="py-4 px-4">Last Modified</th>
-              <th scope="col" class="py-4 px-4">Action</th>
+              <th scope="col" class="py-2">Name</th>
+              <th scope="col" class="py-2">Size</th>
+              <th scope="col" class="py-2">Last Modified</th>
+              <th scope="col" class="py-2">Action</th>
             </tr>
           </thead>
           <tbody>

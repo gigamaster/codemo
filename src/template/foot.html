@@ -5,331 +5,334 @@
 
 
 </main>
+<!-- right quick links -->
+<aside class="absolute top-24 right-0 hidden md:block flex flex-col px-2">
+  <svg class="mb-6" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 9v2m4 0V7m-8 4h.01M3 3h1m17 0h-1m0 0v12h-6m6-12H4m0 0v12h6m0 0l-2 6m2-6h4m0 0l2 6"/></svg>
+  <svg class="mb-6" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2 13.5C2 17.9 5.667 19 7.5 19h10c1.5 0 4.5-.9 4.5-4.5S19 10 17.5 10c0-1.5-1.5-5-5-5c-2.8 0-4.5 2-5 3C5.667 8 2 9.1 2 13.5"/></svg>
+  <svg class="mb-6" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 11.172V5a2 2 0 0 1 2-2h6.172a2 2 0 0 1 1.414.586l8 8a2 2 0 0 1 0 2.828l-6.172 6.172a2 2 0 0 1-2.828 0l-8-8A2 2 0 0 1 3 11.172M7 7h.001"/></svg>
+  <svg class="mb-6" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 6a2 2 0 0 1 2-2h3.93a2 2 0 0 1 1.664.89l.812 1.22A2 2 0 0 0 13.07 7H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+</aside>
 
 <!-- Main footer -->
-<footer
-class="flex items-center justify-between p-4 bg-white dark:bg-darker"
->
-<div><p class="m-2 lg:m-4 text-xs"><a href="{{giturl}}"
-target="_blank" class="text-blue-700">Codemo — Github Web File Browser</a> — Auto generated {{buildtime}}</p></div>
-<div>
-<p class="m-2 lg:m-4 text-xs">Made by
-<a href="https://github.com/gigamaster" target="_blank" class="text-blue-500 hover:underline"
-  > {{author}}</a>
-</p>
-</div>
-</footer>
-
-</div>
-
-<!-- Panels Github and Settings -->
-
-<!-- Settings Panel -->
-<!-- overlay -->
-<div
-x-transition:enter="transition duration-300 ease-in-out"
-x-transition:enter-start="opacity-0"
-x-transition:enter-end="opacity-100"
-x-transition:leave="transition duration-300 ease-in-out"
-x-transition:leave-start="opacity-100"
-x-transition:leave-end="opacity-0"
-x-show="isSettingsPanelOpen"
-@click="isSettingsPanelOpen = false"
-class="fixed inset-0 z-10 bg-primary-darker"
-style="opacity: 0.5"
-aria-hidden="true"
-></div>
-<!-- Panel -->
-<section
-x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
-x-transition:enter-start="translate-x-full"
-x-transition:enter-end="translate-x-0"
-x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
-x-transition:leave-start="translate-x-0"
-x-transition:leave-end="translate-x-full"
-x-ref="settingsPanel"
-tabindex="-1"
-x-show="isSettingsPanelOpen"
-@keydown.escape="isSettingsPanelOpen = false"
-class="fixed inset-y-0 right-0 z-20 w-full max-w-xs bg-white shadow-xl dark:bg-darker dark:text-light sm:max-w-md focus:outline-none"
-aria-labelledby="settinsPanelLabel"
->
-<div class="absolute left-0 p-2 transform -translate-x-full bg-white shadow-xl dark:bg-darker dark:text-light">
-<!-- Close button -->
-<button
-  @click="isSettingsPanelOpen = false"
-  class="p-2 text-gray-400 rounded-md focus:outline-none focus:ring 
-  dark:border-primary dark:hover:text-primary-100 dark:hover:border-primary-light focus:outline-none focus:ring focus:ring-primary-lighter focus:ring-offset-2 dark:focus:ring-offset-dark dark:focus:ring-primary-dark border-gray-900 text-gray-900 dark:border-primary-light dark:text-primary-100"
->
-  <svg
-    class="w-5 h-5"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-  </svg>
-</button>
-</div>
-<!-- Panel content -->
-<div class="flex flex-col h-screen">
-<!-- Panel header -->
-<div
-  class="flex flex-col items-center justify-center flex-shrink-0 px-4 py-8 space-y-4 border-b dark:border-primary-dark"
->
-  <span aria-hidden="true" class="text-gray-500 dark:text-primary">
-    Github Web File Browser
-  </span>
-  <h2 id="settinsPanelLabel" class="flex flex-row text-xl font-medium text-gray-500 dark:text-light">
-    <svg class="w-8 h-8 nr-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h9m4 0h3m-9 8h9M4 16h3"/><circle cx="9" cy="16" r="2"/><circle cx="15" cy="8" r="2"/></g></svg> 
-    Settings
-  </h2>
-</div>
-<!-- Content -->
-<div class="flex-1 overflow-hidden hover:overflow-y-auto">
-  <!-- Theme -->
-  <div class="p-4 space-y-4 md:p-8">
-    <h6 class="text-gray-400 dark:text-light">Mode</h6>
-    <div class="flex items-center space-x-8">
-      <!-- Light button -->
-      <button
-        @click="setLightTheme"
-        class="flex items-center justify-center px-4 py-2 space-x-4 transition-colors border rounded-md hover:text-gray-900 hover:border-gray-900 dark:border-primary dark:hover:text-primary-100 dark:hover:border-primary-light focus:outline-none focus:ring focus:ring-primary-lighter focus:ring-offset-2 dark:focus:ring-offset-dark dark:focus:ring-primary-dark"
-        :class="{ 'border-gray-900 text-gray-900 dark:border-primary-light dark:text-primary-100': !isDark, 'text-gray-500 dark:text-primary-light': isDark }"
-      >
-        <span>
-          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4V1h2v3zm0 19v-3h2v3zm9-10v-2h3v2zM1 13v-2h3v2zm17.7-6.3l-1.4-1.4l1.75-1.8l1.45 1.45zM4.95 20.5L3.5 19.05l1.8-1.75l1.4 1.4zm14.1 0l-1.75-1.8l1.4-1.4l1.8 1.75zM5.3 6.7L3.5 4.95L4.95 3.5L6.7 5.3zM12 18q-2.5 0-4.25-1.75T6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18"/></svg>
-        </span>
-        <span>Light</span>
-      </button>
-
-      <!-- Dark button -->
-      <button
-        @click="setDarkTheme"
-        class="flex items-center justify-center px-4 py-2 space-x-4 transition-colors border rounded-md hover:text-gray-900 hover:border-gray-900 dark:border-primary dark:hover:text-primary-100 dark:hover:border-primary-light focus:outline-none focus:ring focus:ring-primary-lighter focus:ring-offset-2 dark:focus:ring-offset-dark dark:focus:ring-primary-dark"
-        :class="{ 'border-gray-900 text-gray-900 dark:border-primary-light dark:text-primary-100': isDark, 'text-gray-500 dark:text-primary-light': !isDark }"
-      >
-        <span>
-          <svg
-            class="w-6 h-6"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-            />
-          </svg>
-        </span>
-        <span>Dark</span>
-      </button>
-    </div>
+<footer class="flex items-center justify-between p-2 bg-white dark:bg-darker text-gray-400 text-xs">
+  <div class="m-2">
+    <a href={{giturl}}" target="_blank" class="hover:underline">Codemo — Github Web File Browser</a> — Auto generated {{buildtime}}
   </div>
-
-  <!-- Colors -->
-  <div class="p-4 space-y-4 md:p-8">
-    <h6 class="text-gray-400 dark:text-light">Colors</h6>
-    <div>
-      <button
-        @click="setColors('cyan')"
-        class="mr-2 w-9 h-9 rounded-lg"
-        style="background-color: var(--color-cyan)"
-      ></button>
-      <button
-        @click="setColors('green')"
-        class="mr-2 w-9 h-9 rounded-lg"
-        style="background-color: var(--color-green)"
-      ></button>
-      <button
-        @click="setColors('red')"
-        class="mr-2 w-9 h-9 rounded-lg"
-        style="background-color: var(--color-red)"
-      ></button>
-      <button
-        @click="setColors('blue')"
-        class="mr-2 w-9 h-9 rounded-lg"
-        style="background-color: var(--color-blue)"
-      ></button>
-      <button
-        @click="setColors('violet')"
-        class="mr-2 w-9 h-9 rounded-lg"
-        style="background-color: var(--color-violet)"
-      ></button>
-    </div>
+  <div class="m-2">Made by
+  <a href="https://github.com/gigamaster" target="_blank" class="hover:underline"> {{author}}</a>
   </div>
-  <!-- logo -->
-  <div class="logo p-4 space-y-4 md:p-8">
-    <img src="https://gigamaster.github.io/codemo/asset/img/codemo-logo.png" width="" alt="codemo logo">
-  </div>
-</div>
-</div>
-</section>
-<!-- GitHub Notification panel -->
-<!-- overlay -->
-<div
-x-transition:enter="transition duration-300 ease-in-out"
-x-transition:enter-start="opacity-0"
-x-transition:enter-end="opacity-100"
-x-transition:leave="transition duration-300 ease-in-out"
-x-transition:leave-start="opacity-100"
-x-transition:leave-end="opacity-0"
-x-show="isNotificationsPanelOpen"
-@click="isNotificationsPanelOpen = false"
-class="fixed inset-0 z-10 bg-primary-darker"
-style="opacity: 0.5"
-aria-hidden="true"
-></div>
-<!-- Panel -->
-<section
-x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
-x-transition:enter-start="-translate-x-full"
-x-transition:enter-end="translate-x-0"
-x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
-x-transition:leave-start="translate-x-0"
-x-transition:leave-end="-translate-x-full"
-x-ref="notificationsPanel"
-x-show="isNotificationsPanelOpen"
-@keydown.escape="isNotificationsPanelOpen = false"
-tabindex="-1"
-aria-labelledby="notificationPanelLabel"
-class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-darker dark:text-light sm:max-w-md focus:outline-none"
->
-<div class="absolute right-0 p-2 transform translate-x-full bg-white shadow-xl dark:bg-darker dark:text-light">
-<!-- Close button -->
-<button
-  @click="isNotificationsPanelOpen = false"
-  class="p-2 text-gray-400 rounded-md focus:outline-none focus:ring dark:bg-darker dark:text-light"
->
-  <svg
-    class="w-5 h-5"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-  </svg>
-</button>
-</div>
-
-<div class="flex flex-col h-screen" x-data="{ activeTabe: 'action' }">
-
-<!-- Github Panel header -->
-<div class="flex-shrink-0">
-  <div class="flex items-center justify-between px-4 pt-4 border-b dark:border-primary-darker">
-    <h2 id="notificationPanelLabel" class="pb-4 font-semibold">Notifications</h2>
-    <div class="space-x-2">
-      <button
-        @click.prevent="activeTabe = 'action'"
-        class="text-gray-400 dark:hover:text-light hover:text-gray-700 px-px pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
-        :class="{'border-primary-dark dark:border-primary': activeTabe == 'action', 'border-transparent': activeTabe != 'action'}"
-      >
-        Action
-      </button>
-      <button
-        @click.prevent="activeTabe = 'user'"
-        class="text-gray-400 dark:hover:text-light hover:text-gray-700 px-px pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
-        :class="{'border-primary-dark dark:border-primary': activeTabe == 'user', 'border-transparent': activeTabe != 'user'}"
-      >
-        User
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Github Panel tabs -->
-<div class="flex-1 pt-4 overflow-y-hidden hover:overflow-y-auto">
-
-  <!-- Commit Action tab -->
-  <div class="space-y-4 block" x-show.transition.in="activeTabe == 'action'">
-
-  <div class="relative"
-  x-data="commitsData()"
-  x-init="init()"
-  >
-
-<template x-for="commit in commits" x-key="commit">
-<div class="flex px-4 space-x-4">
-<div class="relative flex-shrink-0">
-  <span class="inline-block p-2 overflow-visible rounded-full bg-primary-50 text-primary-light dark:bg-primary-darker">
-    <!-- <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none"><path fill="currentColor" d="M12 16a4 4 0 1 1 0-8a4 4 0 0 1 0 8"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16a4 4 0 0 1 0-8m0 8a4 4 0 0 0 0-8m0 8v5m0-13V3"/></g></svg> -->
-    <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" d="M7.5 10.5a3 3 0 0 1 0-6m0 6a3 3 0 0 0 0-6m0 6V15m0-10.5V0"/></svg>
-  </span>
+  </footer>
+  
+  </div><!-- /flex h-full -->
+  
+  <!-- Panels Github and Settings -->
+  
+  <!-- Settings Panel -->
+  <!-- overlay -->
   <div
-    class="absolute h-24 p-px -mt-3 -ml-px bg-primary-50 left-1/2 dark:bg-primary-darker"
+  x-transition:enter="transition duration-300 ease-in-out"
+  x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100"
+  x-transition:leave="transition duration-300 ease-in-out"
+  x-transition:leave-start="opacity-100"
+  x-transition:leave-end="opacity-0"
+  x-show="isSettingsPanelOpen"
+  @click="isSettingsPanelOpen = false"
+  class="fixed inset-0 z-10 overlay"
+  style="opacity: 0.7"
+  aria-hidden="true"
   ></div>
-</div>
-<div class="flex-1 overflow-hidden">
-  <h5 class="text-sm font-semibold text-gray-600 dark:text-light">
-    <span x-text="commit.commit.message"></span>
-  </h5>
-  <p class="text-sm font-normal text-gray-400 truncate dark:text-primary-lighter">
-    <small x-text="commit.commit.author.name"></small>
-  </p>
-  <span class="text-sm font-normal text-gray-400 dark:text-primary-light"> <small x-text="commit.commit.author.date"></small> </span>
-</div>
-</div>
-</template>
-
+  <!-- Panel -->
+  <section
+  x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
+  x-transition:enter-start="translate-x-full"
+  x-transition:enter-end="translate-x-0"
+  x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+  x-transition:leave-start="translate-x-0"
+  x-transition:leave-end="translate-x-full"
+  x-ref="settingsPanel"
+  tabindex="-1"
+  x-show="isSettingsPanelOpen"
+  @keydown.escape="isSettingsPanelOpen = false"
+  class="fixed inset-y-0 right-0 z-20 w-full max-w-xs bg-white shadow-xl dark:bg-darker dark:text-light sm:max-w-md focus:outline-none"
+  aria-labelledby="settinsPanelLabel"
+  >
+  <div class="absolute left-0 p-2 transform -translate-x-full bg-white shadow-xl dark:bg-darker dark:text-light">
+  <!-- Close button -->
+  <button
+    @click="isSettingsPanelOpen = false"
+    class="p-2 
+    bg-primary-light
+    text-gray-900 
+    rounded-md
+    hover:bg-primary
+    hover:text-light 
+    dark:text-primary-100
+    dark:hover:text-primary-100"
+  >
+    <svg
+      class="w-5 h-5"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
   </div>
-
-  </div><!-- /Commit Action tab -->
-
-  <!-- GitHub Repos tab -->
-  <div class="space-y-4 block" x-show.transition.in="activeTabe == 'user'">
-    
-    <div class="flex px-4 space-x-4">
-      <div class="relative flex-shrink-0">
-        <span class="relative z-10 inline-block overflow-visible rounded-ful">
-          <img
-            class="object-cover rounded-full w-10 h-10"
-            src="https://avatars.githubusercontent.com/u/1905497?v=4"
-            alt="Gigamaster"
-          />
-        </span>
-        <div class="absolute h-24 p-px -mt-3 -ml-px bg-primary-50 left-1/2 dark:bg-primary-darker"></div>
-      </div>
-      <div class="flex-1 overflow-hidden">
-        <h5 class="text-sm font-semibold text-gray-600 dark:text-light">Gigamaster</h5>
-        <p class="text-sm font-normal text-gray-400 truncate dark:text-primary-lighter">
-          Repositories
-        </p>
-        <span class="text-sm font-normal text-gray-400 dark:text-primary-light"> 2d ago </span>
+  <!-- Panel content -->
+  <div class="flex flex-col h-screen">
+  <!-- Panel header -->
+  <div class="flex-shrink1 py-3 border-b dark:border-primary-darker">
+    <h2 id="settinsPanelLabel" class="flex flex-row justify-center text-xl font-medium text-gray-500 dark:text-primary-100">
+      <svg class="w-7 h-7 mx-2" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8h9m4 0h3m-9 8h9M4 16h3"/><circle cx="9" cy="16" r="2"/><circle cx="15" cy="8" r="2"/></g></svg> 
+      Settings
+    </h2>
+  </div>
+  <!-- Content -->
+  <div class="flex-1 overflow-hidden hover:overflow-y-auto">
+    <!-- Theme -->
+    <div class="p-4">
+      <h6 class="text-gray-400 dark:text-light">Mode</h6>
+      <div class="flex justify-center my-4">
+        <!-- Light button -->
+        <button
+          @click="setLightTheme"
+          class="flex items-center justify-center px-4 py-2 mx-4 transition-colors border rounded-md hover:text-gray-900 hover:border-gray-900 dark:border-primary dark:hover:text-primary-100 dark:hover:border-primary-light focus:outline-none focus:ring focus:ring-primary-lighter focus:ring-offset-2 dark:focus:ring-offset-dark dark:focus:ring-primary-dark"
+          :class="{ 'border-gray-900 text-gray-900 dark:border-primary-light dark:text-primary-100': !isDark, 'text-gray-500 dark:text-primary-light': isDark }"
+        >
+          <span>
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4V1h2v3zm0 19v-3h2v3zm9-10v-2h3v2zM1 13v-2h3v2zm17.7-6.3l-1.4-1.4l1.75-1.8l1.45 1.45zM4.95 20.5L3.5 19.05l1.8-1.75l1.4 1.4zm14.1 0l-1.75-1.8l1.4-1.4l1.8 1.75zM5.3 6.7L3.5 4.95L4.95 3.5L6.7 5.3zM12 18q-2.5 0-4.25-1.75T6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18"/></svg>
+          </span>
+          <span>Light</span>
+        </button>
+  
+        <!-- Dark button -->
+        <button
+          @click="setDarkTheme"
+          class="flex items-center justify-center px-4 py-2 mx-4 transition-colors border rounded-md hover:text-gray-900 hover:border-gray-900 dark:border-primary dark:hover:text-primary-100 dark:hover:border-primary-light focus:outline-none focus:ring focus:ring-primary-lighter focus:ring-offset-2 dark:focus:ring-offset-dark dark:focus:ring-primary-dark"
+          :class="{ 'border-gray-900 text-gray-900 dark:border-primary-light dark:text-primary-100': isDark, 'text-gray-500 dark:text-primary-light': !isDark }"
+        >
+          <span>
+            <svg
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </span>
+          <span>Dark</span>
+        </button>
       </div>
     </div>
-    
+  
+    <!-- Colors -->
+    <div class="px-4">
+      <h6 class="text-gray-400 dark:text-light">Colors</h6>
+      <div class="flex justify-center my-4">
+        <button
+        @click="setColors('blue')"
+        class="mr-2 w-7 h-7 rounded-lg"
+        style="background-color: var(--color-blue)"
+        ></button>
+        <button
+          @click="setColors('cyan')"
+          class="mr-2 w-7 h-7 rounded-lg"
+          style="background-color: var(--color-cyan)"
+        ></button>
+        <button
+          @click="setColors('green')"
+          class="mr-2 w-7 h-7 rounded-lg"
+          style="background-color: var(--color-green)"
+        ></button>
+        <button
+          @click="setColors('red')"
+          class="mr-2 w-7 h-7 rounded-lg"
+          style="background-color: var(--color-red)"
+        ></button>
+        <button
+          @click="setColors('slate')"
+          class="mr-2 w-7 h-7 rounded-lg"
+          style="background-color: var(--color-slate)"
+        ></button>
+        <button
+          @click="setColors('violet')"
+          class="mr-2 w-7 h-7 rounded-lg"
+          style="background-color: var(--color-violet)"
+        ></button>
+      </div>
+    </div>
+    <!-- logo -->
+    <div class="logo p-4 space-y-4 md:p-8">
+      <img src="https://gigamaster.github.io/codemo/asset/img/codemo-logo.png" width="" alt="codemo logo">
+    </div>
   </div>
-
-</div>
-
-</div>
-</section>
-
-</div>
-</div>
-
-<!-- notification -->
-<template id="notificationAlert" class="notification">
-  <div class="notify-box data-[notify-show=true]:notify-in data-[notify-show=false]:notify-out">
-      <div class="notify-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 50 50"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#6981ab" stroke-width="2" d="M25 18.75v8.333"/><path stroke="#6981ab" stroke-width="3" d="M25.104 35.417h-.208"/><path stroke="#306cfe" stroke-width="2" d="M21.354 8.73L5.48 37.5a4.166 4.166 0 0 0 3.646 6.25h31.75a4.167 4.167 0 0 0 3.646-6.25L28.646 8.73a4.166 4.166 0 0 0-7.292 0"/></g></svg>
+  </div>
+  </section>
+  <!-- GitHub Notification panel -->
+  <!-- overlay -->
+  <div
+  x-transition:enter="transition duration-300 ease-in-out"
+  x-transition:enter-start="opacity-0"
+  x-transition:enter-end="opacity-100"
+  x-transition:leave="transition duration-300 ease-in-out"
+  x-transition:leave-start="opacity-100"
+  x-transition:leave-end="opacity-0"
+  x-show="isNotificationsPanelOpen"
+  @click="isNotificationsPanelOpen = false"
+  class="fixed inset-0 z-10 overlay"
+  style="opacity: 0.7"
+  aria-hidden="true"
+  ></div>
+  <!-- Panel -->
+  <section
+  x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
+  x-transition:enter-start="-translate-x-full"
+  x-transition:enter-end="translate-x-0"
+  x-transition:leave="transition duration-300 ease-in-out transform sm:duration-500"
+  x-transition:leave-start="translate-x-0"
+  x-transition:leave-end="-translate-x-full"
+  x-ref="notificationsPanel"
+  x-show="isNotificationsPanelOpen"
+  @keydown.escape="isNotificationsPanelOpen = false"
+  tabindex="-1"
+  aria-labelledby="notificationPanelLabel"
+  class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-darker dark:text-light sm:max-w-md focus:outline-none"
+  >
+  <div class="absolute right-0 p-2 transform translate-x-full bg-white shadow-xl dark:bg-darker dark:text-light">
+  <!-- Close button -->
+  <button
+    @click="isNotificationsPanelOpen = false"
+    class="p-2 text-gray-400 rounded-md focus:outline-none focus:ring dark:bg-darker dark:text-light"
+  >
+    <svg
+      class="w-5 h-5"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  </div>
+  
+  <div class="flex flex-col h-screen" x-data="{ activeTabe: 'action' }">
+  <!-- Github Panel header tab -->
+  <div class="flex-shrink-0">
+    <div class="flex items-center justify-between px-4 pt-4 border-b dark:border-primary-darker">
+      <h2 id="notificationPanelLabel" class="pb-4 font-semibold">Notifications</h2>
+      <div class="px-px">
+        <button
+          @click.prevent="activeTabe = 'action'"
+          class="text-gray-400 dark:hover:text-light hover:text-gray-700 px-4 pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
+          :class="{'border-primary-dark dark:border-primary': activeTabe == 'action', 'border-transparent': activeTabe != 'action'}"
+        >
+          Action
+        </button>
+        <button
+          @click.prevent="activeTabe = 'user'"
+          class="text-gray-400 dark:hover:text-light hover:text-gray-700 px-4 pb-4 transition-all duration-200 transform translate-y-px border-b focus:outline-none"
+          :class="{'border-primary-dark dark:border-primary': activeTabe == 'user', 'border-transparent': activeTabe != 'user'}"
+        >
+          User
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Github Panel tabs -->
+  <div class="flex-1 pt-4 overflow-y-hidden hover:overflow-y-auto">
+    <!-- Commit Action tab -->
+    <div class="space-y-4 block" x-show.transition.in="activeTabe == 'action'">
+    <!-- Git commits -->
+      <div class="relative"
+      x-data="commitsData()"
+      x-init="init()"
+      >
+      <template x-for="commit in commits" x-key="commit">
+        <div class="flex px-4">
+          <div class="relative flex-shrink-0">
+            <span class="inline-block p-2 overflow-visible rounded-full bg-primary-50 text-primary-light dark:bg-primary-dark">
+              <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15"><path fill="none" stroke="currentColor" d="M7.5 10.5a3 3 0 0 1 0-6m0 6a3 3 0 0 0 0-6m0 6V15m0-10.5V0"/></svg>
+            </span>
+            <div class="absolute h-24 p-px -mt-3 -ml-px bg-primary-50 left-1/2 dark:bg-primary-dark"></div>
+          </div>
+          <div class="flex-1 px-4 py-2 overflow-hidden">
+            <h5 class="text-sm font-semibold text-gray-600 dark:text-light">
+              <span x-text="commit.commit.message"></span>
+            </h5>
+            <p class="text-sm font-normal text-gray-400 truncate dark:text-primary-lighter">
+              <small x-text="commit.commit.author.name"></small>
+            </p>
+            <span class="text-sm font-normal text-gray-400 dark:text-primary-light"> 
+              <small x-text="commit.commit.author.date"></small> 
+            </span>
+          </div>
+        </div>
+      </template>
+      </div>
+    </div><!-- /Commit Action tab -->
+  
+    <!-- GitHub Repos tab -->
+    <div class="space-y-4 block" x-show.transition.in="activeTabe == 'user'">
+      
+      <div class="flex px-4">
+        <div class="relative flex-shrink-0">
+          <span class="inline-block p-1 overflow-visible rounded-full bg-primary-50 text-primary-light dark:bg-primary-dark">
+            <img
+              class="object-cover rounded-full w-9 h-9"
+              src="https://avatars.githubusercontent.com/u/1905497?v=4"
+              alt="Gigamaster"
+            />
+          </span>
+          <div class="absolute h-24 p-px -mt-3 -ml-px bg-primary-50 left-1/2 dark:bg-primary-darker"></div>
+        </div>
+        <div class="flex-1 px-4 py-2 overflow-hidden">
+          <h5 class="text-sm font-semibold text-gray-600 dark:text-light">Gigamaster</h5>
+          <p class="text-sm font-normal text-gray-400 truncate dark:text-primary-lighter">
+            Repositories
+          </p>
+          <span class="text-sm font-normal text-gray-400 dark:text-primary-light"> 2d ago </span>
+        </div>
       </div>
       
-      <div role="alert" class="notify-text text-white bg-red-500 p-4">
-      {notificationText}
-      </div>
-          
-      <button x-on:click="$root.setAttribute('data-notify-show', false)" 
-      class="notify-btn">
-      Close
-      </button>        
+    </div>
+  
   </div>
-</template>
+  
+  </div>
+  </section>
+  
+    </div><!-- flex h-screen -->
+  </div><!-- setup -->
+  
+  <!-- notification -->
+  <template id="notificationAlert" class="notification">
+    <div class="notify-box data-[notify-show=true]:notify-in data-[notify-show=false]:notify-out">
+        <div class="notify-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 50 50"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#6981ab" stroke-width="2" d="M25 18.75v8.333"/><path stroke="#6981ab" stroke-width="3" d="M25.104 35.417h-.208"/><path stroke="#306cfe" stroke-width="2" d="M21.354 8.73L5.48 37.5a4.166 4.166 0 0 0 3.646 6.25h31.75a4.167 4.167 0 0 0 3.646-6.25L28.646 8.73a4.166 4.166 0 0 0-7.292 0"/></g></svg>
+        </div>
+        
+        <div role="alert" class="notify-text text-white bg-red-500 p-4">
+        {notificationText}
+        </div>
+            
+        <button x-on:click="$root.setAttribute('data-notify-show', false)" 
+        class="notify-btn">
+        Close
+        </button>        
+    </div>
+  </template>
 
 <script src="https://gigamaster.github.io/codemo/asset/lib/link-previewer.min.js"></script>
 <script src="https://gigamaster.github.io/codemo/asset/app.js"></script>
