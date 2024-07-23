@@ -51,7 +51,7 @@ const setup = () => {
     setTheme(this.isDark)
     },
     color: getColor(),
-    selectedColor: 'cyan',
+    selectedColor: 'blue',
     setColors,
     toggleSidbarMenu() {
     this.isSidebarOpen = !this.isSidebarOpen
@@ -82,8 +82,10 @@ const setup = () => {
     }
     }
 }
-    
 
+/* global LinkPreviewer */
+const linkPreviewer = new LinkPreviewer();
+linkPreviewer.attach('td a.preview');
 
 /* Search palette */
 document.addEventListener('alpine:init', () => {
@@ -131,6 +133,7 @@ document.addEventListener('alpine:init', () => {
               // cursor at the end of text 
               this.$refs.input.focus()
               this.$refs.input.value = this.query
+            
           })
           return
       }
@@ -174,24 +177,31 @@ document.addEventListener('alpine:init', () => {
       }
     },
     select() {
-      // Select Item
+      // Select Item - key 'enter'
+      //window.open(this.options[this.selectedIndex].page_url, '_blank');
+      var pageSelect = this.queryFilter[this.currentIndex];
+      var pageUrl    = pageSelect.page_url;
+      var pageTitle  = pageSelect.page_title;
+      console.log (pageUrl);
+      console.log (pageTitle);
+      // 1. window parent
+      window.open(pageUrl, '_parent');
+      // 2. window new or tab _blank
+      // window.open(pageUrl, '_blank');
+      // 3. window pop-up 
+      // openWithSelfMain(pageUrl, pageTitle, '960', '540');
       this.closeSearchBar()
-      // Do whatever you want with selected item
-      // var selectedItem = this.queryFilter[this.currentIndex];
-      window.open(this.queryFilter[this.currentIndex].page_url, '_blank');
-      //window.open(this.options[this.selectedIndex].value, '_blank');
     }
   }))
 })
 
 /*
   Usage Example:
-  openWithSelfMain('https://example.com','XOOPSCube','900','500');
+  openWithSelfMain('https://example.com','XOOPSCube','960','540');
   Location = null is useless because modern browsers now prevent, by default, 
   hiding the address bar for security reasons (phishing)
 */
 function openWithSelfMain(url, title, w, h) {
-  Event.preventDefault()
   // Fixes dual-screen position                         Most browsers      Firefox
   var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
   var dualScreenTop = window.screenTop != undefined ? window.screenTop : window.screenY;
@@ -211,10 +221,6 @@ function openWithSelfMain(url, title, w, h) {
       newWindow.focus();
   }
 }
-
-/* global LinkPreviewer */
-const linkPreviewer = new LinkPreviewer();
-linkPreviewer.attach('td a.preview');
 
 /* GitHub Fetch Repo Commits */
 function commitsData() {
@@ -261,5 +267,5 @@ function commitsData() {
   };
   }
 /*! fetch */
-// var _htmlToElements=function(e){var t=document.createElement("template");t.innerHTML=e;const n=t.content.childNodes,o=[],a=[];for(var d in n)1==n[d].nodeType&&("SCRIPT"===n[d].nodeName?a.push(n[d]):o.push(n[d]));return o.concat(a)},_loadContent=function(e,t,n,o){if(0!==t||o||(document.querySelector(n).innerHTML=""),!(t<=e.length))return!0;var a=e[t];if(void 0!==a&&"SCRIPT"===a.nodeName){var d=document.createElement("script");a.type&&(d.type=a.type),Array.prototype.forEach.call(a.attributes,(function(e){d.setAttribute(e.nodeName,e.nodeValue)})),""!=a.src?(d.src=a.src,d.onload=function(){_loadContent(e,t+1,n)},document.head.appendChild(d)):(d.text=a.text,document.body.appendChild(d),_loadContent(e,t+1,n))}else void 0!==a&&document.querySelector(n).appendChild(a),_loadContent(e,t+1,n)},loadData=async function(e,t,n=!1){return _loadContent(_htmlToElements(e),0,t,n)};
+var _htmlToElements=function(e){var t=document.createElement("template");t.innerHTML=e;const n=t.content.childNodes,o=[],a=[];for(var d in n)1==n[d].nodeType&&("SCRIPT"===n[d].nodeName?a.push(n[d]):o.push(n[d]));return o.concat(a)},_loadContent=function(e,t,n,o){if(0!==t||o||(document.querySelector(n).innerHTML=""),!(t<=e.length))return!0;var a=e[t];if(void 0!==a&&"SCRIPT"===a.nodeName){var d=document.createElement("script");a.type&&(d.type=a.type),Array.prototype.forEach.call(a.attributes,(function(e){d.setAttribute(e.nodeName,e.nodeValue)})),""!=a.src?(d.src=a.src,d.onload=function(){_loadContent(e,t+1,n)},document.head.appendChild(d)):(d.text=a.text,document.body.appendChild(d),_loadContent(e,t+1,n))}else void 0!==a&&document.querySelector(n).appendChild(a),_loadContent(e,t+1,n)},loadData=async function(e,t,n=!1){return _loadContent(_htmlToElements(e),0,t,n)};
  

@@ -51,7 +51,7 @@ def main():
                   get_template_head(dirname),
                   # Dirname Home Icon
                   "<tr class=\"w-2/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
-                      "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
+                      "<th scope=\"row\" class=\"p-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
                       "<span class=\"icon-updir\"></span></a></th><td></td><td></td><td></td></tr>" #if dirname != "." else "",
@@ -64,12 +64,13 @@ def main():
                   # Join Parent Directory and Subdirectory
                   folderZip = os.path.join(pDirname, subdirname)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
-                          "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
+                          "<th scope=\"row\" class=\"p-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + subdirname + "/\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                           subdirname + "</a></th><td></td><td></td>" +
                           "<td class=\"text-center\">" +
-                          "<a class=\"download\" @click=\"GitZip.zipRepo('" + uFolder + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\"><span class=\"icon-download\"></span></td></a></tr>\n")
+                          "<a class=\"download m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" @click=\"GitZip.zipRepo('" + uFolder + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\">" +
+                          "<span class=\"icon-download w-4 h-4 mx-2\"></span></td></a></tr>\n")
               
               #sort filenames alphabetically
               filenames.sort()
@@ -77,7 +78,7 @@ def main():
                   # File Icon - Link - Size - Time
                   path = (dirname == '.' and filename or dirname + '/' + filename)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
-                          "<th scope=\"row\" class=\"py-2 px-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">\n" +
+                          "<th scope=\"row\" class=\"p-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">\n" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
                           filename + "</a></th><td class=\"size\">" +
@@ -85,14 +86,17 @@ def main():
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
                   
                   # File Preview - filename relative path
-                  f.write("<a class=\"preview\" href=\"" + filename + "\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\"><span class=\"icon-view\"></span></a>")
+                  f.write("<a class=\"link-previewer m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" href=\"" + filename + "\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
+                          "<span class=\"icon-view w-4 h-4 mx-2\"></span></a>")
                   
                   # Join Parent Directory and File Name with extension
                   fName = os.path.join(pDirname, filename)
                   # GitHub Link to Edit 
-                  f.write("<a class=\"edit\" href=\"" + uEdit + fName + "\"  target=\"_blank\" title=\"Edit File\"><span class=\"icon-edit\"></span></a>" +
-                  # GitHubBlob URL to Download
-                  "<a class=\"download\" @click=\"GitZip.zipRepo('" + uBlob + fName + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\"><span class=\"icon-download\"></span></td></tr>\n")
+                  f.write("<a class=\"edit m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" href=\"" + uEdit + fName + "\"  target=\"_blank\" title=\"Edit File\">" +
+                          "<span class=\"icon-edit w-4 h-4 mx-2\"></span></a>" +
+                          # GitHubBlob URL to Download
+                          "<a class=\"download m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" @click=\"GitZip.zipRepo('" + uBlob + fName + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\">" +
+                          "<span class=\"icon-download w-4 h-4 mx-2\"></span></td></tr>\n")
 
               f.write("\n".join([
                   get_template_foot(),

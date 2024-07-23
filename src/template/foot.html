@@ -3,7 +3,6 @@
 </table>
 </div>
 
-
 </main>
 <!-- right quick links -->
 <aside class="absolute top-24 right-0 hidden md:block flex flex-col px-2">
@@ -21,13 +20,11 @@
   <div class="m-2">Made by
   <a href="https://github.com/gigamaster" target="_blank" class="hover:underline"> {{author}}</a>
   </div>
-  </footer>
+</footer>
   
   </div><!-- /flex h-full -->
   
-  <!-- Panels Github and Settings -->
-  
-  <!-- Settings Panel -->
+  <!-- Panels -Github and Settings -->
   <!-- overlay -->
   <div
   x-transition:enter="transition duration-300 ease-in-out"
@@ -42,7 +39,7 @@
   style="opacity: 0.7"
   aria-hidden="true"
   ></div>
-  <!-- Panel -->
+  <!-- Panel Settings -->
   <section
   x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
   x-transition:enter-start="translate-x-full"
@@ -61,14 +58,7 @@
   <!-- Close button -->
   <button
     @click="isSettingsPanelOpen = false"
-    class="p-2 
-    bg-primary-light
-    text-gray-900 
-    rounded-md
-    hover:bg-primary
-    hover:text-light 
-    dark:text-primary-100
-    dark:hover:text-primary-100"
+    class="p-2 bg-primary-light text-gray-900 rounded-md hover:bg-primary hover:text-light dark:text-primary-100 dark:hover:text-primary-100"
   >
     <svg
       class="w-5 h-5"
@@ -178,7 +168,7 @@
   </div>
   </div>
   </section>
-  <!-- GitHub Notification panel -->
+  <!-- Panel - GitHub Notification -->
   <!-- overlay -->
   <div
   x-transition:enter="transition duration-300 ease-in-out"
@@ -193,7 +183,7 @@
   style="opacity: 0.7"
   aria-hidden="true"
   ></div>
-  <!-- Panel -->
+  <!-- Panel Github tabs -->
   <section
   x-transition:enter="transition duration-300 ease-in-out transform sm:duration-500"
   x-transition:enter-start="-translate-x-full"
@@ -227,7 +217,7 @@
   </div>
   
   <div class="flex flex-col h-screen" x-data="{ activeTabe: 'action' }">
-  <!-- Github Panel header tab -->
+  <!-- Panel header tab -->
   <div class="flex-shrink-0">
     <div class="flex items-center justify-between px-4 pt-4 border-b dark:border-primary-darker">
       <h2 id="notificationPanelLabel" class="pb-4 font-semibold">Notifications</h2>
@@ -250,7 +240,7 @@
     </div>
   </div>
   
-  <!-- Github Panel tabs -->
+  <!-- Panel tabs -->
   <div class="flex-1 pt-4 overflow-y-hidden hover:overflow-y-auto">
     <!-- Commit Action tab -->
     <div class="space-y-4 block" x-show.transition.in="activeTabe == 'action'">
@@ -283,7 +273,7 @@
       </div>
     </div><!-- /Commit Action tab -->
   
-    <!-- GitHub Repos tab -->
+    <!-- User tab -->
     <div class="space-y-4 block" x-show.transition.in="activeTabe == 'user'">
       
       <div class="flex px-4">
@@ -308,31 +298,13 @@
       
     </div>
   
-  </div>
+  </div><!-- /Panel tabs-->
   
   </div>
   </section>
   
-    </div><!-- flex h-screen -->
-  </div><!-- setup -->
-  
-  <!-- notification -->
-  <template id="notificationAlert" class="notification">
-    <div class="notify-box data-[notify-show=true]:notify-in data-[notify-show=false]:notify-out">
-        <div class="notify-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px" viewBox="0 0 50 50"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="#6981ab" stroke-width="2" d="M25 18.75v8.333"/><path stroke="#6981ab" stroke-width="3" d="M25.104 35.417h-.208"/><path stroke="#306cfe" stroke-width="2" d="M21.354 8.73L5.48 37.5a4.166 4.166 0 0 0 3.646 6.25h31.75a4.167 4.167 0 0 0 3.646-6.25L28.646 8.73a4.166 4.166 0 0 0-7.292 0"/></g></svg>
-        </div>
-        
-        <div role="alert" class="notify-text text-white bg-red-500 p-4">
-        {notificationText}
-        </div>
-            
-        <button x-on:click="$root.setAttribute('data-notify-show', false)" 
-        class="notify-btn">
-        Close
-        </button>        
-    </div>
-  </template>
+  </div><!-- flex h-screen -->
+</div><!-- setup -->
 
 <script src="https://gigamaster.github.io/codemo/asset/lib/link-previewer.min.js"></script>
 <script src="https://gigamaster.github.io/codemo/asset/app.js"></script>
