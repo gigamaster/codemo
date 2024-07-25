@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Cash register sales</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Cash register sales</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/d6b95a23-2d52-4b0b-85d9-03445792060c.png" alt="Cash register sales" usemap="#d6b95a23-2d52-4b0b-85d9-03445792060cmap"/>
+			   <map name="d6b95a23-2d52-4b0b-85d9-03445792060cmap">
+				  		<area shape="rect" coords="562,424,682,479" href="../elements/79696b51-5b80-4bad-876c-c4cb64d30c46.html"  target="element">
+				  		<area shape="rect" coords="10,73,371,119" href="../elements/2c4494bb-5a33-440a-9fc9-f939aba725e1.html"  target="element">
+				  		<area shape="rect" coords="425,424,545,479" href="../elements/48aabc22-2836-46d8-812c-dddab3b804db.html"  target="element">
+				  		<area shape="rect" coords="425,208,682,239" href="../elements/b329ebad-69ec-488c-8d66-9d59a92ed092.html"  target="element">
+				  		<area shape="rect" coords="425,343,682,380" href="../elements/f72a3173-4205-4c66-abf4-1c7a5e689b13.html"  target="element">
+				  		<area shape="rect" coords="214,157,371,290" href="../elements/f957cd16-db23-410a-abc1-ae61c60fc482.html"  target="element">
+				  						<area shape="rect" coords="34,217,154,272" href="../elements/5f430770-776d-459a-85a6-4e175baaf7b0.html"  target="element">
+
+				  				<area shape="rect" coords="22,181,167,278" href="../elements/be361486-87f4-4871-9b36-73bd96b0a09d.html"  target="element">
+
+				  		<area shape="rect" coords="10,157,180,290" href="../elements/ef7613ed-944f-4166-8482-d22cdbca2432.html"  target="element">
+				  		<area shape="rect" coords="10,334,180,389" href="../elements/7aa63544-c4b4-4e29-8c24-dc9f678da57d.html"  target="element">
+				  		<area shape="rect" coords="214,334,371,389" href="../elements/b19d726f-8ab1-44e6-98b4-08d50bb34b14.html"  target="element">
+				  		<area shape="rect" coords="118,10,238,47" href="../elements/aad57129-7682-469e-9e37-a5596f074a2b.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="convertlinks documentation" style="white-space:pre-wrap">The format of the journal of actual register transactions from a single cash register can be represented as "SAF-T Cash register" or "XBRL". At least in case of SAF-T, the requirement is that the journal is created in the cash register itself (entries needs to be digitally signed by a key known to the register).
+
+The details of the application architecture providing the "cash sales report" service is outside the scope of this model, but this view shows one possibility: it is assumed that the ERP-system needs to keep track of each cash register transaction and does so by accessing, storing and aggregating the journal from each register. This information can furter be provided through the "cash sales report"-service.
+
+The cash register itself might be managed by a central application component, this might be a part of the ERP or integrated with the ERP, or it might provide the "cash sales report"-service without going through the ERP. These details are up to the implementer and out of scope for this analysis.
+</div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/aad57129-7682-469e-9e37-a5596f074a2b.html" target="element"> SME </a> </td>
+											    <td> <a href="../elements/aad57129-7682-469e-9e37-a5596f074a2b.html" target="element" class="i18n-elementtype-BusinessRole">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/b19d726f-8ab1-44e6-98b4-08d50bb34b14.html" target="element"> ERP </a> </td>
+											    <td> <a href="../elements/b19d726f-8ab1-44e6-98b4-08d50bb34b14.html" target="element" class="i18n-elementtype-ApplicationComponent">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/7aa63544-c4b4-4e29-8c24-dc9f678da57d.html" target="element"> Cash register </a> </td>
+											    <td> <a href="../elements/7aa63544-c4b4-4e29-8c24-dc9f678da57d.html" target="element" class="i18n-elementtype-ApplicationComponent">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/ef7613ed-944f-4166-8482-d22cdbca2432.html" target="element"> Cash sales </a> </td>
+											    <td> <a href="../elements/ef7613ed-944f-4166-8482-d22cdbca2432.html" target="element" class="i18n-elementtype-ApplicationFunction">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/be361486-87f4-4871-9b36-73bd96b0a09d.html" target="element"> Journal </a> </td>
+													    <td> <a href="../elements/be361486-87f4-4871-9b36-73bd96b0a09d.html" target="element" class="i18n-elementtype-DataObject">
+													    </a> </td>
+													</tr>
+
+															<tr>
+															    <td> <a href="../elements/5f430770-776d-459a-85a6-4e175baaf7b0.html" target="element"> Cash register transaction </a> </td>
+															    <td> <a href="../elements/5f430770-776d-459a-85a6-4e175baaf7b0.html" target="element" class="i18n-elementtype-DataObject">
+															    </a> </td>
+															</tr>
+
+													
+											
+											<tr>
+											    <td> <a href="../elements/f957cd16-db23-410a-abc1-ae61c60fc482.html" target="element"> Cash sales reporting </a> </td>
+											    <td> <a href="../elements/f957cd16-db23-410a-abc1-ae61c60fc482.html" target="element" class="i18n-elementtype-ApplicationFunction">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/f72a3173-4205-4c66-abf4-1c7a5e689b13.html" target="element"> Cash sales report </a> </td>
+											    <td> <a href="../elements/f72a3173-4205-4c66-abf4-1c7a5e689b13.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/b329ebad-69ec-488c-8d66-9d59a92ed092.html" target="element"> Cash sales report </a> </td>
+											    <td> <a href="../elements/b329ebad-69ec-488c-8d66-9d59a92ed092.html" target="element" class="i18n-elementtype-ApplicationService">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/48aabc22-2836-46d8-812c-dddab3b804db.html" target="element"> SAF-T Cash register </a> </td>
+											    <td> <a href="../elements/48aabc22-2836-46d8-812c-dddab3b804db.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/2c4494bb-5a33-440a-9fc9-f939aba725e1.html" target="element"> Cash sales </a> </td>
+											    <td> <a href="../elements/2c4494bb-5a33-440a-9fc9-f939aba725e1.html" target="element" class="i18n-elementtype-BusinessFunction">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/79696b51-5b80-4bad-876c-c4cb64d30c46.html" target="element"> XBRL-GL </a> </td>
+											    <td> <a href="../elements/79696b51-5b80-4bad-876c-c4cb64d30c46.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																	<tr>
+																		<td> <a href="../elements/c3c994b3-9bd8-4b66-9867-ab8ad5ecafc1.html" target="element">  </a> </td>
+																		<td> <a href="../elements/c3c994b3-9bd8-4b66-9867-ab8ad5ecafc1.html" target="element" class="i18n-elementtype-AssignmentRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/aad57129-7682-469e-9e37-a5596f074a2b.html" target="element"> SME </a> </td>
+																		<td> <a href="../elements/2c4494bb-5a33-440a-9fc9-f939aba725e1.html" target="element"> Cash sales </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/1b1dcb1e-d3a5-4dbc-b2de-60c6db246b13.html" target="element">  </a> </td>
+																		<td> <a href="../elements/1b1dcb1e-d3a5-4dbc-b2de-60c6db246b13.html" target="element" class="i18n-elementtype-AssignmentRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/b19d726f-8ab1-44e6-98b4-08d50bb34b14.html" target="element"> ERP </a> </td>
+																		<td> <a href="../elements/f957cd16-db23-410a-abc1-ae61c60fc482.html" target="element"> Cash sales reporting </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/55b8b423-3aa4-4b89-bce5-97479317c1c0.html" target="element">  </a> </td>
+																		<td> <a href="../elements/55b8b423-3aa4-4b89-bce5-97479317c1c0.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/b19d726f-8ab1-44e6-98b4-08d50bb34b14.html" target="element"> ERP </a> </td>
+																		<td> <a href="../elements/f72a3173-4205-4c66-abf4-1c7a5e689b13.html" target="element"> Cash sales report </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/c742cf2a-c772-452f-8565-fff49e611038.html" target="element">  </a> </td>
+																		<td> <a href="../elements/c742cf2a-c772-452f-8565-fff49e611038.html" target="element" class="i18n-elementtype-AssignmentRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/7aa63544-c4b4-4e29-8c24-dc9f678da57d.html" target="element"> Cash register </a> </td>
+																		<td> <a href="../elements/ef7613ed-944f-4166-8482-d22cdbca2432.html" target="element"> Cash sales </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/ed556613-ed39-4316-94ef-36eb22c94ad3.html" target="element">  </a> </td>
+																		<td> <a href="../elements/ed556613-ed39-4316-94ef-36eb22c94ad3.html" target="element" class="i18n-elementtype-AccessRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ef7613ed-944f-4166-8482-d22cdbca2432.html" target="element"> Cash sales </a> </td>
+																		<td> <a href="../elements/be361486-87f4-4871-9b36-73bd96b0a09d.html" target="element"> Journal </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/4ce7e2a4-8378-4d88-b7c4-fc3fc698aeca.html" target="element">  </a> </td>
+																		<td> <a href="../elements/4ce7e2a4-8378-4d88-b7c4-fc3fc698aeca.html" target="element" class="i18n-elementtype-ServingRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ef7613ed-944f-4166-8482-d22cdbca2432.html" target="element"> Cash sales </a> </td>
+																		<td> <a href="../elements/2c4494bb-5a33-440a-9fc9-f939aba725e1.html" target="element"> Cash sales </a> </td>
+																	</tr>
+
+																			<tr>
+																				<td> <a href="../elements/f75733ef-3c1c-4680-893e-48318a7e98eb.html" target="element">  </a> </td>
+																				<td> <a href="../elements/f75733ef-3c1c-4680-893e-48318a7e98eb.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																				</a> </td>
+																				<td> <a href="../elements/be361486-87f4-4871-9b36-73bd96b0a09d.html" target="element"> Journal </a> </td>
+																				<td> <a href="../elements/5f430770-776d-459a-85a6-4e175baaf7b0.html" target="element"> Cash register transaction </a> </td>
+																			</tr>
+
+													
+											
+																	<tr>
+																		<td> <a href="../elements/d7649436-95be-4191-b9b8-e1a3e1433156.html" target="element">  </a> </td>
+																		<td> <a href="../elements/d7649436-95be-4191-b9b8-e1a3e1433156.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/f957cd16-db23-410a-abc1-ae61c60fc482.html" target="element"> Cash sales reporting </a> </td>
+																		<td> <a href="../elements/b329ebad-69ec-488c-8d66-9d59a92ed092.html" target="element"> Cash sales report </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/c83ebb2c-13a0-4671-8dd4-7b0060c0c812.html" target="element">  </a> </td>
+																		<td> <a href="../elements/c83ebb2c-13a0-4671-8dd4-7b0060c0c812.html" target="element" class="i18n-elementtype-ServingRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/f957cd16-db23-410a-abc1-ae61c60fc482.html" target="element"> Cash sales reporting </a> </td>
+																		<td> <a href="../elements/2c4494bb-5a33-440a-9fc9-f939aba725e1.html" target="element"> Cash sales </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/61143a0e-0fde-435e-b036-7c17ae70cecd.html" target="element">  </a> </td>
+																		<td> <a href="../elements/61143a0e-0fde-435e-b036-7c17ae70cecd.html" target="element" class="i18n-elementtype-AccessRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/f957cd16-db23-410a-abc1-ae61c60fc482.html" target="element"> Cash sales reporting </a> </td>
+																		<td> <a href="../elements/be361486-87f4-4871-9b36-73bd96b0a09d.html" target="element"> Journal </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/dffc7acc-118c-4a72-ab68-e8a8adce0e3a.html" target="element">  </a> </td>
+																		<td> <a href="../elements/dffc7acc-118c-4a72-ab68-e8a8adce0e3a.html" target="element" class="i18n-elementtype-AssignmentRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/f72a3173-4205-4c66-abf4-1c7a5e689b13.html" target="element"> Cash sales report </a> </td>
+																		<td> <a href="../elements/b329ebad-69ec-488c-8d66-9d59a92ed092.html" target="element"> Cash sales report </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/fcb7e73a-c94b-4cef-bdf2-7fac711fd08f.html" target="element">  </a> </td>
+																		<td> <a href="../elements/fcb7e73a-c94b-4cef-bdf2-7fac711fd08f.html" target="element" class="i18n-elementtype-SpecializationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/48aabc22-2836-46d8-812c-dddab3b804db.html" target="element"> SAF-T Cash register </a> </td>
+																		<td> <a href="../elements/f72a3173-4205-4c66-abf4-1c7a5e689b13.html" target="element"> Cash sales report </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/7a9bcd48-5c9f-44b8-ab4c-6e60162a7aef.html" target="element">  </a> </td>
+																		<td> <a href="../elements/7a9bcd48-5c9f-44b8-ab4c-6e60162a7aef.html" target="element" class="i18n-elementtype-SpecializationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/79696b51-5b80-4bad-876c-c4cb64d30c46.html" target="element"> XBRL-GL </a> </td>
+																		<td> <a href="../elements/f72a3173-4205-4c66-abf4-1c7a5e689b13.html" target="element"> Cash sales report </a> </td>
+																	</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

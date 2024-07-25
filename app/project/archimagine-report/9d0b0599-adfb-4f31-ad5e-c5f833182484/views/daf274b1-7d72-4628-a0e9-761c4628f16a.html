@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Implementation and Deployment</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-3.3.2.min.css">
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-theme-3.3.2.min.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Implementation and Deployment</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-implementation_deployment"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_implementation_deployment" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/daf274b1-7d72-4628-a0e9-761c4628f16a.png" alt="Implementation and Deployment" usemap="#daf274b1-7d72-4628-a0e9-761c4628f16amap"/>
+			   <map name="daf274b1-7d72-4628-a0e9-761c4628f16amap">
+				  		<area shape="rect" coords="508,223,628,278" href="../elements/cc995aa2-6c5d-4324-8ec3-9ccc14ad610c.html"  target="element">
+				  		<area shape="rect" coords="389,222,509,277" href="../elements/eba33b68-ace8-48b5-8dc7-1a8371c8bdca.html"  target="element">
+				  		<area shape="rect" coords="270,222,390,277" href="../elements/2fb75151-cfc3-4aab-b924-55639693e8a4.html"  target="element">
+				  		<area shape="rect" coords="151,222,271,277" href="../elements/155b001f-cab8-4c46-aa4e-8ae7f7594ae8.html"  target="element">
+				  		<area shape="rect" coords="32,222,152,277" href="../elements/e7059fd6-7bd0-491c-b905-cf2bf08f9252.html"  target="element">
+				  		<area shape="rect" coords="627,168,747,223" href="../elements/b1a22de9-d06a-4fcd-b69a-7127b145a8e4.html"  target="element">
+				  		<area shape="rect" coords="508,168,628,223" href="../elements/d120f670-13c6-4e73-a3d6-2fef9a6c25f9.html"  target="element">
+				  		<area shape="rect" coords="389,168,509,223" href="../elements/d19dbcc0-a828-46a2-b5cb-07776a4eb5d4.html"  target="element">
+				  		<area shape="rect" coords="270,168,390,223" href="../elements/b8d02d72-31f1-4f4a-8846-830e868d76cd.html"  target="element">
+				  		<area shape="rect" coords="151,168,271,223" href="../elements/14bd391e-4980-46b6-bf06-4225cd749b8c.html"  target="element">
+				  		<area shape="rect" coords="32,168,152,223" href="../elements/62779256-ba2a-4022-baf5-d85fa1a4e726.html"  target="element">
+				  		<area shape="rect" coords="627,114,747,169" href="../elements/80ea9e3d-d22f-468c-ac9d-7703b9ccf036.html"  target="element">
+				  		<area shape="rect" coords="508,114,628,169" href="../elements/a606b1c8-d56a-4e9c-87b4-ea0b80c85058.html"  target="element">
+				  		<area shape="rect" coords="389,114,509,169" href="../elements/911d0d4e-5633-4ca2-a60e-798348bd0186.html"  target="element">
+				  		<area shape="rect" coords="270,114,390,169" href="../elements/4e6d50ef-da19-4459-966b-52596ea4092c.html"  target="element">
+				  		<area shape="rect" coords="151,114,271,169" href="../elements/4014a652-6b91-4810-8195-b762c9ea5f43.html"  target="element">
+				  		<area shape="rect" coords="32,114,152,169" href="../elements/7ff9d026-7d54-4f34-ab68-d05c3a25eefc.html"  target="element">
+				  		<area shape="rect" coords="10,10,140,80" href="../elements/3ebd5db0-cf2b-4d49-adaf-fedb06a120d4.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<textarea id="docsrc" style="display:none"></textarea>
+						<div id="doctgt" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/3ebd5db0-cf2b-4d49-adaf-fedb06a120d4.html" target="element"> Grouping </a> </td>
+											    <td> <a href="../elements/3ebd5db0-cf2b-4d49-adaf-fedb06a120d4.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/7ff9d026-7d54-4f34-ab68-d05c3a25eefc.html" target="element"> Application Component </a> </td>
+											    <td> <a href="../elements/7ff9d026-7d54-4f34-ab68-d05c3a25eefc.html" target="element" class="i18n-elementtype-ApplicationComponent"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/4014a652-6b91-4810-8195-b762c9ea5f43.html" target="element"> Application Collaboration </a> </td>
+											    <td> <a href="../elements/4014a652-6b91-4810-8195-b762c9ea5f43.html" target="element" class="i18n-elementtype-ApplicationCollaboration"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/4e6d50ef-da19-4459-966b-52596ea4092c.html" target="element"> Application Interface </a> </td>
+											    <td> <a href="../elements/4e6d50ef-da19-4459-966b-52596ea4092c.html" target="element" class="i18n-elementtype-ApplicationInterface"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/911d0d4e-5633-4ca2-a60e-798348bd0186.html" target="element"> Application Function </a> </td>
+											    <td> <a href="../elements/911d0d4e-5633-4ca2-a60e-798348bd0186.html" target="element" class="i18n-elementtype-ApplicationFunction"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/a606b1c8-d56a-4e9c-87b4-ea0b80c85058.html" target="element"> Application Interaction </a> </td>
+											    <td> <a href="../elements/a606b1c8-d56a-4e9c-87b4-ea0b80c85058.html" target="element" class="i18n-elementtype-ApplicationInteraction"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/80ea9e3d-d22f-468c-ac9d-7703b9ccf036.html" target="element"> Application Process </a> </td>
+											    <td> <a href="../elements/80ea9e3d-d22f-468c-ac9d-7703b9ccf036.html" target="element" class="i18n-elementtype-ApplicationProcess"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/62779256-ba2a-4022-baf5-d85fa1a4e726.html" target="element"> Application Event </a> </td>
+											    <td> <a href="../elements/62779256-ba2a-4022-baf5-d85fa1a4e726.html" target="element" class="i18n-elementtype-ApplicationEvent"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/14bd391e-4980-46b6-bf06-4225cd749b8c.html" target="element"> Application Service </a> </td>
+											    <td> <a href="../elements/14bd391e-4980-46b6-bf06-4225cd749b8c.html" target="element" class="i18n-elementtype-ApplicationService"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/b8d02d72-31f1-4f4a-8846-830e868d76cd.html" target="element"> Data Object </a> </td>
+											    <td> <a href="../elements/b8d02d72-31f1-4f4a-8846-830e868d76cd.html" target="element" class="i18n-elementtype-DataObject"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/d19dbcc0-a828-46a2-b5cb-07776a4eb5d4.html" target="element"> System Software </a> </td>
+											    <td> <a href="../elements/d19dbcc0-a828-46a2-b5cb-07776a4eb5d4.html" target="element" class="i18n-elementtype-SystemSoftware"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/d120f670-13c6-4e73-a3d6-2fef9a6c25f9.html" target="element"> Technology Interface </a> </td>
+											    <td> <a href="../elements/d120f670-13c6-4e73-a3d6-2fef9a6c25f9.html" target="element" class="i18n-elementtype-TechnologyInterface"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/b1a22de9-d06a-4fcd-b69a-7127b145a8e4.html" target="element"> Path </a> </td>
+											    <td> <a href="../elements/b1a22de9-d06a-4fcd-b69a-7127b145a8e4.html" target="element" class="i18n-elementtype-Path"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/e7059fd6-7bd0-491c-b905-cf2bf08f9252.html" target="element"> Technology Function </a> </td>
+											    <td> <a href="../elements/e7059fd6-7bd0-491c-b905-cf2bf08f9252.html" target="element" class="i18n-elementtype-TechnologyFunction"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/155b001f-cab8-4c46-aa4e-8ae7f7594ae8.html" target="element"> Technology Process </a> </td>
+											    <td> <a href="../elements/155b001f-cab8-4c46-aa4e-8ae7f7594ae8.html" target="element" class="i18n-elementtype-TechnologyProcess"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/2fb75151-cfc3-4aab-b924-55639693e8a4.html" target="element"> Technology Interaction </a> </td>
+											    <td> <a href="../elements/2fb75151-cfc3-4aab-b924-55639693e8a4.html" target="element" class="i18n-elementtype-TechnologyInteraction"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/eba33b68-ace8-48b5-8dc7-1a8371c8bdca.html" target="element"> Technology Service </a> </td>
+											    <td> <a href="../elements/eba33b68-ace8-48b5-8dc7-1a8371c8bdca.html" target="element" class="i18n-elementtype-TechnologyService"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/cc995aa2-6c5d-4324-8ec3-9ccc14ad610c.html" target="element"> Artifact </a> </td>
+											    <td> <a href="../elements/cc995aa2-6c5d-4324-8ec3-9ccc14ad610c.html" target="element" class="i18n-elementtype-Artifact"> </a> </td>
+											</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

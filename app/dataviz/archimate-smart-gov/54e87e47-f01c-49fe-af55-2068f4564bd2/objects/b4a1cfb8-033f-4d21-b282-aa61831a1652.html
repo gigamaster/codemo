@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>WP3-1</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-3.3.2.min.css">
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-theme-3.3.2.min.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>WP3-1</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-elementtype-DiagramModelGroup"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-DiagramModelGroup" target="hint"></a>
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<textarea id="docsrc" style="display:none"></textarea>
+						<div id="doctgt" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Manage Business Transactions (reference implementation) </a> </td>
+											    <td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element" class="i18n-elementtype-ApplicationComponent"> </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/4cc878e0-9054-435e-9306-396f373ff1ee.html" target="element"> Business transactions </a> </td>
+													    <td> <a href="../elements/4cc878e0-9054-435e-9306-396f373ff1ee.html" target="element" class="i18n-elementtype-ApplicationComponent"> </a> </td>
+													</tr>
+
+											
+											<tr>
+											    <td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element"> Read entries </a> </td>
+											    <td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element" class="i18n-elementtype-ApplicationInterface"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/05e1fe7e-253a-4bae-b0f5-d7d15c6fe024.html" target="element"> Create entries </a> </td>
+											    <td> <a href="../elements/05e1fe7e-253a-4bae-b0f5-d7d15c6fe024.html" target="element" class="i18n-elementtype-ApplicationInterface"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/7407beea-9249-47e1-81d1-e8335874febe.html" target="element"> XBRL GL </a> </td>
+											    <td> <a href="../elements/7407beea-9249-47e1-81d1-e8335874febe.html" target="element" class="i18n-elementtype-Constraint"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/184767ec-1af0-46ee-910a-69ebaf9c7667.html" target="element"> Update entries </a> </td>
+											    <td> <a href="../elements/184767ec-1af0-46ee-910a-69ebaf9c7667.html" target="element" class="i18n-elementtype-ApplicationInterface"> </a> </td>
+											</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																	<tr>
+																		<td> <a href="../elements/cf6c77df-0b4c-481f-9200-b5a9df5acb6f.html" target="element">  </a> </td>
+																		<td> <a href="../elements/cf6c77df-0b4c-481f-9200-b5a9df5acb6f.html" target="element" class="i18n-elementtype-RealizationRelationship"></a> </td>
+																		<td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Manage Business Transactions (reference implementation) </a> </td>
+																		<td> <a href="../elements/05e1fe7e-253a-4bae-b0f5-d7d15c6fe024.html" target="element"> Create entries </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/21736228-ab5a-40ad-a64f-503ede294d64.html" target="element">  </a> </td>
+																		<td> <a href="../elements/21736228-ab5a-40ad-a64f-503ede294d64.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Manage Business Transactions (reference implementation) </a> </td>
+																		<td> <a href="../elements/4cc878e0-9054-435e-9306-396f373ff1ee.html" target="element"> Business transactions </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/24a68c97-eb69-4a8c-9ede-4198f1a48f31.html" target="element">  </a> </td>
+																		<td> <a href="../elements/24a68c97-eb69-4a8c-9ede-4198f1a48f31.html" target="element" class="i18n-elementtype-RealizationRelationship"></a> </td>
+																		<td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Manage Business Transactions (reference implementation) </a> </td>
+																		<td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element"> Read entries </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/a805ce64-68aa-47e0-95f9-52014738dc45.html" target="element">  </a> </td>
+																		<td> <a href="../elements/a805ce64-68aa-47e0-95f9-52014738dc45.html" target="element" class="i18n-elementtype-RealizationRelationship"></a> </td>
+																		<td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Manage Business Transactions (reference implementation) </a> </td>
+																		<td> <a href="../elements/184767ec-1af0-46ee-910a-69ebaf9c7667.html" target="element"> Update entries </a> </td>
+																	</tr>
+
+											
+																	<tr>
+																		<td> <a href="../elements/1474fd42-f867-4891-ae38-6395e0b2dcff.html" target="element">  </a> </td>
+																		<td> <a href="../elements/1474fd42-f867-4891-ae38-6395e0b2dcff.html" target="element" class="i18n-elementtype-ServingRelationship"></a> </td>
+																		<td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element"> Read entries </a> </td>
+																		<td> <a href="../elements/99ab2e1f-1b97-4e2b-9bde-243305d2e7e6.html" target="element"> Reporting service: financial statement </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/cce0bb04-4889-48ce-a320-56f3ed074463.html" target="element">  </a> </td>
+																		<td> <a href="../elements/cce0bb04-4889-48ce-a320-56f3ed074463.html" target="element" class="i18n-elementtype-TriggeringRelationship"></a> </td>
+																		<td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element"> Read entries </a> </td>
+																		<td> <a href="../elements/353534be-26c5-430b-8714-9e2af459b92f.html" target="element"> Reporting sevice "X" </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/b4b5bec1-2aa9-4198-ad34-6bf10cad3376.html" target="element">  </a> </td>
+																		<td> <a href="../elements/b4b5bec1-2aa9-4198-ad34-6bf10cad3376.html" target="element" class="i18n-elementtype-TriggeringRelationship"></a> </td>
+																		<td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element"> Read entries </a> </td>
+																		<td> <a href="../elements/3a185814-e9dd-46a8-b5bb-f0d666902a6e.html" target="element"> Reporting service: statistics </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/10085f58-abe4-426c-8937-ed557bc0e70f.html" target="element">  </a> </td>
+																		<td> <a href="../elements/10085f58-abe4-426c-8937-ed557bc0e70f.html" target="element" class="i18n-elementtype-TriggeringRelationship"></a> </td>
+																		<td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element"> Read entries </a> </td>
+																		<td> <a href="../elements/b334d061-e77d-4d3e-8c10-af68ec56b772.html" target="element"> Auditing service provider </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/51cb338d-cc9f-43b2-a4a0-bb379bdb7e90.html" target="element">  </a> </td>
+																		<td> <a href="../elements/51cb338d-cc9f-43b2-a4a0-bb379bdb7e90.html" target="element" class="i18n-elementtype-TriggeringRelationship"></a> </td>
+																		<td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element"> Read entries </a> </td>
+																		<td> <a href="../elements/b12ef104-b15f-4e2b-bad5-6a4ebe27c867.html" target="element"> Reporting service: tax </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/4337dbf6-9814-458a-92fa-f4b36d99473a.html" target="element">  </a> </td>
+																		<td> <a href="../elements/4337dbf6-9814-458a-92fa-f4b36d99473a.html" target="element" class="i18n-elementtype-AssociationRelationship"></a> </td>
+																		<td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element"> Read entries </a> </td>
+																		<td> <a href="../elements/7407beea-9249-47e1-81d1-e8335874febe.html" target="element"> XBRL GL </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/34d0bee5-95e9-4f19-80af-0284e8c42e26.html" target="element">  </a> </td>
+																		<td> <a href="../elements/34d0bee5-95e9-4f19-80af-0284e8c42e26.html" target="element" class="i18n-elementtype-TriggeringRelationship"></a> </td>
+																		<td> <a href="../elements/af09ed18-1b24-4576-9693-56a7b85133e2.html" target="element"> Read entries </a> </td>
+																		<td> <a href="../elements/a1fb8e7d-194d-4611-9bb4-ffc5741fbf9d.html" target="element"> Tieto UI (?) </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/f5b35c78-c626-4c73-ad9d-2dced8539afb.html" target="element">  </a> </td>
+																		<td> <a href="../elements/f5b35c78-c626-4c73-ad9d-2dced8539afb.html" target="element" class="i18n-elementtype-AssociationRelationship"></a> </td>
+																		<td> <a href="../elements/7407beea-9249-47e1-81d1-e8335874febe.html" target="element"> XBRL GL </a> </td>
+																		<td> <a href="../elements/05e1fe7e-253a-4bae-b0f5-d7d15c6fe024.html" target="element"> Create entries </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/cf90655a-0216-49d6-a6de-461a226b1573.html" target="element">  </a> </td>
+																		<td> <a href="../elements/cf90655a-0216-49d6-a6de-461a226b1573.html" target="element" class="i18n-elementtype-AssociationRelationship"></a> </td>
+																		<td> <a href="../elements/7407beea-9249-47e1-81d1-e8335874febe.html" target="element"> XBRL GL </a> </td>
+																		<td> <a href="../elements/184767ec-1af0-46ee-910a-69ebaf9c7667.html" target="element"> Update entries </a> </td>
+																	</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

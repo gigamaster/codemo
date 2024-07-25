@@ -1,0 +1,385 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Information model</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Information model</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/5dfea728-f0a4-4532-8255-aba4a475bff7.png" alt="Information model" usemap="#5dfea728-f0a4-4532-8255-aba4a475bff7map"/>
+			   <map name="5dfea728-f0a4-4532-8255-aba4a475bff7map">
+				  		<area shape="rect" coords="10,400,130,455" href="../elements/725e737b-c7a5-44bc-9a24-a88e6226a23a.html"  target="element">
+				          <area shape="rect" coords="274,328,315,354" href="../objects/94242728-a56a-494b-a1c1-5dae19abc5fb.html" target="element" >
+				          <area shape="rect" coords="243,370,284,396" href="../objects/0f070b75-7c76-4273-b82c-dfb4f0572dee.html" target="element" >
+				  		<area shape="rect" coords="165,400,285,455" href="../elements/c1ed56c4-1b58-4078-a15e-18ef95493760.html"  target="element">
+				          <area shape="rect" coords="446,191,487,217" href="../objects/f4238e37-714d-4c7a-882c-dcdd692d60c5.html" target="element" >
+				          <area shape="rect" coords="446,166,487,192" href="../objects/fdd290d0-d04d-414c-bd44-fc04f9a7f9ca.html" target="element" >
+				          <area shape="rect" coords="282,106,323,132" href="../objects/ebaa041e-05f4-4de2-9c15-fdbdfbcd0833.html" target="element" >
+				  		<area shape="rect" coords="694,400,814,455" href="../elements/f9d16468-ab31-4674-8c76-07f212f8c5b5.html"  target="element">
+				  		<area shape="rect" coords="382,478,502,533" href="../elements/039fba91-777d-455e-a777-254c8cce9ad8.html"  target="element">
+				  		<area shape="rect" coords="243,478,363,533" href="../elements/630f388f-859f-40d2-ab3f-655bb50ad366.html"  target="element">
+				          <area shape="rect" coords="345,231,386,257" href="../objects/db7adce0-47e1-4833-9aa4-94bbb92b03a7.html" target="element" >
+				          <area shape="rect" coords="382,376,423,402" href="../objects/560fae54-387b-4c1d-91f4-3800f4dc1229.html" target="element" >
+				          <area shape="rect" coords="274,274,315,300" href="../objects/e48eedc6-f167-4ce3-b8da-cae8f82b354a.html" target="element" >
+				  		<area shape="rect" coords="322,286,442,341" href="../elements/d4bf416e-5c92-4121-9f10-ef5e098f7a65.html"  target="element">
+				  		<area shape="rect" coords="322,400,442,455" href="../elements/23769ae4-4a84-46d3-b1af-3acd4ce56c2b.html"  target="element">
+				          <area shape="rect" coords="282,184,323,210" href="../objects/fe94540e-ecaa-4e09-b4f3-637fcf0f55a0.html" target="element" >
+				  		<area shape="rect" coords="322,106,442,161" href="../elements/1181ff81-2bf9-4726-858b-7bf156b5b4e8.html"  target="element">
+				  		<area shape="rect" coords="562,34,682,89" href="../elements/62470fa6-694b-47c8-9f09-7aa05fe5e3db.html"  target="element">
+				  		<area shape="rect" coords="610,274,730,329" href="../elements/595f9f00-5531-4d19-b9e4-297a626f9a7b.html"  target="element">
+				  		<area shape="rect" coords="322,176,442,231" href="../elements/2569e42e-abdd-40ee-bc16-dcf625a34a94.html"  target="element">
+				  		<area shape="rect" coords="10,34,130,359" href="../elements/f05bd5c4-8db8-4764-b439-1ff91a0aec00.html"  target="element">
+				  		<area shape="rect" coords="322,34,442,89" href="../elements/3136bb1a-49ff-4424-b77c-b31fbdac6b21.html"  target="element">
+				  		<area shape="rect" coords="554,10,954,514" href="../elements/51f79e4f-366c-4517-ab77-cf3718e9cca0.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="convertlinks documentation" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/51f79e4f-366c-4517-ab77-cf3718e9cca0.html" target="element"> Organizing the entries of bookkeeping </a> </td>
+											    <td> <a href="../elements/51f79e4f-366c-4517-ab77-cf3718e9cca0.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/3136bb1a-49ff-4424-b77c-b31fbdac6b21.html" target="element"> Set of transactions </a> </td>
+											    <td> <a href="../elements/3136bb1a-49ff-4424-b77c-b31fbdac6b21.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/f05bd5c4-8db8-4764-b439-1ff91a0aec00.html" target="element"> Transaction </a> </td>
+											    <td> <a href="../elements/f05bd5c4-8db8-4764-b439-1ff91a0aec00.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/2569e42e-abdd-40ee-bc16-dcf625a34a94.html" target="element"> Proof of transaction </a> </td>
+											    <td> <a href="../elements/2569e42e-abdd-40ee-bc16-dcf625a34a94.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/595f9f00-5531-4d19-b9e4-297a626f9a7b.html" target="element"> Journal </a> </td>
+											    <td> <a href="../elements/595f9f00-5531-4d19-b9e4-297a626f9a7b.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/62470fa6-694b-47c8-9f09-7aa05fe5e3db.html" target="element"> Company </a> </td>
+											    <td> <a href="../elements/62470fa6-694b-47c8-9f09-7aa05fe5e3db.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/1181ff81-2bf9-4726-858b-7bf156b5b4e8.html" target="element"> Business document </a> </td>
+											    <td> <a href="../elements/1181ff81-2bf9-4726-858b-7bf156b5b4e8.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+									        <tr>
+									           <td> <a href="../objects/fe94540e-ecaa-4e09-b4f3-637fcf0f55a0.html" target="element">  </a> </td>
+									           <td> <a href="../objects/fe94540e-ecaa-4e09-b4f3-637fcf0f55a0.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+											<tr>
+											    <td> <a href="../elements/23769ae4-4a84-46d3-b1af-3acd4ce56c2b.html" target="element"> Account </a> </td>
+											    <td> <a href="../elements/23769ae4-4a84-46d3-b1af-3acd4ce56c2b.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/d4bf416e-5c92-4121-9f10-ef5e098f7a65.html" target="element"> Entry </a> </td>
+											    <td> <a href="../elements/d4bf416e-5c92-4121-9f10-ef5e098f7a65.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+									        <tr>
+									           <td> <a href="../objects/e48eedc6-f167-4ce3-b8da-cae8f82b354a.html" target="element">  </a> </td>
+									           <td> <a href="../objects/e48eedc6-f167-4ce3-b8da-cae8f82b354a.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+									        <tr>
+									           <td> <a href="../objects/560fae54-387b-4c1d-91f4-3800f4dc1229.html" target="element">  </a> </td>
+									           <td> <a href="../objects/560fae54-387b-4c1d-91f4-3800f4dc1229.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+									        <tr>
+									           <td> <a href="../objects/db7adce0-47e1-4833-9aa4-94bbb92b03a7.html" target="element">  </a> </td>
+									           <td> <a href="../objects/db7adce0-47e1-4833-9aa4-94bbb92b03a7.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+											<tr>
+											    <td> <a href="../elements/630f388f-859f-40d2-ab3f-655bb50ad366.html" target="element"> Balance sheet accounts </a> </td>
+											    <td> <a href="../elements/630f388f-859f-40d2-ab3f-655bb50ad366.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/039fba91-777d-455e-a777-254c8cce9ad8.html" target="element"> Profit and loss statement accounts </a> </td>
+											    <td> <a href="../elements/039fba91-777d-455e-a777-254c8cce9ad8.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/f9d16468-ab31-4674-8c76-07f212f8c5b5.html" target="element"> General Ledger </a> </td>
+											    <td> <a href="../elements/f9d16468-ab31-4674-8c76-07f212f8c5b5.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+									        <tr>
+									           <td> <a href="../objects/ebaa041e-05f4-4de2-9c15-fdbdfbcd0833.html" target="element">  </a> </td>
+									           <td> <a href="../objects/ebaa041e-05f4-4de2-9c15-fdbdfbcd0833.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+									        <tr>
+									           <td> <a href="../objects/fdd290d0-d04d-414c-bd44-fc04f9a7f9ca.html" target="element">  </a> </td>
+									           <td> <a href="../objects/fdd290d0-d04d-414c-bd44-fc04f9a7f9ca.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+									        <tr>
+									           <td> <a href="../objects/f4238e37-714d-4c7a-882c-dcdd692d60c5.html" target="element">  </a> </td>
+									           <td> <a href="../objects/f4238e37-714d-4c7a-882c-dcdd692d60c5.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+											<tr>
+											    <td> <a href="../elements/c1ed56c4-1b58-4078-a15e-18ef95493760.html" target="element"> Product or Service </a> </td>
+											    <td> <a href="../elements/c1ed56c4-1b58-4078-a15e-18ef95493760.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+									        <tr>
+									           <td> <a href="../objects/0f070b75-7c76-4273-b82c-dfb4f0572dee.html" target="element">  </a> </td>
+									           <td> <a href="../objects/0f070b75-7c76-4273-b82c-dfb4f0572dee.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+									        <tr>
+									           <td> <a href="../objects/94242728-a56a-494b-a1c1-5dae19abc5fb.html" target="element">  </a> </td>
+									           <td> <a href="../objects/94242728-a56a-494b-a1c1-5dae19abc5fb.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+											<tr>
+											    <td> <a href="../elements/725e737b-c7a5-44bc-9a24-a88e6226a23a.html" target="element"> Product or Service Catalog </a> </td>
+											    <td> <a href="../elements/725e737b-c7a5-44bc-9a24-a88e6226a23a.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																	<tr>
+																		<td> <a href="../elements/21891305-06a4-4bd7-b235-6e11c60c9554.html" target="element"> belongs to </a> </td>
+																		<td> <a href="../elements/21891305-06a4-4bd7-b235-6e11c60c9554.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/3136bb1a-49ff-4424-b77c-b31fbdac6b21.html" target="element"> Set of transactions </a> </td>
+																		<td> <a href="../elements/62470fa6-694b-47c8-9f09-7aa05fe5e3db.html" target="element"> Company </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/39ea87a5-f401-4c55-8ffb-987cd7a3ef49.html" target="element"> proved by  </a> </td>
+																		<td> <a href="../elements/39ea87a5-f401-4c55-8ffb-987cd7a3ef49.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/f05bd5c4-8db8-4764-b439-1ff91a0aec00.html" target="element"> Transaction </a> </td>
+																		<td> <a href="../elements/2569e42e-abdd-40ee-bc16-dcf625a34a94.html" target="element"> Proof of transaction </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/732a917d-fa49-40d0-bb6b-eef450e60190.html" target="element"> is part of </a> </td>
+																		<td> <a href="../elements/732a917d-fa49-40d0-bb6b-eef450e60190.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/f05bd5c4-8db8-4764-b439-1ff91a0aec00.html" target="element"> Transaction </a> </td>
+																		<td> <a href="../elements/3136bb1a-49ff-4424-b77c-b31fbdac6b21.html" target="element"> Set of transactions </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/18a6a1cd-8091-481c-a427-00426345315b.html" target="element"> related to </a> </td>
+																		<td> <a href="../elements/18a6a1cd-8091-481c-a427-00426345315b.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/f05bd5c4-8db8-4764-b439-1ff91a0aec00.html" target="element"> Transaction </a> </td>
+																		<td> <a href="../elements/1181ff81-2bf9-4726-858b-7bf156b5b4e8.html" target="element"> Business document </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/f1890790-5d14-480f-a197-6f10f3279590.html" target="element"> recorded in </a> </td>
+																		<td> <a href="../elements/f1890790-5d14-480f-a197-6f10f3279590.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/f05bd5c4-8db8-4764-b439-1ff91a0aec00.html" target="element"> Transaction </a> </td>
+																		<td> <a href="../elements/d4bf416e-5c92-4121-9f10-ef5e098f7a65.html" target="element"> Entry </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/d7bfe4da-3696-4593-bb50-0a6f4bd819dc.html" target="element"> can be </a> </td>
+																		<td> <a href="../elements/d7bfe4da-3696-4593-bb50-0a6f4bd819dc.html" target="element" class="i18n-elementtype-SpecializationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2569e42e-abdd-40ee-bc16-dcf625a34a94.html" target="element"> Proof of transaction </a> </td>
+																		<td> <a href="../elements/1181ff81-2bf9-4726-858b-7bf156b5b4e8.html" target="element"> Business document </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/f96f233a-cf7d-4b2a-a6b4-d27233a8959f.html" target="element"> reference </a> </td>
+																		<td> <a href="../elements/f96f233a-cf7d-4b2a-a6b4-d27233a8959f.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2569e42e-abdd-40ee-bc16-dcf625a34a94.html" target="element"> Proof of transaction </a> </td>
+																		<td> <a href="../elements/d4bf416e-5c92-4121-9f10-ef5e098f7a65.html" target="element"> Entry </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/4b8d23c2-b79f-4b2c-aa64-1a5d6d5d013a.html" target="element"> reference a voucher </a> </td>
+																		<td> <a href="../elements/4b8d23c2-b79f-4b2c-aa64-1a5d6d5d013a.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2569e42e-abdd-40ee-bc16-dcf625a34a94.html" target="element"> Proof of transaction </a> </td>
+																		<td> <a href="../elements/595f9f00-5531-4d19-b9e4-297a626f9a7b.html" target="element"> Journal </a> </td>
+																	</tr>
+
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+																	<tr>
+																		<td> <a href="../elements/77603d1a-a21b-431f-a00b-2953a0517032.html" target="element">  </a> </td>
+																		<td> <a href="../elements/77603d1a-a21b-431f-a00b-2953a0517032.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/23769ae4-4a84-46d3-b1af-3acd4ce56c2b.html" target="element"> Account </a> </td>
+																		<td> <a href="../elements/f9d16468-ab31-4674-8c76-07f212f8c5b5.html" target="element"> General Ledger </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/e20adb8c-bbff-484c-b2f2-62053097c2f4.html" target="element"> filed on </a> </td>
+																		<td> <a href="../elements/e20adb8c-bbff-484c-b2f2-62053097c2f4.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/d4bf416e-5c92-4121-9f10-ef5e098f7a65.html" target="element"> Entry </a> </td>
+																		<td> <a href="../elements/23769ae4-4a84-46d3-b1af-3acd4ce56c2b.html" target="element"> Account </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/6fb27709-1cba-46cf-b8b0-650da61df1da.html" target="element"> listed in </a> </td>
+																		<td> <a href="../elements/6fb27709-1cba-46cf-b8b0-650da61df1da.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/d4bf416e-5c92-4121-9f10-ef5e098f7a65.html" target="element"> Entry </a> </td>
+																		<td> <a href="../elements/595f9f00-5531-4d19-b9e4-297a626f9a7b.html" target="element"> Journal </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/09c1293e-5af5-43a4-8240-2b56915c9357.html" target="element">  </a> </td>
+																		<td> <a href="../elements/09c1293e-5af5-43a4-8240-2b56915c9357.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/d4bf416e-5c92-4121-9f10-ef5e098f7a65.html" target="element"> Entry </a> </td>
+																		<td> <a href="../elements/f9d16468-ab31-4674-8c76-07f212f8c5b5.html" target="element"> General Ledger </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/9bc03469-3937-4864-a0d3-7fed7c86f1c3.html" target="element">  </a> </td>
+																		<td> <a href="../elements/9bc03469-3937-4864-a0d3-7fed7c86f1c3.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/d4bf416e-5c92-4121-9f10-ef5e098f7a65.html" target="element"> Entry </a> </td>
+																		<td> <a href="../elements/c1ed56c4-1b58-4078-a15e-18ef95493760.html" target="element"> Product or Service </a> </td>
+																	</tr>
+
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+																	<tr>
+																		<td> <a href="../elements/0690e245-613a-4a2c-9f43-b147fc3e7a07.html" target="element">  </a> </td>
+																		<td> <a href="../elements/0690e245-613a-4a2c-9f43-b147fc3e7a07.html" target="element" class="i18n-elementtype-SpecializationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/630f388f-859f-40d2-ab3f-655bb50ad366.html" target="element"> Balance sheet accounts </a> </td>
+																		<td> <a href="../elements/23769ae4-4a84-46d3-b1af-3acd4ce56c2b.html" target="element"> Account </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/f1ae61b6-1173-413d-b4db-a03ac3757fcc.html" target="element">  </a> </td>
+																		<td> <a href="../elements/f1ae61b6-1173-413d-b4db-a03ac3757fcc.html" target="element" class="i18n-elementtype-SpecializationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/039fba91-777d-455e-a777-254c8cce9ad8.html" target="element"> Profit and loss statement accounts </a> </td>
+																		<td> <a href="../elements/23769ae4-4a84-46d3-b1af-3acd4ce56c2b.html" target="element"> Account </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/ddb408d5-ca39-4694-98ad-caa6b81de6bc.html" target="element"> reference a voucher </a> </td>
+																		<td> <a href="../elements/ddb408d5-ca39-4694-98ad-caa6b81de6bc.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/f9d16468-ab31-4674-8c76-07f212f8c5b5.html" target="element"> General Ledger </a> </td>
+																		<td> <a href="../elements/2569e42e-abdd-40ee-bc16-dcf625a34a94.html" target="element"> Proof of transaction </a> </td>
+																	</tr>
+
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

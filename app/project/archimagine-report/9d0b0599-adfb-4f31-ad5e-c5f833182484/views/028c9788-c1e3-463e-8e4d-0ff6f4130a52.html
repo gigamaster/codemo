@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Node.js complete reference guide</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-3.3.2.min.css">
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-theme-3.3.2.min.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Node.js complete reference guide</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/028c9788-c1e3-463e-8e4d-0ff6f4130a52.png" alt="Node.js complete reference guide" usemap="#028c9788-c1e3-463e-8e4d-0ff6f4130a52map"/>
+			   <map name="028c9788-c1e3-463e-8e4d-0ff6f4130a52map">
+				  				<area shape="rect" coords="22,574,323,670" href="../elements/831ee9dd-9d08-4a81-8633-53d6c020981d.html"  target="element">
+				  				<area shape="rect" coords="22,454,323,562" href="../elements/60227ab3-c5b7-4599-a689-400ba79ffcc2.html"  target="element">
+				  				<area shape="rect" coords="22,46,323,122" href="../elements/b44e0f79-f35a-4791-b997-c80afa7d31fb.html"  target="element">
+				  				<area shape="rect" coords="332,226,636,319" href="../elements/68810b1e-49f2-4268-b882-d63486b3d1b3.html"  target="element">
+				  				<area shape="rect" coords="958,130,1259,214" href="../elements/c6ff4f8b-2c79-4422-9d4d-98594368692f.html"  target="element">
+				  				<area shape="rect" coords="646,227,947,323" href="../elements/0abc6ea4-e279-4e6a-91d3-3f89b19464ad.html"  target="element">
+				  				<area shape="rect" coords="22,334,323,442" href="../elements/61221b87-4155-498f-87e1-4600372513e2.html"  target="element">
+				  				<area shape="rect" coords="958,454,1259,560" href="../elements/8b9e2f82-067f-4cc4-a733-f2543e7d4654.html"  target="element">
+				  				<area shape="rect" coords="646,131,947,215" href="../elements/5a7b6be8-1344-43c3-a575-6af25dee38dd.html"  target="element">
+				  				<area shape="rect" coords="333,334,634,441" href="../elements/ac1e35e8-dc1a-4f39-83a6-01203847dcee.html"  target="element">
+				  				<area shape="rect" coords="334,574,638,670" href="../elements/43b6d4d4-ff31-4384-86b8-7b302ea85360.html"  target="element">
+				  				<area shape="rect" coords="958,574,1259,668" href="../elements/0cb7d73c-5c00-423d-8d2d-105b6287a36e.html"  target="element">
+				  				<area shape="rect" coords="332,130,636,214" href="../elements/86be0bd9-1e50-4a65-8806-7e0ba24cac3a.html"  target="element">
+				  				<area shape="rect" coords="334,454,638,560" href="../elements/d8cc1750-00b0-44c8-8cec-23460c38f37b.html"  target="element">
+				  				<area shape="rect" coords="22,226,323,320" href="../elements/b889f145-affe-4101-a75c-a9f7be577885.html"  target="element">
+				  				<area shape="rect" coords="646,575,947,670" href="../elements/37d4619d-d982-4d5d-85a1-4cf914b8c646.html"  target="element">
+				  				<area shape="rect" coords="958,334,1259,440" href="../elements/ed732564-96aa-4d9b-aee7-b0ba5c105fa0.html"  target="element">
+				  				<area shape="rect" coords="958,46,1259,121" href="../elements/e381785b-f89b-419a-b78e-92273b29b7fb.html"  target="element">
+				  				<area shape="rect" coords="646,340,947,442" href="../elements/057fbd70-13c3-42a1-9e5f-45024db9c939.html"  target="element">
+				  				<area shape="rect" coords="646,47,947,120" href="../elements/b799479b-5a92-45da-988e-26bf814f3859.html"  target="element">
+				  				<area shape="rect" coords="22,130,323,215" href="../elements/1a695d34-ca8b-4ead-837c-090664e1dbbf.html"  target="element">
+				  				<area shape="rect" coords="958,226,1259,320" href="../elements/19d3108d-f7b8-43b4-b145-789d501a9186.html"  target="element">
+				  				<area shape="rect" coords="646,455,947,561" href="../elements/b46fa900-1103-4972-ab42-0d93df0fa3d7.html"  target="element">
+				  				<area shape="rect" coords="334,46,634,121" href="../elements/8d48c958-e3cd-431b-ba11-b9ecb199f0a8.html"  target="element">
+
+				  		<area shape="rect" coords="10,10,1271,694" href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<textarea id="docsrc" style="display:none"></textarea>
+						<div id="doctgt" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+											    <td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/8d48c958-e3cd-431b-ba11-b9ecb199f0a8.html" target="element"> Chapter 07 - Data Storage and Retrieval </a> </td>
+													    <td> <a href="../elements/8d48c958-e3cd-431b-ba11-b9ecb199f0a8.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/b46fa900-1103-4972-ab42-0d93df0fa3d7.html" target="element"> Chapter 17 - Consuming a RESTful API </a> </td>
+													    <td> <a href="../elements/b46fa900-1103-4972-ab42-0d93df0fa3d7.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/19d3108d-f7b8-43b4-b145-789d501a9186.html" target="element"> Chapter 21 - Building a Microservice </a> </td>
+													    <td> <a href="../elements/19d3108d-f7b8-43b4-b145-789d501a9186.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/1a695d34-ca8b-4ead-837c-090664e1dbbf.html" target="element"> Chapter 02 - Setting up Node2.js </a> </td>
+													    <td> <a href="../elements/1a695d34-ca8b-4ead-837c-090664e1dbbf.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/b799479b-5a92-45da-988e-26bf814f3859.html" target="element"> Chapter 13 - Building a Typical Web API </a> </td>
+													    <td> <a href="../elements/b799479b-5a92-45da-988e-26bf814f3859.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/057fbd70-13c3-42a1-9e5f-45024db9c939.html" target="element"> Chapter 16 - Implementing a Full Fledged RESTful Service </a> </td>
+													    <td> <a href="../elements/057fbd70-13c3-42a1-9e5f-45024db9c939.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/e381785b-f89b-419a-b78e-92273b29b7fb.html" target="element"> Chapter 19 - The Age of Microservices </a> </td>
+													    <td> <a href="../elements/e381785b-f89b-419a-b78e-92273b29b7fb.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/ed732564-96aa-4d9b-aee7-b0ba5c105fa0.html" target="element"> Chapter 22 - State </a> </td>
+													    <td> <a href="../elements/ed732564-96aa-4d9b-aee7-b0ba5c105fa0.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/37d4619d-d982-4d5d-85a1-4cf914b8c646.html" target="element"> Chapter 18 - Securing the Application </a> </td>
+													    <td> <a href="../elements/37d4619d-d982-4d5d-85a1-4cf914b8c646.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/b889f145-affe-4101-a75c-a9f7be577885.html" target="element"> Chapter 03 - Node.js Modules </a> </td>
+													    <td> <a href="../elements/b889f145-affe-4101-a75c-a9f7be577885.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/d8cc1750-00b0-44c8-8cec-23460c38f37b.html" target="element"> Chapter 11 - Unit Testing and Functional Testing </a> </td>
+													    <td> <a href="../elements/d8cc1750-00b0-44c8-8cec-23460c38f37b.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/86be0bd9-1e50-4a65-8806-7e0ba24cac3a.html" target="element"> Chapter 08 - Multiuser Authentication the Microservice Way </a> </td>
+													    <td> <a href="../elements/86be0bd9-1e50-4a65-8806-7e0ba24cac3a.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/0cb7d73c-5c00-423d-8d2d-105b6287a36e.html" target="element"> Chapter 24 -  Design Patterns </a> </td>
+													    <td> <a href="../elements/0cb7d73c-5c00-423d-8d2d-105b6287a36e.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/43b6d4d4-ff31-4384-86b8-7b302ea85360.html" target="element"> Chapter 12 - REST &#8211; What You Did Not Know </a> </td>
+													    <td> <a href="../elements/43b6d4d4-ff31-4384-86b8-7b302ea85360.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/ac1e35e8-dc1a-4f39-83a6-01203847dcee.html" target="element"> Chapter 10 - Deploying Node.js Applications </a> </td>
+													    <td> <a href="../elements/ac1e35e8-dc1a-4f39-83a6-01203847dcee.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/5a7b6be8-1344-43c3-a575-6af25dee38dd.html" target="element"> Chapter 14 - Using NoSQL Databases </a> </td>
+													    <td> <a href="../elements/5a7b6be8-1344-43c3-a575-6af25dee38dd.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/8b9e2f82-067f-4cc4-a733-f2543e7d4654.html" target="element"> Chapter 23 - Testing </a> </td>
+													    <td> <a href="../elements/8b9e2f82-067f-4cc4-a733-f2543e7d4654.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/61221b87-4155-498f-87e1-4600372513e2.html" target="element"> Chapter 04 - HTTP Servers and Clients  </a> </td>
+													    <td> <a href="../elements/61221b87-4155-498f-87e1-4600372513e2.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/0abc6ea4-e279-4e6a-91d3-3f89b19464ad.html" target="element"> Chapter 15 - Restful API Design Guidelines </a> </td>
+													    <td> <a href="../elements/0abc6ea4-e279-4e6a-91d3-3f89b19464ad.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/c6ff4f8b-2c79-4422-9d4d-98594368692f.html" target="element"> Chapter 20 - Modules and Toolkits </a> </td>
+													    <td> <a href="../elements/c6ff4f8b-2c79-4422-9d4d-98594368692f.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/68810b1e-49f2-4268-b882-d63486b3d1b3.html" target="element"> Chapter 09 - Dynamic Client/Server Interaction with Socket.IO </a> </td>
+													    <td> <a href="../elements/68810b1e-49f2-4268-b882-d63486b3d1b3.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/b44e0f79-f35a-4791-b997-c80afa7d31fb.html" target="element"> Chapter 01- About Node1.js </a> </td>
+													    <td> <a href="../elements/b44e0f79-f35a-4791-b997-c80afa7d31fb.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/60227ab3-c5b7-4599-a689-400ba79ffcc2.html" target="element"> Chapter 05 - Your First Expre5ss Application </a> </td>
+													    <td> <a href="../elements/60227ab3-c5b7-4599-a689-400ba79ffcc2.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/831ee9dd-9d08-4a81-8633-53d6c020981d.html" target="element"> Chapter 06 - Implementing the Mobile-Fi6rst Paradigm </a> </td>
+													    <td> <a href="../elements/831ee9dd-9d08-4a81-8633-53d6c020981d.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+													</tr>
+
+											
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																	<tr>
+																		<td> <a href="../elements/200e31c8-825e-4c0f-8b76-0be59f474012.html" target="element">  </a> </td>
+																		<td> <a href="../elements/200e31c8-825e-4c0f-8b76-0be59f474012.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/8d48c958-e3cd-431b-ba11-b9ecb199f0a8.html" target="element"> Chapter 07 - Data Storage and Retrieval </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/ea0d687c-b892-473e-bbab-547434f405c1.html" target="element">  </a> </td>
+																		<td> <a href="../elements/ea0d687c-b892-473e-bbab-547434f405c1.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/b46fa900-1103-4972-ab42-0d93df0fa3d7.html" target="element"> Chapter 17 - Consuming a RESTful API </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/f6cf2ada-6c8f-4b89-a9e4-5e9e913e528f.html" target="element">  </a> </td>
+																		<td> <a href="../elements/f6cf2ada-6c8f-4b89-a9e4-5e9e913e528f.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/19d3108d-f7b8-43b4-b145-789d501a9186.html" target="element"> Chapter 21 - Building a Microservice </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/2d9fe3e2-9964-4e1c-9723-9293450f4bc6.html" target="element">  </a> </td>
+																		<td> <a href="../elements/2d9fe3e2-9964-4e1c-9723-9293450f4bc6.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/1a695d34-ca8b-4ead-837c-090664e1dbbf.html" target="element"> Chapter 02 - Setting up Node2.js </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/e317cf04-a4ba-4ef8-ae2e-5f7821de9819.html" target="element">  </a> </td>
+																		<td> <a href="../elements/e317cf04-a4ba-4ef8-ae2e-5f7821de9819.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/b799479b-5a92-45da-988e-26bf814f3859.html" target="element"> Chapter 13 - Building a Typical Web API </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/156d5fa5-59e7-411e-9bd8-73a57edd3269.html" target="element">  </a> </td>
+																		<td> <a href="../elements/156d5fa5-59e7-411e-9bd8-73a57edd3269.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/057fbd70-13c3-42a1-9e5f-45024db9c939.html" target="element"> Chapter 16 - Implementing a Full Fledged RESTful Service </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/0641936b-2694-4112-bda8-13ee1920c4cc.html" target="element">  </a> </td>
+																		<td> <a href="../elements/0641936b-2694-4112-bda8-13ee1920c4cc.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/e381785b-f89b-419a-b78e-92273b29b7fb.html" target="element"> Chapter 19 - The Age of Microservices </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/8e26a417-fec6-4119-8874-b0e1783de10e.html" target="element">  </a> </td>
+																		<td> <a href="../elements/8e26a417-fec6-4119-8874-b0e1783de10e.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/ed732564-96aa-4d9b-aee7-b0ba5c105fa0.html" target="element"> Chapter 22 - State </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/519d8a83-d037-484d-bd9e-828f210082ee.html" target="element">  </a> </td>
+																		<td> <a href="../elements/519d8a83-d037-484d-bd9e-828f210082ee.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/37d4619d-d982-4d5d-85a1-4cf914b8c646.html" target="element"> Chapter 18 - Securing the Application </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/7a043731-5632-412c-9b82-f3d91bfaf31e.html" target="element">  </a> </td>
+																		<td> <a href="../elements/7a043731-5632-412c-9b82-f3d91bfaf31e.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/b889f145-affe-4101-a75c-a9f7be577885.html" target="element"> Chapter 03 - Node.js Modules </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/9f551550-a381-4708-a711-6f31ac57bd06.html" target="element">  </a> </td>
+																		<td> <a href="../elements/9f551550-a381-4708-a711-6f31ac57bd06.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/d8cc1750-00b0-44c8-8cec-23460c38f37b.html" target="element"> Chapter 11 - Unit Testing and Functional Testing </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/a4b64535-bcc2-4b02-b91b-66a9b4b9c655.html" target="element">  </a> </td>
+																		<td> <a href="../elements/a4b64535-bcc2-4b02-b91b-66a9b4b9c655.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/86be0bd9-1e50-4a65-8806-7e0ba24cac3a.html" target="element"> Chapter 08 - Multiuser Authentication the Microservice Way </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/168b8c08-d16b-4746-bd0b-a554c433d55f.html" target="element">  </a> </td>
+																		<td> <a href="../elements/168b8c08-d16b-4746-bd0b-a554c433d55f.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/0cb7d73c-5c00-423d-8d2d-105b6287a36e.html" target="element"> Chapter 24 -  Design Patterns </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/3e8ddc80-0d7a-4db5-83c1-4fde1cffa6a2.html" target="element">  </a> </td>
+																		<td> <a href="../elements/3e8ddc80-0d7a-4db5-83c1-4fde1cffa6a2.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/43b6d4d4-ff31-4384-86b8-7b302ea85360.html" target="element"> Chapter 12 - REST &#8211; What You Did Not Know </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/f31cbab1-ae4d-4c1c-b81e-9b623f847e83.html" target="element">  </a> </td>
+																		<td> <a href="../elements/f31cbab1-ae4d-4c1c-b81e-9b623f847e83.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/ac1e35e8-dc1a-4f39-83a6-01203847dcee.html" target="element"> Chapter 10 - Deploying Node.js Applications </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/44093bdc-918f-401f-9c04-21b26a341cf0.html" target="element">  </a> </td>
+																		<td> <a href="../elements/44093bdc-918f-401f-9c04-21b26a341cf0.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/5a7b6be8-1344-43c3-a575-6af25dee38dd.html" target="element"> Chapter 14 - Using NoSQL Databases </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/5c5f00a3-7ee1-4877-884d-b179eb1aae61.html" target="element">  </a> </td>
+																		<td> <a href="../elements/5c5f00a3-7ee1-4877-884d-b179eb1aae61.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/8b9e2f82-067f-4cc4-a733-f2543e7d4654.html" target="element"> Chapter 23 - Testing </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/a8a03bf7-64ae-4fac-8c26-eef93cdcb193.html" target="element">  </a> </td>
+																		<td> <a href="../elements/a8a03bf7-64ae-4fac-8c26-eef93cdcb193.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/61221b87-4155-498f-87e1-4600372513e2.html" target="element"> Chapter 04 - HTTP Servers and Clients  </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/7b9bc399-2286-4039-aad9-9bd8484aa044.html" target="element">  </a> </td>
+																		<td> <a href="../elements/7b9bc399-2286-4039-aad9-9bd8484aa044.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/0abc6ea4-e279-4e6a-91d3-3f89b19464ad.html" target="element"> Chapter 15 - Restful API Design Guidelines </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/930a6f45-e79e-4b3d-873f-646ca36f22af.html" target="element">  </a> </td>
+																		<td> <a href="../elements/930a6f45-e79e-4b3d-873f-646ca36f22af.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/c6ff4f8b-2c79-4422-9d4d-98594368692f.html" target="element"> Chapter 20 - Modules and Toolkits </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/2717d7cd-ea88-4550-a645-60a6c3617339.html" target="element">  </a> </td>
+																		<td> <a href="../elements/2717d7cd-ea88-4550-a645-60a6c3617339.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/68810b1e-49f2-4268-b882-d63486b3d1b3.html" target="element"> Chapter 09 - Dynamic Client/Server Interaction with Socket.IO </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/c40b311d-31ee-4f44-90ab-40353575f503.html" target="element">  </a> </td>
+																		<td> <a href="../elements/c40b311d-31ee-4f44-90ab-40353575f503.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/b44e0f79-f35a-4791-b997-c80afa7d31fb.html" target="element"> Chapter 01- About Node1.js </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/e67fac9d-1032-475c-8035-5e412420b972.html" target="element">  </a> </td>
+																		<td> <a href="../elements/e67fac9d-1032-475c-8035-5e412420b972.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/60227ab3-c5b7-4599-a689-400ba79ffcc2.html" target="element"> Chapter 05 - Your First Expre5ss Application </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/8237fda4-e812-4a19-9873-6f695109b5ef.html" target="element">  </a> </td>
+																		<td> <a href="../elements/8237fda4-e812-4a19-9873-6f695109b5ef.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/b89bd609-b81f-448f-a78c-7cd8fdfa0242.html" target="element"> Node.js complete reference guide </a> </td>
+																		<td> <a href="../elements/831ee9dd-9d08-4a81-8633-53d6c020981d.html" target="element"> Chapter 06 - Implementing the Mobile-Fi6rst Paradigm </a> </td>
+																	</tr>
+
+											
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

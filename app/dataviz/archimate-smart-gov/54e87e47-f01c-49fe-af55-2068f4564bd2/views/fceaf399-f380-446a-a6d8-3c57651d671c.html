@@ -1,0 +1,389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Regnskapssystem</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Regnskapssystem</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/fceaf399-f380-446a-a6d8-3c57651d671c.png" alt="Regnskapssystem" usemap="#fceaf399-f380-446a-a6d8-3c57651d671cmap"/>
+			   <map name="fceaf399-f380-446a-a6d8-3c57651d671cmap">
+				  				<area shape="rect" coords="466,46,626,101" href="../elements/e20d8e75-79ef-4ca6-9a82-f2e18a3accb6.html"  target="element">
+				  				<area shape="rect" coords="466,110,626,165" href="../elements/fdec46fe-cb47-4a9e-8ee8-ae531c06bf8f.html"  target="element">
+				  				<area shape="rect" coords="466,178,626,233" href="../elements/4ae89df5-26e5-45c5-9ddd-b6f773bbd172.html"  target="element">
+				  				<area shape="rect" coords="466,250,626,305" href="../elements/5c968f53-cd55-45b6-bf58-785331a53592.html"  target="element">
+				  				<area shape="rect" coords="466,322,626,377" href="../elements/aab894dd-4c7e-4113-bde9-3851fde04302.html"  target="element">
+
+				  		<area shape="rect" coords="442,10,659,527" href="../elements/fb7fac6a-d678-4f1e-a61b-8adda8af3890.html"  target="element">
+				  				<area shape="rect" coords="250,466,410,521" href="../elements/a8c53e12-3a76-4a60-9ab6-70745e1cd049.html"  target="element">
+				  				<area shape="rect" coords="250,394,410,449" href="../elements/769b071a-9ca0-4bbb-bb8f-e95449cf23fa.html"  target="element">
+				  				<area shape="rect" coords="250,322,410,377" href="../elements/6260342b-5e62-42fe-9e99-ed5e221115e7.html"  target="element">
+				  				<area shape="rect" coords="250,250,410,305" href="../elements/96a2b54f-4e32-4684-9fef-8db7962f0eec.html"  target="element">
+				  				<area shape="rect" coords="250,178,410,233" href="../elements/47740041-cc54-4fed-a1c6-e4432d27bc9c.html"  target="element">
+				  				<area shape="rect" coords="250,110,410,165" href="../elements/27fbcef0-c6fc-4d8c-b53e-6c3d94f6ec8e.html"  target="element">
+				  				<area shape="rect" coords="250,46,410,101" href="../elements/44a23048-9178-4b56-8405-f1e1990464cc.html"  target="element">
+
+				  		<area shape="rect" coords="226,10,431,527" href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html"  target="element">
+				  				<area shape="rect" coords="34,406,194,461" href="../elements/b2879896-9483-496a-8b64-b4efda32b422.html"  target="element">
+				  				<area shape="rect" coords="34,334,194,389" href="../elements/0d57adde-828f-477a-ad6f-3cef79041e43.html"  target="element">
+				  				<area shape="rect" coords="34,262,194,317" href="../elements/428820b4-e83a-4424-8942-fe89687ba7a2.html"  target="element">
+				  				<area shape="rect" coords="34,190,194,245" href="../elements/077e9221-a491-48f2-9dc8-4cd9d51b4a6e.html"  target="element">
+				  				<area shape="rect" coords="34,118,194,173" href="../elements/fc091f34-cc4d-463f-a947-825f6c00b94e.html"  target="element">
+				  				<area shape="rect" coords="34,46,194,101" href="../elements/1bc39469-ee3d-4b89-a711-c2809bcdbfdf.html"  target="element">
+
+				  		<area shape="rect" coords="10,10,215,527" href="../elements/8cdd4a94-8214-49b1-9be4-3cac2b8f7dc8.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="convertlinks documentation" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/8cdd4a94-8214-49b1-9be4-3cac2b8f7dc8.html" target="element"> Dokumentasjon av bokf&#248;rte opplysninger </a> </td>
+											    <td> <a href="../elements/8cdd4a94-8214-49b1-9be4-3cac2b8f7dc8.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/1bc39469-ee3d-4b89-a711-c2809bcdbfdf.html" target="element"> Salgsdokument </a> </td>
+													    <td> <a href="../elements/1bc39469-ee3d-4b89-a711-c2809bcdbfdf.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/fc091f34-cc4d-463f-a947-825f6c00b94e.html" target="element"> Kj&#248;psdokument </a> </td>
+													    <td> <a href="../elements/fc091f34-cc4d-463f-a947-825f6c00b94e.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/077e9221-a491-48f2-9dc8-4cd9d51b4a6e.html" target="element"> L&#248;nnsdokumentasjon </a> </td>
+													    <td> <a href="../elements/077e9221-a491-48f2-9dc8-4cd9d51b4a6e.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/428820b4-e83a-4424-8942-fe89687ba7a2.html" target="element"> Betalingsdokumentasjon </a> </td>
+													    <td> <a href="../elements/428820b4-e83a-4424-8942-fe89687ba7a2.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/0d57adde-828f-477a-ad6f-3cef79041e43.html" target="element"> Dokumentasjon av andre regnskapsmessige disposisjoner </a> </td>
+													    <td> <a href="../elements/0d57adde-828f-477a-ad6f-3cef79041e43.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/b2879896-9483-496a-8b64-b4efda32b422.html" target="element"> Annen dokumentasjon av bokf&#248;rte opplysninger </a> </td>
+													    <td> <a href="../elements/b2879896-9483-496a-8b64-b4efda32b422.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+											
+											<tr>
+											    <td> <a href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html" target="element"> Spesifikasjoner av pliktig regnskapsrapportering </a> </td>
+											    <td> <a href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/44a23048-9178-4b56-8405-f1e1990464cc.html" target="element"> Bokf&#248;ringsspesifikasjon </a> </td>
+													    <td> <a href="../elements/44a23048-9178-4b56-8405-f1e1990464cc.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/27fbcef0-c6fc-4d8c-b53e-6c3d94f6ec8e.html" target="element"> Kontospesifikasjon </a> </td>
+													    <td> <a href="../elements/27fbcef0-c6fc-4d8c-b53e-6c3d94f6ec8e.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/47740041-cc54-4fed-a1c6-e4432d27bc9c.html" target="element"> Kundespesifikasjon </a> </td>
+													    <td> <a href="../elements/47740041-cc54-4fed-a1c6-e4432d27bc9c.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/96a2b54f-4e32-4684-9fef-8db7962f0eec.html" target="element"> Leverand&#248;rspesifikasjon </a> </td>
+													    <td> <a href="../elements/96a2b54f-4e32-4684-9fef-8db7962f0eec.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/6260342b-5e62-42fe-9e99-ed5e221115e7.html" target="element"> Merverdiavgiftspesifikasjon </a> </td>
+													    <td> <a href="../elements/6260342b-5e62-42fe-9e99-ed5e221115e7.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/769b071a-9ca0-4bbb-bb8f-e95449cf23fa.html" target="element"> L&#248;nnsspesifikasjon </a> </td>
+													    <td> <a href="../elements/769b071a-9ca0-4bbb-bb8f-e95449cf23fa.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/a8c53e12-3a76-4a60-9ab6-70745e1cd049.html" target="element"> Andre spesifikasjoner </a> </td>
+													    <td> <a href="../elements/a8c53e12-3a76-4a60-9ab6-70745e1cd049.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+											
+											<tr>
+											    <td> <a href="../elements/fb7fac6a-d678-4f1e-a61b-8adda8af3890.html" target="element"> Pliktig regnskapsrapportering </a> </td>
+											    <td> <a href="../elements/fb7fac6a-d678-4f1e-a61b-8adda8af3890.html" target="element" class="i18n-elementtype-Grouping">
+											    </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/aab894dd-4c7e-4113-bde9-3851fde04302.html" target="element"> Annen pliktig regnskapsrapportering </a> </td>
+													    <td> <a href="../elements/aab894dd-4c7e-4113-bde9-3851fde04302.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/5c968f53-cd55-45b6-bf58-785331a53592.html" target="element"> A-meldingen l&#248;nn </a> </td>
+													    <td> <a href="../elements/5c968f53-cd55-45b6-bf58-785331a53592.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/4ae89df5-26e5-45c5-9ddd-b6f773bbd172.html" target="element"> Omsetningsoppgave MVA </a> </td>
+													    <td> <a href="../elements/4ae89df5-26e5-45c5-9ddd-b6f773bbd172.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/fdec46fe-cb47-4a9e-8ee8-ae531c06bf8f.html" target="element"> Likningsoppgave </a> </td>
+													    <td> <a href="../elements/fdec46fe-cb47-4a9e-8ee8-ae531c06bf8f.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/e20d8e75-79ef-4ca6-9a82-f2e18a3accb6.html" target="element"> &#197;rsregnskap </a> </td>
+													    <td> <a href="../elements/e20d8e75-79ef-4ca6-9a82-f2e18a3accb6.html" target="element" class="i18n-elementtype-BusinessObject">
+													    </a> </td>
+													</tr>
+
+											
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																	<tr>
+																		<td> <a href="../elements/b00690f4-e124-44e1-84ab-485f88a6c27d.html" target="element">  </a> </td>
+																		<td> <a href="../elements/b00690f4-e124-44e1-84ab-485f88a6c27d.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8cdd4a94-8214-49b1-9be4-3cac2b8f7dc8.html" target="element"> Dokumentasjon av bokf&#248;rte opplysninger </a> </td>
+																		<td> <a href="../elements/1bc39469-ee3d-4b89-a711-c2809bcdbfdf.html" target="element"> Salgsdokument </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/9116224f-3b3c-421b-b76d-997f398385e5.html" target="element">  </a> </td>
+																		<td> <a href="../elements/9116224f-3b3c-421b-b76d-997f398385e5.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8cdd4a94-8214-49b1-9be4-3cac2b8f7dc8.html" target="element"> Dokumentasjon av bokf&#248;rte opplysninger </a> </td>
+																		<td> <a href="../elements/fc091f34-cc4d-463f-a947-825f6c00b94e.html" target="element"> Kj&#248;psdokument </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/f64b3078-cb34-4a72-982c-c835b2fb2239.html" target="element">  </a> </td>
+																		<td> <a href="../elements/f64b3078-cb34-4a72-982c-c835b2fb2239.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8cdd4a94-8214-49b1-9be4-3cac2b8f7dc8.html" target="element"> Dokumentasjon av bokf&#248;rte opplysninger </a> </td>
+																		<td> <a href="../elements/077e9221-a491-48f2-9dc8-4cd9d51b4a6e.html" target="element"> L&#248;nnsdokumentasjon </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/33e40b21-4a7c-48d1-ad51-c56f86d7e6c1.html" target="element">  </a> </td>
+																		<td> <a href="../elements/33e40b21-4a7c-48d1-ad51-c56f86d7e6c1.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8cdd4a94-8214-49b1-9be4-3cac2b8f7dc8.html" target="element"> Dokumentasjon av bokf&#248;rte opplysninger </a> </td>
+																		<td> <a href="../elements/428820b4-e83a-4424-8942-fe89687ba7a2.html" target="element"> Betalingsdokumentasjon </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/1f9879fa-94dc-4e8c-a4ea-59158ce9b85a.html" target="element">  </a> </td>
+																		<td> <a href="../elements/1f9879fa-94dc-4e8c-a4ea-59158ce9b85a.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8cdd4a94-8214-49b1-9be4-3cac2b8f7dc8.html" target="element"> Dokumentasjon av bokf&#248;rte opplysninger </a> </td>
+																		<td> <a href="../elements/0d57adde-828f-477a-ad6f-3cef79041e43.html" target="element"> Dokumentasjon av andre regnskapsmessige disposisjoner </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/bb54a799-2354-4f83-8c51-62bc4fb73919.html" target="element">  </a> </td>
+																		<td> <a href="../elements/bb54a799-2354-4f83-8c51-62bc4fb73919.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8cdd4a94-8214-49b1-9be4-3cac2b8f7dc8.html" target="element"> Dokumentasjon av bokf&#248;rte opplysninger </a> </td>
+																		<td> <a href="../elements/b2879896-9483-496a-8b64-b4efda32b422.html" target="element"> Annen dokumentasjon av bokf&#248;rte opplysninger </a> </td>
+																	</tr>
+
+											
+																	<tr>
+																		<td> <a href="../elements/87d4512e-fa17-454c-bc03-c94b2f1c5933.html" target="element">  </a> </td>
+																		<td> <a href="../elements/87d4512e-fa17-454c-bc03-c94b2f1c5933.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html" target="element"> Spesifikasjoner av pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/44a23048-9178-4b56-8405-f1e1990464cc.html" target="element"> Bokf&#248;ringsspesifikasjon </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/f97b6530-c203-4977-8b50-c7f8a74a5844.html" target="element">  </a> </td>
+																		<td> <a href="../elements/f97b6530-c203-4977-8b50-c7f8a74a5844.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html" target="element"> Spesifikasjoner av pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/27fbcef0-c6fc-4d8c-b53e-6c3d94f6ec8e.html" target="element"> Kontospesifikasjon </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/8f7541c4-57d1-4d1d-accb-1dade7a77712.html" target="element">  </a> </td>
+																		<td> <a href="../elements/8f7541c4-57d1-4d1d-accb-1dade7a77712.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html" target="element"> Spesifikasjoner av pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/47740041-cc54-4fed-a1c6-e4432d27bc9c.html" target="element"> Kundespesifikasjon </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/3e5ca74b-eca2-4444-8eb7-92702f5e27c0.html" target="element">  </a> </td>
+																		<td> <a href="../elements/3e5ca74b-eca2-4444-8eb7-92702f5e27c0.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html" target="element"> Spesifikasjoner av pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/96a2b54f-4e32-4684-9fef-8db7962f0eec.html" target="element"> Leverand&#248;rspesifikasjon </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/8c23583e-9138-4d37-872e-db7a8bca85ee.html" target="element">  </a> </td>
+																		<td> <a href="../elements/8c23583e-9138-4d37-872e-db7a8bca85ee.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html" target="element"> Spesifikasjoner av pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/6260342b-5e62-42fe-9e99-ed5e221115e7.html" target="element"> Merverdiavgiftspesifikasjon </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/202d6be7-73e1-4b4c-af70-eb6b7aa4979f.html" target="element">  </a> </td>
+																		<td> <a href="../elements/202d6be7-73e1-4b4c-af70-eb6b7aa4979f.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html" target="element"> Spesifikasjoner av pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/769b071a-9ca0-4bbb-bb8f-e95449cf23fa.html" target="element"> L&#248;nnsspesifikasjon </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/25c2d463-e0f7-477f-8a3f-9606bb76965c.html" target="element">  </a> </td>
+																		<td> <a href="../elements/25c2d463-e0f7-477f-8a3f-9606bb76965c.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/8683dfdd-7231-4ff3-9f82-dc4149590e83.html" target="element"> Spesifikasjoner av pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/a8c53e12-3a76-4a60-9ab6-70745e1cd049.html" target="element"> Andre spesifikasjoner </a> </td>
+																	</tr>
+
+											
+																	<tr>
+																		<td> <a href="../elements/b35b3d22-f38f-49a2-88b1-e4cefc373461.html" target="element">  </a> </td>
+																		<td> <a href="../elements/b35b3d22-f38f-49a2-88b1-e4cefc373461.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/fb7fac6a-d678-4f1e-a61b-8adda8af3890.html" target="element"> Pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/aab894dd-4c7e-4113-bde9-3851fde04302.html" target="element"> Annen pliktig regnskapsrapportering </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/9002e88d-287d-48b8-8975-4bb9ff3ae541.html" target="element">  </a> </td>
+																		<td> <a href="../elements/9002e88d-287d-48b8-8975-4bb9ff3ae541.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/fb7fac6a-d678-4f1e-a61b-8adda8af3890.html" target="element"> Pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/5c968f53-cd55-45b6-bf58-785331a53592.html" target="element"> A-meldingen l&#248;nn </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/70fc02e4-a115-4983-8cd8-b147d5530790.html" target="element">  </a> </td>
+																		<td> <a href="../elements/70fc02e4-a115-4983-8cd8-b147d5530790.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/fb7fac6a-d678-4f1e-a61b-8adda8af3890.html" target="element"> Pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/4ae89df5-26e5-45c5-9ddd-b6f773bbd172.html" target="element"> Omsetningsoppgave MVA </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/fc3f6a32-8c77-452a-ac5d-a6a4f4256805.html" target="element">  </a> </td>
+																		<td> <a href="../elements/fc3f6a32-8c77-452a-ac5d-a6a4f4256805.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/fb7fac6a-d678-4f1e-a61b-8adda8af3890.html" target="element"> Pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/fdec46fe-cb47-4a9e-8ee8-ae531c06bf8f.html" target="element"> Likningsoppgave </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/2a50c049-d489-478b-93d6-f282695551ef.html" target="element">  </a> </td>
+																		<td> <a href="../elements/2a50c049-d489-478b-93d6-f282695551ef.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/fb7fac6a-d678-4f1e-a61b-8adda8af3890.html" target="element"> Pliktig regnskapsrapportering </a> </td>
+																		<td> <a href="../elements/e20d8e75-79ef-4ca6-9a82-f2e18a3accb6.html" target="element"> &#197;rsregnskap </a> </td>
+																	</tr>
+
+											
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

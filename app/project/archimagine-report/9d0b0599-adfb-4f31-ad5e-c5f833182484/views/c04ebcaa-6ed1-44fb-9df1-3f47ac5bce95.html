@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Application Usage</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-3.3.2.min.css">
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-theme-3.3.2.min.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Application Usage</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-application_usage"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_application_usage" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/c04ebcaa-6ed1-44fb-9df1-3f47ac5bce95.png" alt="Application Usage" usemap="#c04ebcaa-6ed1-44fb-9df1-3f47ac5bce95map"/>
+			   <map name="c04ebcaa-6ed1-44fb-9df1-3f47ac5bce95map">
+				  		<area shape="rect" coords="250,202,370,257" href="../elements/6f38e0e6-e8a0-4576-9516-8aae6005b22f.html"  target="element">
+				  		<area shape="rect" coords="129,202,249,257" href="../elements/4037eba8-c438-4050-b192-76d011f985f0.html"  target="element">
+				  		<area shape="rect" coords="10,202,130,257" href="../elements/131a7034-b193-4134-aa38-bb2b815c058d.html"  target="element">
+				  		<area shape="rect" coords="605,148,725,203" href="../elements/26fd3087-bdc9-4572-a48a-6d3731f08179.html"  target="element">
+				  		<area shape="rect" coords="486,148,606,203" href="../elements/d2c50ecd-bbcc-4954-964d-cd8ebbd08d96.html"  target="element">
+				  		<area shape="rect" coords="367,148,487,203" href="../elements/db98a4c4-5294-49ca-8bbd-244e69cf5524.html"  target="element">
+				  		<area shape="rect" coords="250,148,370,203" href="../elements/bc5649f6-4b9f-405a-8900-161cc03b4e40.html"  target="element">
+				  		<area shape="rect" coords="129,148,249,203" href="../elements/6295fe03-9a35-4ea9-8b63-9b06f07c7203.html"  target="element">
+				  		<area shape="rect" coords="10,148,130,203" href="../elements/a44f46e5-4a1a-4d23-a9ac-ab4bc7a78587.html"  target="element">
+				  		<area shape="rect" coords="843,94,963,149" href="../elements/293a2739-24cb-48d9-89d7-171cd76bfed3.html"  target="element">
+				  		<area shape="rect" coords="724,94,844,149" href="../elements/9258154d-e66a-4f15-ba0f-5d0919f51b2f.html"  target="element">
+				  		<area shape="rect" coords="605,94,725,149" href="../elements/3a881f0c-5c27-4fc0-a4bc-1932fb9c0968.html"  target="element">
+				  		<area shape="rect" coords="486,94,606,149" href="../elements/f1dec312-c32e-49b5-9fc3-acf03c2ddb4d.html"  target="element">
+				  		<area shape="rect" coords="367,94,487,149" href="../elements/7b1cb393-12ef-4388-8c89-054a381c04bd.html"  target="element">
+				  		<area shape="rect" coords="248,94,368,149" href="../elements/3f6103f0-4b89-4f13-9dfd-f174efa43b33.html"  target="element">
+				  		<area shape="rect" coords="129,94,249,149" href="../elements/d6bcc072-4ba5-4f78-8dd0-ab417314906e.html"  target="element">
+				  		<area shape="rect" coords="10,94,130,149" href="../elements/20f6cdf9-8903-448b-951e-703683eb7b99.html"  target="element">
+				  		<area shape="rect" coords="22,10,118,81" href="../elements/5dcbdc76-3195-4b73-adc2-f0231f4c970a.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<textarea id="docsrc" style="display:none"></textarea>
+						<div id="doctgt" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/5dcbdc76-3195-4b73-adc2-f0231f4c970a.html" target="element"> Grouping </a> </td>
+											    <td> <a href="../elements/5dcbdc76-3195-4b73-adc2-f0231f4c970a.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/20f6cdf9-8903-448b-951e-703683eb7b99.html" target="element"> Business Actor </a> </td>
+											    <td> <a href="../elements/20f6cdf9-8903-448b-951e-703683eb7b99.html" target="element" class="i18n-elementtype-BusinessActor"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/d6bcc072-4ba5-4f78-8dd0-ab417314906e.html" target="element"> Business Role </a> </td>
+											    <td> <a href="../elements/d6bcc072-4ba5-4f78-8dd0-ab417314906e.html" target="element" class="i18n-elementtype-BusinessRole"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/3f6103f0-4b89-4f13-9dfd-f174efa43b33.html" target="element"> Business Collaboration </a> </td>
+											    <td> <a href="../elements/3f6103f0-4b89-4f13-9dfd-f174efa43b33.html" target="element" class="i18n-elementtype-BusinessCollaboration"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/7b1cb393-12ef-4388-8c89-054a381c04bd.html" target="element"> Business Process </a> </td>
+											    <td> <a href="../elements/7b1cb393-12ef-4388-8c89-054a381c04bd.html" target="element" class="i18n-elementtype-BusinessProcess"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/f1dec312-c32e-49b5-9fc3-acf03c2ddb4d.html" target="element"> Business Function </a> </td>
+											    <td> <a href="../elements/f1dec312-c32e-49b5-9fc3-acf03c2ddb4d.html" target="element" class="i18n-elementtype-BusinessFunction"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/3a881f0c-5c27-4fc0-a4bc-1932fb9c0968.html" target="element"> Business Interaction </a> </td>
+											    <td> <a href="../elements/3a881f0c-5c27-4fc0-a4bc-1932fb9c0968.html" target="element" class="i18n-elementtype-BusinessInteraction"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/9258154d-e66a-4f15-ba0f-5d0919f51b2f.html" target="element"> Business Event </a> </td>
+											    <td> <a href="../elements/9258154d-e66a-4f15-ba0f-5d0919f51b2f.html" target="element" class="i18n-elementtype-BusinessEvent"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/293a2739-24cb-48d9-89d7-171cd76bfed3.html" target="element"> Business Object </a> </td>
+											    <td> <a href="../elements/293a2739-24cb-48d9-89d7-171cd76bfed3.html" target="element" class="i18n-elementtype-BusinessObject"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/a44f46e5-4a1a-4d23-a9ac-ab4bc7a78587.html" target="element"> Application Component </a> </td>
+											    <td> <a href="../elements/a44f46e5-4a1a-4d23-a9ac-ab4bc7a78587.html" target="element" class="i18n-elementtype-ApplicationComponent"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/6295fe03-9a35-4ea9-8b63-9b06f07c7203.html" target="element"> Application Collaboration </a> </td>
+											    <td> <a href="../elements/6295fe03-9a35-4ea9-8b63-9b06f07c7203.html" target="element" class="i18n-elementtype-ApplicationCollaboration"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/bc5649f6-4b9f-405a-8900-161cc03b4e40.html" target="element"> Application Interface </a> </td>
+											    <td> <a href="../elements/bc5649f6-4b9f-405a-8900-161cc03b4e40.html" target="element" class="i18n-elementtype-ApplicationInterface"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/db98a4c4-5294-49ca-8bbd-244e69cf5524.html" target="element"> Application Function </a> </td>
+											    <td> <a href="../elements/db98a4c4-5294-49ca-8bbd-244e69cf5524.html" target="element" class="i18n-elementtype-ApplicationFunction"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/d2c50ecd-bbcc-4954-964d-cd8ebbd08d96.html" target="element"> Application Interaction </a> </td>
+											    <td> <a href="../elements/d2c50ecd-bbcc-4954-964d-cd8ebbd08d96.html" target="element" class="i18n-elementtype-ApplicationInteraction"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/26fd3087-bdc9-4572-a48a-6d3731f08179.html" target="element"> Application Process </a> </td>
+											    <td> <a href="../elements/26fd3087-bdc9-4572-a48a-6d3731f08179.html" target="element" class="i18n-elementtype-ApplicationProcess"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/131a7034-b193-4134-aa38-bb2b815c058d.html" target="element"> Application Event </a> </td>
+											    <td> <a href="../elements/131a7034-b193-4134-aa38-bb2b815c058d.html" target="element" class="i18n-elementtype-ApplicationEvent"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/4037eba8-c438-4050-b192-76d011f985f0.html" target="element"> Application Service </a> </td>
+											    <td> <a href="../elements/4037eba8-c438-4050-b192-76d011f985f0.html" target="element" class="i18n-elementtype-ApplicationService"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/6f38e0e6-e8a0-4576-9516-8aae6005b22f.html" target="element"> Data Object </a> </td>
+											    <td> <a href="../elements/6f38e0e6-e8a0-4576-9516-8aae6005b22f.html" target="element" class="i18n-elementtype-DataObject"> </a> </td>
+											</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

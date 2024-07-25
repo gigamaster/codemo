@@ -1,0 +1,575 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Reference implementation (extended)</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Reference implementation (extended)</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/1d12d390-5fbb-4944-b82d-26660e3f4ad5.png" alt="Reference implementation (extended)" usemap="#1d12d390-5fbb-4944-b82d-26660e3f4ad5map"/>
+			   <map name="1d12d390-5fbb-4944-b82d-26660e3f4ad5map">
+				  		<area shape="rect" coords="880,598,1000,653" href="../elements/7407beea-9249-47e1-81d1-e8335874febe.html"  target="element">
+				  		<area shape="rect" coords="303,154,453,209" href="../elements/04e66ae6-b766-4026-bf7b-4be34cf61cca.html"  target="element">
+				  		<area shape="rect" coords="166,154,286,209" href="../elements/19d3ce2a-2f09-436f-8333-afb6849c8000.html"  target="element">
+				  		<area shape="rect" coords="10,154,130,209" href="../elements/82e2ad3e-f802-4fef-8267-1dfc71f8cb77.html"  target="element">
+				  		<area shape="rect" coords="687,610,807,665" href="../elements/d2c1abe7-7b04-4164-9c5c-4f8b65ad1ec9.html"  target="element">
+				  		<area shape="rect" coords="555,610,675,665" href="../elements/62fcda04-51e2-4faa-9a49-eb0c68ef4b52.html"  target="element">
+				  		<area shape="rect" coords="687,682,807,737" href="../elements/c345587e-e206-4466-921a-2b3231818358.html"  target="element">
+				  		<area shape="rect" coords="554,682,674,737" href="../elements/45de42f6-b255-471a-9824-df5cfebe763b.html"  target="element">
+				  		<area shape="rect" coords="13,544,133,599" href="../elements/5cc7c7b9-35ab-4385-ae1e-752f9b4f51bc.html"  target="element">
+				  		<area shape="rect" coords="1156,388,1299,443" href="../elements/c877fc7e-e249-4f0e-96fb-b50a7a9fc945.html"  target="element">
+				  		<area shape="rect" coords="166,260,286,315" href="../elements/bb8b56c2-e42a-4d72-a7cd-38209fd97054.html"  target="element">
+				  		<area shape="rect" coords="310,260,454,315" href="../elements/f5d4e234-e87a-427b-bc09-b491123d1d80.html"  target="element">
+				  		<area shape="rect" coords="166,356,286,411" href="../elements/65a5a1da-5ddd-4d8a-95c1-a70c5e7dde53.html"  target="element">
+				  		<area shape="rect" coords="162,466,282,521" href="../elements/abba84eb-996b-4773-96e0-10fe90174ffa.html"  target="element">
+				  		<area shape="rect" coords="819,156,963,569" href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html"  target="element">
+				  		<area shape="rect" coords="309,356,453,411" href="../elements/f6d46354-f718-4d25-aef1-c21eeb2ffcad.html"  target="element">
+				  		<area shape="rect" coords="310,464,454,519" href="../elements/ead182f2-3b41-454e-b487-5b2e73fac43c.html"  target="element">
+				  		<area shape="rect" coords="1153,521,1297,576" href="../elements/ecc43ce7-5a01-44cb-9fe9-2887e71e5801.html"  target="element">
+				  		<area shape="rect" coords="1156,190,1299,245" href="../elements/b246bc2d-608e-48fc-b434-051517cbc79d.html"  target="element">
+				  		<area shape="rect" coords="1323,190,1443,245" href="../elements/6fedf950-cd3a-481e-b369-d0fa31fba1c5.html"  target="element">
+				  		<area shape="rect" coords="1156,454,1299,509" href="../elements/f3605fc2-bae3-41c6-bdb5-f509d2a487f4.html"  target="element">
+				  		<area shape="rect" coords="1323,454,1443,509" href="../elements/aad57129-7682-469e-9e37-a5596f074a2b.html"  target="element">
+				  		<area shape="rect" coords="1015,610,1135,665" href="../elements/70cb470d-4a58-4bd2-8e9d-dd78a2ca3501.html"  target="element">
+				  		<area shape="rect" coords="1323,256,1443,311" href="../elements/84a257ab-2190-4bdf-91ea-f77632c83f39.html"  target="element">
+				  		<area shape="rect" coords="999,94,1119,149" href="../elements/cbde5f20-18ad-4cda-bd44-8ff95d053b66.html"  target="element">
+				  		<area shape="rect" coords="982,10,1135,69" href="../elements/6a8dadf9-fff4-4a77-9222-5fca6b29bb4b.html"  target="element">
+				  		<area shape="rect" coords="10,356,130,411" href="../elements/387ccf9c-3ffe-4f2f-ae6b-1a1381998cdc.html"  target="element">
+				  		<area shape="rect" coords="10,260,130,315" href="../elements/455729e0-5b98-4e40-9b45-61b75ba8f657.html"  target="element">
+				  		<area shape="rect" coords="1143,610,1263,665" href="../elements/e4f7a853-a7d8-4931-ba70-1e790a276224.html"  target="element">
+				  		<area shape="rect" coords="1156,322,1299,377" href="../elements/8e5b42ff-d5a0-40f8-88c5-25f0464464d9.html"  target="element">
+				  		<area shape="rect" coords="1156,256,1299,311" href="../elements/085df0f5-b807-4bb0-88af-8ce4c5696d67.html"  target="element">
+				  		<area shape="rect" coords="1155,106,1300,179" href="../elements/56a16cf2-b5f7-4b0b-927b-38807e078139.html"  target="element">
+				          <area shape="rect" coords="1323,94,1516,179" href="../objects/a57fd394-a9af-479b-ae5b-7d227e0b23d4.html" target="element" >
+				  		<area shape="rect" coords="14,470,134,525" href="../elements/a016445b-242a-4d4b-9a33-50d37d0fe53c.html"  target="element">
+				  		<area shape="rect" coords="543,156,784,569" href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="convertlinks documentation" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Digital shoebox (reference implementation) </a> </td>
+											    <td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element" class="i18n-elementtype-ApplicationComponent">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/a016445b-242a-4d4b-9a33-50d37d0fe53c.html" target="element"> e-invoice PEPPOL BIS Billing 3.0 </a> </td>
+											    <td> <a href="../elements/a016445b-242a-4d4b-9a33-50d37d0fe53c.html" target="element" class="i18n-elementtype-Constraint">
+											    </a> </td>
+											</tr>
+
+									        <tr>
+									           <td> <a href="../objects/a57fd394-a9af-479b-ae5b-7d227e0b23d4.html" target="element">  </a> </td>
+									           <td> <a href="../objects/a57fd394-a9af-479b-ae5b-7d227e0b23d4.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+											<tr>
+											    <td> <a href="../elements/56a16cf2-b5f7-4b0b-927b-38807e078139.html" target="element"> Analysis to create added value to the transaction </a> </td>
+											    <td> <a href="../elements/56a16cf2-b5f7-4b0b-927b-38807e078139.html" target="element" class="i18n-elementtype-BusinessService">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/085df0f5-b807-4bb0-88af-8ce4c5696d67.html" target="element"> Tax Audit </a> </td>
+											    <td> <a href="../elements/085df0f5-b807-4bb0-88af-8ce4c5696d67.html" target="element" class="i18n-elementtype-BusinessService">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/8e5b42ff-d5a0-40f8-88c5-25f0464464d9.html" target="element"> Statistics </a> </td>
+											    <td> <a href="../elements/8e5b42ff-d5a0-40f8-88c5-25f0464464d9.html" target="element" class="i18n-elementtype-BusinessService">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/e4f7a853-a7d8-4931-ba70-1e790a276224.html" target="element"> Standard audit file - Tax (SAF-T) </a> </td>
+											    <td> <a href="../elements/e4f7a853-a7d8-4931-ba70-1e790a276224.html" target="element" class="i18n-elementtype-Requirement">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/455729e0-5b98-4e40-9b45-61b75ba8f657.html" target="element"> e-order </a> </td>
+											    <td> <a href="../elements/455729e0-5b98-4e40-9b45-61b75ba8f657.html" target="element" class="i18n-elementtype-Constraint">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/387ccf9c-3ffe-4f2f-ae6b-1a1381998cdc.html" target="element"> ISO 20022 camt 053 </a> </td>
+											    <td> <a href="../elements/387ccf9c-3ffe-4f2f-ae6b-1a1381998cdc.html" target="element" class="i18n-elementtype-Constraint">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/6a8dadf9-fff4-4a77-9222-5fca6b29bb4b.html" target="element"> National standards for chart of accounts </a> </td>
+											    <td> <a href="../elements/6a8dadf9-fff4-4a77-9222-5fca6b29bb4b.html" target="element" class="i18n-elementtype-Constraint">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/cbde5f20-18ad-4cda-bd44-8ff95d053b66.html" target="element"> Chart of accounts </a> </td>
+											    <td> <a href="../elements/cbde5f20-18ad-4cda-bd44-8ff95d053b66.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/84a257ab-2190-4bdf-91ea-f77632c83f39.html" target="element"> Tax authoritiy </a> </td>
+											    <td> <a href="../elements/84a257ab-2190-4bdf-91ea-f77632c83f39.html" target="element" class="i18n-elementtype-BusinessRole">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/70cb470d-4a58-4bd2-8e9d-dd78a2ca3501.html" target="element"> SIE </a> </td>
+											    <td> <a href="../elements/70cb470d-4a58-4bd2-8e9d-dd78a2ca3501.html" target="element" class="i18n-elementtype-Constraint">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/aad57129-7682-469e-9e37-a5596f074a2b.html" target="element"> SME </a> </td>
+											    <td> <a href="../elements/aad57129-7682-469e-9e37-a5596f074a2b.html" target="element" class="i18n-elementtype-BusinessRole">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/f3605fc2-bae3-41c6-bdb5-f509d2a487f4.html" target="element"> Portability </a> </td>
+											    <td> <a href="../elements/f3605fc2-bae3-41c6-bdb5-f509d2a487f4.html" target="element" class="i18n-elementtype-BusinessService">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/6fedf950-cd3a-481e-b369-d0fa31fba1c5.html" target="element"> Credit provider (bank) </a> </td>
+											    <td> <a href="../elements/6fedf950-cd3a-481e-b369-d0fa31fba1c5.html" target="element" class="i18n-elementtype-BusinessRole">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/b246bc2d-608e-48fc-b434-051517cbc79d.html" target="element"> Giving credit </a> </td>
+											    <td> <a href="../elements/b246bc2d-608e-48fc-b434-051517cbc79d.html" target="element" class="i18n-elementtype-BusinessService">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/ecc43ce7-5a01-44cb-9fe9-2887e71e5801.html" target="element"> Tracability of products </a> </td>
+											    <td> <a href="../elements/ecc43ce7-5a01-44cb-9fe9-2887e71e5801.html" target="element" class="i18n-elementtype-BusinessService">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/ead182f2-3b41-454e-b487-5b2e73fac43c.html" target="element"> InvoiceAPI </a> </td>
+											    <td> <a href="../elements/ead182f2-3b41-454e-b487-5b2e73fac43c.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/f6d46354-f718-4d25-aef1-c21eeb2ffcad.html" target="element"> BankStatementAPI </a> </td>
+											    <td> <a href="../elements/f6d46354-f718-4d25-aef1-c21eeb2ffcad.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element"> TransactionAPI </a> </td>
+											    <td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/abba84eb-996b-4773-96e0-10fe90174ffa.html" target="element"> e-invoice </a> </td>
+											    <td> <a href="../elements/abba84eb-996b-4773-96e0-10fe90174ffa.html" target="element" class="i18n-elementtype-Representation">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/65a5a1da-5ddd-4d8a-95c1-a70c5e7dde53.html" target="element"> Bank statement </a> </td>
+											    <td> <a href="../elements/65a5a1da-5ddd-4d8a-95c1-a70c5e7dde53.html" target="element" class="i18n-elementtype-Representation">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/f5d4e234-e87a-427b-bc09-b491123d1d80.html" target="element"> OrderAPI </a> </td>
+											    <td> <a href="../elements/f5d4e234-e87a-427b-bc09-b491123d1d80.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/bb8b56c2-e42a-4d72-a7cd-38209fd97054.html" target="element"> e-order </a> </td>
+											    <td> <a href="../elements/bb8b56c2-e42a-4d72-a7cd-38209fd97054.html" target="element" class="i18n-elementtype-Representation">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/c877fc7e-e249-4f0e-96fb-b50a7a9fc945.html" target="element"> Analytics </a> </td>
+											    <td> <a href="../elements/c877fc7e-e249-4f0e-96fb-b50a7a9fc945.html" target="element" class="i18n-elementtype-BusinessService">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/5cc7c7b9-35ab-4385-ae1e-752f9b4f51bc.html" target="element"> Finvoice </a> </td>
+											    <td> <a href="../elements/5cc7c7b9-35ab-4385-ae1e-752f9b4f51bc.html" target="element" class="i18n-elementtype-Constraint">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/45de42f6-b255-471a-9824-df5cfebe763b.html" target="element"> Business document validation </a> </td>
+											    <td> <a href="../elements/45de42f6-b255-471a-9824-df5cfebe763b.html" target="element" class="i18n-elementtype-ApplicationComponent">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/c345587e-e206-4466-921a-2b3231818358.html" target="element"> Business Registry </a> </td>
+											    <td> <a href="../elements/c345587e-e206-4466-921a-2b3231818358.html" target="element" class="i18n-elementtype-ApplicationComponent">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/62fcda04-51e2-4faa-9a49-eb0c68ef4b52.html" target="element"> Business document validation API </a> </td>
+											    <td> <a href="../elements/62fcda04-51e2-4faa-9a49-eb0c68ef4b52.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/d2c1abe7-7b04-4164-9c5c-4f8b65ad1ec9.html" target="element"> Business Core data API </a> </td>
+											    <td> <a href="../elements/d2c1abe7-7b04-4164-9c5c-4f8b65ad1ec9.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/82e2ad3e-f802-4fef-8267-1dfc71f8cb77.html" target="element"> e-receipts </a> </td>
+											    <td> <a href="../elements/82e2ad3e-f802-4fef-8267-1dfc71f8cb77.html" target="element" class="i18n-elementtype-Constraint">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/19d3ce2a-2f09-436f-8333-afb6849c8000.html" target="element"> e-receipts </a> </td>
+											    <td> <a href="../elements/19d3ce2a-2f09-436f-8333-afb6849c8000.html" target="element" class="i18n-elementtype-Representation">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/04e66ae6-b766-4026-bf7b-4be34cf61cca.html" target="element"> ReceiptAPI </a> </td>
+											    <td> <a href="../elements/04e66ae6-b766-4026-bf7b-4be34cf61cca.html" target="element" class="i18n-elementtype-ApplicationInterface">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/7407beea-9249-47e1-81d1-e8335874febe.html" target="element"> XBRL Global Ledger </a> </td>
+											    <td> <a href="../elements/7407beea-9249-47e1-81d1-e8335874febe.html" target="element" class="i18n-elementtype-Constraint">
+											    </a> </td>
+											</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																	<tr>
+																		<td> <a href="../elements/087f108a-f9c9-41c7-9b68-ee32d908e758.html" target="element">  </a> </td>
+																		<td> <a href="../elements/087f108a-f9c9-41c7-9b68-ee32d908e758.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Digital shoebox (reference implementation) </a> </td>
+																		<td> <a href="../elements/ead182f2-3b41-454e-b487-5b2e73fac43c.html" target="element"> InvoiceAPI </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/269ffb4d-7e83-4220-b761-07503d478817.html" target="element">  </a> </td>
+																		<td> <a href="../elements/269ffb4d-7e83-4220-b761-07503d478817.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Digital shoebox (reference implementation) </a> </td>
+																		<td> <a href="../elements/f6d46354-f718-4d25-aef1-c21eeb2ffcad.html" target="element"> BankStatementAPI </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/65b8015e-3d2f-4ceb-a1ac-edfe60c02a44.html" target="element">  </a> </td>
+																		<td> <a href="../elements/65b8015e-3d2f-4ceb-a1ac-edfe60c02a44.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Digital shoebox (reference implementation) </a> </td>
+																		<td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element"> TransactionAPI </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/346c234e-4c88-45f3-a8e0-392fd06e2bfd.html" target="element">  </a> </td>
+																		<td> <a href="../elements/346c234e-4c88-45f3-a8e0-392fd06e2bfd.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Digital shoebox (reference implementation) </a> </td>
+																		<td> <a href="../elements/f5d4e234-e87a-427b-bc09-b491123d1d80.html" target="element"> OrderAPI </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/e96393f3-d10e-4a73-8100-ca67a9144900.html" target="element">  </a> </td>
+																		<td> <a href="../elements/e96393f3-d10e-4a73-8100-ca67a9144900.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2362773c-cdba-4679-8146-b3eb46daf54d.html" target="element"> Digital shoebox (reference implementation) </a> </td>
+																		<td> <a href="../elements/04e66ae6-b766-4026-bf7b-4be34cf61cca.html" target="element"> ReceiptAPI </a> </td>
+																	</tr>
+
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+																	<tr>
+																		<td> <a href="../elements/54d5a6cd-4356-49b1-a7da-8285531a89c8.html" target="element">  </a> </td>
+																		<td> <a href="../elements/54d5a6cd-4356-49b1-a7da-8285531a89c8.html" target="element" class="i18n-elementtype-AccessRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/56a16cf2-b5f7-4b0b-927b-38807e078139.html" target="element"> Analysis to create added value to the transaction </a> </td>
+																		<td> <a href="../elements/cbde5f20-18ad-4cda-bd44-8ff95d053b66.html" target="element"> Chart of accounts </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/d6323e6f-efdc-446a-b83c-03a9b702ff51.html" target="element">  </a> </td>
+																		<td> <a href="../elements/d6323e6f-efdc-446a-b83c-03a9b702ff51.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/e4f7a853-a7d8-4931-ba70-1e790a276224.html" target="element"> Standard audit file - Tax (SAF-T) </a> </td>
+																		<td> <a href="../elements/d2517242-c445-4f91-9639-afe1e44e88e1.html" target="element">  </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/707083f7-04bb-4deb-b314-f0c586fc3b73.html" target="element">  </a> </td>
+																		<td> <a href="../elements/707083f7-04bb-4deb-b314-f0c586fc3b73.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/cbde5f20-18ad-4cda-bd44-8ff95d053b66.html" target="element"> Chart of accounts </a> </td>
+																		<td> <a href="../elements/6a8dadf9-fff4-4a77-9222-5fca6b29bb4b.html" target="element"> National standards for chart of accounts </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/fe0ed831-be23-4276-8907-1bbe154728a4.html" target="element">  </a> </td>
+																		<td> <a href="../elements/fe0ed831-be23-4276-8907-1bbe154728a4.html" target="element" class="i18n-elementtype-AssignmentRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/84a257ab-2190-4bdf-91ea-f77632c83f39.html" target="element"> Tax authoritiy </a> </td>
+																		<td> <a href="../elements/085df0f5-b807-4bb0-88af-8ce4c5696d67.html" target="element"> Tax Audit </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/acf6b8b2-586d-405f-aeed-d1ca7a5b5c58.html" target="element">  </a> </td>
+																		<td> <a href="../elements/acf6b8b2-586d-405f-aeed-d1ca7a5b5c58.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/70cb470d-4a58-4bd2-8e9d-dd78a2ca3501.html" target="element"> SIE </a> </td>
+																		<td> <a href="../elements/d2517242-c445-4f91-9639-afe1e44e88e1.html" target="element">  </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/ae797c16-589e-43f5-9827-7d963bd17a6a.html" target="element">  </a> </td>
+																		<td> <a href="../elements/ae797c16-589e-43f5-9827-7d963bd17a6a.html" target="element" class="i18n-elementtype-AssignmentRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/aad57129-7682-469e-9e37-a5596f074a2b.html" target="element"> SME </a> </td>
+																		<td> <a href="../elements/f3605fc2-bae3-41c6-bdb5-f509d2a487f4.html" target="element"> Portability </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/cff53faa-7a4b-43e3-a0f0-86e588fba181.html" target="element">  </a> </td>
+																		<td> <a href="../elements/cff53faa-7a4b-43e3-a0f0-86e588fba181.html" target="element" class="i18n-elementtype-AssignmentRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/6fedf950-cd3a-481e-b369-d0fa31fba1c5.html" target="element"> Credit provider (bank) </a> </td>
+																		<td> <a href="../elements/b246bc2d-608e-48fc-b434-051517cbc79d.html" target="element"> Giving credit </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/3eca78bc-30d3-42a5-a979-cfba6abbf313.html" target="element">  </a> </td>
+																		<td> <a href="../elements/3eca78bc-30d3-42a5-a979-cfba6abbf313.html" target="element" class="i18n-elementtype-ServingRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element"> TransactionAPI </a> </td>
+																		<td> <a href="../elements/c877fc7e-e249-4f0e-96fb-b50a7a9fc945.html" target="element"> Analytics </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/ae12efce-4bd2-421d-90f1-0a9f20c20707.html" target="element">  </a> </td>
+																		<td> <a href="../elements/ae12efce-4bd2-421d-90f1-0a9f20c20707.html" target="element" class="i18n-elementtype-ServingRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element"> TransactionAPI </a> </td>
+																		<td> <a href="../elements/8e5b42ff-d5a0-40f8-88c5-25f0464464d9.html" target="element"> Statistics </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/268c24a0-a8b4-4a2a-9cf5-a50fa8332a92.html" target="element">  </a> </td>
+																		<td> <a href="../elements/268c24a0-a8b4-4a2a-9cf5-a50fa8332a92.html" target="element" class="i18n-elementtype-ServingRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element"> TransactionAPI </a> </td>
+																		<td> <a href="../elements/f3605fc2-bae3-41c6-bdb5-f509d2a487f4.html" target="element"> Portability </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/d2517242-c445-4f91-9639-afe1e44e88e1.html" target="element">  </a> </td>
+																		<td> <a href="../elements/d2517242-c445-4f91-9639-afe1e44e88e1.html" target="element" class="i18n-elementtype-ServingRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element"> TransactionAPI </a> </td>
+																		<td> <a href="../elements/085df0f5-b807-4bb0-88af-8ce4c5696d67.html" target="element"> Tax Audit </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/8b0d8d09-4055-4a8d-a9d7-1866d9253592.html" target="element">  </a> </td>
+																		<td> <a href="../elements/8b0d8d09-4055-4a8d-a9d7-1866d9253592.html" target="element" class="i18n-elementtype-ServingRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element"> TransactionAPI </a> </td>
+																		<td> <a href="../elements/b246bc2d-608e-48fc-b434-051517cbc79d.html" target="element"> Giving credit </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/ff47eb15-1766-4d9c-91c4-54366d64876c.html" target="element">  </a> </td>
+																		<td> <a href="../elements/ff47eb15-1766-4d9c-91c4-54366d64876c.html" target="element" class="i18n-elementtype-ServingRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element"> TransactionAPI </a> </td>
+																		<td> <a href="../elements/56a16cf2-b5f7-4b0b-927b-38807e078139.html" target="element"> Analysis to create added value to the transaction </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/41686b45-bd75-498b-a1dc-e166e0f55c21.html" target="element">  </a> </td>
+																		<td> <a href="../elements/41686b45-bd75-498b-a1dc-e166e0f55c21.html" target="element" class="i18n-elementtype-ServingRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/7a466117-f71f-4522-8902-a4542173fcd5.html" target="element"> TransactionAPI </a> </td>
+																		<td> <a href="../elements/ecc43ce7-5a01-44cb-9fe9-2887e71e5801.html" target="element"> Tracability of products </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/3a472361-6910-4aba-87c0-35431268aeb6.html" target="element">  </a> </td>
+																		<td> <a href="../elements/3a472361-6910-4aba-87c0-35431268aeb6.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/abba84eb-996b-4773-96e0-10fe90174ffa.html" target="element"> e-invoice </a> </td>
+																		<td> <a href="../elements/a016445b-242a-4d4b-9a33-50d37d0fe53c.html" target="element"> e-invoice PEPPOL BIS Billing 3.0 </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/b80e5c82-2976-43d9-a83c-3a9d153b8a72.html" target="element">  </a> </td>
+																		<td> <a href="../elements/b80e5c82-2976-43d9-a83c-3a9d153b8a72.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/abba84eb-996b-4773-96e0-10fe90174ffa.html" target="element"> e-invoice </a> </td>
+																		<td> <a href="../elements/087f108a-f9c9-41c7-9b68-ee32d908e758.html" target="element">  </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/d0c0ed98-0efc-4b2d-afc5-d31287a7bd87.html" target="element">  </a> </td>
+																		<td> <a href="../elements/d0c0ed98-0efc-4b2d-afc5-d31287a7bd87.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/abba84eb-996b-4773-96e0-10fe90174ffa.html" target="element"> e-invoice </a> </td>
+																		<td> <a href="../elements/5cc7c7b9-35ab-4385-ae1e-752f9b4f51bc.html" target="element"> Finvoice </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/56045a56-3926-4705-9a00-1f8d4894c3dd.html" target="element">  </a> </td>
+																		<td> <a href="../elements/56045a56-3926-4705-9a00-1f8d4894c3dd.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/65a5a1da-5ddd-4d8a-95c1-a70c5e7dde53.html" target="element"> Bank statement </a> </td>
+																		<td> <a href="../elements/269ffb4d-7e83-4220-b761-07503d478817.html" target="element">  </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/d4d48e10-6500-411e-8713-11df5fd21b9b.html" target="element">  </a> </td>
+																		<td> <a href="../elements/d4d48e10-6500-411e-8713-11df5fd21b9b.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/65a5a1da-5ddd-4d8a-95c1-a70c5e7dde53.html" target="element"> Bank statement </a> </td>
+																		<td> <a href="../elements/387ccf9c-3ffe-4f2f-ae6b-1a1381998cdc.html" target="element"> ISO 20022 camt 053 </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/c7d23e6f-e093-4498-8c58-891ef4960fe3.html" target="element">  </a> </td>
+																		<td> <a href="../elements/c7d23e6f-e093-4498-8c58-891ef4960fe3.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/bb8b56c2-e42a-4d72-a7cd-38209fd97054.html" target="element"> e-order </a> </td>
+																		<td> <a href="../elements/346c234e-4c88-45f3-a8e0-392fd06e2bfd.html" target="element">  </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/6690914b-5c8f-4ad2-a50c-a5bb5a21ffb1.html" target="element">  </a> </td>
+																		<td> <a href="../elements/6690914b-5c8f-4ad2-a50c-a5bb5a21ffb1.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/bb8b56c2-e42a-4d72-a7cd-38209fd97054.html" target="element"> e-order </a> </td>
+																		<td> <a href="../elements/455729e0-5b98-4e40-9b45-61b75ba8f657.html" target="element"> e-order </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/b0855e7b-05a4-4d03-98dd-029e61011379.html" target="element">  </a> </td>
+																		<td> <a href="../elements/b0855e7b-05a4-4d03-98dd-029e61011379.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/45de42f6-b255-471a-9824-df5cfebe763b.html" target="element"> Business document validation </a> </td>
+																		<td> <a href="../elements/62fcda04-51e2-4faa-9a49-eb0c68ef4b52.html" target="element"> Business document validation API </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/a8aa8182-8af1-476a-a4e4-54ed0f214a23.html" target="element">  </a> </td>
+																		<td> <a href="../elements/a8aa8182-8af1-476a-a4e4-54ed0f214a23.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/c345587e-e206-4466-921a-2b3231818358.html" target="element"> Business Registry </a> </td>
+																		<td> <a href="../elements/d2c1abe7-7b04-4164-9c5c-4f8b65ad1ec9.html" target="element"> Business Core data API </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/612a7a00-b75d-4531-85ff-22d60a4e08b8.html" target="element">  </a> </td>
+																		<td> <a href="../elements/612a7a00-b75d-4531-85ff-22d60a4e08b8.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/19d3ce2a-2f09-436f-8333-afb6849c8000.html" target="element"> e-receipts </a> </td>
+																		<td> <a href="../elements/82e2ad3e-f802-4fef-8267-1dfc71f8cb77.html" target="element"> e-receipts </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/19230be2-3cbe-4217-aae5-50ae4acc8a94.html" target="element">  </a> </td>
+																		<td> <a href="../elements/19230be2-3cbe-4217-aae5-50ae4acc8a94.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/7407beea-9249-47e1-81d1-e8335874febe.html" target="element"> XBRL Global Ledger </a> </td>
+																		<td> <a href="../elements/d2517242-c445-4f91-9639-afe1e44e88e1.html" target="element">  </a> </td>
+																	</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

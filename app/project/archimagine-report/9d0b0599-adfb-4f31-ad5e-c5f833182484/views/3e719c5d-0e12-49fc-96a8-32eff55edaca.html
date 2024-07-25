@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>UML2 Eclipse</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-3.3.2.min.css">
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap-theme-3.3.2.min.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>UML2 Eclipse</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-product"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_product" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/3e719c5d-0e12-49fc-96a8-32eff55edaca.png" alt="UML2 Eclipse" usemap="#3e719c5d-0e12-49fc-96a8-32eff55edacamap"/>
+			   <map name="3e719c5d-0e12-49fc-96a8-32eff55edacamap">
+				  		<area shape="rect" coords="610,10,730,65" href="../elements/d0b58f15-3beb-496f-8f66-e0b86c4373b5.html"  target="element">
+				  				<area shape="rect" coords="274,425,394,480" href="../elements/91a5b736-d50b-4a21-b777-986faf78d160.html"  target="element">
+				  				<area shape="rect" coords="34,425,154,480" href="../elements/a20f7330-14c4-4ad8-ac04-080a7a8df90d.html"  target="element">
+				  				<area shape="rect" coords="106,346,226,401" href="../elements/6cd1b4c8-cad4-459a-966a-2d5a0dbdb5ec.html"  target="element">
+				  				<area shape="rect" coords="550,346,670,401" href="../elements/51d1599e-58b9-42f9-9d4c-0a595ee13b07.html"  target="element">
+				  				<area shape="rect" coords="274,346,394,401" href="../elements/7df141ff-4239-44dc-9cad-1747ff9e8588.html"  target="element">
+				  				<area shape="rect" coords="106,274,226,329" href="../elements/46d48ff3-fa2b-44fd-a935-2fafb6279fc8.html"  target="element">
+				  				<area shape="rect" coords="526,172,646,227" href="../elements/98fb1fff-8b6d-466f-81ed-b8b3ca67a2e5.html"  target="element">
+				  				<area shape="rect" coords="406,346,526,401" href="../elements/1bc5c157-de55-4e40-856e-5e92f3be9a72.html"  target="element">
+				  				<area shape="rect" coords="526,238,646,293" href="../elements/39ba4fcd-8dfd-461c-ac0f-e1be75669e20.html"  target="element">
+				  				<area shape="rect" coords="22,154,142,209" href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html"  target="element">
+
+				  		<area shape="rect" coords="10,118,730,491" href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html"  target="element">
+				  		<area shape="rect" coords="454,10,574,65" href="../elements/5171cd9b-bd49-419e-aa62-459abc03984a.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<textarea id="docsrc" style="display:none">UML2 is an EMF-based implementation of the Unified Modeling Language (UML) 2.x OMG metamodel for the Eclipse platform.
+The objectives of the UML2 component are to provide:
+- a  useable implementation of the UML metamodel to support the development of modeling tools
+- a common XMI schema to facilitate interchange of semantic models
+- test cases as a means of validating the specification
+- validation rules as a means of defining and enforcing levels of compliance
+
+Although MDT/UML2 provides the metamodel, it does not provide UML modelling tools themselves. One implementation is MDT/Papyrus. An older, no longer supported implementation is MDT-UML2Tools.</textarea>
+						<div id="doctgt" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/5171cd9b-bd49-419e-aa62-459abc03984a.html" target="element"> Sirius </a> </td>
+											    <td> <a href="../elements/5171cd9b-bd49-419e-aa62-459abc03984a.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+											    <td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element" class="i18n-elementtype-Grouping"> </a> </td>
+											</tr>
+
+													<tr>
+													    <td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+													    <td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/39ba4fcd-8dfd-461c-ac0f-e1be75669e20.html" target="element"> XSD Model 2.13 </a> </td>
+													    <td> <a href="../elements/39ba4fcd-8dfd-461c-ac0f-e1be75669e20.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/1bc5c157-de55-4e40-856e-5e92f3be9a72.html" target="element"> EMF Ecore 2.13 </a> </td>
+													    <td> <a href="../elements/1bc5c157-de55-4e40-856e-5e92f3be9a72.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/98fb1fff-8b6d-466f-81ed-b8b3ca67a2e5.html" target="element"> XSD Ecore Converter 2.9.0  </a> </td>
+													    <td> <a href="../elements/98fb1fff-8b6d-466f-81ed-b8b3ca67a2e5.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/46d48ff3-fa2b-44fd-a935-2fafb6279fc8.html" target="element"> UML2 5.3.0 MDT  </a> </td>
+													    <td> <a href="../elements/46d48ff3-fa2b-44fd-a935-2fafb6279fc8.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/7df141ff-4239-44dc-9cad-1747ff9e8588.html" target="element"> EMF Compare 3.3.1 </a> </td>
+													    <td> <a href="../elements/7df141ff-4239-44dc-9cad-1747ff9e8588.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/51d1599e-58b9-42f9-9d4c-0a595ee13b07.html" target="element"> CDO 4.6.0 </a> </td>
+													    <td> <a href="../elements/51d1599e-58b9-42f9-9d4c-0a595ee13b07.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/6cd1b4c8-cad4-459a-966a-2d5a0dbdb5ec.html" target="element"> UML2.5 OMG Specifications </a> </td>
+													    <td> <a href="../elements/6cd1b4c8-cad4-459a-966a-2d5a0dbdb5ec.html" target="element" class="i18n-elementtype-Contract"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/a20f7330-14c4-4ad8-ac04-080a7a8df90d.html" target="element"> Eclipse Oxygen 4.7.0 </a> </td>
+													    <td> <a href="../elements/a20f7330-14c4-4ad8-ac04-080a7a8df90d.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+													</tr>
+
+													<tr>
+													    <td> <a href="../elements/91a5b736-d50b-4a21-b777-986faf78d160.html" target="element"> OCL for UML 5.3.0 </a> </td>
+													    <td> <a href="../elements/91a5b736-d50b-4a21-b777-986faf78d160.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+													</tr>
+
+											
+											<tr>
+											    <td> <a href="../elements/d0b58f15-3beb-496f-8f66-e0b86c4373b5.html" target="element"> XTEXT </a> </td>
+											    <td> <a href="../elements/d0b58f15-3beb-496f-8f66-e0b86c4373b5.html" target="element" class="i18n-elementtype-Product"> </a> </td>
+											</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																	<tr>
+																		<td> <a href="../elements/206b41cf-0f3c-489e-a366-e8b3d2a15bb0.html" target="element">  </a> </td>
+																		<td> <a href="../elements/206b41cf-0f3c-489e-a366-e8b3d2a15bb0.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/c4c62c9b-bb36-4b7a-8a67-34d367c27dba.html" target="element">  </a> </td>
+																		<td> <a href="../elements/c4c62c9b-bb36-4b7a-8a67-34d367c27dba.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/39ba4fcd-8dfd-461c-ac0f-e1be75669e20.html" target="element"> XSD Model 2.13 </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/a6b87f78-991a-41bb-8f6f-b1e475fe62b6.html" target="element">  </a> </td>
+																		<td> <a href="../elements/a6b87f78-991a-41bb-8f6f-b1e475fe62b6.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/1bc5c157-de55-4e40-856e-5e92f3be9a72.html" target="element"> EMF Ecore 2.13 </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/5366aa34-2547-4c00-b0e3-e0035cdbb9b9.html" target="element">  </a> </td>
+																		<td> <a href="../elements/5366aa34-2547-4c00-b0e3-e0035cdbb9b9.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/98fb1fff-8b6d-466f-81ed-b8b3ca67a2e5.html" target="element"> XSD Ecore Converter 2.9.0  </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/83981bb8-5f86-4507-bf22-d6cbf1ef2893.html" target="element">  </a> </td>
+																		<td> <a href="../elements/83981bb8-5f86-4507-bf22-d6cbf1ef2893.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/46d48ff3-fa2b-44fd-a935-2fafb6279fc8.html" target="element"> UML2 5.3.0 MDT  </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/a48f011e-288d-4d75-a51d-4ea468149be0.html" target="element">  </a> </td>
+																		<td> <a href="../elements/a48f011e-288d-4d75-a51d-4ea468149be0.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/7df141ff-4239-44dc-9cad-1747ff9e8588.html" target="element"> EMF Compare 3.3.1 </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/b45b49c1-12f0-4d9f-a286-a01c5ef65c91.html" target="element">  </a> </td>
+																		<td> <a href="../elements/b45b49c1-12f0-4d9f-a286-a01c5ef65c91.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/51d1599e-58b9-42f9-9d4c-0a595ee13b07.html" target="element"> CDO 4.6.0 </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/dd183df5-b40e-4862-a612-908936760be6.html" target="element">  </a> </td>
+																		<td> <a href="../elements/dd183df5-b40e-4862-a612-908936760be6.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/6cd1b4c8-cad4-459a-966a-2d5a0dbdb5ec.html" target="element"> UML2.5 OMG Specifications </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/df6a5b16-e4d8-4c46-8454-64b141b0e91d.html" target="element">  </a> </td>
+																		<td> <a href="../elements/df6a5b16-e4d8-4c46-8454-64b141b0e91d.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/a20f7330-14c4-4ad8-ac04-080a7a8df90d.html" target="element"> Eclipse Oxygen 4.7.0 </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/5a563cd8-232d-4890-abf2-4b1afc89e514.html" target="element">  </a> </td>
+																		<td> <a href="../elements/5a563cd8-232d-4890-abf2-4b1afc89e514.html" target="element" class="i18n-elementtype-CompositionRelationship"></a> </td>
+																		<td> <a href="../elements/87d5746d-662d-400f-8aed-f757918e07d1.html" target="element"> Papyrus configuration 3.0 Oxygen </a> </td>
+																		<td> <a href="../elements/91a5b736-d50b-4a21-b777-986faf78d160.html" target="element"> OCL for UML 5.3.0 </a> </td>
+																	</tr>
+
+																			<tr>
+																				<td> <a href="../elements/2d9114a2-9f39-4c78-ab3c-da5b812146cd.html" target="element">  </a> </td>
+																				<td> <a href="../elements/2d9114a2-9f39-4c78-ab3c-da5b812146cd.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/46d48ff3-fa2b-44fd-a935-2fafb6279fc8.html" target="element"> UML2 5.3.0 MDT  </a> </td>
+																			</tr>
+																			<tr>
+																				<td> <a href="../elements/21eec2ac-33cc-4785-a1a1-1237d65fa80a.html" target="element">  </a> </td>
+																				<td> <a href="../elements/21eec2ac-33cc-4785-a1a1-1237d65fa80a.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/5171cd9b-bd49-419e-aa62-459abc03984a.html" target="element"> Sirius </a> </td>
+																			</tr>
+																			<tr>
+																				<td> <a href="../elements/c590299e-d900-4bb2-812e-b0989e56e41a.html" target="element">  </a> </td>
+																				<td> <a href="../elements/c590299e-d900-4bb2-812e-b0989e56e41a.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/a20f7330-14c4-4ad8-ac04-080a7a8df90d.html" target="element"> Eclipse Oxygen 4.7.0 </a> </td>
+																			</tr>
+																			<tr>
+																				<td> <a href="../elements/ffb69511-5d11-460c-ab80-3f8d27ff336c.html" target="element">  </a> </td>
+																				<td> <a href="../elements/ffb69511-5d11-460c-ab80-3f8d27ff336c.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/1bc5c157-de55-4e40-856e-5e92f3be9a72.html" target="element"> EMF Ecore 2.13 </a> </td>
+																			</tr>
+																			<tr>
+																				<td> <a href="../elements/1fad8c65-f54f-4c80-9a12-64367dda35b2.html" target="element">  </a> </td>
+																				<td> <a href="../elements/1fad8c65-f54f-4c80-9a12-64367dda35b2.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/98fb1fff-8b6d-466f-81ed-b8b3ca67a2e5.html" target="element"> XSD Ecore Converter 2.9.0  </a> </td>
+																			</tr>
+																			<tr>
+																				<td> <a href="../elements/d845a016-b737-4b5e-8fe2-e5793f307e92.html" target="element">  </a> </td>
+																				<td> <a href="../elements/d845a016-b737-4b5e-8fe2-e5793f307e92.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/7df141ff-4239-44dc-9cad-1747ff9e8588.html" target="element"> EMF Compare 3.3.1 </a> </td>
+																			</tr>
+																			<tr>
+																				<td> <a href="../elements/f66a12f8-9ad7-41b8-9bef-75b79ca1a8bb.html" target="element">  </a> </td>
+																				<td> <a href="../elements/f66a12f8-9ad7-41b8-9bef-75b79ca1a8bb.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/91a5b736-d50b-4a21-b777-986faf78d160.html" target="element"> OCL for UML 5.3.0 </a> </td>
+																			</tr>
+																			<tr>
+																				<td> <a href="../elements/7ef323de-ec7e-415c-893f-a0d78102a4cf.html" target="element">  </a> </td>
+																				<td> <a href="../elements/7ef323de-ec7e-415c-893f-a0d78102a4cf.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/51d1599e-58b9-42f9-9d4c-0a595ee13b07.html" target="element"> CDO 4.6.0 </a> </td>
+																			</tr>
+																			<tr>
+																				<td> <a href="../elements/fa638c8c-ad93-44f6-965a-78eaecf3e454.html" target="element">  </a> </td>
+																				<td> <a href="../elements/fa638c8c-ad93-44f6-965a-78eaecf3e454.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/39ba4fcd-8dfd-461c-ac0f-e1be75669e20.html" target="element"> XSD Model 2.13 </a> </td>
+																			</tr>
+																			<tr>
+																				<td> <a href="../elements/c69be3d4-a3be-49bb-8ae5-37a3cbe82c2b.html" target="element">  </a> </td>
+																				<td> <a href="../elements/c69be3d4-a3be-49bb-8ae5-37a3cbe82c2b.html" target="element" class="i18n-elementtype-AggregationRelationship"></a> </td>
+																				<td> <a href="../elements/91d45659-0d95-4474-bd90-6fadae64521e.html" target="element"> MDT Papyrus </a> </td>
+																				<td> <a href="../elements/d0b58f15-3beb-496f-8f66-e0b86c4373b5.html" target="element"> XTEXT </a> </td>
+																			</tr>
+
+																			<tr>
+																				<td> <a href="../elements/8d52b4a9-9b88-4cee-8000-180e2379ddca.html" target="element">  </a> </td>
+																				<td> <a href="../elements/8d52b4a9-9b88-4cee-8000-180e2379ddca.html" target="element" class="i18n-elementtype-AssociationRelationship"></a> </td>
+																				<td> <a href="../elements/6cd1b4c8-cad4-459a-966a-2d5a0dbdb5ec.html" target="element"> UML2.5 OMG Specifications </a> </td>
+																				<td> <a href="../elements/46d48ff3-fa2b-44fd-a935-2fafb6279fc8.html" target="element"> UML2 5.3.0 MDT  </a> </td>
+																			</tr>
+
+											
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>

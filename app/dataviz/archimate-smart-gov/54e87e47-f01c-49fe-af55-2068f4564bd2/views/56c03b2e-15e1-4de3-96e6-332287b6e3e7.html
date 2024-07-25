@@ -1,0 +1,688 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="frame" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Invoice data model</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) -->
+	<script type="text/javascript" src="../../lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.yeti.css">
+	<script type="text/javascript" src="../../lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="../../css/model.css">
+	<link type="text/css" rel="stylesheet" href="../../css/i18n.css">
+	<script type="text/javascript" src="../../js/frame.js"></script>
+	<script type="text/javascript" src="../../js/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default root-panel">
+
+		<div class="panel-heading root-panel-heading">
+            <!-- Name -->
+               <b>Invoice data model</b>
+
+            <!-- If a View with Viewpoint -->
+			   (<span class="i18n-viewpoint-"></span>)
+			   <a class="glyphicon glyphicon-info-sign" id="hint-viewpoint_" target="hint"></a>
+            <!-- Or if a model (i.e has Purpose method) -->
+		</div>
+
+		<div class="panel-body root-panel-body">
+		    <!-- If this is a digram model (has children and no bounds) show the image -->
+			   <img class="diagram" src="../images/56c03b2e-15e1-4de3-96e6-332287b6e3e7.png" alt="Invoice data model" usemap="#56c03b2e-15e1-4de3-96e6-332287b6e3e7map"/>
+			   <map name="56c03b2e-15e1-4de3-96e6-332287b6e3e7map">
+				  		<area shape="rect" coords="242,10,435,65" href="../elements/81078e50-6e20-4cc8-b3ae-6827fe40f341.html"  target="element">
+				  		<area shape="rect" coords="50,94,207,126" href="../elements/ea967dd8-b65e-4ec9-ade6-4220847f5e3b.html"  target="element">
+				  		<area shape="rect" coords="52,130,209,167" href="../elements/bcdf04b6-c95a-4331-a6a9-9a65cbb1fc63.html"  target="element">
+				  		<area shape="rect" coords="50,176,207,210" href="../elements/a5610799-6167-4011-947d-c09ad38392ae.html"  target="element">
+				  		<area shape="rect" coords="50,215,207,247" href="../elements/2108e14d-46fa-427b-9f1f-7d5a397279e3.html"  target="element">
+				  		<area shape="rect" coords="50,249,207,283" href="../elements/258ba471-5275-4c2c-a702-5b05af4e9d9b.html"  target="element">
+				  		<area shape="rect" coords="51,288,208,322" href="../elements/4cc39a85-fa80-44e5-89b6-8177b7082f92.html"  target="element">
+				  		<area shape="rect" coords="14,10,207,65" href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html"  target="element">
+				  		<area shape="rect" coords="962,1098,1082,1153" href="../elements/29021251-7bf3-472c-8ffb-5ee6f4cf6bb9.html"  target="element">
+				  		<area shape="rect" coords="818,1098,938,1153" href="../elements/9661d872-eaed-4537-ade3-dcaf899063ec.html"  target="element">
+				  		<area shape="rect" coords="818,1038,938,1093" href="../elements/c9c29c43-61fd-4be3-bc65-75f370810913.html"  target="element">
+				  		<area shape="rect" coords="818,972,938,1027" href="../elements/202b510c-8e0d-4332-9262-78e577507684.html"  target="element">
+				  		<area shape="rect" coords="818,912,938,967" href="../elements/8c837b6f-1422-49a8-913d-67481f6f21f4.html"  target="element">
+				  		<area shape="rect" coords="818,852,938,907" href="../elements/4cd49822-e401-4513-b730-f7a51772547c.html"  target="element">
+				  		<area shape="rect" coords="818,792,938,847" href="../elements/a4687834-a6c5-49ab-81df-00bc9611cdb5.html"  target="element">
+				  		<area shape="rect" coords="662,1026,782,1081" href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html"  target="element">
+				  		<area shape="rect" coords="662,966,782,1021" href="../elements/19ae0117-8e3b-4aa1-b586-e26645214f61.html"  target="element">
+				  		<area shape="rect" coords="662,906,782,961" href="../elements/6cb2101d-2f1c-45ce-abf3-fd714d3af917.html"  target="element">
+				  		<area shape="rect" coords="662,846,782,901" href="../elements/8b6ec273-ba28-44bc-81af-8bd15350549e.html"  target="element">
+				  		<area shape="rect" coords="662,786,782,841" href="../elements/ea2b9b37-e086-4904-a323-be0d6f7841e8.html"  target="element">
+				  		<area shape="rect" coords="662,726,782,781" href="../elements/e9bfc7eb-a470-4a02-a11b-527ba5a240ac.html"  target="element">
+				  		<area shape="rect" coords="818,726,938,781" href="../elements/133bf5e2-7e4e-4ac0-b698-7cfa1916f8e1.html"  target="element">
+				  		<area shape="rect" coords="818,666,938,721" href="../elements/c98a2b26-8ddf-4574-946e-eb0baea5a4b0.html"  target="element">
+				  		<area shape="rect" coords="662,642,782,697" href="../elements/c611cb81-0f3f-486c-bd45-e236f453a322.html"  target="element">
+				  		<area shape="rect" coords="818,606,938,661" href="../elements/efdaa812-6536-45e2-9a29-9339aa721668.html"  target="element">
+				  		<area shape="rect" coords="662,570,782,625" href="../elements/13e251b5-30eb-47b0-8cbc-1361bd9cac9a.html"  target="element">
+				  		<area shape="rect" coords="818,546,938,601" href="../elements/fe893093-26cb-47eb-90f8-095014f14b61.html"  target="element">
+				  		<area shape="rect" coords="818,486,938,541" href="../elements/c07766c3-2d97-4684-8af4-ab0dd3ec0f27.html"  target="element">
+				  		<area shape="rect" coords="662,486,782,541" href="../elements/9d4a7691-63c3-4cac-8ddf-9c33a9197600.html"  target="element">
+				  		<area shape="rect" coords="662,426,782,481" href="../elements/06671b6c-4b46-4d3c-b629-c31a7c00d8b3.html"  target="element">
+				  		<area shape="rect" coords="818,390,938,445" href="../elements/8161692a-a922-4881-8b8e-c44b1e529fe3.html"  target="element">
+				  		<area shape="rect" coords="818,330,938,385" href="../elements/9575fa8a-be55-4965-9d26-65eeac46958d.html"  target="element">
+				  		<area shape="rect" coords="662,330,782,385" href="../elements/91f9731d-e8aa-4043-9bbc-49a731e206a2.html"  target="element">
+				  		<area shape="rect" coords="818,270,938,325" href="../elements/8e2097aa-4424-498e-9176-b3ac526c81db.html"  target="element">
+				  		<area shape="rect" coords="818,210,938,265" href="../elements/ad97bbee-3f33-422e-93b5-5b690205e35b.html"  target="element">
+				  		<area shape="rect" coords="662,258,782,313" href="../elements/2517d75c-6654-47a5-877c-bcc1703c8148.html"  target="element">
+				  		<area shape="rect" coords="662,198,782,253" href="../elements/753447f1-58ff-4397-8677-d866a90f1499.html"  target="element">
+				  		<area shape="rect" coords="470,10,626,65" href="../elements/b1f5d338-5749-4724-aec0-4f5bc636838a.html"  target="element">
+				          <area shape="rect" coords="674,10,859,65" href="../objects/9a3bcc33-40c5-4423-b79e-b22d4523041d.html" target="element" >
+				  		<area shape="rect" coords="662,138,782,193" href="../elements/2a1f93ec-e3c2-4ba5-b9fb-4459cb5901e3.html"  target="element">
+				  		<area shape="rect" coords="662,75,782,130" href="../elements/fc0c6b21-e926-4d50-8f95-2c7e8c45aed3.html"  target="element">
+				  		<area shape="rect" coords="362,546,603,601" href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html"  target="element">
+
+			   </map>
+
+			<div role="tabpanel">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+                    <!-- Purpose / Documentation / Content -->
+					   <li role="presentation" class="active"><a href="#documentation" aria-controls="documentation" role="tab" data-toggle="tab" class="i18n-documentation"></a></li>
+
+                    <!-- Properties -->
+                    <li role="presentation"><a href="#properties" aria-controls="properties" role="tab" data-toggle="tab" class="i18n-properties"></a></li>
+
+						<li role="presentation"><a href="#elements" aria-controls="elements" role="tab" data-toggle="tab" class="i18n-elements"></a></li>
+						<li role="presentation"><a href="#relationships" aria-controls="relationships" role="tab" data-toggle="tab" class="i18n-relationships"></a></li>
+                    <!-- Model, Query Tab -->
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="documentation">
+						<div class="convertlinks documentation" style="white-space:pre-wrap"></div>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="properties">
+						<table class="table table-striped table-hover table-condensed">
+							<thead>
+								<tr>
+									<th class="i18n-key"></th>
+									<th class="i18n-value"></th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div>
+						<div role="tabpanel" class="tab-pane" id="elements">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+									</tr>
+								</thead>
+								<tbody>
+											<tr>
+											    <td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+											    <td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/fc0c6b21-e926-4d50-8f95-2c7e8c45aed3.html" target="element"> Invoice note </a> </td>
+											    <td> <a href="../elements/fc0c6b21-e926-4d50-8f95-2c7e8c45aed3.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/2a1f93ec-e3c2-4ba5-b9fb-4459cb5901e3.html" target="element"> Process control </a> </td>
+											    <td> <a href="../elements/2a1f93ec-e3c2-4ba5-b9fb-4459cb5901e3.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+									        <tr>
+									           <td> <a href="../objects/9a3bcc33-40c5-4423-b79e-b22d4523041d.html" target="element">  </a> </td>
+									           <td> <a href="../objects/9a3bcc33-40c5-4423-b79e-b22d4523041d.html" target="element" class="i18n-elementtype-DiagramModelNote"> </a> </td>
+									        </tr>
+
+											<tr>
+											    <td> <a href="../elements/b1f5d338-5749-4724-aec0-4f5bc636838a.html" target="element"> CEN eInvoicing Semantic Data Model </a> </td>
+											    <td> <a href="../elements/b1f5d338-5749-4724-aec0-4f5bc636838a.html" target="element" class="i18n-elementtype-Constraint">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/753447f1-58ff-4397-8677-d866a90f1499.html" target="element"> Preceeding invoice reference </a> </td>
+											    <td> <a href="../elements/753447f1-58ff-4397-8677-d866a90f1499.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/2517d75c-6654-47a5-877c-bcc1703c8148.html" target="element"> Seller </a> </td>
+											    <td> <a href="../elements/2517d75c-6654-47a5-877c-bcc1703c8148.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/ad97bbee-3f33-422e-93b5-5b690205e35b.html" target="element"> Seller postal address </a> </td>
+											    <td> <a href="../elements/ad97bbee-3f33-422e-93b5-5b690205e35b.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/8e2097aa-4424-498e-9176-b3ac526c81db.html" target="element"> Seller contact </a> </td>
+											    <td> <a href="../elements/8e2097aa-4424-498e-9176-b3ac526c81db.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/91f9731d-e8aa-4043-9bbc-49a731e206a2.html" target="element"> Buyer </a> </td>
+											    <td> <a href="../elements/91f9731d-e8aa-4043-9bbc-49a731e206a2.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/9575fa8a-be55-4965-9d26-65eeac46958d.html" target="element"> Buyer postal address </a> </td>
+											    <td> <a href="../elements/9575fa8a-be55-4965-9d26-65eeac46958d.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/8161692a-a922-4881-8b8e-c44b1e529fe3.html" target="element"> Buyer contact </a> </td>
+											    <td> <a href="../elements/8161692a-a922-4881-8b8e-c44b1e529fe3.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/06671b6c-4b46-4d3c-b629-c31a7c00d8b3.html" target="element"> Payee </a> </td>
+											    <td> <a href="../elements/06671b6c-4b46-4d3c-b629-c31a7c00d8b3.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/9d4a7691-63c3-4cac-8ddf-9c33a9197600.html" target="element"> Sellers Tax representative party </a> </td>
+											    <td> <a href="../elements/9d4a7691-63c3-4cac-8ddf-9c33a9197600.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/c07766c3-2d97-4684-8af4-ab0dd3ec0f27.html" target="element"> Sellers Tax representative postal address </a> </td>
+											    <td> <a href="../elements/c07766c3-2d97-4684-8af4-ab0dd3ec0f27.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/fe893093-26cb-47eb-90f8-095014f14b61.html" target="element"> Delivery or invoice period </a> </td>
+											    <td> <a href="../elements/fe893093-26cb-47eb-90f8-095014f14b61.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/13e251b5-30eb-47b0-8cbc-1361bd9cac9a.html" target="element"> Deliver to information </a> </td>
+											    <td> <a href="../elements/13e251b5-30eb-47b0-8cbc-1361bd9cac9a.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/efdaa812-6536-45e2-9a29-9339aa721668.html" target="element"> Deliver to address </a> </td>
+											    <td> <a href="../elements/efdaa812-6536-45e2-9a29-9339aa721668.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/c611cb81-0f3f-486c-bd45-e236f453a322.html" target="element"> Payment instructions </a> </td>
+											    <td> <a href="../elements/c611cb81-0f3f-486c-bd45-e236f453a322.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/c98a2b26-8ddf-4574-946e-eb0baea5a4b0.html" target="element"> Credit transfer </a> </td>
+											    <td> <a href="../elements/c98a2b26-8ddf-4574-946e-eb0baea5a4b0.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/133bf5e2-7e4e-4ac0-b698-7cfa1916f8e1.html" target="element"> Payment card information </a> </td>
+											    <td> <a href="../elements/133bf5e2-7e4e-4ac0-b698-7cfa1916f8e1.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/e9bfc7eb-a470-4a02-a11b-527ba5a240ac.html" target="element"> Document level allowences </a> </td>
+											    <td> <a href="../elements/e9bfc7eb-a470-4a02-a11b-527ba5a240ac.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/ea2b9b37-e086-4904-a323-be0d6f7841e8.html" target="element"> Document level charges </a> </td>
+											    <td> <a href="../elements/ea2b9b37-e086-4904-a323-be0d6f7841e8.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/8b6ec273-ba28-44bc-81af-8bd15350549e.html" target="element"> Document totals  </a> </td>
+											    <td> <a href="../elements/8b6ec273-ba28-44bc-81af-8bd15350549e.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/6cb2101d-2f1c-45ce-abf3-fd714d3af917.html" target="element"> VAT breakdown </a> </td>
+											    <td> <a href="../elements/6cb2101d-2f1c-45ce-abf3-fd714d3af917.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/19ae0117-8e3b-4aa1-b586-e26645214f61.html" target="element"> Additional supporting documents </a> </td>
+											    <td> <a href="../elements/19ae0117-8e3b-4aa1-b586-e26645214f61.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html" target="element"> Invoice line </a> </td>
+											    <td> <a href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/a4687834-a6c5-49ab-81df-00bc9611cdb5.html" target="element"> Invoice line period </a> </td>
+											    <td> <a href="../elements/a4687834-a6c5-49ab-81df-00bc9611cdb5.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/4cd49822-e401-4513-b730-f7a51772547c.html" target="element"> Invoice allowences  </a> </td>
+											    <td> <a href="../elements/4cd49822-e401-4513-b730-f7a51772547c.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/8c837b6f-1422-49a8-913d-67481f6f21f4.html" target="element"> Invoice charges </a> </td>
+											    <td> <a href="../elements/8c837b6f-1422-49a8-913d-67481f6f21f4.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/202b510c-8e0d-4332-9262-78e577507684.html" target="element"> Price details </a> </td>
+											    <td> <a href="../elements/202b510c-8e0d-4332-9262-78e577507684.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/c9c29c43-61fd-4be3-bc65-75f370810913.html" target="element"> Line VAT information </a> </td>
+											    <td> <a href="../elements/c9c29c43-61fd-4be3-bc65-75f370810913.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/9661d872-eaed-4537-ade3-dcaf899063ec.html" target="element"> Item information </a> </td>
+											    <td> <a href="../elements/9661d872-eaed-4537-ade3-dcaf899063ec.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/29021251-7bf3-472c-8ffb-5ee6f4cf6bb9.html" target="element"> Item attributes </a> </td>
+											    <td> <a href="../elements/29021251-7bf3-472c-8ffb-5ee6f4cf6bb9.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html" target="element"> Invoice </a> </td>
+											    <td> <a href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/4cc39a85-fa80-44e5-89b6-8177b7082f92.html" target="element"> line </a> </td>
+											    <td> <a href="../elements/4cc39a85-fa80-44e5-89b6-8177b7082f92.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/258ba471-5275-4c2c-a702-5b05af4e9d9b.html" target="element"> price </a> </td>
+											    <td> <a href="../elements/258ba471-5275-4c2c-a702-5b05af4e9d9b.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/2108e14d-46fa-427b-9f1f-7d5a397279e3.html" target="element"> payment </a> </td>
+											    <td> <a href="../elements/2108e14d-46fa-427b-9f1f-7d5a397279e3.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/a5610799-6167-4011-947d-c09ad38392ae.html" target="element"> period </a> </td>
+											    <td> <a href="../elements/a5610799-6167-4011-947d-c09ad38392ae.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/bcdf04b6-c95a-4331-a6a9-9a65cbb1fc63.html" target="element"> buyer </a> </td>
+											    <td> <a href="../elements/bcdf04b6-c95a-4331-a6a9-9a65cbb1fc63.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/ea967dd8-b65e-4ec9-ade6-4220847f5e3b.html" target="element"> seller </a> </td>
+											    <td> <a href="../elements/ea967dd8-b65e-4ec9-ade6-4220847f5e3b.html" target="element" class="i18n-elementtype-BusinessObject">
+											    </a> </td>
+											</tr>
+
+											<tr>
+											    <td> <a href="../elements/81078e50-6e20-4cc8-b3ae-6827fe40f341.html" target="element"> e-invoice </a> </td>
+											    <td> <a href="../elements/81078e50-6e20-4cc8-b3ae-6827fe40f341.html" target="element" class="i18n-elementtype-DataObject">
+											    </a> </td>
+											</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="relationships">
+							<table class="table table-striped table-hover table-condensed">
+								<thead>
+									<tr>
+										<th class="i18n-name"></th>
+										<th class="i18n-type"></th>
+										<th class="i18n-source"></th>
+										<th class="i18n-target"></th>
+									</tr>
+								</thead>
+								<tbody>
+																	<tr>
+																		<td> <a href="../elements/32d4db5f-43d0-454a-b87f-1e6ff2249465.html" target="element">  </a> </td>
+																		<td> <a href="../elements/32d4db5f-43d0-454a-b87f-1e6ff2249465.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/b1f5d338-5749-4724-aec0-4f5bc636838a.html" target="element"> CEN eInvoicing Semantic Data Model </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/88c7834c-7ef3-414f-a937-721d9da900ec.html" target="element">  </a> </td>
+																		<td> <a href="../elements/88c7834c-7ef3-414f-a937-721d9da900ec.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/fc0c6b21-e926-4d50-8f95-2c7e8c45aed3.html" target="element"> Invoice note </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/f982d513-9ed2-4a6d-b3d8-c1c4c3cde282.html" target="element">  </a> </td>
+																		<td> <a href="../elements/f982d513-9ed2-4a6d-b3d8-c1c4c3cde282.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/2a1f93ec-e3c2-4ba5-b9fb-4459cb5901e3.html" target="element"> Process control </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/4abff7fe-4853-4631-9461-50f0c3af0d0f.html" target="element">  </a> </td>
+																		<td> <a href="../elements/4abff7fe-4853-4631-9461-50f0c3af0d0f.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/753447f1-58ff-4397-8677-d866a90f1499.html" target="element"> Preceeding invoice reference </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/38c0969c-6017-4e48-85a0-df5401195fed.html" target="element">  </a> </td>
+																		<td> <a href="../elements/38c0969c-6017-4e48-85a0-df5401195fed.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/2517d75c-6654-47a5-877c-bcc1703c8148.html" target="element"> Seller </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/7001c336-b3a9-4249-ae15-7a32de318b25.html" target="element">  </a> </td>
+																		<td> <a href="../elements/7001c336-b3a9-4249-ae15-7a32de318b25.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/91f9731d-e8aa-4043-9bbc-49a731e206a2.html" target="element"> Buyer </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/8d243eb3-9205-4b50-a653-c53c0479adb6.html" target="element">  </a> </td>
+																		<td> <a href="../elements/8d243eb3-9205-4b50-a653-c53c0479adb6.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/06671b6c-4b46-4d3c-b629-c31a7c00d8b3.html" target="element"> Payee </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/4429f610-8944-42ac-8bba-33f5d058bade.html" target="element">  </a> </td>
+																		<td> <a href="../elements/4429f610-8944-42ac-8bba-33f5d058bade.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/9d4a7691-63c3-4cac-8ddf-9c33a9197600.html" target="element"> Sellers Tax representative party </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/c0a594d5-173d-45fe-8537-52ef4ce5f777.html" target="element">  </a> </td>
+																		<td> <a href="../elements/c0a594d5-173d-45fe-8537-52ef4ce5f777.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/13e251b5-30eb-47b0-8cbc-1361bd9cac9a.html" target="element"> Deliver to information </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/4ebef52e-96c5-4769-9bac-8eb1024edf32.html" target="element">  </a> </td>
+																		<td> <a href="../elements/4ebef52e-96c5-4769-9bac-8eb1024edf32.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/c611cb81-0f3f-486c-bd45-e236f453a322.html" target="element"> Payment instructions </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/a2724bf9-0830-4377-9bd6-6149d9b43946.html" target="element">  </a> </td>
+																		<td> <a href="../elements/a2724bf9-0830-4377-9bd6-6149d9b43946.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/e9bfc7eb-a470-4a02-a11b-527ba5a240ac.html" target="element"> Document level allowences </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/26ade352-2159-4b0f-bd8f-ab9bf394966f.html" target="element">  </a> </td>
+																		<td> <a href="../elements/26ade352-2159-4b0f-bd8f-ab9bf394966f.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/ea2b9b37-e086-4904-a323-be0d6f7841e8.html" target="element"> Document level charges </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/9878f364-c695-4f38-9464-588ebcdb322a.html" target="element">  </a> </td>
+																		<td> <a href="../elements/9878f364-c695-4f38-9464-588ebcdb322a.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/8b6ec273-ba28-44bc-81af-8bd15350549e.html" target="element"> Document totals  </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/acffc725-13c8-4bf1-8106-d9ea33dfcaee.html" target="element">  </a> </td>
+																		<td> <a href="../elements/acffc725-13c8-4bf1-8106-d9ea33dfcaee.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/6cb2101d-2f1c-45ce-abf3-fd714d3af917.html" target="element"> VAT breakdown </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/543b2f64-f414-4f44-ac8c-d3f41611cccc.html" target="element">  </a> </td>
+																		<td> <a href="../elements/543b2f64-f414-4f44-ac8c-d3f41611cccc.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/19ae0117-8e3b-4aa1-b586-e26645214f61.html" target="element"> Additional supporting documents </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/30766b8d-5f19-4660-821a-717b7ab89e3a.html" target="element">  </a> </td>
+																		<td> <a href="../elements/30766b8d-5f19-4660-821a-717b7ab89e3a.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																		<td> <a href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html" target="element"> Invoice line </a> </td>
+																	</tr>
+
+											<!-- DEBUG: Skipping element from class com.archimatetool.model.impl.DiagramModelNote -->
+																	<tr>
+																		<td> <a href="../elements/df3f097b-ff35-4ea6-b9b1-10d0b370c5d7.html" target="element">  </a> </td>
+																		<td> <a href="../elements/df3f097b-ff35-4ea6-b9b1-10d0b370c5d7.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2517d75c-6654-47a5-877c-bcc1703c8148.html" target="element"> Seller </a> </td>
+																		<td> <a href="../elements/ad97bbee-3f33-422e-93b5-5b690205e35b.html" target="element"> Seller postal address </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/fa0413b4-980d-44ae-8737-8acbf6d4d2b1.html" target="element">  </a> </td>
+																		<td> <a href="../elements/fa0413b4-980d-44ae-8737-8acbf6d4d2b1.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/2517d75c-6654-47a5-877c-bcc1703c8148.html" target="element"> Seller </a> </td>
+																		<td> <a href="../elements/8e2097aa-4424-498e-9176-b3ac526c81db.html" target="element"> Seller contact </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/ef9f5700-f56a-4442-8bd2-372a465eadf7.html" target="element">  </a> </td>
+																		<td> <a href="../elements/ef9f5700-f56a-4442-8bd2-372a465eadf7.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/91f9731d-e8aa-4043-9bbc-49a731e206a2.html" target="element"> Buyer </a> </td>
+																		<td> <a href="../elements/9575fa8a-be55-4965-9d26-65eeac46958d.html" target="element"> Buyer postal address </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/ee1da991-a34f-457f-b0e7-5916a84b77ac.html" target="element">  </a> </td>
+																		<td> <a href="../elements/ee1da991-a34f-457f-b0e7-5916a84b77ac.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/91f9731d-e8aa-4043-9bbc-49a731e206a2.html" target="element"> Buyer </a> </td>
+																		<td> <a href="../elements/8161692a-a922-4881-8b8e-c44b1e529fe3.html" target="element"> Buyer contact </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/9078a5a0-4ac8-4743-8320-2336f1daa7ec.html" target="element">  </a> </td>
+																		<td> <a href="../elements/9078a5a0-4ac8-4743-8320-2336f1daa7ec.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/9d4a7691-63c3-4cac-8ddf-9c33a9197600.html" target="element"> Sellers Tax representative party </a> </td>
+																		<td> <a href="../elements/c07766c3-2d97-4684-8af4-ab0dd3ec0f27.html" target="element"> Sellers Tax representative postal address </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/cc4740c8-28fe-4c04-86d1-7c09bc1733ce.html" target="element">  </a> </td>
+																		<td> <a href="../elements/cc4740c8-28fe-4c04-86d1-7c09bc1733ce.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/13e251b5-30eb-47b0-8cbc-1361bd9cac9a.html" target="element"> Deliver to information </a> </td>
+																		<td> <a href="../elements/fe893093-26cb-47eb-90f8-095014f14b61.html" target="element"> Delivery or invoice period </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/c5ebd151-fe01-49fa-951e-57eb85b0aacb.html" target="element">  </a> </td>
+																		<td> <a href="../elements/c5ebd151-fe01-49fa-951e-57eb85b0aacb.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/13e251b5-30eb-47b0-8cbc-1361bd9cac9a.html" target="element"> Deliver to information </a> </td>
+																		<td> <a href="../elements/efdaa812-6536-45e2-9a29-9339aa721668.html" target="element"> Deliver to address </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/02d07124-9a90-42e7-9e9b-3e255a3ba1f4.html" target="element">  </a> </td>
+																		<td> <a href="../elements/02d07124-9a90-42e7-9e9b-3e255a3ba1f4.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/c611cb81-0f3f-486c-bd45-e236f453a322.html" target="element"> Payment instructions </a> </td>
+																		<td> <a href="../elements/c98a2b26-8ddf-4574-946e-eb0baea5a4b0.html" target="element"> Credit transfer </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/e74b0664-df4d-496f-b67a-7df59c41106d.html" target="element">  </a> </td>
+																		<td> <a href="../elements/e74b0664-df4d-496f-b67a-7df59c41106d.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/c611cb81-0f3f-486c-bd45-e236f453a322.html" target="element"> Payment instructions </a> </td>
+																		<td> <a href="../elements/133bf5e2-7e4e-4ac0-b698-7cfa1916f8e1.html" target="element"> Payment card information </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/8ecf49d9-97a1-4a05-a48f-29f102bedeb3.html" target="element">  </a> </td>
+																		<td> <a href="../elements/8ecf49d9-97a1-4a05-a48f-29f102bedeb3.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html" target="element"> Invoice line </a> </td>
+																		<td> <a href="../elements/a4687834-a6c5-49ab-81df-00bc9611cdb5.html" target="element"> Invoice line period </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/f857e4cd-3594-4bc9-bc58-ecec530e1333.html" target="element">  </a> </td>
+																		<td> <a href="../elements/f857e4cd-3594-4bc9-bc58-ecec530e1333.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html" target="element"> Invoice line </a> </td>
+																		<td> <a href="../elements/4cd49822-e401-4513-b730-f7a51772547c.html" target="element"> Invoice allowences  </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/fe753c1f-04a7-4fbd-8ec1-78f69f0a7b8d.html" target="element">  </a> </td>
+																		<td> <a href="../elements/fe753c1f-04a7-4fbd-8ec1-78f69f0a7b8d.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html" target="element"> Invoice line </a> </td>
+																		<td> <a href="../elements/8c837b6f-1422-49a8-913d-67481f6f21f4.html" target="element"> Invoice charges </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/ae06a6ff-4f2b-45af-a02c-823678850257.html" target="element">  </a> </td>
+																		<td> <a href="../elements/ae06a6ff-4f2b-45af-a02c-823678850257.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html" target="element"> Invoice line </a> </td>
+																		<td> <a href="../elements/202b510c-8e0d-4332-9262-78e577507684.html" target="element"> Price details </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/14e2390f-189c-4e68-974e-56c9421a7a72.html" target="element">  </a> </td>
+																		<td> <a href="../elements/14e2390f-189c-4e68-974e-56c9421a7a72.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html" target="element"> Invoice line </a> </td>
+																		<td> <a href="../elements/c9c29c43-61fd-4be3-bc65-75f370810913.html" target="element"> Line VAT information </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/e5f5d563-4af7-4ff9-9066-95f14843ab03.html" target="element">  </a> </td>
+																		<td> <a href="../elements/e5f5d563-4af7-4ff9-9066-95f14843ab03.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/be68b3bc-6bc3-4127-b885-4a70a6566f33.html" target="element"> Invoice line </a> </td>
+																		<td> <a href="../elements/9661d872-eaed-4537-ade3-dcaf899063ec.html" target="element"> Item information </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/4ed6232b-5629-41fb-97a1-8883ffb473c3.html" target="element">  </a> </td>
+																		<td> <a href="../elements/4ed6232b-5629-41fb-97a1-8883ffb473c3.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/9661d872-eaed-4537-ade3-dcaf899063ec.html" target="element"> Item information </a> </td>
+																		<td> <a href="../elements/29021251-7bf3-472c-8ffb-5ee6f4cf6bb9.html" target="element"> Item attributes </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/dc656d2e-bd27-40cc-8e98-9be2104b2ec7.html" target="element">  </a> </td>
+																		<td> <a href="../elements/dc656d2e-bd27-40cc-8e98-9be2104b2ec7.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html" target="element"> Invoice </a> </td>
+																		<td> <a href="../elements/a5610799-6167-4011-947d-c09ad38392ae.html" target="element"> period </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/6d95dcd1-46dd-4f50-bf6f-6d3157880e00.html" target="element">  </a> </td>
+																		<td> <a href="../elements/6d95dcd1-46dd-4f50-bf6f-6d3157880e00.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html" target="element"> Invoice </a> </td>
+																		<td> <a href="../elements/bcdf04b6-c95a-4331-a6a9-9a65cbb1fc63.html" target="element"> buyer </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/d1e96243-6444-4cbd-90c0-1519d07862e7.html" target="element">  </a> </td>
+																		<td> <a href="../elements/d1e96243-6444-4cbd-90c0-1519d07862e7.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html" target="element"> Invoice </a> </td>
+																		<td> <a href="../elements/4cc39a85-fa80-44e5-89b6-8177b7082f92.html" target="element"> line </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/01446e9e-49a1-485d-8993-369192bf1a0c.html" target="element">  </a> </td>
+																		<td> <a href="../elements/01446e9e-49a1-485d-8993-369192bf1a0c.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html" target="element"> Invoice </a> </td>
+																		<td> <a href="../elements/258ba471-5275-4c2c-a702-5b05af4e9d9b.html" target="element"> price </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/4a97b48a-3309-4253-8bdb-6607b56d98cb.html" target="element">  </a> </td>
+																		<td> <a href="../elements/4a97b48a-3309-4253-8bdb-6607b56d98cb.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html" target="element"> Invoice </a> </td>
+																		<td> <a href="../elements/2108e14d-46fa-427b-9f1f-7d5a397279e3.html" target="element"> payment </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/dafd356b-88e4-422d-a38f-04da1b20283b.html" target="element">  </a> </td>
+																		<td> <a href="../elements/dafd356b-88e4-422d-a38f-04da1b20283b.html" target="element" class="i18n-elementtype-CompositionRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html" target="element"> Invoice </a> </td>
+																		<td> <a href="../elements/ea967dd8-b65e-4ec9-ade6-4220847f5e3b.html" target="element"> seller </a> </td>
+																	</tr>
+
+																	<tr>
+																		<td> <a href="../elements/fcca04e9-00d9-4bbc-9caa-79290d684dbb.html" target="element">  </a> </td>
+																		<td> <a href="../elements/fcca04e9-00d9-4bbc-9caa-79290d684dbb.html" target="element" class="i18n-elementtype-RealizationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/81078e50-6e20-4cc8-b3ae-6827fe40f341.html" target="element"> e-invoice </a> </td>
+																		<td> <a href="../elements/b9940717-360b-4f72-b90d-bae94d82c2db.html" target="element"> Invoice </a> </td>
+																	</tr>
+																	<tr>
+																		<td> <a href="../elements/249b9af6-dc71-4638-bf67-9a16f50f07e8.html" target="element"> standardization </a> </td>
+																		<td> <a href="../elements/249b9af6-dc71-4638-bf67-9a16f50f07e8.html" target="element" class="i18n-elementtype-AssociationRelationship">
+																		</a> </td>
+																		<td> <a href="../elements/81078e50-6e20-4cc8-b3ae-6827fe40f341.html" target="element"> e-invoice </a> </td>
+																		<td> <a href="../elements/ff4e3bd8-e840-412a-8296-f2795a1459b1.html" target="element"> Core invoice </a> </td>
+																	</tr>
+
+
+								</tbody>
+							</table>
+						</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">imageMapResize();</script>
+</body>
+</html>
