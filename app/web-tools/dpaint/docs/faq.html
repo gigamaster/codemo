@@ -1,0 +1,56 @@
+<h2>F.A.Q.</h2>
+
+<h3>Dude, your effects/filters are not working</h3>
+
+<div class="faq padded">
+    You are using safari, right? (or another IOS browser)<br>
+    Safari <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/filter">doesn't support Canvas filters.</a><br>
+    I might one day implement them in plain JavaScript, but currently I'm not spending too much time on all the weird and crippling quirks of Safari.<br>
+    Please use a modern browser like Chrome, Firefox or Edge, or at least one that doesn't actively tries to hold back the web.
+</div>
+
+<h3>Dude, When I copy and paste an image, I loose transparency</h3>
+<div class="faq padded">
+    Yes very often you do...<br>
+    This is mainly an issue with Photoshop on Windows, which doesn't save the transparency information in the clipboard in a standard way.<br>
+    Weirdly enough, Photoshop on Mac does preserve transparency in copy/paste.<br>
+    As a workaround, you can first save your file as PNG and import that instead.
+</div>
+
+<h3>Dude, what's up with this Deluxe Paint bullsh*t, it's nothing like it.</h3>
+<div class="faq padded">
+    I mean: the toolbox is even on the wrong side!<br>
+    Yep. It's certainly not a remake of Deluxe Paint, but it's heavily inspired by it, regarding Amiga spirit and pixel handling.<br>
+    I like to think of as "What if Deluxe Paint was made today?"<br>
+    <small>Besides: Deluxe Paint on Atari has the tools at the bottom, blasphemy!</small>
+    <br>If you're looking for a more faithful recreation of Deluxe Paint, check out <a href="https://github.com/mriale/PyDPainter">PyDPainter</a>.
+</div>
+
+<h3>Can I import palettes from <a href="https://lospec.com/">Lospec</a>?</h3>
+<div class="faq padded">
+    Yes.<br>
+    Download the <a href="https://lospec.com/">Lospec Palette</a> as PNG, open that image in DPaint.js.<br>
+    Next to that, you can extract the palette from any image by selecting the menu Palette -> From image.
+</div>
+
+<h3>How do I save Amiga Icons in the "New Icon" format?</h3>
+<div class="faq padded">
+    Don't.<br>
+    The "New Icon" format was a hacky and messy way to solve a problem 30 years ago, but nowadays there are far better solutions.<br>
+    Save your icons as "Color Icon" (or "Glow Icon") and use a <a href="https://aminet.net/package/util/libs/IconLib_46.4">proper icon library</a> on your Amiga.<br>
+    Please stop using the "New Icon" format, the sooner it fades out, the better.<br>
+    DPaint.js can read New Icons, but write support is not planned.
+</div>
+
+<h3>How do I save images as JPEG?</h3>
+<div class="faq padded">
+    Apologies for being opinionated and pedantic.<br>
+    DPaint.js is targeted at pixel art and lo-spec images.<br>
+    While the JPEG format is fine for high resolution photos,
+    it's not a good match if you want to preserve each pixel of an image because it's a lossy compression that blurs and alters the image.<br>
+    Therefore, DPaint.js doesn't provide an option to save as JPEG.<br>
+</div>
+
+
+
+

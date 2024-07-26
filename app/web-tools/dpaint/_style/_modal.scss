@@ -1,0 +1,471 @@
+.blanket{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: none;
+
+  &.active{
+    display: block;
+  }
+}
+
+.modalwindow{
+  position: absolute;
+  z-index: 1001;
+  background-color: $panel-background-color;
+  width: 440px;
+  height: 260px;
+  border: 1px solid black;
+  top: calc(50vh - 130px);
+  left: 50%;
+  margin-left: -100px;
+  box-shadow: 0 0 8px 0px black;
+  display: none;
+
+  .caption{
+    color: $menu-text-color;
+    padding: 2px 4px;
+    border-bottom: 1px solid black;
+    position: relative;
+    height: 20px;
+    background-color: #00000038;
+    cursor: move;
+    user-select: none;
+
+    .button{
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      line-height: 14px;
+      text-align: center;
+      border: 1px solid black;
+      top: 2px;
+      right: 2px;
+      font-size: 12px;
+      user-select: none;
+
+      &:hover{
+        background-color: $panel-background-active;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.active{
+    display: block;
+  }
+
+  .inner{
+    color: $menu-text-color;
+
+
+    .button{
+      border: 1px solid #6a6a6a;
+      margin: 2px;
+      padding: 6px;
+      user-select: none;
+
+      .title{
+        color: $menu-text-color;
+      }
+
+      .subtitle{
+        color: #797979;
+      }
+
+      &:hover{
+        cursor: pointer;
+        border: 1px solid #8c8c8c;
+        background-color: #232323;
+      }
+
+      &.large{
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+      }
+
+      &.highlight{
+        border: 1px solid #ded293;
+        color: #ded293;
+      }
+    }
+
+    h3{
+      font-size: 13px;
+      padding: 0 10px;
+      margin: 10px 0;
+    }
+
+    .panel.form{
+      padding: 0 10px;
+
+      span.label{
+          display: inline-block;
+          width: 80px;
+          text-align: right;
+          padding-right: 8px;
+      }
+
+      input[type="number"]{
+        width: 100px;
+        margin-right: 8px;
+        margin-bottom: 4px;
+      }
+    }
+
+    select{
+      color: $menu-text-color;
+      width: 100%;
+      border: 1px solid black;
+      background-color: transparent;
+      margin: 4px 0;
+
+      &:focus{
+        outline: none;
+      }
+
+      option{
+        color: $menu-text-color;
+        background-color: #2B2B2B;
+        border-radius: 0;
+      }
+
+      &.resize{
+        width: 100px;
+        padding: 2px;
+        position: absolute;
+        left: 198px;
+        top: 120px;
+      }
+    }
+
+    .buttons{
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      right: 0;
+      padding: 10px 8px;
+
+      &.relative{
+        position: relative;
+      }
+
+      .button{
+        width: 150px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 20px;
+        margin: 0 2px;
+
+        &.ghost{
+          opacity: 0.7;
+        }
+      }
+    }
+
+    .about{
+      img{
+        width: 100%;
+        height: auto;
+      }
+
+      .text{
+        position: absolute;
+        z-index: 1;
+        font-size: 12px;
+        line-height: 14px;
+        left: 56px;
+        color: #a5bac2;
+        opacity: 0.8;
+        pointer-events: none;
+
+        &.info{
+          width: 380px;
+          bottom: 110px;
+        }
+
+        &.copyright{
+          bottom: 82px;
+        }
+
+        &.github{
+          bottom: 55px;
+        }
+
+        &.nobullshit{
+          bottom: 10px;
+          opacity: 0.5;
+        }
+
+
+        &.link{
+          pointer-events: all;
+
+          &:hover{
+            color: white;
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+
+        &.version{
+          left: unset;
+          right: 66px;
+          bottom: 55px;
+        }
+
+        &.contrib{
+
+          i{
+            opacity: 0.8;
+            display: block;
+            font-style: normal;
+          }
+          bottom: 10px;
+          text-align: right;
+          left: unset;
+          right: 66px;
+          opacity: 0.5;
+        }
+      }
+
+    }
+
+    .optiondialog{
+      p{
+        margin: 0;
+        padding: 10px;
+      }
+    }
+
+    .lock{
+      position: absolute;
+      height: 33px;
+      width: 13px;
+      border: 1px solid transparent;
+      border-left: none;
+      top: 46px;
+      left: 246px;
+      opacity: 0.7;
+
+      .link{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        right: -8px;
+        margin-top: -8px;
+        background-color: $panel-background-color;
+        background-image: url("../_img/link.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.7;
+
+        &:hover{
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+
+      &.active{
+        border: 1px solid $menu-text-color-dim;
+        border-left: none;
+        opacity: 1;
+      }
+    }
+
+    .anchor{
+      position: absolute;
+      border:1px solid black;
+      left: 290px;
+      top: 56px;
+      width: 92px;
+      height: 92px;
+      background-color: #533030;
+      display: flex;
+      flex-wrap: wrap;
+
+
+      h3{
+        position: absolute;
+        left: -11px;
+        top: -37px;
+      }
+
+      .page{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border: 1px solid black;
+        background-color: #47494d;
+        left: 15px;
+        top: 15px;
+        z-index: 1;
+        transition: left 0.2s ease-in-out, top 0.2s ease-in-out;
+      }
+
+      .hotspot{
+        width: 30px;
+        height: 30px;
+        position: relative;
+        z-index: 2;
+        &:hover{
+          background-color: rgba(255, 255, 255, 0.13);
+          cursor: pointer;
+        }
+      }
+
+      .arrow{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-image: url("../_img/caret.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: -8px 0 0 -8px;
+        opacity: 0.6;
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+
+        &.top{
+          left: 50%;
+          top: 8px;
+          transform: rotate(270deg);
+        }
+
+        &.right{
+          right: 0;
+          top: 50%;
+        }
+
+        &.bottom{
+          left: 50%;
+          bottom: 0;
+          transform: rotate(90deg);
+        }
+
+        &.left{
+          left: 8px;
+          top: 50%;
+          transform: rotate(180deg);
+        }
+      }
+
+      &.top{
+        .page{
+          top: -1px;
+        }
+        .arrow.bottom{
+          bottom: 10px;
+        }
+      }
+
+      &.left{
+        .page{
+          left: -1px;
+        }
+        .arrow.right{
+          right: 10px;
+        }
+      }
+
+      &.right{
+        .page{
+          left: 31px;
+        }
+        .arrow.left{
+          left: 18px;
+        }
+      }
+
+      &.bottom{
+        .page{
+          top: 31px;
+        }
+        .arrow.top{
+          top: 18px;
+        }
+      }
+
+    }
+
+    .quick{
+      position: absolute;
+      top: 123px;
+      left: 88px;
+      font-size: 12px;
+
+      .button.calc{
+        display: inline-block;
+        width: 22px;
+        padding: 2px;
+        text-align: center;
+      }
+    }
+
+    .textlink{
+      text-decoration: underline;
+      color: $menu-text-color;
+
+      &:hover{
+        color: white;
+        cursor: pointer;
+      }
+    }
+
+    &.full{
+      position: absolute;
+      left: 0;
+      top: 20px;
+      right: 0;
+      bottom: 0;
+    }
+
+
+
+    @import "paletteEditor";
+    @import "effectEditor";
+    @import "ditherEditor";
+    @import "saveDialog";
+  }
+}
+
+.notificationbox{
+  position: fixed;
+  left: 20px;
+  bottom: 40px;
+  z-index: 1000;
+  width: 250px;
+  height: 80px;
+  background-color: #1a1a1a;
+  color: $menu-text-color;
+  border: 1px solid #3b3b3b;
+  font-size: 13px;
+  margin-left: -200px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+
+  .title{
+    background-color: #101010;
+    border-bottom: 1px solid #3b3b3b;
+    padding: 4px 10px;
+  }
+
+  .text{
+    padding: 4px 10px;
+  }
+
+  &.active{
+    display: block;
+    opacity: 1;
+    margin-left: 0;
+    pointer-events: all;
+  }
+}

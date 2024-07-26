@@ -1,0 +1,309 @@
+.saveform{
+  padding: 10px;
+  h4{
+    padding: 0;
+    margin: 0 0 4px 0;
+    font-weight: normal;
+
+    &.amiga,
+    &.general{
+      background-image: url("../_img/amigatick.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left center;
+      padding-left: 20px;
+    }
+
+    &.general{
+      background-image: url("../_img/image.svg");
+      padding-left: 22px;
+    }
+  }
+
+  input{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .platform{
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+
+    .button{
+      border: none;
+      position: relative;
+      padding: 5px 5px 5px 40px;
+
+      .icon{
+        width: 32px;
+        height:32px;
+        left: 0;
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &.png{background-image: url("../_img/png.svg");}
+        &.json{background-image: url("../_img/json.svg");}
+        &.psd{background-image: url("../_img/psd.svg");}
+        &.mui{background-image: url("../_img/mui.png");}
+        &.os3{background-image: url("../_img/os3.png");}
+        &.os4{background-image: url("../_img/os4.png");}
+        &.iff{background-image: url("../_img/iff.png");}
+        &.adf{background-image: url("../_img/floppy.png");}
+      }
+
+      .info{
+        background-color: #4d5052;
+        position: absolute;
+        padding: 4px 4px 4px 8px;
+        border: 1px solid black;
+        top: 0;
+        left: 140px;
+        z-index: 10;
+        width: 200px;
+        opacity: 0;
+        pointer-events: none;
+        min-height: 40px;
+        transition: opacity 0.2s ease-in-out, left 0.2s ease-in-out;
+
+        &:before{
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: -21px;
+            border: 10px solid transparent;
+            border-right: 10px solid black;
+        }
+
+        &:after{
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: -20px;
+          border: 10px solid transparent;
+          border-right: 10px solid #4d5052;
+        }
+
+      }
+
+      &:hover{
+        .info{
+          opacity: 1;
+          left: 160px;
+        }
+      }
+
+      &.more{
+        position: absolute;
+        bottom: 10px;
+        min-width: 60px;
+        padding: 5px 8px;
+
+        &:after{
+          content: "";
+          position: absolute;
+          right: 2px;
+          width: 16px;
+          height: 17px;
+          background-image: url("../_img/caret.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &.amiga{
+      .button{
+        .info{
+          left: unset;
+          right: 140px;
+          transition: opacity 0.2s ease-in-out, right 0.2s ease-in-out;
+
+          &:before{
+            left: unset;
+            right: -21px;
+            transform: rotate(180deg);
+          }
+
+          &:after{
+            left: unset;
+            right: -20px;
+            transform: rotate(180deg);
+          }
+        }
+          &:hover{
+            .info{
+              right: 160px;
+            }
+          }
+      }
+    }
+  }
+
+
+  .moremenu{
+    z-index: 10;
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    right: 0;
+    width: 220px;
+    background-color: #2B2B2B;
+    border-left: 1px solid black;
+    display: none;
+
+    .item{
+      padding:5px 5px 5px 44px;
+      border-bottom: 1px solid black;
+      position: relative;
+
+      .subtitle{
+        font-size: 13px;
+        padding: 4px 0;
+        color: #797979;
+      }
+
+      &:hover{
+        background-color: #232323;
+        cursor: pointer;
+
+        .info{
+          opacity: 1;
+          right: 220px;
+        }
+      }
+
+      &:after{
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        width: 34px;
+        height: 34px;
+        background-image: url("../_img/layers.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &.mask:after{
+        background-image: url("../_img/layers_mask.svg");
+      }
+      &.index:after{
+        background-image: url("../_img/pixelgrid.svg");
+      }
+
+      &.loading{
+        &:after{
+          display: none;
+        }
+      }
+
+      .spinner{
+        top: 8px;
+        left: 30px;
+        width: 32px;
+        height: 32px;
+      }
+
+      .info{
+        background-color: #232323;
+        position: absolute;
+        padding: 4px 4px 4px 8px;
+        border: 1px solid black;
+        top: 0px;
+        z-index: 10;
+        width: 170px;
+        opacity: 0;
+        pointer-events: none;
+        min-height: 40px;
+        transition: opacity 0.2s ease-in-out, right 0.2s ease-in-out;
+        right: 120px;
+        box-shadow: 0 0 20px 0px #00000082;
+
+
+        &:before{
+          content: "";
+          position: absolute;
+          top: 10px;
+          border: 10px solid transparent;
+          border-right: 10px solid black;
+          right: -21px;
+          transform: rotate(180deg);
+        }
+
+        &:after{
+          content: "";
+          position: absolute;
+          top: 10px;
+          right: -20px;
+          transform: rotate(180deg);
+          border: 10px solid transparent;
+          border-right: 10px solid #232323;
+        }
+
+      }
+
+    }
+  }
+
+  &.hasmore{
+    .moremenu{
+      display: block;
+    }
+
+    .button.more:after{
+        transform: rotate(180deg);
+    }
+
+    input{
+      width: calc(100% - 220px);
+    }
+  }
+
+
+}
+
+.saveoverlay{
+  position: absolute;
+  top: 20px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  background-color:#3D3F41;
+  z-index: 10;
+
+  .info{
+    text-align: center;
+    padding: 50px 10px 10px 10px;
+
+    b{
+      font-size: 20px;
+      display: block;
+      padding: 20px 0;
+    }
+  }
+
+  .spinner{
+    display: none;
+  }
+
+  &.loading{
+    .info{
+      display: none;
+    }
+
+    .buttons{
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .spinner{
+      display: block;
+    }
+  }
+}

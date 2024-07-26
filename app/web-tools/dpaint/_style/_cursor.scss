@@ -1,0 +1,150 @@
+.cursor{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  margin-top: -18px;
+  margin-left: -2px;
+  pointer-events: none;
+  background-size: contain;
+  z-index: 1002;
+  display: none;
+
+  &.rotate{
+    background-image: url("../_img/rotate1.svg");
+    margin-top: -10px;
+    margin-left: -10px;
+  }
+
+}
+
+body.customcursor.hoverviewport{
+  cursor: none;
+
+  .sizebox{
+    cursor: none;
+  }
+
+  .cursor{
+    display: block;
+  }
+
+
+}
+
+body.hoverviewport{
+  &.cursor-draw{
+    cursor: url("../_img/cursors/cross.png") 12 12, auto;
+  }
+
+  &.cursor-colorpicker{
+    cursor: url("../_img/cursors/pipette.png") 0 24, auto;
+
+    canvas.overlaycanvas{
+      display: none;
+    }
+  }
+
+  &.cursor-rotate{
+    cursor: url("../_img/cursors/rotatene.png") 0 0, auto;
+  }
+
+  &.cursor-select{
+    cursor: crosshair;
+  }
+
+  &.cursor-text{
+    cursor: text;
+  }
+
+  &.cursor-pan{
+    cursor: grab;
+
+    canvas.overlaycanvas{
+      display: none;
+    }
+  }
+}
+
+/* cursors that also apply to main UI */
+body,
+body.hoverviewport{
+
+  &.cursor-drag{
+    cursor: grabbing !important;
+    .cursor{
+      display: none;
+    }
+  }
+}
+
+body.hovercanvas.pointerdown.cursor-colorpicker{
+  .cursor{
+    display: block;
+
+    .mark{
+      position: absolute;
+      pointer-events: none;
+      display: none;
+      width: 60px;
+      height: 60px;
+      margin: -14px 0 0 -26px;
+      border: 8px solid green;
+      border-radius: 50%;
+      box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 0 3px 1px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+#dragelement{
+  position: absolute;
+  z-index: 1002;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  &.active{
+    opacity: 1;
+  }
+
+  .dragelement{
+    &.box{
+      width: 120px;
+      padding: 4px 8px;
+      color: $menu-text-color;
+      background-color: #313335;
+      border: 1px solid #000000;
+      box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.63);
+
+      &.frame{
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &.tooltip{
+      background-color: #d0c5b1;
+      padding: 4px 8px;
+      border: 1px solid black;
+      font-size: 12px;
+      white-space: nowrap;
+      pointer-events: none;
+      margin: 12px 0 0 12px;
+    }
+  }
+
+
+}
+
+
+
+
+
