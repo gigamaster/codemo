@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme" style="color-scheme: dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Entity-Relationship Diagram Editor App</title>
+  <meta name="description" content="Entity-Relationship Diagram Editor App" />
+  <meta name="application-name" content="ERD Editor" />
+  <meta name="keywords" content="erd editor, app, PWA, support, offline, real-time collaboration, encryption, local-first, autosave, browser, synchronization" />
+  <meta name="author" content="SeungHwan-Lee" />
+  <meta name="generator" content="codemo" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- Theme color -->
+  <meta name="theme-color" content="#111213" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://gigamaster.github.io/codemo/asset/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://gigamaster.github.io/codemo/asset/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://gigamaster.github.io/codemo/asset/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="https://gigamaster.github.io/codemo/asset/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="https://gigamaster.github.io/codemo/asset/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+  <link rel="shortcut icon" href="https://gigamaster.github.io/codemo/asset/favicon/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#111213" />
+  <meta name="msapplication-config" content="https://gigamaster.github.io/codemo/asset/favicon/browserconfig.xml" />
+  <style>
+    body {
+    background: radial-gradient(circle at 50% 100%, #262b2f, #000);
+    color: #abc;
+    font: normal 16px/1.5 system-ui, sans-serif;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100vw;
+  }
+  </style>
+  <script type="module">
+    import 'https://esm.run/@dineug/erd-editor';
+  
+    const editor = document.createElement('erd-editor');
+    document.body.appendChild(editor);
+  </script>
+  <!-- or 
+<script type="module" src="https://esm.run/@dineug/erd-editor"></script>
+-->
+</head>
+<body>
+</body>
+</html>
