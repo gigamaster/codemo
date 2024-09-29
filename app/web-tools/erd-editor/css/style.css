@@ -1,0 +1,93 @@
+*,::after,::before {box-sizing:border-box;border:0 solid}
+* { margin:0 }
+@supports (scrollbar-width: auto) {
+* {
+  scrollbar-color: #262b2f #000;
+  scrollbar-width: thin;
+  }
+}
+
+body {
+  background: radial-gradient(circle at 50% 100%, #262b2f, #000);
+  color: #aaa;
+  font: normal 16px/1.5 system-ui, sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 100vw;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+}
+
+#menu {
+  display:block;
+  height:100vh;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#menu nav {
+  background: #111;
+  border-bottom: 1px solid #212527;
+  box-shadow: 0px 1px 15px 10px #212527;
+  display: inline-block;
+  font-size: 1rem;
+  height: 30px;
+  padding: 5px 16px;
+  position: fixed;    
+  width: calc(100% - 2rem);
+}
+
+#menu a, #menu a:visited { color:#fff; text-decoration:none}
+#menu a:active, #menu a:hover {color:#ddd}
+
+svg {
+  margin-right: .5rem;
+  vertical-align: -.175em;
+}
+
+#menu > div {
+  height:100vh;
+  overflow-y: hidden;
+  padding: 50px 1rem;
+  scrollbar-gutter: stable;
+}
+
+#menu > div:hover {
+  overflow-y: auto;
+}
+
+#menu > div h3 {
+  font-weight: 300;
+}
+
+#menu > div p {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+kbd {
+  background: #212527;
+  border: 1px solid #111213;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px 0 #5a5a5a70;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+.gutter {
+  background-color: #212527;
+  background-repeat: no-repeat;
+  background-position: 50% 50vh;
+  border: 1px solid #111213;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  cursor: col-resize;
+}
