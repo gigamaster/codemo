@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GUI SPARQL Web App - EU Data Provider</title>
+  <meta name="description" content="App GUI for SPARQL Data Provider - European Union" />
+  <meta name="robots" content="all" />
+  <meta name="keywords" content="app, gui, sparql, web app, dataviz, european union, data, provider, diagram, generator, svg" />
+  <meta name="rating" content="general" />
+  <meta name="author" content="Nuno Luciano" />
+  <meta name="copyright" content="Authors" />
+  <meta name="generator" content="SPARQL" />
+  <link rel="stylesheet" href="./lib/style.css" />
+  <link rel="preload" as="script" href="./lib/ontodia-custom.min.js" />
+  <link rel="preload" as="script" href="./lib/react.min.js" />
+  <link rel="preload" as="script" href="./lib/react-dom.min.js" />
+  <script>
+  window.addEventListener('load', () => {
+    const preload = document.querySelector('.preloader');
+    setTimeout( function() {
+        preload.classList.add('preloader-done');
+    }, 3000 );
+  });
+</script>
+</head>
+<body>
+<div class="preloader">
+  <div class="loading">
+  <h1>SPARQL Data Provider </h1>
+  <h4>European Union :: Data Loading...</h4>
+  </div>
+</div>
+<div id="container"></div>
+<!-- local first -->
+<script src='./lib/ontodia-custom.min.js'></script>
+<script src="./lib/react.min.js"></script>
+<script src="./lib/react-dom.min.js"></script>
+<script src="./lib/script.js"></script>
+</body>
+</html>

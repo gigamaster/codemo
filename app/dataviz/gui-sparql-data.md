@@ -1,16 +1,18 @@
-# GUI-App-Build-Diagram
+# GUI Sparql Data Query
 
-European Union Sparql Data Provider   
-Ontodia needs to have an access to data,  
-therefore you have to provide a SPARQL  
-endpoint URL in environment property.   
+We've set European Union Sparql Data Provider   
+to use for demonstration purposes.   
 
-We've set European Union Data Provider   
-to use for demonstration purposes. 
+More about EU : https://data.europa.eu/fr/about/sparql   
+
+SPARQL Query Editor   
+https://data.europa.eu/sparql
 
 ## Ontodia
 
 Ontodia is a JavaScript library that allows to visualize, navigate and explore data in the form of an interactive graph based on underlying data sources.
+Ontodia needs to have an access to data, therefore you have to provide a SPARQL  
+endpoint URL in environment property. 
 
 ## What is Ontodia for?
 
@@ -28,11 +30,9 @@ It was designed to visualize RDF data sets in particular, but could be tailored 
 
 ## How to try it?
 
-- Click `gui app build data diagram` to open the GUI in your browser.   
+- Open the GUI in your browser.   
 - Drag and drop to build diagrams
 - Search relational data 
-
-More about EU : https://data.europa.eu/fr/about/sparql
 
 ## About SPARQL
 
