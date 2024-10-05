@@ -1,0 +1,289 @@
+.splitpanel{
+  position: absolute;
+  top: 27px;
+  left: 70px;
+  right: 0;
+  bottom: 22px;
+
+  .panel{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(50% - 4px);
+    border: 1px solid black;
+
+    &:first-of-type{
+      left: 0;
+      width: 100%;
+    }
+    &:last-of-type{
+      right: 0;
+      display: none;
+    }
+
+    .toolbar{
+      top: 0;
+      right: 0;
+      width: unset;
+      height: 21px;
+      border: none;
+      border-bottom: 1px solid black;
+      justify-content: flex-start;
+      display: flex;
+      white-space: nowrap;
+
+
+      .button{
+        height: 20px;
+        width: 20px;
+        color: $menu-text-color;
+        font-size: 12px;
+        line-height: 20px;
+        border: none;
+        border-right: 1px solid black;
+        background-color: $button-background-dark;
+
+        &.auto{
+          width: auto;
+          padding: 0 5px;
+        }
+
+        &.expand{
+          background-image: url("../_img/fullscreen.svg");
+          background-size: 60% 60%;
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+
+        &.closepresentation{
+          display: none;
+        }
+
+        &.right{
+          position: absolute;
+          right: 0;
+          border-left: 1px solid black;
+        }
+      }
+
+      .toolpanel{
+        .options{
+          display: flex;
+          padding: 3px 2px 0 2px;
+          color: $menu-text-color;
+          font-size: 12px;
+
+          span.tool{
+            padding: 0px 4px 0 10px;
+            color: $menu-text-color-dim;
+          }
+
+          .optionsgroup{
+            display: flex;
+          }
+
+          .flex{
+            display: flex;
+          }
+
+          .checkbox{
+            font-size: 12px;
+            padding-right: 10px;
+            label span{
+              padding-left: 14px;
+              &:before{
+                width: 10px;
+                height: 10px;
+              }
+            }
+
+            &.mask{
+              margin-left: 10px;
+            }
+
+            &.inline{
+              margin-left: 10px;
+            }
+          }
+
+          input[type=range] {
+            margin: 0 4px 0 4px;
+            width: 40px;
+            height: 6px;
+          }
+
+          input[type=range]::-webkit-slider-thumb {
+            margin-top: -7px;
+            width: 8px;
+            height: 14px;
+          }
+
+          input[type=range]::-webkit-slider-runnable-track {
+            background: #010101;
+            height: 3px;
+            margin-top: -2px;
+            cursor: pointer;
+          }
+
+          label{
+            font-size: 11px;
+            &.inline{
+              margin-left: 6px;
+            }
+          }
+
+          select{
+            background-color: #181818;
+            color: $menu-text-color;
+            border: 1px solid #626262;
+            font-size: 11px;
+            margin-right: 4px;
+            &:focus{
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+
+    .viewport,
+    .windowContainer,
+    .tileContainer{
+      position: absolute;
+      top: 21px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: auto;
+      display: flex;
+      touch-action: none;
+
+      &.hidden{
+        display: none;
+      }
+    }
+
+    .windowContainer{
+      .window{
+        width: 300px;
+        height: 170px;
+        background-image: url("../_img/frame.png");
+        position: absolute;
+        top: 50px;
+        left: 10px;
+
+        &:nth-child(2){
+          top: 250px;
+        }
+
+        &:nth-child(3){
+          top: 450px;
+        }
+
+        canvas{
+          position: absolute;
+          top: 18px;
+          left: 4px;
+        }
+      }
+    }
+  }
+
+  .splitter{
+    position: absolute;
+    left: calc(50% - 4px);
+    margin-left: 1px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    cursor: col-resize;
+    z-index: 10;
+    display: none;
+
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .canvaswrapper{
+    display: block;
+    margin: auto;
+    position: relative;
+  }
+  
+  .canvascontainer{
+    display: block;
+    position: relative;
+    border: 1px solid black;
+    background-image: url("../_img/checkers.png");
+  }
+
+  canvas{
+    image-rendering: optimizeSpeed;
+    image-rendering: optimize-contrast;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+    -webkit-touch-callout: none;
+    display: block;
+    position: relative;
+    z-index: 1;
+    
+    &.overlaycanvas{
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+  }
+
+}
+
+
+body.shift.mousedown{
+  .splitpanel{
+    .overlaycanvas{
+      display: none;
+    }
+  }
+}
+
+
+body.withsidepanel{
+  .splitpanel{
+    left: 250px;
+  }
+}
+
+body.withfilebrowser{
+    .splitpanel{
+        right: 154px;
+    }
+}
+
+body.presentation{
+  .splitpanel{
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    .toolbar{
+      .button{
+        display: none;
+
+        &.closepresentation{
+          display: block;
+        }
+      }
+
+      .toolpanel{
+        display: none;
+      }
+    }
+  }
+}

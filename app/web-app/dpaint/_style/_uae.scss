@@ -1,0 +1,61 @@
+.uae{
+  position: absolute;
+  left:0;
+  top: 0;
+  z-index: 1000;
+  background-color: $button-background-dark;
+  box-shadow: 0 0 20px 0px black;
+
+  .caption{
+    height: 20px;
+    color: $menu-text-color;
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    padding: 2px 2px 2px 24px;
+    background-image: url("../_img/amigatick.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 2px center;
+    cursor: move;
+
+    .close{
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      right: 0;
+      top: 0;
+      text-align: center;
+      cursor: pointer;
+      opacity: 0.7;
+
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+
+  .resizer{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 0;
+    bottom: 0;
+    border:10px solid transparent;
+    border-bottom-color: #313335;
+    border-right-color: #313335;
+    cursor: nwse-resize;
+  }
+
+  iframe{
+    width: 100%;
+    height: calc(100% - 21px);
+    border: none;
+  }
+
+  &.dragging{
+    iframe{
+      pointer-events: none;
+    }
+  }
+}

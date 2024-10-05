@@ -1,0 +1,81 @@
+@import "var";
+
+html {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  background-color: $background-color;
+  font-family: sans-serif;
+  font-size: 14px;
+  height: 100%;
+  margin: 0;
+  padding: 1px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.container{
+  position: relative;
+  height: 100%;
+  background-color: $background-color;
+
+  &.fuzzy{
+    pointer-events: none;
+    filter: blur(2px);
+  }
+}
+
+h1.error{
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 100;
+  margin: 50px auto;
+  width: 50%;
+
+  a{
+    color: white;
+  }
+}
+
+.spinner{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -25px;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+
+}
+
+
+
+@import "scrollbar";
+@import "forms";
+@import "range";
+@import "menu";
+@import "contextMenu";
+@import "toolbar";
+@import "statusbar";
+@import "sidepanel";
+@import "paletteList";
+@import "editor";
+@import "visualAids";
+@import "selection";
+@import "cursor";
+@import "modal";
+@import "fileBrowser";
+@import "gallery";
+@import "uae";
+@import "mobile";

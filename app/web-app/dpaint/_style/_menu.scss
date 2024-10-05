@@ -1,0 +1,152 @@
+@import "var";
+
+.menu{
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px solid black;
+  height: 25px;
+  background-color: $panel-background-color;
+  color: $menu-text-color;
+  z-index: 1000;
+  user-select: none;
+  white-space: nowrap;
+
+  .hamburger{
+    display: none;
+  }
+
+  a.main{
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 23px;
+    font-size: 13px;
+
+    .sub{
+      left: 0;
+      margin-top: 0;
+      position: absolute;
+      background-color: $panel-background-color;
+      color: $menu-text-color;
+      border: 1px solid black;
+      display: none;
+
+      a{
+        display: block;
+        padding: 0 24px 0 10px;
+        font-size: 13px;
+        line-height: 23px;
+        white-space: nowrap;
+        position: relative;
+
+        &.wide{
+          padding: 0 70px 0 10px;
+
+          &.ultra{
+            padding: 0 90px 0 10px;
+          }
+        }
+
+        &.caret{
+          &:after{
+            content: "";
+            position: absolute;
+            right: 2px;
+            width: 16px;
+            height: 23px;
+            background-image: url("../_img/caret.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.5;
+          }
+        }
+
+        &.checked{
+          &:before{
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            bottom: 0;
+            width: 14px;
+            background-image: url("../_img/check.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
+
+        &:hover{
+          background-color: $panel-background-active;
+          cursor: pointer;
+
+          .subsub{
+            display: block;
+          }
+        }
+
+        .shortkey{
+          position: absolute;
+          right: 6px;
+          top: 1px;
+          color: $menu-text-color-dim;
+          font-size: 11px;
+        }
+      }
+
+      &.checkable{
+        a{
+          padding: 0 24px 0 20px;
+        }
+      }
+
+      .info{
+        position: absolute;
+        right: 6px;
+        top: 1px;
+        color: $menu-text-color-dim;
+        font-size: 11px;
+      }
+
+
+      .subsub{
+        position: absolute;
+        background-color: $panel-background-color;
+        border: 1px solid black;
+        z-index: 100;
+        top: 0;
+        left: 50%;
+        display: none;
+
+        &.checkable{
+          a{
+            padding: 0 24px 0 20px;
+
+            &.hasinfo{
+              padding-right: 120px;
+            }
+          }
+        }
+      }
+    }
+
+    &:hover,
+    &.active{
+      background-color: $panel-background-active;
+      cursor: pointer;
+    }
+
+    &.active{
+      .sub{
+        display: block;
+      }
+    }
+  }
+}
+
+body.presentation{
+  .menu {
+    display: none;
+  }
+}
