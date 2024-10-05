@@ -1,0 +1,10 @@
+bak/
+bak/*
+test/*
+app/test/*
+tests/*
+*.bak
+*.tmp
+*.tmp_proj
+*.log
+node_modules
