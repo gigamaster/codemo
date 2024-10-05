@@ -16,6 +16,17 @@ or a directory as a zip archive to your own (local) computer.
   
 --- 
 
+
+| Web App | Image | SVG | Editor | 
+| ------------- | ------------- | ------------- | ------------- |
+| dpaint  | drawio | encrypt  | erd-editor |
+| [dpaint][dpaint] | [drawio][drawio] | [encrypt][encrypt] | [erd-editor][erd-editor] |
+| godsvg | grapesjs | livecodes | mermaid-editor |
+| [godsvg][godsvg] | [grapesjs][grapesjs] | [livecodes][livecodes] | [mermaid-editor][mermaid-editor] |
+| tldraw | voxel-builder | vvvebjs |  |
+| [tldraw][tldraw] | [voxel-builder][voxel-builder] | [vvvebjs][vvvebjs] |  |
+
+
 ### 1. Live Code
 
 import a repository, directory, file or gist and embed a live code editor in a website with a simple link to see the results in real time. You can use your favorite CSS and Javascript framework with an existing project or start fresh with a quick-start template of [Livecodes](https://gigamaster.github.io/livecodes/)  
@@ -35,7 +46,7 @@ Alternativaly, you can open the repository in a new browser tab, press `>`
 
 --- 
 
-### Resources
+### Tech Stack
 
 - [Docker](https://www.docker.com/) 
 - Runner `ubuntu-latest` 
@@ -89,3 +100,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE   
 SOFTWARE.   
 
+[web]: https://gigamaster.github.io/codemo/web-app/
+[dpaint]: https://gigamaster.github.io/codemo/web-app/
+[drawio]: https://gigamaster.github.io/codemo/web-app/
+[encrypt]: https://gigamaster.github.io/codemo/web-app/
+[erd-editor]: https://gigamaster.github.io/codemo/web-app/
+[godsvg]: https://gigamaster.github.io/codemo/web-app/
+[grapesjs]: https://gigamaster.github.io/codemo/web-app/
+[livecodes]: https://gigamaster.github.io/codemo/web-app/
+[mermaid-editor]: https://gigamaster.github.io/codemo/web-app/
+[tldraw]: https://gigamaster.github.io/codemo/web-app/
+[voxel-builder]: https://gigamaster.github.io/codemo/web-app/
+[vvvebjs]: https://gigamaster.github.io/codemo/web-app/
