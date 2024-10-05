@@ -12,8 +12,7 @@
     "precache-manifest.85446bd97476a4a2675cfe1500a8e5b7.js": "./precache-manifest.85446bd97476a4a2675cfe1500a8e5b7.js",
     "service-worker.js": "./service-worker.js",
     "static/css/2.42c6bb7e.chunk.css.map": "./static/css/2.42c6bb7e.chunk.css.map",
-    "static/css/main.8196904e.chunk.css.map": "./static/css/main.8196904e.chunk.css.map",
-    "static/media/bootstrap.min.css": "./static/media/glyphicons-halflings-regular.fa277232.woff"
+    "static/css/main.8196904e.chunk.css.map": "./static/css/main.8196904e.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.89b10739.js",
