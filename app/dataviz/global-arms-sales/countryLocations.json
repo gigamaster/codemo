@@ -1,0 +1,2042 @@
+{
+	"Papua New Guinea": {
+		"airports": 65,
+		"country": "Papua New Guinea",
+		"code1": "GKA",
+		"code2": "AYGA",
+		"long": 146.39184654377354,
+		"lat": -6.8309689665935975
+	},
+	"Greenland": {
+		"airports": 29,
+		"country": "Greenland",
+		"code1": "UAK",
+		"code2": "BGBW",
+		"long": -48.07624872743294,
+		"lat": 67.54129023019541
+	},
+	"Iceland": {
+		"airports": 25,
+		"country": "Iceland",
+		"code1": "AEY",
+		"code2": "BIAR",
+		"long": -18.891538387219875,
+		"lat": 65.15225052482273
+	},
+	"Canada": {
+		"airports": 581,
+		"country": "Canada",
+		"code1": "YAM",
+		"code2": "CYAM",
+		"long": -105.3463071853321,
+		"lat": 59.54314431433634
+	},
+	"Algeria": {
+		"airports": 47,
+		"country": "Algeria",
+		"code1": "\\N",
+		"code2": "DAAB",
+		"long": 3.5236325480084703,
+		"lat": 32.60056944926426
+	},
+	"Benin": {
+		"airports": 3,
+		"country": "Benin",
+		"code1": "COO",
+		"code2": "DBBB",
+		"long": 2.6446720204722087,
+		"lat": 8.953132395487467
+	},
+	"Burkina Faso": {
+		"airports": 2,
+		"country": "Burkina Faso",
+		"code1": "OUA",
+		"code2": "DFFD",
+		"long": -2.9216949343681335,
+		"lat": 11.7566499710083
+	},
+	"Ghana": {
+		"airports": 6,
+		"country": "Ghana",
+		"code1": "ACC",
+		"code2": "DGAA",
+		"long": -1.5386716400583584,
+		"lat": 7.369588295618692
+	},
+	"Cote d'Ivoire": {
+		"airports": 7,
+		"country": "Cote d'Ivoire",
+		"code1": "ABJ",
+		"code2": "DIAP",
+		"long": -5.80622427804084,
+		"lat": 6.871734346663062
+	},
+	"Nigeria": {
+		"airports": 28,
+		"country": "Nigeria",
+		"code1": "ABV",
+		"code2": "DNAA",
+		"long": 7.209219515045326,
+		"lat": 8.203505044964988
+	},
+	"Niger": {
+		"airports": 7,
+		"country": "Niger",
+		"code1": "MFQ",
+		"code2": "DRRM",
+		"long": 8.150712830679756,
+		"lat": 14.99232850755964
+	},
+	"Tunisia": {
+		"airports": 13,
+		"country": "Tunisia",
+		"code1": "MIR",
+		"code2": "DTMB",
+		"long": 9.859356144239854,
+		"lat": 34.95951760099928
+	},
+	"Togo": {
+		"airports": 4,
+		"country": "Togo",
+		"code1": "LRL",
+		"code2": "DXNG",
+		"long": 0.9923427469577789,
+		"lat": 8.824901501564026
+	},
+	"Belgium": {
+		"airports": 54,
+		"country": "Belgium",
+		"code1": "ANR",
+		"code2": "EBAW",
+		"long": 4.448858119041656,
+		"lat": 50.86867685175531
+	},
+	"Germany": {
+		"airports": 475,
+		"country": "Germany",
+		"code1": "\\N",
+		"code2": "EDAB",
+		"long": 9.574997298563765,
+		"lat": 51.002505746577846
+	},
+	"Germany (FRG)": {
+		"airports": 475,
+		"country": "Germany",
+		"code1": "\\N",
+		"code2": "EDAB",
+		"long": 9.574997298563765,
+		"lat": 51.002505746577846
+	},
+	"East Germany (GDR)": {
+		"airports": 475,
+		"country": "Germany",
+		"code1": "\\N",
+		"code2": "EDAB",
+		"long": 9.574997298563765,
+		"lat": 51.002505746577846
+	},
+	"Estonia": {
+		"airports": 11,
+		"country": "Estonia",
+		"code1": "\\N",
+		"code2": "EEEI",
+		"long": 24.243691401176633,
+		"lat": 58.663781857419
+	},
+	"Finland": {
+		"airports": 89,
+		"country": "Finland",
+		"code1": "ENF",
+		"code2": "EFET",
+		"long": 25.060841457397604,
+		"lat": 62.119316851389655
+	},
+	"United Kingdom": {
+		"airports": 331,
+		"country": "United Kingdom",
+		"code1": "BFS",
+		"code2": "EGAA",
+		"long": -2.1300402059519796,
+		"lat": 52.965172353258744
+	},
+	"Guernsey": {
+		"airports": 2,
+		"country": "Guernsey",
+		"code1": "ACI",
+		"code2": "EGJA",
+		"long": -2.4083449840545654,
+		"lat": 49.5705509185791
+	},
+	"Jersey": {
+		"airports": 1,
+		"country": "Jersey",
+		"code1": "JER",
+		"code2": "EGJJ",
+		"long": -2.195509910583496,
+		"lat": 49.20790100097656
+	},
+	"Isle of Man": {
+		"airports": 1,
+		"country": "Isle of Man",
+		"code1": "IOM",
+		"code2": "EGNS",
+		"long": -4.623889923095703,
+		"lat": 54.08330154418945
+	},
+	"Falkland Islands": {
+		"airports": 7,
+		"country": "Falkland Islands",
+		"code1": "MPN",
+		"code2": "EGYP",
+		"long": -58.7601627299805,
+		"lat": -51.98350544935831
+	},
+	"Netherlands": {
+		"airports": 73,
+		"country": "Netherlands",
+		"code1": "AMS",
+		"code2": "EHAM",
+		"long": 5.161046702455909,
+		"lat": 52.09177500045853
+	},
+	"Ireland": {
+		"airports": 25,
+		"country": "Ireland",
+		"code1": "ORK",
+		"code2": "EICK",
+		"long": -8.312746201893257,
+		"lat": 52.847956105463446
+	},
+	"Denmark": {
+		"airports": 65,
+		"country": "Denmark",
+		"code1": "AAR",
+		"code2": "EKAH",
+		"long": 11.33863902804189,
+		"lat": 55.715373882404265
+	},
+	"Faroe Islands": {
+		"airports": 7,
+		"country": "Faroe Islands",
+		"code1": "FAE",
+		"code2": "EKVG",
+		"long": -6.999889358445723,
+		"lat": 61.879602144459426
+	},
+	"Luxembourg": {
+		"airports": 2,
+		"country": "Luxembourg",
+		"code1": "LUX",
+		"code2": "ELLX",
+		"long": 6.1691722,
+		"lat": 49.611666650000004
+	},
+	"Norway": {
+		"airports": 87,
+		"country": "Norway",
+		"code1": "AES",
+		"code2": "ENAL",
+		"long": 10.734633857556965,
+		"lat": 60.98137127806572
+	},
+	"Poland": {
+		"airports": 54,
+		"country": "Poland",
+		"code1": "\\N",
+		"code2": "EPBC",
+		"long": 18.611475274579526,
+		"lat": 52.49064629641226
+	},
+	"Sweden": {
+		"airports": 104,
+		"country": "Sweden",
+		"code1": "\\N",
+		"code2": "ESCF",
+		"long": 16.15615011507064,
+		"lat": 60.17871187905809
+	},
+	"South Africa": {
+		"airports": 117,
+		"country": "South Africa",
+		"code1": "ALJ",
+		"code2": "FAAB",
+		"long": 24.70445372917555,
+		"lat": -30.09093382171243
+	},
+	"Botswana": {
+		"airports": 37,
+		"country": "Botswana",
+		"code1": "FRW",
+		"code2": "FBFT",
+		"long": 21.38604785763199,
+		"lat": -17.697579783426615
+	},
+	"DR Congo": {
+		"airports": 3,
+		"country": "Congo (Brazzaville)",
+		"code1": "BZV",
+		"code2": "FCBB",
+		"long": 13.266499933369953,
+		"lat": -4.424693316650391
+	},
+	"Congo": {
+		"airports": 44,
+		"country": "Congo (Kinshasa)",
+		"code1": "FTX",
+		"code2": "FCOO",
+		"long": 21.679134747594627,
+		"lat": -2.765537478119765
+	},
+	"Swaziland": {
+		"airports": 1,
+		"country": "Swaziland",
+		"code1": "MTS",
+		"code2": "FDMS",
+		"long": 31.3075008392334,
+		"lat": -26.52899932861328
+	},
+	"Central African Republic": {
+		"airports": 3,
+		"country": "Central African Republic",
+		"code1": "BGF",
+		"code2": "FEFF",
+		"long": 18.500807525594073,
+		"lat": 5.964093989013671
+	},
+	"Equatorial Guinea": {
+		"airports": 2,
+		"country": "Equatorial Guinea",
+		"code1": "BSG",
+		"code2": "FGBT",
+		"long": 9.257200241088867,
+		"lat": 2.830370008945465
+	},
+	"Saint Helena": {
+		"airports": 1,
+		"country": "Saint Helena",
+		"code1": "ASI",
+		"code2": "FHAW",
+		"long": -14.393699645996094,
+		"lat": -7.969600200653076
+	},
+	"Mauritius": {
+		"airports": 2,
+		"country": "Mauritius",
+		"code1": "MRU",
+		"code2": "FIMP",
+		"long": 60.522300720214844,
+		"lat": -20.093950271606445
+	},
+	"British Indian Ocean Territory": {
+		"airports": 1,
+		"country": "British Indian Ocean Territory",
+		"code1": "\\N",
+		"code2": "FJDG",
+		"long": 72.411102,
+		"lat": -7.31327
+	},
+	"Cameroon": {
+		"airports": 10,
+		"country": "Cameroon",
+		"code1": "TKC",
+		"code2": "FKKC",
+		"long": 11.457150936127013,
+		"lat": 6.001124954223778
+	},
+	"Zambia": {
+		"airports": 15,
+		"country": "Zambia",
+		"code1": "\\N",
+		"code2": "FLKE",
+		"long": 18.395924664967183,
+		"lat": -11.157362612255955
+	},
+	"Comoros": {
+		"airports": 4,
+		"country": "Comoros",
+		"code1": "HAH",
+		"code2": "FMCH",
+		"long": 43.67812533722618,
+		"lat": -11.918575051117333
+	},
+	"Mayotte": {
+		"airports": 1,
+		"country": "Mayotte",
+		"code1": "DZA",
+		"code2": "FMCZ",
+		"long": 45.28110122680664,
+		"lat": -12.804699897766113
+	},
+	"Reunion": {
+		"airports": 10,
+		"country": "Reunion",
+		"code1": "RUN",
+		"code2": "FMEE",
+		"long": 45.6303053720459,
+		"lat": -21.275721280163573
+	},
+	"Madagascar": {
+		"airports": 45,
+		"country": "Madagascar",
+		"code1": "TNR",
+		"code2": "FMMI",
+		"long": 46.209856325092936,
+		"lat": -20.784385406794243
+	},
+	"Angola": {
+		"airports": 27,
+		"country": "Angola",
+		"code1": "SSY",
+		"code2": "FNBC",
+		"long": 15.686199484252407,
+		"lat": -10.563452151460318
+	},
+	"Gabon": {
+		"airports": 14,
+		"country": "Gabon",
+		"code1": "OYE",
+		"code2": "FOGO",
+		"long": 11.135810448586419,
+		"lat": -0.9074286231592827
+	},
+	"Sao Tome and Principe": {
+		"airports": 2,
+		"country": "Sao Tome and Principe",
+		"code1": "PCP",
+		"code2": "FPPR",
+		"long": 7.061944961547852,
+		"lat": 1.0205575078725815
+	},
+	"Mozambique": {
+		"airports": 25,
+		"country": "Mozambique",
+		"code1": "BEW",
+		"code2": "FQBR",
+		"long": 36.83396872891336,
+		"lat": -16.92567514825069
+	},
+	"Seychelles": {
+		"airports": 11,
+		"country": "Seychelles",
+		"code1": "\\N",
+		"code2": "FSAL",
+		"long": 56.16966887413441,
+		"lat": -5.440118902945779
+	},
+	"Chad": {
+		"airports": 7,
+		"country": "Chad",
+		"code1": "AEH",
+		"code2": "FTTC",
+		"long": 18.936542571142883,
+		"lat": 12.681807309827818
+	},
+	"Zimbabwe": {
+		"airports": 17,
+		"country": "Zimbabwe",
+		"code1": "BUQ",
+		"code2": "FVBU",
+		"long": 29.185850576080295,
+		"lat": -18.45299267931263
+	},
+	"Malawi": {
+		"airports": 9,
+		"country": "Malawi",
+		"code1": "BLZ",
+		"code2": "FWCL",
+		"long": 34.380844287789714,
+		"lat": -12.954174505953429
+	},
+	"Lesotho": {
+		"airports": 3,
+		"country": "Lesotho",
+		"code1": "MSU",
+		"code2": "FXMM",
+		"long": 27.77566655476888,
+		"lat": -29.4375
+	},
+	"Mali": {
+		"airports": 9,
+		"country": "Mali",
+		"code1": "BKO",
+		"code2": "GABS",
+		"long": -5.465660883753324,
+		"lat": 14.532001019730718
+	},
+	"Gambia": {
+		"airports": 1,
+		"country": "Gambia",
+		"code1": "BJL",
+		"code2": "GBYD",
+		"long": -16.65220069885254,
+		"lat": 13.338000297546387
+	},
+	"Spain": {
+		"airports": 127,
+		"country": "Spain",
+		"code1": "FUE",
+		"code2": "GCFV",
+		"long": -3.5722416518779525,
+		"lat": 39.25397489402301
+	},
+	"Sierra Leone": {
+		"airports": 8,
+		"country": "Sierra Leone",
+		"code1": "FNA",
+		"code2": "GFLL",
+		"long": -12.312402789100647,
+		"lat": 8.156178503528595
+	},
+	"Guinea-Bissau": {
+		"airports": 3,
+		"country": "Guinea-Bissau",
+		"code1": "\\N",
+		"code2": "GGCF",
+		"long": -15.557426452636719,
+		"lat": 11.493351936340332
+	},
+	"Liberia": {
+		"airports": 3,
+		"country": "Liberia",
+		"code1": "MLW",
+		"code2": "GLMR",
+		"long": -9.60598341623942,
+		"lat": 5.633956750233968
+	},
+	"Morocco": {
+		"airports": 26,
+		"country": "Morocco",
+		"code1": "AGA",
+		"code2": "GMAD",
+		"long": -6.234030105066748,
+		"lat": 32.98313222852731
+	},
+	"Senegal": {
+		"airports": 9,
+		"country": "Senegal",
+		"code1": "ZIG",
+		"code2": "GOGG",
+		"long": -14.966344162434895,
+		"lat": 14.072577881876626
+	},
+	"Mauritania": {
+		"airports": 11,
+		"country": "Mauritania",
+		"code1": "IEO",
+		"code2": "GQNA",
+		"long": -12.326643683693627,
+		"lat": 18.8512544631958
+	},
+	"Guinea": {
+		"airports": 7,
+		"country": "Guinea",
+		"code1": "FIG",
+		"code2": "GUFA",
+		"long": -12.017614160737855,
+		"lat": 10.221283263137828
+	},
+	"Cape Verde": {
+		"airports": 7,
+		"country": "Cape Verde",
+		"code1": "SID",
+		"code2": "GVAC",
+		"long": -23.76649992806052,
+		"lat": 15.894985743933955
+	},
+	"Ethiopia": {
+		"airports": 33,
+		"country": "Ethiopia",
+		"code1": "ADD",
+		"code2": "HAAB",
+		"long": 38.562292466968,
+		"lat": 9.352153265718524
+	},
+	"Burundi": {
+		"airports": 1,
+		"country": "Burundi",
+		"code1": "BJM",
+		"code2": "HBBA",
+		"long": 29.318500518798828,
+		"lat": -3.3240199089050293
+	},
+	"Somalia": {
+		"airports": 11,
+		"country": "Somalia",
+		"code1": "HGA",
+		"code2": "HCMH",
+		"long": 46.01045151161044,
+		"lat": 7.387132231529252
+	},
+	"Egypt": {
+		"airports": 29,
+		"country": "Egypt",
+		"code1": "ALY",
+		"code2": "HEAX",
+		"long": 32.26733124029269,
+		"lat": 28.756945168630992
+	},
+	"Kenya": {
+		"airports": 63,
+		"country": "Kenya",
+		"code1": "EDL",
+		"code2": "HKEL",
+		"long": 34.82527989672394,
+		"lat": -0.45005587487306653
+	},
+	"Libya": {
+		"airports": 21,
+		"country": "Libya",
+		"code1": "\\N",
+		"code2": "HLFL",
+		"long": 17.632253476556013,
+		"lat": 29.642483083076012
+	},
+	"Rwanda": {
+		"airports": 3,
+		"country": "Rwanda",
+		"code1": "GYI",
+		"code2": "HRYG",
+		"long": 29.435433069862697,
+		"lat": -2.0360232989008584
+	},
+	"Sudan": {
+		"airports": 19,
+		"country": "Sudan",
+		"code1": "DOG",
+		"code2": "HSDN",
+		"long": 30.56460895084521,
+		"lat": 13.355534596361954
+	},
+	"South Sudan": {
+		"airports": 2,
+		"country": "South Sudan",
+		"code1": "JUB",
+		"code2": "HSSJ",
+		"long": 32.09205055235273,
+		"lat": 4.636005163193715
+	},
+	"Tanzania": {
+		"airports": 36,
+		"country": "Tanzania",
+		"code1": "ARK",
+		"code2": "HTAR",
+		"long": 35.809396880842655,
+		"lat": -5.1938427655681005
+	},
+	"Uganda": {
+		"airports": 12,
+		"country": "Uganda",
+		"code1": "EBB",
+		"code2": "HUEN",
+		"long": 22.421180854187007,
+		"lat": 4.878635420407474
+	},
+	"Albania": {
+		"airports": 5,
+		"country": "Albania",
+		"code1": "TIA",
+		"code2": "LATI",
+		"long": 19.822259607542502,
+		"lat": 41.31831973772657
+	},
+	"Bulgaria": {
+		"airports": 14,
+		"country": "Bulgaria",
+		"code1": "BOJ",
+		"code2": "LBBG",
+		"long": 25.34901155577741,
+		"lat": 42.68591425142997
+	},
+	"Cyprus": {
+		"airports": 5,
+		"country": "Cyprus",
+		"code1": "LCA",
+		"code2": "LCLK",
+		"long": 33.17336417944336,
+		"lat": 34.89786198393555
+	},
+	"Croatia": {
+		"airports": 15,
+		"country": "Croatia",
+		"code1": "DBV",
+		"code2": "LDDU",
+		"long": 15.950666587377283,
+		"lat": 44.80644111104662
+	},
+	"France": {
+		"airports": 293,
+		"country": "France",
+		"code1": "CQF",
+		"code2": "LFAC",
+		"long": 2.287293767719581,
+		"lat": 46.656944593369154
+	},
+	"Saint Pierre and Miquelon": {
+		"airports": 2,
+		"country": "Saint Pierre and Miquelon",
+		"code1": "MQC",
+		"code2": "LFVM",
+		"long": -56.27669906616113,
+		"lat": 46.92920112607617
+	},
+	"Greece": {
+		"airports": 61,
+		"country": "Greece",
+		"code1": "PYR",
+		"code2": "LGAD",
+		"long": 23.930392203978485,
+		"lat": 38.03731408614485
+	},
+	"Hungary": {
+		"airports": 30,
+		"country": "Hungary",
+		"code1": "BUD",
+		"code2": "LHBP",
+		"long": 13.039494668162487,
+		"lat": 43.98085786951533
+	},
+	"Italy": {
+		"airports": 138,
+		"country": "Italy",
+		"code1": "\\N",
+		"code2": "LIBA",
+		"long": 11.425135379834318,
+		"lat": 43.360835113781704
+	},
+	"FOG": {
+		"airports": 1,
+		"country": "FOG",
+		"code1": "LIBF",
+		"code2": "41.432899",
+		"long": 265,
+		"lat": 15.535
+	},
+	"TAR": {
+		"airports": 1,
+		"country": "TAR",
+		"code1": "LIBG",
+		"code2": "40.517502",
+		"long": 215,
+		"lat": 17.4032
+	},
+	"Slovenia": {
+		"airports": 7,
+		"country": "Slovenia",
+		"code1": "\\N",
+		"code2": "LJCE",
+		"long": 14.641057058279904,
+		"lat": 46.0194718748605
+	},
+	"Czechoslovakia": {
+		"airports": 34,
+		"country": "Czech Republic",
+		"code1": "\\N",
+		"code2": "LKCS",
+		"long": 14.866767737370509,
+		"lat": 49.92493750799965
+	},
+	"Czech Republic": {
+		"airports": 34,
+		"country": "Czech Republic",
+		"code1": "\\N",
+		"code2": "LKCS",
+		"long": 14.866767737370509,
+		"lat": 49.92493750799965
+	},
+	"Israel": {
+		"airports": 21,
+		"country": "Israel",
+		"code1": "TLV",
+		"code2": "LLBG",
+		"long": 34.975875131577254,
+		"lat": 31.751671388165953
+	},
+	"Malta": {
+		"airports": 8,
+		"country": "Malta",
+		"code1": "MLA",
+		"code2": "LMML",
+		"long": 17.073211,
+		"lat": 33.27971350000001
+	},
+	"Austria": {
+		"airports": 41,
+		"country": "Austria",
+		"code1": "\\N",
+		"code2": "LOAN",
+		"long": 14.310735580150036,
+		"lat": 47.60428017773667
+	},
+	"Portugal": {
+		"airports": 51,
+		"country": "Portugal",
+		"code1": "\\N",
+		"code2": "LPAR",
+		"long": -8.2245,
+		"lat": 39.3999
+	},
+	"Yugoslavia": {
+		"airports": 5,
+		"country": "Bosnia and Herzegovina",
+		"code1": "OMO",
+		"code2": "LQMO",
+		"long": 18.002719880371096,
+		"lat": 43.97123977539063
+	},
+	"Bosnia and Herzegovina": {
+		"airports": 5,
+		"country": "Bosnia and Herzegovina",
+		"code1": "OMO",
+		"code2": "LQMO",
+		"long": 18.002719880371096,
+		"lat": 43.97123977539063
+	},
+	"Romania": {
+		"airports": 29,
+		"country": "Romania",
+		"code1": "ARW",
+		"code2": "LRAR",
+		"long": 24.55617112548407,
+		"lat": 45.88784897612136
+	},
+	"Switzerland": {
+		"airports": 90,
+		"country": "Switzerland",
+		"code1": "\\N",
+		"code2": "LSGC",
+		"long": 8.153955696788632,
+		"lat": 46.95900099731116
+	},
+	"Turkey": {
+		"airports": 81,
+		"country": "Turkey",
+		"code1": "\\N",
+		"code2": "LTAB",
+		"long": 33.87128402817361,
+		"lat": 39.06267683161137
+	},
+	"Moldova": {
+		"airports": 6,
+		"country": "Moldova",
+		"code1": "BZY",
+		"code2": "LUBL",
+		"long": 28.42684970600908,
+		"lat": 47.19641678263938
+	},
+	"Macedonia": {
+		"airports": 2,
+		"country": "Macedonia",
+		"code1": "OHD",
+		"code2": "LWOH",
+		"long": 21.1818505,
+		"lat": 41.570800500000004
+	},
+	"Gibraltar": {
+		"airports": 1,
+		"country": "Gibraltar",
+		"code1": "GIB",
+		"code2": "LXGB",
+		"long": -5.3496599197400005,
+		"lat": 36.1511993408
+	},
+	"Serbia": {
+		"airports": 7,
+		"country": "Serbia",
+		"code1": "BEG",
+		"code2": "LYBE",
+		"long": 20.7612430282,
+		"lat": 44.04187133381428
+	},
+	"Kosovo": {
+		"airports": 7,
+		"country": "Serbia",
+		"code1": "BEG",
+		"code2": "LYBE",
+		"long": 21.166191,
+		"lat": 42.667542
+	},
+	"Montenegro": {
+		"airports": 3,
+		"country": "Montenegro",
+		"code1": "TGD",
+		"code2": "LYPG",
+		"long": 18.914434551025387,
+		"lat": 42.397473311930334
+	},
+	"Slovakia": {
+		"airports": 15,
+		"country": "Slovakia",
+		"code1": "BTS",
+		"code2": "LZIB",
+		"long": 18.66471896891178,
+		"lat": 42.23490382738796
+	},
+	"Turks and Caicos Islands": {
+		"airports": 6,
+		"country": "Turks and Caicos Islands",
+		"code1": "NCA",
+		"code2": "MBNC",
+		"long": -71.64646692911602,
+		"lat": 21.635053117675426
+	},
+	"Dominican Republic": {
+		"airports": 15,
+		"country": "Dominican Republic",
+		"code1": "EPS",
+		"code2": "MDAB",
+		"long": -69.9495659349541,
+		"lat": 18.729177653568257
+	},
+	"Guatemala": {
+		"airports": 11,
+		"country": "Guatemala",
+		"code1": "\\N",
+		"code2": "MGBN",
+		"long": -90.48442758802729,
+		"lat": 15.255656410206607
+	},
+	"Honduras": {
+		"airports": 14,
+		"country": "Honduras",
+		"code1": "LCE",
+		"code2": "MHLC",
+		"long": -86.46899346257673,
+		"lat": 15.566466518567767
+	},
+	"Jamaica": {
+		"airports": 7,
+		"country": "Jamaica",
+		"code1": "OCJ",
+		"code2": "MKBS",
+		"long": -77.28713902239542,
+		"lat": 18.26665148148008
+	},
+	"Mexico": {
+		"airports": 101,
+		"country": "Mexico",
+		"code1": "ACA",
+		"code2": "MMAA",
+		"long": -101.54208563160424,
+		"lat": 22.578930570263747
+	},
+	"Nicaragua": {
+		"airports": 14,
+		"country": "Nicaragua",
+		"code1": "BEF",
+		"code2": "MNBL",
+		"long": -84.8240639733538,
+		"lat": 12.627056740343367
+	},
+	"Panama": {
+		"airports": 29,
+		"country": "Panama",
+		"code1": "BOC",
+		"code2": "MPBO",
+		"long": -79.22517879945082,
+		"lat": 8.725774002071004
+	},
+	"Costa Rica": {
+		"airports": 30,
+		"country": "Costa Rica",
+		"code1": "\\N",
+		"code2": "MRBA",
+		"long": -84.18577868919029,
+		"lat": 9.82623889966917
+	},
+	"FMLN (El Salvador)*": {
+		"airports": 2,
+		"country": "El Salvador",
+		"code1": "SAL",
+		"code2": "MSLP",
+		"long": -89.08780278222656,
+		"lat": 13.57020004196167
+	},
+	"El Salvador": {
+		"airports": 2,
+		"country": "El Salvador",
+		"code1": "SAL",
+		"code2": "MSLP",
+		"long": -89.08780278222656,
+		"lat": 13.57020004196167
+	},
+	"Haiti": {
+		"airports": 14,
+		"country": "Haiti",
+		"code1": "\\N",
+		"code2": "MTCA",
+		"long": -72.75411514195034,
+		"lat": 18.957806992013115
+	},
+	"Cuba": {
+		"airports": 34,
+		"country": "Cuba",
+		"code1": "BCA",
+		"code2": "MUBA",
+		"long": -79.57728694927204,
+		"lat": 21.817021740502764
+	},
+	"Cayman Islands": {
+		"airports": 4,
+		"country": "Cayman Islands",
+		"code1": "CYB",
+		"code2": "MWCB",
+		"long": -80.684938562133,
+		"lat": 19.486330248713184
+	},
+	"Bahamas": {
+		"airports": 40,
+		"country": "Bahamas",
+		"code1": "\\N",
+		"code2": "MYAB",
+		"long": -76.54196295828233,
+		"lat": 24.538413598080194
+	},
+	"Belize": {
+		"airports": 17,
+		"country": "Belize",
+		"code1": "BZE",
+		"code2": "MZBZ",
+		"long": -91.9176146365579,
+		"lat": 19.898533160998394
+	},
+	"Cook Islands": {
+		"airports": 8,
+		"country": "Cook Islands",
+		"code1": "AIT",
+		"code2": "NCAI",
+		"long": -158.70976066591112,
+		"lat": -17.658382296567837
+	},
+	"Fiji": {
+		"airports": 18,
+		"country": "Fiji",
+		"code1": "NAN",
+		"code2": "NFFN",
+		"long": 177.83894220144228,
+		"lat": -17.35028630491037
+	},
+	"Tonga": {
+		"airports": 6,
+		"country": "Tonga",
+		"code1": "TBU",
+		"code2": "NFTF",
+		"long": -174.63917009028125,
+		"lat": -18.754989593135157
+	},
+	"Kiribati": {
+		"airports": 18,
+		"country": "Kiribati",
+		"code1": "TRW",
+		"code2": "NGTA",
+		"long": 136.64438800698522,
+		"lat": 0.09476498414825713
+	},
+	"Wallis and Futuna": {
+		"airports": 2,
+		"country": "Wallis and Futuna",
+		"code1": "WLS",
+		"code2": "NLWW",
+		"long": -177.13249969499998,
+		"lat": -13.774850368500001
+	},
+	"Samoa": {
+		"airports": 4,
+		"country": "Samoa",
+		"code1": "APW",
+		"code2": "NSFA",
+		"long": -172.1584436759844,
+		"lat": -13.731499881743849
+	},
+	"American Samoa": {
+		"airports": 3,
+		"country": "American Samoa",
+		"code1": "PPG",
+		"code2": "NSTU",
+		"long": -169.93500323799998,
+		"lat": -14.244214776033333
+	},
+	"French Polynesia": {
+		"airports": 38,
+		"country": "French Polynesia",
+		"code1": "RUR",
+		"code2": "NTAR",
+		"long": -145.54971871200905,
+		"lat": -16.512382163600112
+	},
+	"Vanuatu": {
+		"airports": 29,
+		"country": "Vanuatu",
+		"code1": "VLI",
+		"code2": "NVVV",
+		"long": 168.1712939466819,
+		"lat": -16.45425818723681
+	},
+	"New Caledonia": {
+		"airports": 11,
+		"country": "New Caledonia",
+		"code1": "KNQ",
+		"code2": "NWWD",
+		"long": 166.16454523259944,
+		"lat": -21.178745789961383
+	},
+	"New Zealand": {
+		"airports": 72,
+		"country": "New Zealand",
+		"code1": "AKL",
+		"code2": "NZAA",
+		"long": 172.8025740694882,
+		"lat": -41.572447670711306
+	},
+	"NATO": {
+		"airports": 72,
+		"country": "New Zealand",
+		"code1": "AKL",
+		"code2": "NZAA",
+		"long": 50.8025740694882,
+		"lat": -41.572447670711306
+	},
+	"Antarctica": {
+		"airports": 21,
+		"country": "Antarctica",
+		"code1": "\\N",
+		"code2": "NZSP",
+		"long": 4.4693099706022315,
+		"lat": -68.34049182934457
+	},
+	"Mujahedin (Afghanistan)*": {
+		"airports": 22,
+		"country": "Afghanistan",
+		"code1": "HEA",
+		"code2": "OAHR",
+		"long": 66.58725287251336,
+		"lat": 34.019037113208576
+	},
+	"Afghanistan": {
+		"airports": 22,
+		"country": "Afghanistan",
+		"code1": "HEA",
+		"code2": "OAHR",
+		"long": 66.58725287251336,
+		"lat": 34.019037113208576
+	},
+	"Bahrain": {
+		"airports": 2,
+		"country": "Bahrain",
+		"code1": "BAH",
+		"code2": "OBBI",
+		"long": 50.612098693847656,
+		"lat": 26.094599723815918
+	},
+	"Saudi Arabia": {
+		"airports": 45,
+		"country": "Saudi Arabia",
+		"code1": "AHB",
+		"code2": "OEAB",
+		"long": 43.97090451185095,
+		"lat": 24.62933384927919
+	},
+	"Iran": {
+		"airports": 83,
+		"country": "Iran",
+		"code1": "ABD",
+		"code2": "OIAA",
+		"long": 52.66893679580239,
+		"lat": 32.277687685810115
+	},
+	"Jordan": {
+		"airports": 7,
+		"country": "Jordan",
+		"code1": "AMM",
+		"code2": "OJAI",
+		"long": 35.903219024278066,
+		"lat": 31.11928441882472
+	},
+	"West Bank": {
+		"airports": 1,
+		"country": "West Bank",
+		"code1": "\\N",
+		"code2": "OJJR",
+		"long": 35.219200134277,
+		"lat": 31.864700317383
+	},
+	"Kuwait": {
+		"airports": 3,
+		"country": "Kuwait",
+		"code1": "KWI",
+		"code2": "OKBK",
+		"long": 47.760533650727595,
+		"lat": 29.169366836535872
+	},
+	"Lebanon": {
+		"airports": 3,
+		"country": "Lebanon",
+		"code1": "BEY",
+		"code2": "OLBA",
+		"long": 35.829133351643875,
+		"lat": 34.086999257405594
+	},
+	"UAE": {
+		"airports": 23,
+		"country": "United Arab Emirates",
+		"code1": "AUH",
+		"code2": "OMAA",
+		"long": 48.64696969869678,
+		"lat": 25.33849909687155
+	},
+	"Oman": {
+		"airports": 8,
+		"country": "Oman",
+		"code1": "KHS",
+		"code2": "OOKB",
+		"long": 56.340184823486325,
+		"lat": 21.32897158036804
+	},
+	"Pakistan": {
+		"airports": 53,
+		"country": "Pakistan",
+		"code1": "\\N",
+		"code2": "OPBG",
+		"long": 69.94867652454448,
+		"lat": 30.052086565098545
+	},
+	"Iraq": {
+		"airports": 16,
+		"country": "Iraq",
+		"code1": "BSR",
+		"code2": "ORMM",
+		"long": 44.290759390741854,
+		"lat": 34.00657511349516
+	},
+	"Syria": {
+		"airports": 6,
+		"country": "Syria",
+		"code1": "ALP",
+		"code2": "OSAP",
+		"long": 38.22883218721517,
+		"lat": 35.30944955546061
+	},
+	"Qatar": {
+		"airports": 4,
+		"country": "Qatar",
+		"code1": "\\N",
+		"code2": "OTBD",
+		"long": 51.35118906255,
+		"lat": 25.12118920065
+	},
+	"Northern Mariana Islands": {
+		"airports": 3,
+		"country": "Northern Mariana Islands",
+		"code1": "ROP",
+		"code2": "PGRO",
+		"long": 145.53033447257292,
+		"lat": 14.764166831978386
+	},
+	"Guam": {
+		"airports": 2,
+		"country": "Guam",
+		"code1": "UAM",
+		"code2": "PGUA",
+		"long": 144.8629991245,
+		"lat": 13.5337001724
+	},
+	"Marshall Islands": {
+		"airports": 32,
+		"country": "Marshall Islands",
+		"code1": "MAJ",
+		"code2": "PKMJ",
+		"long": 169.02034896022948,
+		"lat": 8.348823820129194
+	},
+	"Midway Islands": {
+		"airports": 1,
+		"country": "Midway Islands",
+		"code1": "MDY",
+		"code2": "PMDY",
+		"long": -177.38099670410156,
+		"lat": 28.20170021057129
+	},
+	"Micronesia": {
+		"airports": 7,
+		"country": "Micronesia",
+		"code1": "TKK",
+		"code2": "PTKK",
+		"long": 147.82088442930356,
+		"lat": 7.999665682423131
+	},
+	"Palau": {
+		"airports": 4,
+		"country": "Palau",
+		"code1": "ROR",
+		"code2": "PTRO",
+		"long": 134.35544608691407,
+		"lat": 7.1563430080108645
+	},
+	"Taiwan": {
+		"airports": 82,
+		"country": "Taiwan",
+		"code1": "KNH",
+		"code2": "RCBS",
+		"long": 121.51105415535425,
+		"lat": 22.18293153924166
+	},
+	"Japan": {
+		"airports": 204,
+		"country": "Japan",
+		"code1": "NRT",
+		"code2": "RJAA",
+		"long": 137.8648302872276,
+		"lat": 34.75705326383051
+	},
+	"South Korea": {
+		"airports": 70,
+		"country": "South Korea",
+		"code1": "KWJ",
+		"code2": "RKJJ",
+		"long": 128.38031649449644,
+		"lat": 35.512912746149935
+	},
+	"Philippines": {
+		"airports": 68,
+		"country": "Philippines",
+		"code1": "MNL",
+		"code2": "RPLL",
+		"long": 122.67426673613788,
+		"lat": 11.642028914935544
+	},
+	"Argentina": {
+		"airports": 107,
+		"country": "Argentina",
+		"code1": "COC",
+		"code2": "SAAC",
+		"long": -64.1437647308804,
+		"lat": -36.3862452738056
+	},
+	"Brazil": {
+		"airports": 254,
+		"country": "Brazil",
+		"code1": "CDJ",
+		"code2": "SBAA",
+		"long": -49.73597968762103,
+		"lat": -15.286379220650993
+	},
+	"Chile": {
+		"airports": 50,
+		"country": "Chile",
+		"code1": "ARI",
+		"code2": "SCAR",
+		"long": -70.1138482862543,
+		"lat": -37.1516928788388
+	},
+	"Ecuador": {
+		"airports": 43,
+		"country": "Ecuador",
+		"code1": "ATF",
+		"code2": "SEAM",
+		"long": -78.60792134540866,
+		"lat": -1.349213686155289
+	},
+	"Paraguay": {
+		"airports": 8,
+		"country": "Paraguay",
+		"code1": "ASU",
+		"code2": "SGAS",
+		"long": -57.00392540258789,
+		"lat": -24.810771799728396
+	},
+	"Colombia": {
+		"airports": 79,
+		"country": "Colombia",
+		"code1": "AXM",
+		"code2": "SKAR",
+		"long": -74.55833986075952,
+		"lat": 5.306909772151896
+	},
+	"Bolivia": {
+		"airports": 27,
+		"country": "Bolivia",
+		"code1": "BJO",
+		"code2": "SLBJ",
+		"long": -65.69649800987791,
+		"lat": -17.070253063948176
+	},
+	"Suriname": {
+		"airports": 24,
+		"country": "Suriname",
+		"code1": "PBM",
+		"code2": "SMJP",
+		"long": -55.601459039620245,
+		"lat": 4.362672774299179
+	},
+	"French Guiana": {
+		"airports": 26,
+		"country": "French Guiana",
+		"code1": "CAY",
+		"code2": "SOCA",
+		"long": -49.224001738084624,
+		"lat": 4.5034169557373085
+	},
+	"Peru": {
+		"airports": 49,
+		"country": "Peru",
+		"code1": "\\N",
+		"code2": "SPAB",
+		"long": -74.94713374286056,
+		"lat": -10.259446631669132
+	},
+	"Uruguay": {
+		"airports": 16,
+		"country": "Uruguay",
+		"code1": "\\N",
+		"code2": "SUAA",
+		"long": -55.49224432623323,
+		"lat": -33.379834414680815
+	},
+	"Venezuela": {
+		"airports": 60,
+		"country": "Venezuela",
+		"code1": "AGV",
+		"code2": "SVAC",
+		"long": -67.0632269176271,
+		"lat": 8.969696901461422
+	},
+	"Guyana": {
+		"airports": 19,
+		"country": "Guyana",
+		"code1": "\\N",
+		"code2": "SYLD",
+		"long": -59.14585481671479,
+		"lat": 5.475746243811605
+	},
+	"Antigua and Barbuda": {
+		"airports": 5,
+		"country": "Antigua and Barbuda",
+		"code1": "ANU",
+		"code2": "TAPA",
+		"long": -61.698522600000004,
+		"lat": 17.210604
+	},
+	"Barbados": {
+		"airports": 2,
+		"country": "Barbados",
+		"code1": "BGI",
+		"code2": "TBPB",
+		"long": -59.5606126526,
+		"lat": 13.087878609850002
+	},
+	"Dominica": {
+		"airports": 3,
+		"country": "Dominica",
+		"code1": "DCF",
+		"code2": "TDCF",
+		"long": -61.360003235677084,
+		"lat": 15.39337212359619
+	},
+	"Martinique": {
+		"airports": 4,
+		"country": "Martinique",
+		"code1": "FDF",
+		"code2": "TFFF",
+		"long": -61.08099838275146,
+		"lat": 14.63535615081787
+	},
+	"Guadeloupe": {
+		"airports": 8,
+		"country": "Guadeloupe",
+		"code1": "SFG",
+		"code2": "TFFG",
+		"long": -61.63223770574639,
+		"lat": 16.362915108287332
+	},
+	"Grenada": {
+		"airports": 3,
+		"country": "Grenada",
+		"code1": "GND",
+		"code2": "TGPY",
+		"long": -61.67132782568359,
+		"lat": 12.177024327229818
+	},
+	"Virgin Islands": {
+		"airports": 8,
+		"country": "Virgin Islands",
+		"code1": "STT",
+		"code2": "TIST",
+		"long": -64.86768403259278,
+		"lat": 18.181626873474123
+	},
+	"Puerto Rico": {
+		"airports": 15,
+		"country": "Puerto Rico",
+		"code1": "BQN",
+		"code2": "TJBQ",
+		"long": -65.96642237209801,
+		"lat": 18.315786907684398
+	},
+	"Saint Kitts and Nevis": {
+		"airports": 3,
+		"country": "Saint Kitts and Nevis",
+		"code1": "SKB",
+		"code2": "TKPK",
+		"long": -62.67269145979817,
+		"lat": 17.269121036295573
+	},
+	"Saint Lucia": {
+		"airports": 3,
+		"country": "Saint Lucia",
+		"code1": "SLU",
+		"code2": "TLPC",
+		"long": -61.006365333333335,
+		"lat": 13.874106999999999
+	},
+	"Aruba": {
+		"airports": 2,
+		"country": "Aruba",
+		"code1": "AUA",
+		"code2": "TNCA",
+		"long": -70.02891587695314,
+		"lat": 12.510422496948241
+	},
+	"Netherlands Antilles": {
+		"airports": 10,
+		"country": "Netherlands Antilles",
+		"code1": "BON",
+		"code2": "TNCB",
+		"long": -64.7629443300007,
+		"lat": 16.1714929404347
+	},
+	"Anguilla": {
+		"airports": 1,
+		"country": "Anguilla",
+		"code1": "AXA",
+		"code2": "TQPF",
+		"long": -63.05509948730469,
+		"lat": 18.20479965209961
+	},
+	"Trinidad and Tobago": {
+		"airports": 3,
+		"country": "Trinidad and Tobago",
+		"code1": "TAB",
+		"code2": "TTCP",
+		"long": -60.96871775382486,
+		"lat": 10.975718673787435
+	},
+	"British Virgin Islands": {
+		"airports": 4,
+		"country": "British Virgin Islands",
+		"code1": "EIS",
+		"code2": "TUPJ",
+		"long": -64.47918619665528,
+		"lat": 18.510613416595458
+	},
+	"Saint Vincent": {
+		"airports": 5,
+		"country": "Saint Vincent and the Grenadines",
+		"code1": "CIW",
+		"code2": "TVSC",
+		"long": -61.281488800049296,
+		"lat": 12.863947296144667
+	},
+	"Kazakhstan": {
+		"airports": 38,
+		"country": "Kazakhstan",
+		"code1": "ALA",
+		"code2": "UAAA",
+		"long": 68.27520274881786,
+		"lat": 48.409079138061514
+	},
+	"Kyrgyzstan": {
+		"airports": 6,
+		"country": "Kyrgyzstan",
+		"code1": "FRU",
+		"code2": "UAFM",
+		"long": 74.34934658228855,
+		"lat": 41.91783625587116
+	},
+	"Azerbaijan": {
+		"airports": 14,
+		"country": "Azerbaijan",
+		"code1": "GYD",
+		"code2": "UBBB",
+		"long": 49.019570574483396,
+		"lat": 40.20002646090396
+	},
+	"Russia": {
+		"airports": 383,
+		"country": "Russia",
+		"code1": "YKS",
+		"code2": "UEEE",
+		"long": 72.00275051590866,
+		"lat": 62.46203225761661 
+	},
+	"Ukraine": {
+		"airports": 50,
+		"country": "Ukraine",
+		"code1": "KBP",
+		"code2": "UKBB",
+		"long": 31.66457170638338,
+		"lat": 48.47489431498977
+	},
+	"Belarus": {
+		"airports": 15,
+		"country": "Belarus",
+		"code1": "GME",
+		"code2": "UMGG",
+		"long": 28.565896809580106,
+		"lat": 53.366945135670534
+	},
+	"Turkmenistan": {
+		"airports": 8,
+		"country": "Turkmenistan",
+		"code1": "ASB",
+		"code2": "UTAA",
+		"long": 58.40512479806519,
+		"lat": 39.57729083645629
+	},
+	"Tajikistan": {
+		"airports": 5,
+		"country": "Tajikistan",
+		"code1": "DYU",
+		"code2": "UTDD",
+		"long": 69.73787994383922,
+		"lat": 38.422640228279064
+	},
+	"Uzbekistan": {
+		"airports": 13,
+		"country": "Uzbekistan",
+		"code1": "BHK",
+		"code2": "UTSB",
+		"long": 66.81814633883684,
+		"lat": 40.46471522404213
+	},
+	"India": {
+		"airports": 191,
+		"country": "India",
+		"code1": "AMD",
+		"code2": "VAAH",
+		"long": 79.8775243771643,
+		"lat": 22.68033322963167
+	},
+	"Sri Lanka": {
+		"airports": 17,
+		"country": "Sri Lanka",
+		"code1": "CMB",
+		"code2": "VCBI",
+		"long": 80.6026602087761,
+		"lat": 7.282272898651731
+	},
+	"Cambodia": {
+		"airports": 13,
+		"country": "Cambodia",
+		"code1": "\\N",
+		"code2": "VDKH",
+		"long": 92.75908290956922,
+		"lat": 11.361407313558267
+	},
+	"Bangladesh": {
+		"airports": 13,
+		"country": "Bangladesh",
+		"code1": "CXB",
+		"code2": "VGCB",
+		"long": 90.03961983240686,
+		"lat": 23.385810480403023
+	},
+	"Hong Kong": {
+		"airports": 30,
+		"country": "Hong Kong",
+		"code1": "HKG",
+		"code2": "VHHH",
+		"long": 114.116190683525,
+		"lat": 22.330954838776844
+	},
+	"Laos": {
+		"airports": 12,
+		"country": "Laos",
+		"code1": "LPQ",
+		"code2": "VLLB",
+		"long": 103.56428392726986,
+		"lat": 18.44406294002776
+	},
+	"Macau": {
+		"airports": 5,
+		"country": "Macau",
+		"code1": "MFM",
+		"code2": "VMMC",
+		"long": 113.57158099373049,
+		"lat": 22.174069815063476
+	},
+	"Nepal": {
+		"airports": 38,
+		"country": "Nepal",
+		"code1": "BWA",
+		"code2": "VNBW",
+		"long": 84.68514928289281,
+		"lat": 27.92933951438356
+	},
+	"Bhutan": {
+		"airports": 4,
+		"country": "Bhutan",
+		"code1": "PBH",
+		"code2": "VQPR",
+		"long": 90.53756577345,
+		"lat": 27.276587262375003
+	},
+	"Maldives": {
+		"airports": 68,
+		"country": "Maldives",
+		"code1": "MLE",
+		"code2": "VRMM",
+		"long": 67.10818357784918,
+		"lat": 6.569012334517301
+	},
+	"Thailand": {
+		"airports": 69,
+		"country": "Thailand",
+		"code1": "DMK",
+		"code2": "VTBD",
+		"long": 100.59290633463037,
+		"lat": 13.30642701035176
+	},
+	"Vietnam": {
+		"airports": 31,
+		"country": "Vietnam",
+		"code1": "DAD",
+		"code2": "VVDN",
+		"long": 106.91927039463408,
+		"lat": 14.689768457653475
+	},
+	"South Vietnam": {
+		"airports": 31,
+		"country": "Vietnam",
+		"code1": "DAD",
+		"code2": "VVDN",
+		"long": 106.91927039463408,
+		"lat": 14.689768457653475
+	},
+	"Burma": {
+		"airports": 44,
+		"country": "Burma",
+		"code1": "\\N",
+		"code2": "VYAN",
+		"long": 96.90162890615787,
+		"lat": 20.43584594800384
+	},
+	"Indonesia": {
+		"airports": 149,
+		"country": "Indonesia",
+		"code1": "UPG",
+		"code2": "WAAA",
+		"long": 115.88727767502435,
+		"lat": -2.3688637611871908
+	},
+	"Malaysia": {
+		"airports": 49,
+		"country": "Malaysia",
+		"code1": "BTU",
+		"code2": "WBGB",
+		"long": 106.67117508984177,
+		"lat": 4.244930999501694
+	},
+	"Brunei": {
+		"airports": 3,
+		"country": "Brunei",
+		"code1": "BWN",
+		"code2": "WBSB",
+		"long": 114.68396839593619,
+		"lat": 4.930400040943304
+	},
+	"Timor-Leste": {
+		"airports": 3,
+		"country": "East Timor",
+		"code1": "\\N",
+		"code2": "WPDB",
+		"long": 125.73800150582551,
+		"lat": -8.779580116272369
+	},
+	"Singapore": {
+		"airports": 12,
+		"country": "Singapore",
+		"code1": "\\N",
+		"code2": "WSAG",
+		"long": 103.90528764483072,
+		"lat": 1.3478834113992078
+	},
+	"Australia": {
+		"airports": 400,
+		"country": "Australia",
+		"code1": "\\N",
+		"code2": "YBAF",
+		"long": 140.20621707964668,
+		"lat": -27.626302524938733
+	},
+	"Christmas Island": {
+		"airports": 1,
+		"country": "Christmas Island",
+		"code1": "XCH",
+		"code2": "YPXM",
+		"long": 105.69000244140625,
+		"lat": -10.450599670410156
+	},
+	"Norfolk Island": {
+		"airports": 1,
+		"country": "Norfolk Island",
+		"code1": "NLK",
+		"code2": "YSNF",
+		"long": 167.93899536132812,
+		"lat": -29.04159927368164
+	},
+	"China": {
+		"airports": 349,
+		"country": "China",
+		"code1": "PEK",
+		"code2": "ZBAA",
+		"long": 100.59443163674463,
+		"lat": 33.37626168615046
+	},
+	"North Korea": {
+		"airports": 11,
+		"country": "North Korea",
+		"code1": "FNJ",
+		"code2": "ZKPY",
+		"long": 127.29996627272726,
+		"lat": 39.91688372727273
+	},
+	"Mongolia": {
+		"airports": 14,
+		"country": "Mongolia",
+		"code1": "ULN",
+		"code2": "ZMUB",
+		"long": 101.38320553167199,
+		"lat": 47.58445681541213
+	},
+	"United States": {
+		"airports": 2295,
+		"country": "United States",
+		"code1": "BTI",
+		"code2": "PABA",
+		"long": -99.92689228714607,
+		"lat": 40.65940308225032
+	},
+	"Latvia": {
+		"airports": 8,
+		"country": "Latvia",
+		"code1": "LPX",
+		"code2": "EVLA",
+		"long": 23.84280870076963,
+		"lat": 56.75638160326485
+	},
+	"Lithuania": {
+		"airports": 10,
+		"country": "Lithuania",
+		"code1": "SQQ",
+		"code2": "EYSA",
+		"long": 23.998804422371425,
+		"lat": 55.2611692026407
+	},
+	"Armenia": {
+		"airports": 13,
+		"country": "Armenia",
+		"code1": "\\N",
+		"code2": "UDYE",
+		"long": 44.48582011816924,
+		"lat": 40.57086088206154
+	},
+	"Eritrea": {
+		"airports": 3,
+		"country": "Eritrea",
+		"code1": "ASA",
+		"code2": "HHSB",
+		"long": 40.308600107828774,
+		"lat": 14.677899996439615
+	},
+	"PLO (Israel)*": {
+		"airports": 1,
+		"country": "Palestine",
+		"code1": "GZA",
+		"code2": "LVGZ",
+		"long": 34.276100158691,
+		"lat": 31.24640083313
+	},
+	"Palestine": {
+		"airports": 1,
+		"country": "Palestine",
+		"code1": "GZA",
+		"code2": "LVGZ",
+		"long": 34.276100158691,
+		"lat": 31.24640083313
+	},
+	"Georgia": {
+		"airports": 11,
+		"country": "Georgia",
+		"code1": "BUS",
+		"code2": "UGSB",
+		"long": 43.67805153749091,
+		"lat": 42.02163724719091
+	},
+	"North Yemen": {
+		"airports": 11,
+		"country": "Yemen",
+		"code1": "RIY",
+		"code2": "OYRN",
+		"long": 47.635563243515485,
+		"lat": 14.931681719695545
+	},
+	"South Yemen": {
+		"airports": 11,
+		"country": "Yemen",
+		"code1": "RIY",
+		"code2": "OYRN",
+		"long": 47.635563243515485,
+		"lat": 14.931681719695545
+	},
+	"Yemen": {
+		"airports": 11,
+		"country": "Yemen",
+		"code1": "RIY",
+		"code2": "OYRN",
+		"long": 47.635563243515485,
+		"lat": 14.931681719695545
+	},
+	"Bermuda": {
+		"airports": 4,
+		"country": "Bermuda",
+		"code1": "BDA",
+		"code2": "TXKF",
+		"long": -64.75457757702637,
+		"lat": 32.349504353271485
+	},
+	"Solomon Islands": {
+		"airports": 27,
+		"country": "Solomon Islands",
+		"code1": "HIR",
+		"code2": "AGGH",
+		"long": 152.96290593744206,
+		"lat": -8.016752813199991
+	},
+	"Nauru": {
+		"airports": 1,
+		"country": "Nauru",
+		"code1": "INU",
+		"code2": "ANYN",
+		"long": 166.919006,
+		"lat": -0.547458
+	},
+	"Tuvalu": {
+		"airports": 1,
+		"country": "Tuvalu",
+		"code1": "FUN",
+		"code2": "NGFU",
+		"long": 179.195999,
+		"lat": -8.525
+	},
+	"Namibia": {
+		"airports": 21,
+		"country": "Namibia",
+		"code1": "WDH",
+		"code2": "FYWH",
+		"long": 17.57472803118005,
+		"lat": -22.45778407440185
+	},
+	"Djibouti": {
+		"airports": 3,
+		"country": "Djibouti",
+		"code1": "JIB",
+		"code2": "HDAM",
+		"long": 43.114499409993485,
+		"lat": 11.765766779581705
+	},
+	"Montserrat": {
+		"airports": 2,
+		"country": "Montserrat",
+		"code1": "MNI",
+		"code2": "TRPG",
+		"long": -62.19331566992187,
+		"lat": 16.79139495471191
+	},
+	"Monaco": {
+		"airports": 1,
+		"country": "Monaco",
+		"code1": "MCM",
+		"code2": "\\N",
+		"long": 7.41666666,
+		"lat": 43.73333333
+	},
+	"Johnston Atoll": {
+		"airports": 1,
+		"country": "Johnston Atoll",
+		"code1": "JON",
+		"code2": "PJON",
+		"long": -169.533996582,
+		"lat": 16.7285995483
+	},
+	"Western Sahara": {
+		"airports": 3,
+		"country": "Western Sahara",
+		"code1": "SMW",
+		"code2": "GMMA",
+		"long": -13.611966666666667,
+		"lat": 25.867266333333333
+	},
+	"Niue": {
+		"airports": 1,
+		"country": "Niue",
+		"code1": "IUE",
+		"code2": "NIUE",
+		"long": -169.92559814453125,
+		"lat": -19.079030990600586
+	},
+	"Cocos (Keeling) Islands": {
+		"airports": 1,
+		"country": "Cocos (Keeling) Islands",
+		"code1": "CCK",
+		"code2": "YPCC",
+		"long": 96.8339004517,
+		"lat": -12.1883001328
+	},
+	"South Georgia and the Islands": {
+		"airports": 2,
+		"country": "South Georgia and the Islands",
+		"code1": "\\N",
+		"code2": "\\N",
+		"long": -36.4072735,
+		"lat": -54.2210035
+	},
+	"Myanmar": {
+		"airports": 1,
+		"country": "Myanmar",
+		"code1": "KMV",
+		"code2": "VYKL",
+		"long": 94.05110168457031,
+		"lat": 23.188800811767578
+	},
+	"Svalbard": {
+		"airports": 4,
+		"country": "Svalbard",
+		"code1": "\\N",
+		"code2": "ENSA",
+		"long": 14.784575,
+		"lat": 78.39446056595
+	},
+	"Wake Island": {
+		"airports": 1,
+		"country": "Wake Island",
+		"code1": "AWK",
+		"code2": "PWAK",
+		"long": 166.63600158691406,
+		"lat": 19.282100677490234
+	},
+	"Ashmore and Cartier Islands": {
+		"airports": 1,
+		"country": "Ashmore and Cartier Islands",
+		"code1": "\\N",
+		"code2": "\\N",
+		"long": 136.3,
+		"lat": -16.068
+	},
+	"Juan de Nova Island": {
+		"airports": 1,
+		"country": "Juan de Nova Island",
+		"code1": "XIK",
+		"code2": "XNIK",
+		"long": -149.397,
+		"lat": 40.382
+	}
+}

@@ -20,7 +20,7 @@ or a directory as a zip archive to your own (local) computer.
 | Web App | Image | SVG | Editor | 
 | ------------- | ------------- | ------------- | ------------- |
 | dpaint  | drawio | encrypt  | erd-editor |
-| [dpaint][dpaint] | [drawio][drawio] | [encrypt][encrypt] | [erd-editor][erd-editor] |
+| ![dpaint]([dpaint]) | ![drawio]([drawio]) | ![encrypt]([encrypt]) | [erd-editor][erd-editor] |
 | godsvg | grapesjs | livecodes | mermaid-editor |
 | [godsvg][godsvg] | [grapesjs][grapesjs] | [livecodes][livecodes] | [mermaid-editor][mermaid-editor] |
 | tldraw | voxel-builder | vvvebjs |  |
@@ -68,9 +68,7 @@ Alternativaly, you can open the repository in a new browser tab, press `>`
 
 
   > 
-  > _If I had to do it again today,    
-  > I would definitely choose jQuery   
-  > ease of use than Tailwind and Alpine.js_
+  > _If I had to do it again today, I would definitely choose the ease of use of jQuery over Tailwind and Alpine.js_
   >
 
 

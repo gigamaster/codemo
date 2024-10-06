@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Arms Sales Visualization - Bewelge</title>
+	<link rel="stylesheet" href="interface.css">
+	<script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" href="lib/spectrum.css" />
+	<script type="text/javascript" src="lib/spectrum.js"></script>
+</head>
+<body>
+	<div style='position:relative'></div>
+
+	<div id="mainTitle">
+		<span>Arms Sales Visualization</span>
+		<div id='info' onclick='openDescription()'>Description</div>
+	</div>
+
+	<div id="infoDiv"></div>
+	<div id="descriptionDiv">
+		<div id='closeDescription' onclick="closeDescription()">x</div>
+		<h2>Global Arms Sales</h3>
+		<p>UI update by <a href="https://github.com/gigamaster/codemo" target="_blank">gigamaster for Codemo</a></p>
+		<p>This Visualisation shows global arms transfers from 1950-2017.</p>
+		<p>It was heavily inspired by this Video by Will Geary's (@wgeary) - <a
+				href="https://vimeo.com/286751571">https://vimeo.com/286751571</a></p>
+		<p>Since I wanted to see how other countries that are known to be large arms-exporters would look in such an
+			animation, I decided to create an interactive version in which you can select any countries you want to be
+			displayed.</p>
+		<p>The dataset was retrieved from SIPRI - the Stockholm International Peace Research Institue. - <a
+				href="https://www.sipri.org/databases/armstransfers">https://www.sipri.org/databases/armstransfers</a>
+		</p>
+		<p>The SVG world map was retrieved from AMCharts at <a
+				href="https://www.amcharts.com/svg-maps/?map=world">https://www.amcharts.com/svg-maps/?map=world<a></p>
+		<p>If you have a suggestion or found a bug feel free to open an issue on the <a
+				href="http://github.com/bewelge/globalArmsTransfers"> GitHub Repo.</a></p>
+
+		<h3>Cleaned dataset by removing:</h3>
+		<ul>
+			<li> All deals where Supplier or Recipient is unknown.</li>
+			<li> All deals which had multiple sellers without specification which. </li>
+			<li> Deals with the UN, NATO, Regional Security System (RSSS), OSCE & African Union as seller or buyer</li>
+		</ul>
+
+		<h3>Consolidating the following groups:</h3>
+		<ul>
+			<li> Amal (Lebanon)* -> Lebanon</li>
+			<li> ANC (South Africa)* -> South Africa</li>
+			<li> Anti-Castro rebels (Cuba)* -> Cuba</li>
+			<li> Armas (Guatemala) -> Guatemala</li>
+			<li> Biafra -> Nigeria</li>
+			<li> contras (Nicaragua)* -> Nicaragua</li>
+			<li> El Salvador (FMLN) -> El Salvador</li>
+			<li> ELF (Ethiopia)* -> Ethiopia</li>
+			<li> FNLA (Angola)* -> Angola</li>
+			<li> GUNT (Chad)* -> Chad</li>
+			<li> Haiti Rebels -> Haiti</li>
+			<li> Hezbollah (Lebanon)* -> Lebanon</li>
+			<li> Huthi rebels (Yemen)* -> Yemen</li>
+			<li> Indonesia Rebels -> Indonesia</li>
+			<li> Khmer Rouge (Cambodia)* -> Cambodia</li>
+			<li> Lebanon Palestinian rebels* -> Lebanon</li>
+			<li> LF (Lebanon)* -> Lebanon</li>
+			<li> libya GNC -> Libya</li>
+			<li> Libya HoR -> Libya</li>
+			<li> LTTE (Sri Lanka)* -> Sri Lanka</li>
+			<li> Macedonia (FYROM) -> Macedonia</li>
+			<li> MTA (Myanmar)* -> Myanmar</li>
+			<li> Mujahedin (Afghanistan)* -> Afghanistan</li>
+			<li> Northern Alliance (Afghanistan)* -> Afghanistan</li>
+			<li> Northern Cyprus -> Cyprus</li>
+			<li> SLA (Lebanon)* -> Lebanon</li>
+			<li> SNA (Somalia)* -> Somalia</li>
+			<li> Southern rebels (Yemen)* -> Yemen</li>
+			<li> Soviet Union -> Russia</li>
+			<li> Syria Rebels -> Syria</li>
+			<li> UIC (Somalia)* -> Somalia</li>
+			<li> Ukraine Rebels* -> Ukraine</li>
+			<li> UNITA (Angola)* -> Angola</li>
+			<li> Viet Cong -> Vietnam</li>
+			<li> Viet Minh -> Vietnam</li>
+			<li> Viet Nam -> Vietnam</li>
+			<li> ZAPU -> Zimbabwe</li>
+		</ul>
+
+		<h3>* Other plugins used</h3>
+		<ul>
+			<li> Color Picker - https://bgrins.github.io/spectrum/ by bgrins</li>
+			<li> jQuery </li>
+		</ul>
+	</div>
+
+	<div id='legend'></div>
+	<div id='description'></div>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
