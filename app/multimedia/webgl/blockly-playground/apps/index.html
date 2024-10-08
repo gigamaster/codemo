@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Demo: Iframe Blockly</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      background: hsl(0, 0%, 9%);
+	  color: #eee;
+      font: normal 16px/1.5 system-ui, sans-serif;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 1px solid hsl(0, 0%, 14%);
+    }
+	nav {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		min-height: 2rem;
+		padding: 0.25rem;
+	}
+	button {
+		background: hsl(0, 0%, 14%);
+		border: 1px solid hsl(0, 0%, 18%);
+		border-radius: 0.5rem;
+		color: #ddd;
+		font-size: 1rem;
+		padding: 0.5rem;
+	}
+	button:hover {
+		background: hsl(0, 0%, 24%);
+		color: #fff;
+	}
+	#modifiedStatus {
+		background: hsla(120, 80%, 25%, 0.7);
+		border: 1px solid hsla(120, 80%, 40%, 0.8);
+		border-radius: 0.5rem;
+		color: hsl(120, 80%, 50%);
+		font-size: 0.875rem;
+		max-height: 20px;
+		padding: 0.25rem 1rem;
+	}
+  </style>
+</head>
+<body>
+  <table width="100%" height="99%">
+    <tr>
+	<td>
+		<nav>
+		<div>
+			<button id='saveButton'><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7M7 3v4a1 1 0 0 0 1 1h7"/></g></svg> Save</button>
+			<button id='resetButton'><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6"/></svg> Reset</button>
+			<button id='runButton'><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 3l14 9l-14 9z"/></svg> Run</button>
+		</div>
+
+		<span id='modifiedStatus'>Saved</span>
+		</nav>
+	</td>
+	<td>		
+		<div>
+		<span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></g></svg> Get started with samples: </span>
+		<button id="chuckButton">Chuck Norris</button>
+		<button id="batmanButton">Batman</button>
+		<button id="moveButton">Moving</button>
+		</div></td>
+    </tr>
+    <tr>
+      <td height="99%" width="50%">
+	<iframe src="frame-edit/frame-edit.html" allow="autoplay"></iframe>
+      </td>
+      <td height="99%">
+	<iframe class='viewFrame' src="frame-view/index-smooth.html" allow="autoplay"></iframe>
+      </td>
+    </tr>
+  </table>
+<script>
+
+	var sample1 = "%3Cxml%3E%3Cblock%20type%3D%22controls_repeat_ext%22%20inline%3D%22true%22%20x%3D%2244%22%20y%3D%22-21%22%3E%3Cvalue%20name%3D%22TIMES%22%3E%3Cblock%20type%3D%22math_number%22%3E%3Ctitle%20name%3D%22NUM%22%3E50%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cstatement%20name%3D%22DO%22%3E%3Cblock%20type%3D%22variables_set%22%20inline%3D%22false%22%3E%3Ctitle%20name%3D%22VAR%22%3Esaying%3C%2Ftitle%3E%3Cvalue%20name%3D%22VALUE%22%3E%3Cblock%20type%3D%22lists_create_with%22%20inline%3D%22false%22%3E%3Cmutation%20items%3D%225%22%3E%3C%2Fmutation%3E%3Cvalue%20name%3D%22ADD0%22%3E%3Cblock%20type%3D%22text%22%3E%3Ctitle%20name%3D%22TEXT%22%3EA%20lion%20once%20put%20his%20head%20inside%20the%20mouth%20of%20Chuck%20Norris.%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cvalue%20name%3D%22ADD1%22%3E%3Cblock%20type%3D%22text%22%3E%3Ctitle%20name%3D%22TEXT%22%3EChuck%20Norris%20pointed%20his%20finger%20in%20the%20sky%20said%20bang%20and%20an%20airplane%20fell%20from%20the%20sky.%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cvalue%20name%3D%22ADD2%22%3E%3Cblock%20type%3D%22text%22%3E%3Ctitle%20name%3D%22TEXT%22%3ENeo%20is%20The%20One%2C%20the%20one%20after%20Chuck%20Norris.%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cvalue%20name%3D%22ADD3%22%3E%3Cblock%20type%3D%22text%22%3E%3Ctitle%20name%3D%22TEXT%22%3EChuck%20Norris%20can%20roll%20a%2013%20with%20a%20pair%20of%20dice.%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cvalue%20name%3D%22ADD4%22%3E%3Cblock%20type%3D%22text%22%3E%3Ctitle%20name%3D%22TEXT%22%3EChuck%20Norris'%20number%20one%20rule%3A%20HE%20rules!%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cnext%3E%3Cblock%20type%3D%22variables_set%22%20inline%3D%22false%22%3E%3Ctitle%20name%3D%22VAR%22%3Esaying%3C%2Ftitle%3E%3Cvalue%20name%3D%22VALUE%22%3E%3Cblock%20type%3D%22lists_getIndex%22%20inline%3D%22true%22%3E%3Cmutation%20statement%3D%22false%22%20at%3D%22false%22%3E%3C%2Fmutation%3E%3Ctitle%20name%3D%22MODE%22%3EGET%3C%2Ftitle%3E%3Ctitle%20name%3D%22WHERE%22%3ERANDOM%3C%2Ftitle%3E%3Cvalue%20name%3D%22VALUE%22%3E%3Cblock%20type%3D%22variables_get%22%3E%3Ctitle%20name%3D%22VAR%22%3Esaying%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cnext%3E%3Cblock%20type%3D%22draw_say%22%20inline%3D%22false%22%3E%3Cvalue%20name%3D%22value%22%3E%3Cblock%20type%3D%22variables_get%22%3E%3Ctitle%20name%3D%22VAR%22%3Esaying%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3C%2Fblock%3E%3C%2Fnext%3E%3C%2Fblock%3E%3C%2Fnext%3E%3C%2Fblock%3E%3C%2Fstatement%3E%3C%2Fblock%3E%3C%2Fxml%3E";
+	var sample2 = "%3Cxml%3E%3Cblock%20type%3D%22draw_skin%22%20x%3D%22220%22%20y%3D%2283%22%3E%3Ctitle%20name%3D%22VALUE%22%3Ebatman%3C%2Ftitle%3E%3Cnext%3E%3Cblock%20type%3D%22draw_skymap%22%3E%3Ctitle%20name%3D%22VALUE%22%3Emars%3C%2Ftitle%3E%3Cnext%3E%3Cblock%20type%3D%22draw_nickname%22%20inline%3D%22false%22%3E%3Cvalue%20name%3D%22value%22%3E%3Cblock%20type%3D%22text%22%3E%3Ctitle%20name%3D%22TEXT%22%3Ebruce%20wayne%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cnext%3E%3Cblock%20type%3D%22draw_say%22%20inline%3D%22false%22%3E%3Cvalue%20name%3D%22value%22%3E%3Cblock%20type%3D%22text%22%3E%3Ctitle%20name%3D%22TEXT%22%3Eand%20i%20dont%20fear%20spiderman%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3C%2Fblock%3E%3C%2Fnext%3E%3C%2Fblock%3E%3C%2Fnext%3E%3C%2Fblock%3E%3C%2Fnext%3E%3C%2Fblock%3E%3C%2Fxml%3E";
+	var sample3 = "%3Cxml%3E%3Cblock%20type%3D%22controls_repeat_ext%22%20inline%3D%22true%22%20x%3D%2291%22%20y%3D%2271%22%3E%3Cvalue%20name%3D%22TIMES%22%3E%3Cblock%20type%3D%22math_number%22%3E%3Ctitle%20name%3D%22NUM%22%3E8%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cstatement%20name%3D%22DO%22%3E%3Cblock%20type%3D%22draw_move%22%20inline%3D%22true%22%3E%3Cvalue%20name%3D%22DISTANCE%22%3E%3Cblock%20type%3D%22math_number%22%3E%3Ctitle%20name%3D%22NUM%22%3E0.5%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3Cnext%3E%3Cblock%20type%3D%22draw_turn%22%20inline%3D%22false%22%3E%3Cvalue%20name%3D%22ANGLE%22%3E%3Cblock%20type%3D%22math_number%22%3E%3Ctitle%20name%3D%22NUM%22%3E45%3C%2Ftitle%3E%3C%2Fblock%3E%3C%2Fvalue%3E%3C%2Fblock%3E%3C%2Fnext%3E%3C%2Fblock%3E%3C%2Fstatement%3E%3C%2Fblock%3E%3C%2Fxml%3E"; 
+
+	// export blockly namespace locally
+	window.addEventListener('blocklyReady', function(event){
+		window.Blockly = event.detail.Blockly;
+	})
+	// autoload content if present
+	window.addEventListener('blocklyReady', function(){
+		Blockly.addChangeListener(function(){
+			// NOTE - it seems to be called even if there it no change in the workspace
+			document.querySelector('#modifiedStatus').innerText	= 'modified'
+		})
+		Blockly.mainWorkspace.traceOn(true);
+	})
+	window.addEventListener('blocklyReady', function(){
+		if( location.hash ){
+			loadWorkspace()
+			setTimeout(function(){
+				// should have the viewer iframe ready... 
+				//runWorkspace()	
+			}, 500);	// couch couch
+		}
+	})
+	document.querySelector('#runButton').addEventListener('click', function(event){
+		saveWorkspace()
+		runWorkspace()
+	})
+	document.querySelector('#saveButton').addEventListener('click', function(event){
+		saveWorkspace()
+	})
+	document.querySelector('#resetButton').addEventListener('click', function(event){
+		resetWorkspace()
+		
+		var viewIframe	= document.querySelector('iframe.viewFrame')
+		viewIframe.contentWindow.location.reload()
+	})
+
+	document.querySelector('#chuckButton').addEventListener('click', function(event){
+		resetWorkspace()
+		window.location.hash = sample1;
+		changeSample()
+	})
+
+	document.querySelector('#batmanButton').addEventListener('click', function(event){
+			resetWorkspace()
+			window.location.hash = sample2;
+			changeSample()
+	})
+
+	document.querySelector('#moveButton').addEventListener('click', function(event){
+			resetWorkspace()
+			window.location.hash = sample3;
+			changeSample()
+	})
+
+	function changeSample(){
+		window.addEventListener("hashchange", (event) => {
+			loadWorkspace()
+			runWorkspace()
+		});
+	}
+
+	function saveWorkspace(){
+		var xmlDom	= Blockly.Xml.workspaceToDom(Blockly.getMainWorkspace());
+		var xmlText	= Blockly.Xml.domToText(xmlDom)
+		window.location.hash	= encodeURIComponent(xmlText)
+		
+		// changed modifiedStatus
+		document.querySelector('#modifiedStatus').innerText	= 'saved'
+	}
+	function loadWorkspace(){
+	  	console.assert(location.hash)
+		var xmlText	= decodeURIComponent(location.hash.substr(1))
+		var xmlDoc	= Blockly.Xml.textToDom(xmlText);
+		Blockly.Xml.domToWorkspace(Blockly.getMainWorkspace(), xmlDoc)	  	
+	}
+	function runWorkspace(){
+		var generatedCode	= Blockly.JavaScript.workspaceToCode();
+		console.log('generatedCode', generatedCode)
+		var iframeView		= document.querySelector('iframe.viewFrame')
+		iframeView.contentWindow.run(generatedCode);
+	}
+	function resetWorkspace(){
+		Blockly.mainWorkspace.clear();
+	}
+</script>
+</body></html>
+
+
+
+
