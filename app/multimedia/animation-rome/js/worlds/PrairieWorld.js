@@ -103,7 +103,7 @@ var PrairieWorld = function ( shared, camera, callbackSoup ) {
 		}
 
 		var loader = new THREE.JSONLoaderAjax();
-		loader.load( { model: "/files/models/soup/cow.js", callback: addCows } );
+		loader.load( { model: "./files/models/soup/cow.js", callback: addCows } );
 
 		function addCows( geometry ) {
 
@@ -194,7 +194,7 @@ var PrairieWorld = function ( shared, camera, callbackSoup ) {
 
 	};
 
-	loader.load( "/files/models/prairie/Prairie.js", prairieLoaded );
+	loader.load( "./files/models/prairie/Prairie.js", prairieLoaded );
 
 	this.update = function ( delta, camera, portalsActive ) {
 

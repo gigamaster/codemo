@@ -203,9 +203,9 @@ var DunesSoup = function ( camera, scene, shared ) {
 
 	}
 
-	loader.load( { model: "/files/models/soup/birds_A_life.js", callback: birdsALoadedProxy } );
-	loader.load( { model: "/files/models/soup/birds_B_life.js", callback: birdsBLoadedProxy } );
-	loader.load( { model: "/files/models/soup/birds_A_black.js", callback: birdsABlackLoadedProxy } );
+	loader.load( { model: "./files/models/soup/birds_A_life.js", callback: birdsALoadedProxy } );
+	loader.load( { model: "./files/models/soup/birds_B_life.js", callback: birdsBLoadedProxy } );
+	loader.load( { model: "./files/models/soup/birds_A_black.js", callback: birdsABlackLoadedProxy } );
 
 	function birdsALoadedProxy( geometry ) {
 
@@ -262,11 +262,11 @@ var DunesSoup = function ( camera, scene, shared ) {
 
 	}
 
-	loader.load( { model: "/files/models/soup/grass01.js", callback: grass01LoadedProxy } );
-	loader.load( { model: "/files/models/soup/grass02.js", callback: grass02LoadedProxy } );
-	loader.load( { model: "/files/models/soup/grass03.js", callback: grass03LoadedProxy } );
-	loader.load( { model: "/files/models/soup/grassFlower.js", callback: grass04LoadedProxy } );
-	loader.load( { model: "/files/models/soup/darkblob01.js", callback: blob01LoadedProxy } );
+	loader.load( { model: "./files/models/soup/grass01.js", callback: grass01LoadedProxy } );
+	loader.load( { model: "./files/models/soup/grass02.js", callback: grass02LoadedProxy } );
+	loader.load( { model: "./files/models/soup/grass03.js", callback: grass03LoadedProxy } );
+	loader.load( { model: "./files/models/soup/grassFlower.js", callback: grass04LoadedProxy } );
+	loader.load( { model: "./files/models/soup/darkblob01.js", callback: blob01LoadedProxy } );
 
 	function blob01LoadedProxy( geometry ) {
 

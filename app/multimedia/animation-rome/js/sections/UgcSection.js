@@ -54,7 +54,7 @@ var UgcSection = function ( shared ) {
 	that.scene.addChild( environment );
 
 	var loader = new THREE.SceneLoaderAjax();
-	loader.load( "/files/models/dunes/D_tile_1.js", function ( result ) {
+	loader.load( "./files/models/dunes/D_tile_1.js", function ( result ) {
 
 		for ( var i = 0, l = result.scene.objects.length; i < l; i ++ ) {
 

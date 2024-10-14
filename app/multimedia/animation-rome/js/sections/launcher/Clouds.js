@@ -96,7 +96,7 @@ var Clouds = function ( shared, isRelaunch ) {
     mesh2 = new THREE.Mesh( geometry, material );
 
     var loader = new THREE.JSONLoaderAjax();
-    loader.load( { model: "/files/models/soup/birds_B_life.js", callback: makeScene } );
+    loader.load( { model: "./files/models/soup/birds_B_life.js", callback: makeScene } );
 
 	} );
 

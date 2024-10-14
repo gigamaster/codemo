@@ -157,18 +157,18 @@ var DunesWorld = function ( shared ) {
 	loader.onLoadStart = function () { shared.signals.loadItemAdded.dispatch() };
 	loader.onLoadComplete = function () { shared.signals.loadItemCompleted.dispatch() };
 
-	loader.load( "/files/models/dunes/D_tile_walk.js", walkLoaded );
-	loader.load( "/files/models/dunes/D_tile_prairie.js", prairieLoaded );
-	loader.load( "/files/models/dunes/D_tile_city.js", cityLoaded );
+	loader.load( "./files/models/dunes/D_tile_walk.js", walkLoaded );
+	loader.load( "./files/models/dunes/D_tile_prairie.js", prairieLoaded );
+	loader.load( "./files/models/dunes/D_tile_city.js", cityLoaded );
 
-	loader.load( "/files/models/dunes/D_tile_1.js", tile0Loaded );
-	loader.load( "/files/models/dunes/D_tile_2.js", tile1Loaded );
-	loader.load( "/files/models/dunes/D_tile_3.js", tile2Loaded );
-	loader.load( "/files/models/dunes/D_tile_4.js", tile3Loaded );
+	loader.load( "./files/models/dunes/D_tile_1.js", tile0Loaded );
+	loader.load( "./files/models/dunes/D_tile_2.js", tile1Loaded );
+	loader.load( "./files/models/dunes/D_tile_3.js", tile2Loaded );
+	loader.load( "./files/models/dunes/D_tile_4.js", tile3Loaded );
 
 
 	var loader = new THREE.JSONLoaderAjax();
-	loader.load( { model: "/files/models/dunes/D_tile_1_clouds.js", callback: function( geo ) { addClouds( geo, 100 ) } } );
+	loader.load( { model: "./files/models/dunes/D_tile_1_clouds.js", callback: function( geo ) { addClouds( geo, 100 ) } } );
 
 	function addClouds( geometry, n ) {
 
