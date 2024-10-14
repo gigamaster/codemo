@@ -22,7 +22,7 @@ var Clouds = function ( shared, isRelaunch ) {
 
 	geometry = new THREE.Geometry();
 
-	var texture = THREE.ImageUtils.loadTexture( './files/cloud256.png', null, function () {
+	var texture = THREE.ImageUtils.loadTexture( 'https://gigamaster.github.io/codemo/multimedia/animation-rome/files/cloud256.png', null, function () {
 
 		material = new THREE.MeshShaderMaterial( {
 
