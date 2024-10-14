@@ -55,7 +55,7 @@ var LauncherSection = function (shared) {
 
     title = document.createElement('div');
     title.style.position = 'absolute';
-    title.innerHTML = '<img src="/files/logo_heart.png" style="display:block; margin-top:-30px;" />';
+    title.innerHTML = '<img src="./files/logo_heart.png" style="display:block; margin-top:-30px;" />';
     uiContainer.appendChild(title);
 
     buttonEnter = createRolloverButton("10px 0 0 85px", "/files/enter_idle.png", "/files/enter_rollover.png");

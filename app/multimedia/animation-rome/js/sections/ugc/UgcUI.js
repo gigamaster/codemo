@@ -105,7 +105,7 @@ var UgcUI = function (shared) {
 
   var submitText = idElement('div', 'voxel-submit-text');
 
-  submitText.innerHTML = '<span id="agree-terms" class="foo"><input id="agree" type="checkbox" /> &nbsp;I agree to the <a id="terms-link" href="/terms">terms and conditions</a>.</span><br/>';
+  submitText.innerHTML = '<span id="agree-terms" class="foo"><input id="agree" type="checkbox" /> &nbsp;I agree to the <a id="terms-link" href="./terms">terms and conditions</a>.</span><br/>';
   submitText.innerHTML += '<small>Thank you for playing with voxel model! Your dream is unique.</small>';
   var submitImage = idElement('div', 'voxel-submit-image');
   var submitInputs = idElement('div', 'voxel-submit-inputs');

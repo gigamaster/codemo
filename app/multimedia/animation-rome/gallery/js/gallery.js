@@ -29,7 +29,7 @@ var GALLERY = function(params) {
 
   var itemHTML = [
     '<div class="object" id="object-%id%">',
-    '<div class="img-wrapper"><img width="300" style="background-image: url(%img%)" src="images/place-holder.gif" alt=""/></div>',
+    '<div class="img-wrapper"><img width="300" style="background-image: url(%img%)" href="./images/place-holder.gif" alt=""/></div>',
     '<div class="object-title">',
     '%title%',
     '</div>',
@@ -295,7 +295,7 @@ var GALLERY = function(params) {
       $('#lightbox-upvote').removeClass('selected');
       $('#lightbox-downvote').removeClass('selected');
     }
-    $('#webgl').html($('<iframe style="border: 0;" width="100%" height="100%" src="/gallery/viewer.html#' + activeObject.id + '"></iframe>'));
+    $('#webgl').html($('<iframe style="border: 0;" width="100%" height="100%" src="./gallery/viewer.html#' + activeObject.id + '"></iframe>'));
     $('#lightbox-experience').attr('href', '/?id=' + activeObject.id)
   }
 
