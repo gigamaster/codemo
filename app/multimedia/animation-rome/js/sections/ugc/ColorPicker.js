@@ -23,8 +23,8 @@ function ColorPicker(container) {
 
   var imgGround = document.createElement('img');
   var imgSky = document.createElement('img');
-  imgGround.src = '/files/wheel.png';
-  imgSky.src = '/files/wheel-sky.png';
+  imgGround.src='./files/wheel.png';
+  imgSky.src='./files/wheel-sky.png';
 
   var _type = 0;
 

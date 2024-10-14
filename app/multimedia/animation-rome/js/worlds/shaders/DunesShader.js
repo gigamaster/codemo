@@ -9,7 +9,7 @@ var DunesShader = {
 
 	init: function() {
 		
-		DunesShader.uniforms.surfaceImage.texture = THREE.ImageUtils.loadTexture( '/files/textures/CityShader_Clouds.jpg' );
+		DunesShader.uniforms.surfaceImage.texture = THREE.ImageUtils.loadTexture( './files/textures/CityShader_Clouds.jpg' );
 		
 	},
 

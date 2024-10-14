@@ -136,7 +136,7 @@ var LauncherSection = function (shared) {
       ffTitle = document.createElement('div');
       ffTitle.style.paddingTop = "60px";
       ffTitle.style.marginLeft = "-2px";	// Ugly
-      ffTitle.innerHTML = "<img src = '/files/footer/header-trans.png' alt = 'ROME' />";
+      ffTitle.innerHTML = "<img src='./files/footer/header-trans.png' alt = 'ROME' />";
       domElement.appendChild(ffTitle);
 
     }

@@ -649,7 +649,7 @@ var UgcUI = function (shared) {
 
     var div = classedElement('div', 'animal');
     var img = classedElement('img', 'animal-thumb');
-    img.src = '/files/soupthumbs/test.png';
+    img.src='./files/soupthumbs/test.png';
     img.style.position = 'absolute';
 
     var controls = classedElement('div', 'animal-controls');

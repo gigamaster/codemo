@@ -58,7 +58,7 @@ var PrairieWorld = function ( shared, camera, callbackSoup ) {
 
 	// Trail
 
-	var markTexture = THREE.ImageUtils.loadTexture( "/files/textures/trailMarkTexture.jpg" );
+	var markTexture = THREE.ImageUtils.loadTexture( "../files/textures/trailMarkTexture.jpg" );
 
 	// Scene
 

@@ -44,11 +44,11 @@ var PrairieSoup = function ( camera, scene, shared ) {
 
 	// particles
 
-	var sprite0 = THREE.ImageUtils.loadTexture( "/files/textures/dark_0.png" );
-	var sprite1 = THREE.ImageUtils.loadTexture( "/files/textures/dark_1.png" );
-	var sprite2 = THREE.ImageUtils.loadTexture( "/files/textures/dark_2.png" );
-	var sprite3 = THREE.ImageUtils.loadTexture( "/files/textures/dark_3.png" );
-	var sprite4 = THREE.ImageUtils.loadTexture( "/files/textures/dark_4.png" );
+	var sprite0 = THREE.ImageUtils.loadTexture( "./files/textures/dark_0.png" );
+	var sprite1 = THREE.ImageUtils.loadTexture( "./files/textures/dark_1.png" );
+	var sprite2 = THREE.ImageUtils.loadTexture( "./files/textures/dark_2.png" );
+	var sprite3 = THREE.ImageUtils.loadTexture( "./files/textures/dark_3.png" );
+	var sprite4 = THREE.ImageUtils.loadTexture( "./files/textures/dark_4.png" );
 
 	var particleSprites = [sprite0,sprite1,sprite2,sprite3,sprite4];
 	var particles = new Particles(20, scene, 1.5, particleSprites, 70, 60);
