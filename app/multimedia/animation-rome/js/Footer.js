@@ -44,7 +44,7 @@ var Footer = function(container, prefix) {
             emiButton = new EMIBuyButton({
 
                 buttonID: "c9e456919b824bdeb2e3a326b122db43",
-                buttonImageUrl: path + "/buy_button-trans.png",
+                buttonImageUrl: path + "./buy_button-trans.png",
                 useVendorImages: true
 
             }).replaceDiv(divReplacement);
@@ -57,8 +57,8 @@ var Footer = function(container, prefix) {
         Footer.handleLinkListeners(document.getElementById(privacy), "Privacy", DEFAULT_POPUP_PROPERTIES);
         Footer.handleLinkListeners(document.getElementById(terms), "Terms", DEFAULT_POPUP_PROPERTIES);
 
-        Footer.handleLinkListeners(document.getElementById(twitter), "Twitter", DEFAULT_POPUP_SHARING);
-        Footer.handleLinkListeners(document.getElementById(facebook), "Facebook", DEFAULT_POPUP_SHARING);
+        // Footer.handleLinkListeners(document.getElementById(twitter), "Twitter", DEFAULT_POPUP_SHARING);
+        // Footer.handleLinkListeners(document.getElementById(facebook), "Facebook", DEFAULT_POPUP_SHARING);
 
         return this;
 
