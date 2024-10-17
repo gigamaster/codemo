@@ -17,14 +17,19 @@ or a directory as a zip archive to your own (local) computer.
 --- 
 
 
-| Web App | Image | SVG | Editor | 
-| ------------- | ------------- | ------------- | ------------- |
-| dpaint  | drawio | encrypt  | erd-editor |
-| ![dpaint]([dpaint]) | ![drawio]([drawio]) | ![encrypt]([encrypt]) | [erd-editor][erd-editor] |
-| godsvg | grapesjs | livecodes | mermaid-editor |
-| [godsvg][godsvg] | [grapesjs][grapesjs] | [livecodes][livecodes] | [mermaid-editor][mermaid-editor] |
-| tldraw | voxel-builder | vvvebjs |  |
-| [tldraw][tldraw] | [voxel-builder][voxel-builder] | [vvvebjs][vvvebjs] |  |
+| Web App                            | Description  |
+|------------------------------------|--------------|
+| ![dpaint]([dpaint-img])                | [dpaint][dpaint]  Image editor modeled after the legendary Deluxe Paint by Steffest  |
+| ![drawio]([drawio-img])                | [drawio][drawio]  Diagram editor or whiteboard by JGraph Ltd and draw.io AG |
+| ![encrypt]([encrypt-img])              | [encrypt][encrypt]  Static HTML Encryption for public host |
+| ![erd-editor]([erd-editor-img])        | [erd-editor][erd-editor]  Entity-Relationship Diagram Editor by SeungHwan-Lee @dineug |
+| ![godsvg]([godsvg-img])                | [godsvg][godsvg]  Editor for Scalable Vector Graphics (SVG) by @MewPurPur  |
+| ![grapesjs]([grapesjs-img])            | [grapesjs][grapesjs]  WYSIWYG eeb page builder |
+| ![livecodes]([livecodes-img])          | [livecodes][livecodes]  Live code playground |
+| ![mermaid]([mermaid-img])              | [mermaid-editor][mermaid]  Charts and diagrams editor |
+| ![tldraw]([tldraw-img])                | [tldraw][tldraw]  Canvas and whiteboard draw |
+| ![voxel-builder]([voxel-builder-img])  | [voxel-builder][voxel-builder]  Voxel-based 3D Modeling Application  nimadez |
+| ![vvvebjs]([vvvebjs-img])              | [vvvebjs][vvvebjs]  Drag and drop web page builder givanz|
 
 
 ### 1. Live Code
@@ -99,14 +104,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.   
 
 [web]: https://gigamaster.github.io/codemo/web-app/
-[dpaint]: https://gigamaster.github.io/codemo/web-app/
-[drawio]: https://gigamaster.github.io/codemo/web-app/
-[encrypt]: https://gigamaster.github.io/codemo/web-app/
-[erd-editor]: https://gigamaster.github.io/codemo/web-app/
-[godsvg]: https://gigamaster.github.io/codemo/web-app/
-[grapesjs]: https://gigamaster.github.io/codemo/web-app/
-[livecodes]: https://gigamaster.github.io/codemo/web-app/
-[mermaid-editor]: https://gigamaster.github.io/codemo/web-app/
-[tldraw]: https://gigamaster.github.io/codemo/web-app/
-[voxel-builder]: https://gigamaster.github.io/codemo/web-app/
-[vvvebjs]: https://gigamaster.github.io/codemo/web-app/
+[dpaint-img]: https://gigamaster.github.io/codemo/web-app/dpaint.webp
+[dpaint]: https://gigamaster.github.io/codemo/web-app/dpaint/
+[drawio-img]: https://gigamaster.github.io/codemo/web-app/drawio.webp
+[drawio]: https://gigamaster.github.io/codemo/web-app/drawio/
+[encrypt-img]: https://gigamaster.github.io/codemo/web-app/encrypt.webp
+[encrypt]: https://gigamaster.github.io/codemo/web-app/encrypt/
+[erd-editor-img]: https://gigamaster.github.io/codemo/web-app/erd-editor.webp
+[erd-editor]: https://gigamaster.github.io/codemo/web-app/erd-editor/
+[godsvg-img]: https://gigamaster.github.io/codemo/web-app/godsvg.webp
+[godsvg]: https://gigamaster.github.io/codemo/web-app/godsvg/
+[grapesjs-img]: https://gigamaster.github.io/codemo/web-app/grapesjs.webp
+[grapesjs]: https://gigamaster.github.io/codemo/web-app/grapesjs/
+[livecodes-img]: https://gigamaster.github.io/codemo/web-app/livecodes.webp
+[livecodes]: https://gigamaster.github.io/codemo/web-app/livecodes/
+[mermaid-img]: https://gigamaster.github.io/codemo/web-app/mermaid-editor.webp
+[mermaid]: https://gigamaster.github.io/codemo/web-app/mermaid-editor/
+[tldraw-img]: https://gigamaster.github.io/codemo/web-app/tldraw.webp
+[tldraw]: https://gigamaster.github.io/codemo/web-app/tldraw/
+[voxel-builder-img]: https://gigamaster.github.io/codemo/web-app/voxel-builder.webp
+[voxel-builder]: https://gigamaster.github.io/codemo/web-app/voxel-builder/
+[vvvebjs-img]: https://gigamaster.github.io/codemo/web-app/vvvebjs.webp
+[vvvebjs]: https://gigamaster.github.io/codemo/web-app/vvvebjs/

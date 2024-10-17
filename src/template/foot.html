@@ -201,13 +201,156 @@ aria-labelledby="settinsPanelLabel"
   </div>
 
   <!-- Utils -->
+  <!-- localstorage manager -->
   <div class="px-4">
-    <h6 class="text-gray-400 dark:text-light">Utils</h6>
-    <div class="flex justify-center my-4">
-        <span class="icon-bookmark w-6 h-6"></span> Bookmarks
-        <span class="icon-notebook w-6 h-6"></span> Notebook
-    </div>
+    <h6 class="text-gray-400 dark:text-light">LocalStorage Manager</h6>
   </div>
+  <div id="lm" class="w-full flex justify-center my-4 mx-auto p-2 text-xs">
+    <!-- localstorage data -->
+    <div id="data-o"></div>
+  </div>
+
+  <script>
+  // function localManager
+    window.onload = (event) => {
+    function l(a, b) {
+      (b = a.target), 
+      a.preventDefault();
+      var d = b.getAttribute("data-k");
+      var bv = b.nextElementSibling;
+      window.addEventListener('mouseup',function(event){
+        if(event.target != bv && event.target.parentNode != bv){
+            bv.style.display = 'none';
+        }
+      }); 
+      
+      switch (b.id) {
+        case "lc":
+          h.removeItem(d), k();
+          break;
+        case "lv":
+          b.nextElementSibling.style.display= "block";
+          bv.innerHTML = "<pre>" + h[d] + "</pre>";
+          break;
+        case "lca":
+          h.clear(), k();
+          break;
+        case "sc":
+          i.removeItem(d), k();
+          break;
+        case "sv":
+          b.nextElementSibling.style.display= "block";
+          bv.innerHTML = "<pre>" + h[d] + "</pre>";
+          break;
+        case "sca":
+          i.clear(), k();
+          break;
+        case "x":
+          c.style.display = "none";
+          b.nextSibling.display = "none";
+      }
+    }
+    function k() {
+      (e =
+        j + '<div class="flex flex-row items-center">' +
+            '<div class="grow">storage key</div>' +
+            '<div>size</div>' +
+            '<div class="txt-r"><a href="#" id="lca" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear All">All ❌</a></div>' +
+            '</div>'),
+        (e += h.length ? "" : '<div class="flex flex-row grow">No Data</div>');
+      for (d = 0; d < h.length; d++)
+        (g = h.key(d)),
+          (e += (
+            '<div class="flex flex-row items-center">' +
+            '<div class="grow">$</div>' +
+            '<div>' + h[g].length + '</div>' +
+            '<div><a href=# data-k="$" id="lv" class="bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="View">🔍</a><div class="data-o border dark:border-primary-darker"></div></div>' +
+            '<div class="text-center"><a href=# data-k="$" id="lc" class="bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear">❌</a></div>' +
+            '</div>'
+          ).replace(/\$/g, g));
+      (e +=
+        '<div class="flex flex-row items-center"><h2>sessionStorage</h2></div>' +
+        '<div class="flex flex-row items-center">' +
+        '<div class="grow">storage key</div>' +
+        '<div>size</div>' +
+        '<div><a href="#" id="sca" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear All">All ❌</a></div>' +
+        '</div>'),
+        (e += i.length ? "" : '<div class="flex flex-row items-center">No Data</div>');
+      for (d = 0; d < i.length; d++)
+        (g = i.key(d)),
+          (e += (
+            '<div class="flex flex-row items-center">' +
+            '<div class="grow">$</div>' +
+            '<div>' + i[g].length + '</div>' +
+            '<div><a href="#" data-k="$" id="sv" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="View">🔍</a><div class="data-o border dark:border-primary-darker"></div></div>' +
+            '<div><a href=# data-k="$" id="sc" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title=Clear>❌</a></div>' +
+            '</div>'
+          ).replace(/\$/g, g));
+      c.innerHTML = e;
+    }
+    var a = document,
+      b = "localStorageList",
+      o = document.querySelector(".data-o"),
+      c = a.getElementById(b),
+      d,e,f,g,
+      h = window.localStorage,
+      i = window.sessionStorage,
+      j =
+        "<style>$ h2{font:14px/16px sans-serif;}</style>".replace(
+          /\$/g,
+          "#" + b,
+        );
+    c ||
+      ((c = a.createElement("div")),
+      m = a.getElementById('lm'),
+      m.appendChild(c),
+      c.addEventListener("click", l, !1)),
+      c.setAttribute("id", b),
+      c.setAttribute("class", "w-full relative border rounded-md border dark:border-primary-darker p-2"),
+      (c.style.display = "inline-block"),
+      k();
+  }
+  </script>
+  <style>
+  #localStorageList {
+  position: relative; width:100%;
+  }
+  #lc, #lca, #lv, #sc, #sca, #sv {
+  border-radius: 0.375rem;
+  margin: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 0.125rem 0.25rem;
+  color: inherit;
+  text-decoration: inherit;
+  box-sizing: border-box;
+  border: 0px solid;
+  }
+  #lca, #sca{
+  min-width:60px;
+  }
+  #localStorageList > div {padding:4px;}
+  .txt-r {text-align:right;}
+  .data-o {
+  display: none;
+  background-color: #1d1d1d;
+  border-radius: 4px;
+  box-shadow: 1px 4px 10px 1px #111;
+  color: #fff;
+  position: absolute;
+  cursor: pointer;
+  overflow: auto;
+  max-height: 200px;
+  padding: 0.5rem;
+  transform: translateX(-100%) translateY(-70%);
+  width:220px;
+  z-index: 10;
+  }
+  .data-o > pre {
+  max-width: 240px;
+  max-height: 200px;
+  white-space: pre-wrap;
+  }
+  </style>
 
 </div><!-- /Content -->
 </div>
