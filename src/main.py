@@ -87,7 +87,7 @@ def main():
                           "<td class=\"flex flex-nowrap items-center justify-center\">")
                   
                   # File Preview - filename relative path
-                  f.write("<a class=\"preview m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" href=\"" + filename + "\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
+                  f.write("<a class=\"preview m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
                           "<span class=\"icon-view w-4 h-4 mx-2\"></span></a>")
                   
                   # Join Parent Directory and File Name with extension

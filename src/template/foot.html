@@ -204,7 +204,7 @@ aria-labelledby="settinsPanelLabel"
 <!-- Content -->
 <div class="flex-1 overflow-y-auto scroll-gutter">
   <!-- logo -->
-  <div class="logo p-4 space-y-4 md:p-8">
+  <div class="logo px-4 space-y-4">
     <img src="https://gigamaster.github.io/codemo/asset/img/codemo-logo-256.webp" width="256" height="256" alt="Codemo logo">
   </div>
 
@@ -304,124 +304,118 @@ aria-labelledby="settinsPanelLabel"
   </div>
 
   <script>
-  // function localManager
-    window.onload = (event) => {
-    function l(a, b) {
-      (b = a.target), 
-      a.preventDefault();
-      var d = b.getAttribute("data-k");
-      var bv = b.nextElementSibling;
-      window.addEventListener('mouseup',function(event){
-        if(event.target != bv && event.target.parentNode != bv){
-            bv.style.display = 'none';
+    // function localManager
+      window.onload = (event) => {
+      function l(a, b) {
+        (b = a.target), 
+        a.preventDefault();
+        var d = b.getAttribute("data-k");
+        var bv = b.nextElementSibling;
+        window.addEventListener('mouseup',function(event){
+          if(event.target != bv && event.target.parentNode != bv){
+              bv.style.display = 'none';
+          }
+        }); 
+        
+        switch (b.id) {
+          case "lc":
+            h.removeItem(d), k();
+            break;
+          case "lv":
+            b.nextElementSibling.style.display= "block";
+            bv.innerHTML = "<pre>" + h[d] + "</pre>";
+            break;
+          case "lca":
+            h.clear(), k();
+            break;
+          case "sc":
+            i.removeItem(d), k();
+            break;
+          case "sv":
+            b.nextElementSibling.style.display= "block";
+            bv.innerHTML = "<pre>" + h[d] + "</pre>";
+            break;
+          case "sca":
+            i.clear(), k();
+            break;
+          case "x":
+            c.style.display = "none";
+            b.nextSibling.display = "none";
         }
-      }); 
-      
-      switch (b.id) {
-        case "lc":
-          h.removeItem(d), k();
-          break;
-        case "lv":
-          b.nextElementSibling.style.display= "block";
-          bv.innerHTML = "<pre>" + h[d] + "</pre>";
-          break;
-        case "lca":
-          h.clear(), k();
-          break;
-        case "sc":
-          i.removeItem(d), k();
-          break;
-        case "sv":
-          b.nextElementSibling.style.display= "block";
-          bv.innerHTML = "<pre>" + h[d] + "</pre>";
-          break;
-        case "sca":
-          i.clear(), k();
-          break;
-        case "x":
-          c.style.display = "none";
-          b.nextSibling.display = "none";
       }
+      function k() {
+        (e =
+          j + '<div class="flex flex-row items-center">' +
+              '<div class="grow">storage key</div>' +
+              '<div>size</div>' +
+              '<div class="txt-r"><a href="#" id="lca" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear All">All ❌</a></div>' +
+              '</div>'),
+          (e += h.length ? "" : '<div class="flex flex-row grow">No Data</div>');
+        for (d = 0; d < h.length; d++)
+          (g = h.key(d)),
+            (e += (
+              '<div class="flex flex-row items-center">' +
+              '<div class="grow truncate">$</div>' +
+              '<div>' + h[g].length + '</div>' +
+              '<div><a href=# data-k="$" id="lv" class="bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="View">🔍</a><div class="data-o border dark:border-primary-darker"></div></div>' +
+              '<div><a href=# data-k="$" id="lc" class="bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear">❌</a></div>' +
+              '</div>'
+            ).replace(/\$/g, g));
+        (e +=
+          '<div class="flex flex-row items-center"><h2>sessionStorage</h2></div>' +
+          '<div class="flex flex-row items-center">' +
+          '<div class="grow">storage key</div>' +
+          '<div>size</div>' +
+          '<div><a href="#" id="sca" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear All">All ❌</a></div>' +
+          '</div>'),
+          (e += i.length ? "" : '<div class="flex flex-row items-center">No Data</div>');
+        for (d = 0; d < i.length; d++)
+          (g = i.key(d)),
+            (e += (
+              '<div class="flex flex-row items-center">' +
+              '<div class="grow truncate">$</div>' +
+              '<div>' + i[g].length + '</div>' +
+              '<div><a href="#" data-k="$" id="sv" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="View">🔍</a><div class="data-o border dark:border-primary-darker"></div></div>' +
+              '<div><a href=# data-k="$" id="sc" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear">❌</a></div>' +
+              '</div>'
+            ).replace(/\$/g, g));
+        c.innerHTML = e;
+      }
+      var a = document,
+        b = "localStorageList",
+        o = document.querySelector(".data-o"),
+        c = a.getElementById(b),
+        d,e,f,g,
+        h = window.localStorage,
+        i = window.sessionStorage,
+        j =
+          "<style>$ h2{font:14px/16px sans-serif;}</style>".replace(
+            /\$/g,
+            "#" + b,
+          );
+      c ||
+        ((c = a.createElement("div")),
+        m = a.getElementById('lm'),
+        m.appendChild(c),
+        c.addEventListener("click", l, !1)),
+        c.setAttribute("id", b),
+        c.setAttribute("class", "w-full relative border rounded-md border dark:border-primary-darker p-2"),
+        (c.style.display = "inline-block"),
+        k();
     }
-    function k() {
-      (e =
-        j + '<div class="flex flex-row items-center">' +
-            '<div class="grow">storage key</div>' +
-            '<div>size</div>' +
-            '<div class="txt-r"><a href="#" id="lca" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear All">All ❌</a></div>' +
-            '</div>'),
-        (e += h.length ? "" : '<div class="flex flex-row grow">No Data</div>');
-      for (d = 0; d < h.length; d++)
-        (g = h.key(d)),
-          (e += (
-            '<div class="flex flex-row items-center">' +
-            '<div class="grow">$</div>' +
-            '<div>' + h[g].length + '</div>' +
-            '<div><a href=# data-k="$" id="lv" class="bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="View">?</a><div class="data-o border dark:border-primary-darker"></div></div>' +
-            '<div class="text-center"><a href=# data-k="$" id="lc" class="bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear">❌</a></div>' +
-            '</div>'
-          ).replace(/\$/g, g));
-      (e +=
-        '<div class="flex flex-row items-center"><h2>sessionStorage</h2></div>' +
-        '<div class="flex flex-row items-center">' +
-        '<div class="grow">storage key</div>' +
-        '<div>size</div>' +
-        '<div><a href="#" id="sca" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="Clear All">All ❌</a></div>' +
-        '</div>'),
-        (e += i.length ? "" : '<div class="flex flex-row items-center">No Data</div>');
-      for (d = 0; d < i.length; d++)
-        (g = i.key(d)),
-          (e += (
-            '<div class="flex flex-row items-center">' +
-            '<div class="grow">$</div>' +
-            '<div>' + i[g].length + '</div>' +
-            '<div><a href="#" data-k="$" id="sv" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title="View">?</a><div class="data-o border dark:border-primary-darker"></div></div>' +
-            '<div><a href=# data-k="$" id="sc" class="flex grow bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light" title=Clear>❌</a></div>' +
-            '</div>'
-          ).replace(/\$/g, g));
-      c.innerHTML = e;
-    }
-    var a = document,
-      b = "localStorageList",
-      o = document.querySelector(".data-o"),
-      c = a.getElementById(b),
-      d,e,f,g,
-      h = window.localStorage,
-      i = window.sessionStorage,
-      j =
-        "<style>$ h2{font:14px/16px sans-serif;}</style>".replace(
-          /\$/g,
-          "#" + b,
-        );
-    c ||
-      ((c = a.createElement("div")),
-      m = a.getElementById('lm'),
-      m.appendChild(c),
-      c.addEventListener("click", l, !1)),
-      c.setAttribute("id", b),
-      c.setAttribute("class", "w-full relative border rounded-md border dark:border-primary-darker p-2"),
-      (c.style.display = "inline-block"),
-      k();
-  }
   </script>
   <style>
-  #localStorageList {
-  position: relative; width:100%;
-  }
+  #localStorageList {position: relative; width:100%;}
   #lc, #lca, #lv, #sc, #sca, #sv {
   border-radius: 0.375rem;
   margin: 0.25rem;
-  margin-bottom: 0.25rem;
   padding: 0.125rem 0.25rem;
   color: inherit;
   text-decoration: inherit;
   box-sizing: border-box;
   border: 0px solid;
   }
-  #lca, #sca{
-  min-width:60px;
-  justify-content: flex-end;
-  }
+  #lca, #sca{min-width:60px;justify-content: flex-end;}
   #localStorageList > div {padding:4px;}
   .txt-r {text-align:right;}
   .data-o {

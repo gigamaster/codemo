@@ -451,7 +451,7 @@ vertical-align:-.175em;}
 .text-danger-light{--tw-text-opacity:1;color:rgba(239,68,68,var(--tw-text-opacity))} /* no */
 .text-light{color:var(--light)}
 .text-white{color:rgb(255,255,255)}
-.truncate{overflow:hidden;text-overflow:ellipsis}
+.truncate{overflow:hidden;text-overflow:ellipsis;white-space: nowrap;}
 .truncate,.whitespace-nowrap{white-space:nowrap}
 .hover\:overflow-y-auto:hover{overflow-y:auto}
 .hover\:border-gray-900:hover{--tw-border-opacity:1;border-color:rgba(17,24,39,var(--tw-border-opacity))} /* no */
