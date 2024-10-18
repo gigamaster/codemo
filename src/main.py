@@ -12,7 +12,7 @@ import datetime as dt
 with open('/src/icons.json', encoding="utf-8") as json_file:
   data   = json.load(json_file)
   # GitHub Version and Repository Links
-  version= "v.0.9.0"
+  appVersion= "v.0.9.0"
   uBlob  = "https://github.com/gigamaster/codemo/blob/main/app"
   uEdit  = "https://github.com/gigamaster/codemo/edit/main/app"
   uFolder= "https://github.com/gigamaster/codemo/tree/main/app"
@@ -151,7 +151,7 @@ def get_template_foot():
     foot = foot.replace("{{buildtime}}", "at " + dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     foot = foot.replace("{{author}}", os.environ["GITHUB_REPOSITORY_OWNER"]) 
     foot = foot.replace("{{giturl}}", os.environ["GITHUB_SERVER_URL"] + "/" + os.environ["GITHUB_REPOSITORY"] + "/")  
-    foot = foot.replace("{{version}}", version) 
+    foot = foot.replace("{{version}}", appVersion) 
 
     return foot
 
