@@ -75,7 +75,7 @@ def main():
                     f.write("<td class=\"text-center\"></td></tr>")
 
                   else:
-
+                    
                     f.write("<td class=\"text-center\">" +
                           "<a class=\"download m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" @click=\"GitZip.zipRepo('" + uFolder + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\">" +
                           "<span class=\"icon-download w-4 h-4 mx-2\"></span></td></a></tr>\n")
@@ -91,7 +91,8 @@ def main():
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" +
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
                           filename + "</a></th><td class=\"size\">" +
-                          get_file_size(path) + "</td><td class=\"time\">" + get_file_modified_time(path) + "</td>") 
+                          get_file_size(path) + "</td><td class=\"time\">" + get_file_modified_time(path) + "</td>" +
+                          "<td class=\"flex flex-nowrap items-center justify-center\">") 
                   
                   if dirname == ".":
 
@@ -100,8 +101,7 @@ def main():
                   else:
                     
                     # File Preview - filename relative path
-                    f.write("<td class=\"flex flex-nowrap items-center justify-center\">" + 
-                            "<a class=\"preview m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
+                    f.write("<a class=\"preview m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
                             "<span class=\"icon-view w-4 h-4 mx-2\"></span></a>")
                   
                   # Join Parent Directory and File Name with extension
