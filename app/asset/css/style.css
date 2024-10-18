@@ -151,7 +151,7 @@ position: relative;
 width: 24px;
 height: 22px;
 }
-.logo>img {border-radius: 12px;}
+.logo>img {border-radius: 12px;margin: 0 auto;}
 /* default vars */
 *,:after,:before{--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;
 --tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;

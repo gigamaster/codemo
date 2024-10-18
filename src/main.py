@@ -151,7 +151,7 @@ def get_template_foot():
     foot = foot.replace("{{buildtime}}", "at " + dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     foot = foot.replace("{{author}}", os.environ["GITHUB_REPOSITORY_OWNER"]) 
     foot = foot.replace("{{giturl}}", os.environ["GITHUB_SERVER_URL"] + "/" + os.environ["GITHUB_REPOSITORY"] + "/")  
-    foot = foot.replace("{{version}}", appVersion) 
+    foot = foot.replace("{{appVersion}}", appVersion)
 
     return foot
 
