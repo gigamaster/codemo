@@ -55,7 +55,8 @@ def main():
                       "<th scope=\"row\" class=\"p-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
-                      "<span class=\"icon-updir\"></span></a></th><td></td><td></td><td></td></tr>" if dirname != "." else "",
+                      "<span class=\"icon-updir\"></span></a></th>" + 
+                      "<td>2</td><td>3</td><td>4</td></tr>" if dirname != "." else "",
                       ]))
               
               #sort dirnames alphabetically
@@ -70,11 +71,11 @@ def main():
                           "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder") + "\"/>" + 
                           subdirname + 
                           "</a></th>" +
-                          "<td></td><td></td>")
+                          "<td>2</td><td>3</td>")
                   
                   if dirname == ".":
 
-                    f.write("<td></td></tr>")
+                    f.write("<td>4</td></tr>")
 
                   else:
 
@@ -100,19 +101,18 @@ def main():
                   
                         if dirname == ".":
 
-                            f.write("<td></td></tr>")
+                            f.write("<td>4</td></tr>")
                         
                         else:
                     
+                            # Join Parent Directory and File Name with extension
+                            fName = os.path.join(pDirname, filename)
                             # File Preview - filename relative path
                             f.write("<td class=\"flex flex-nowrap items-center justify-center\">" + 
                                     "<a class=\"preview m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
-                                    "<span class=\"icon-view w-4 h-4 mx-2\"></span></a>")
-                  
-                            # Join Parent Directory and File Name with extension
-                            fName = os.path.join(pDirname, filename)
-                            # GitHub Link to Edit 
-                            f.write("<a class=\"edit m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" href=\"" + uEdit + fName + "\"  target=\"_blank\" title=\"Edit File\">" +
+                                    "<span class=\"icon-view w-4 h-4 mx-2\"></span></a>" +                            
+                                    # GitHub Link to Edit 
+                                    "<a class=\"edit m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" href=\"" + uEdit + fName + "\"  target=\"_blank\" title=\"Edit File\">" +
                                     "<span class=\"icon-edit w-4 h-4 mx-2\"></span></a>" +
                                     # GitHubBlob URL to Download
                                     "<a class=\"download m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" @click=\"GitZip.zipRepo('" + uBlob + fName + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\">" +
