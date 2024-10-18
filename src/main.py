@@ -97,22 +97,20 @@ def main():
                               "</a></th>" + 
                               "<td class=\"size\">" + get_file_size(path) + "</td>" + 
                               "<td class=\"time\">" + get_file_modified_time(path) + "</td>") 
-                      if (dirname == "." and filename):
-                          f.write("<td>4</td></tr>\n")
-                      else:
-                          # Join Parent Directory and File Name with extension
-                          fName = os.path.join(pDirname, filename)
-                          # File Preview - filename relative path
-                          f.write("<td class=\"flex flex-nowrap items-center justify-center\">" + 
-                                  "<a class=\"preview m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
-                                  "<span class=\"icon-view w-4 h-4 mx-2\"></span></a>" +                            
-                                  # GitHub Link to Edit 
-                                  "<a class=\"edit m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" href=\"" + uEdit + fName + "\"  target=\"_blank\" title=\"Edit File\">" +
-                                  "<span class=\"icon-edit w-4 h-4 mx-2\"></span></a>" +
-                                  # GitHubBlob URL to Download
-                                  "<a class=\"download m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" @click=\"GitZip.zipRepo('" + uBlob + fName + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\">" +
-                                  "<span class=\"icon-download w-4 h-4 mx-2\"></span></a>" +
-                                  "</td></tr>\n")
+           
+                    # Join Parent Directory and File Name with extension
+                    fName = os.path.join(pDirname, filename)
+                    # File Preview - filename relative path
+                    f.write("<td class=\"flex flex-nowrap items-center justify-center\">" + 
+                            "<a class=\"preview m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
+                            "<span class=\"icon-view w-4 h-4 mx-2\"></span></a>" +                            
+                            # GitHub Link to Edit 
+                            "<a class=\"edit m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" href=\"" + uEdit + fName + "\"  target=\"_blank\" title=\"Edit File\">" +
+                            "<span class=\"icon-edit w-4 h-4 mx-2\"></span></a>" +
+                            # GitHubBlob URL to Download
+                            "<a class=\"download m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" @click=\"GitZip.zipRepo('" + uBlob + fName + "'); await $nextTick(); $notify('Downloading file...')\" title=\"Download File\">" +
+                            "<span class=\"icon-download w-4 h-4 mx-2\"></span></a>" +
+                            "</td></tr>\n")
 
                     f.write("\n".join([
                         get_template_foot(),
