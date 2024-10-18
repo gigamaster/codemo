@@ -87,7 +87,7 @@ def main():
                     #sort filenames alphabetically
                     filenames.sort()
                     for filename in filenames:
-                  
+
                         # File Icon - Link - Size - Time
                         path = (dirname == '.' and filename or dirname + '/' + filename)
                         f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
@@ -98,13 +98,9 @@ def main():
                                 "</a></th>" + 
                                 "<td class=\"size\">" + get_file_size(path) + "</td>" + 
                                 "<td class=\"time\">" + get_file_modified_time(path) + "</td>") 
-                  
-                        if dirname == ".":
-
+                        if dirname == "." and filename:
                             f.write("<td>4</td></tr>")
-                        
                         else:
-                    
                             # Join Parent Directory and File Name with extension
                             fName = os.path.join(pDirname, filename)
                             # File Preview - filename relative path
