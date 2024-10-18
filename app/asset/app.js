@@ -193,7 +193,7 @@ document.addEventListener('alpine:init', () => {
 
 /*
   Usage Example:
-  openWithSelfMain('https://example.com','XOOPSCube','960','540');
+  openWithSelfMain('https://example.com','Example Title','960','540');
   Location = null is useless because modern browsers now prevent, by default, 
   hiding the address bar for security reasons (phishing)
 */

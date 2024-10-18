@@ -1,13 +1,18 @@
-# Github Repository Web File Browser
-
-
 [![HTML CSS JS](html-css-javascript.svg)](https://github.com/gigamaster/codemo) [![CODEMO powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/gigamaster/codemo)  
 
+-----
 
-### /////////////////////////// — CODEMO
+<h1 align="center">
+<br />
+<br />
+///// — CODEMO DIGITAL NOMAD — \\\\\
+<br /><br />
+</h1>
 
-GitHub repository web file browser to preview, edit and download individual files   
-or a directory as a zip archive to your own (local) computer.
+
+GitHub repository with Web apps, code playground, vector graphic creator and editor,  
+file browser to preview, edit and download individual files or a directory as a zip archive  
+to a (local) computer.
 
 
 [![HCodemo Screenshot](codemo-screen.jpg)](https://gigamaster.github.io/codemo/)
@@ -16,21 +21,41 @@ or a directory as a zip archive to your own (local) computer.
   
 --- 
 
+<h2 align="center">
+<br />
+<br />
+///// — WEB APPLICATIONS — \\\\\
+<br /><br />
+</h2>
 
-| Web App                            | Description  |
-|------------------------------------|--------------|
-| ![dpaint]([dpaint-img])                | [dpaint][dpaint]  Image editor modeled after the legendary Deluxe Paint by Steffest  |
-| ![drawio]([drawio-img])                | [drawio][drawio]  Diagram editor or whiteboard by JGraph Ltd and draw.io AG |
-| ![encrypt]([encrypt-img])              | [encrypt][encrypt]  Static HTML Encryption for public host |
-| ![erd-editor]([erd-editor-img])        | [erd-editor][erd-editor]  Entity-Relationship Diagram Editor by SeungHwan-Lee @dineug |
-| ![godsvg]([godsvg-img])                | [godsvg][godsvg]  Editor for Scalable Vector Graphics (SVG) by @MewPurPur  |
-| ![grapesjs]([grapesjs-img])            | [grapesjs][grapesjs]  WYSIWYG eeb page builder |
-| ![livecodes]([livecodes-img])          | [livecodes][livecodes]  Live code playground |
-| ![mermaid]([mermaid-img])              | [mermaid-editor][mermaid]  Charts and diagrams editor |
-| ![tldraw]([tldraw-img])                | [tldraw][tldraw]  Canvas and whiteboard draw |
-| ![voxel-builder]([voxel-builder-img])  | [voxel-builder][voxel-builder]  Voxel-based 3D Modeling Application  nimadez |
-| ![vvvebjs]([vvvebjs-img])              | [vvvebjs][vvvebjs]  Drag and drop web page builder givanz|
+<table>
+<tr><th width="30%">Web App</th><th>Description</th></tr>
+<tr><td width=""></td><td></td></tr>
+<img src="app/web-app/dpaint.webp" width="30%" height="auto" alt="dpaint">                | [dpaint][dpaint]  Image editor modeled after the legendary Deluxe Paint by Steffest  |
+| ![drawio](app/web-app/drawio.webp)                | [drawio][drawio]  Diagram editor or whiteboard by JGraph Ltd and draw.io AG |
+| ![encrypt](app/web-app/encrypt.webp)               | [encrypt][encrypt]  Static HTML Encryption for public host |
+| ![erd-editor](app/web-app/erd-editor.webp)         | [erd-editor][erd-editor]  Entity-Relationship Diagram Editor by SeungHwan-Lee @dineug |
+| ![godsvg](app/web-app/godsvg.webp)                | [godsvg][godsvg]  Editor for Scalable Vector Graphics (SVG) by @MewPurPur  |
+| ![grapesjs](app/web-app/grapesjs.webp)            | [grapesjs][grapesjs]  WYSIWYG eeb page builder |
+| ![livecodes](app/web-app/livecodes.webp)          | [livecodes][livecodes]  Live code playground |
+| ![mermaid](app/web-app/mermaid.webp)              | [mermaid-editor][mermaid]  Charts and diagrams editor |
+| ![tldraw](app/web-app/tldraw.webp)                 | [tldraw][tldraw]  Canvas and whiteboard draw |
+| ![voxel-builder](app/web-app/voxel-builder.webp)   | [voxel-builder][voxel-builder]  Voxel-based 3D Modeling Application  nimadez |
+| ![vvvebjs](app/web-app/vvvebjs.webp)              | [vvvebjs][vvvebjs]  Drag and drop web page builder givanz|
 
+
+## Install on desktops and laptops
+
+You must be using a modern browser. Desktop installation is currently supported by Google Chrome and Microsoft Edge on Linux, Windows, macOS, and Chromebooks. Click the button in the Address bar to get a pop up asking to install Codemo. Once Codemo is installed, it will:
+
+- Have an icon in the launcher, home screen, start menu, or launchpad.
+- Appear as a result when a user searches for the app on their device.
+- Have a separate window within the operating system.
+- Have support for specific capabilities.
+
+**Install, manage, or uninstall apps...**  
+- [Chrome - Use web apps](https://support.google.com/chrome/answer/9658361?hl=en&co=GENIE.Platform%3DDesktop)
+- [Microsoft Edge](https://support.microsoft.com/en-us/topic/install-manage-or-uninstall-apps-in-microsoft-edge-0c156575-a94a-45e4-a54f-3a84846f6113)
 
 ### 1. Live Code
 
@@ -104,25 +129,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.   
 
 [web]: https://gigamaster.github.io/codemo/web-app/
-[dpaint-img]: https://gigamaster.github.io/codemo/web-app/dpaint.webp
+[dpaint-img]: ./app/web-app/dpaint.webp
 [dpaint]: https://gigamaster.github.io/codemo/web-app/dpaint/
-[drawio-img]: https://gigamaster.github.io/codemo/web-app/drawio.webp
+[drawio-img]: ./app/web-app/drawio.webp
 [drawio]: https://gigamaster.github.io/codemo/web-app/drawio/
-[encrypt-img]: https://gigamaster.github.io/codemo/web-app/encrypt.webp
+[encrypt-img]: ./app/web-app/encrypt.webp
 [encrypt]: https://gigamaster.github.io/codemo/web-app/encrypt/
-[erd-editor-img]: https://gigamaster.github.io/codemo/web-app/erd-editor.webp
+[erd-editor-img]: ./app/web-app/erd-editor.webp
 [erd-editor]: https://gigamaster.github.io/codemo/web-app/erd-editor/
-[godsvg-img]: https://gigamaster.github.io/codemo/web-app/godsvg.webp
+[godsvg-img]: ./app/web-app/godsvg.webp
 [godsvg]: https://gigamaster.github.io/codemo/web-app/godsvg/
-[grapesjs-img]: https://gigamaster.github.io/codemo/web-app/grapesjs.webp
+[grapesjs-img]: ./app/web-app/grapesjs.webp
 [grapesjs]: https://gigamaster.github.io/codemo/web-app/grapesjs/
-[livecodes-img]: https://gigamaster.github.io/codemo/web-app/livecodes.webp
+[livecodes-img]: ./app/web-app/livecodes.webp
 [livecodes]: https://gigamaster.github.io/codemo/web-app/livecodes/
-[mermaid-img]: https://gigamaster.github.io/codemo/web-app/mermaid-editor.webp
+[mermaid-img]: ./app/web-app/mermaid-editor.webp
 [mermaid]: https://gigamaster.github.io/codemo/web-app/mermaid-editor/
-[tldraw-img]: https://gigamaster.github.io/codemo/web-app/tldraw.webp
+[tldraw-img]: ./app/web-app/tldraw.webp
 [tldraw]: https://gigamaster.github.io/codemo/web-app/tldraw/
-[voxel-builder-img]: https://gigamaster.github.io/codemo/web-app/voxel-builder.webp
+[voxel-builder-img]: ./app/web-app/voxel-builder.webp
 [voxel-builder]: https://gigamaster.github.io/codemo/web-app/voxel-builder/
-[vvvebjs-img]: https://gigamaster.github.io/codemo/web-app/vvvebjs.webp
+[vvvebjs-img]: ./app/web-app/vvvebjs.webp
 [vvvebjs]: https://gigamaster.github.io/codemo/web-app/vvvebjs/

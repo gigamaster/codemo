@@ -11,7 +11,8 @@ import datetime as dt
 
 with open('/src/icons.json', encoding="utf-8") as json_file:
   data   = json.load(json_file)
-  # GitHub Repository Links
+  # GitHub Version and Repository Links
+  version= "v.0.9.0"
   uBlob  = "https://github.com/gigamaster/codemo/blob/main/app"
   uEdit  = "https://github.com/gigamaster/codemo/edit/main/app"
   uFolder= "https://github.com/gigamaster/codemo/tree/main/app"
@@ -54,7 +55,7 @@ def main():
                       "<th scope=\"row\" class=\"p-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">" +
                       "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"../\">" +
                       "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64("o.folder-home") + "\"/>" +
-                      "<span class=\"icon-updir\"></span></a></th><td></td><td></td><td></td></tr>" #if dirname != "." else "",
+                      "<span class=\"icon-updir\"></span></a></th><td></td><td></td><td></td></tr>" if dirname != "." else "",
                       ]))
               
               #sort dirnames alphabetically
@@ -150,6 +151,7 @@ def get_template_foot():
     foot = foot.replace("{{buildtime}}", "at " + dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     foot = foot.replace("{{author}}", os.environ["GITHUB_REPOSITORY_OWNER"]) 
     foot = foot.replace("{{giturl}}", os.environ["GITHUB_SERVER_URL"] + "/" + os.environ["GITHUB_REPOSITORY"] + "/")  
+    foot = foot.replace("{{version}}", version) 
 
     return foot
 

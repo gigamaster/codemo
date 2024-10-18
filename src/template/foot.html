@@ -23,18 +23,111 @@
       <span class="sr-only">Open Notification panel</span>
       <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M15 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0m-4-4a1 1 0 1 0 2 0a1 1 0 1 0-2 0m0 8a1 1 0 1 0 2 0a1 1 0 1 0-2 0m1-1V9m3 2l-2-2m-2-2L9.1 5.1"/><path d="m13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1-2.892 0l-7.955-7.955a2.045 2.045 0 0 1 0-2.892l7.955-7.955a2.045 2.045 0 0 1 2.892 0z"/></g></svg>
     </button>
-    <span class="m-1 mb-2 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark">
+    <!-- APP TOOLS -->
+    <div x-data="{modalTaskOpen: false, modalInfoOpen: false}">
+    <span @click="modalTaskOpen = true" class="m-1 mb-2 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark">
     <i class="icon-bookmark w-6 h-6"></i>
     </span>
-    <span class="m-1 mb-2 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark">
+    <!-- Modal overlay -->
+    <div x-cloak x-show="modalTaskOpen" 
+    x-transition.opacity.duration.200ms 
+    @keydown.esc.window="modalTaskOpen = false" 
+    @click.self="modalTaskOpen = false" 
+    class="fixed z-20 inset-0 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-4 pb-8 lg:p-8" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="defaultModalTitle">
+      <!-- Modal Dialog -->
+      <div x-show="modalTaskOpen" 
+      x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity" 
+      x-transition:enter-start="opacity-0 scale-50" 
+      x-transition:enter-end="opacity-100 scale-100" 
+      class="flex max-w-xl flex-col gap-4 overflow-hidden rounded-md border-b dark:border-primary-darker text-primary-lighter bg-white dark:bg-darker">
+        <!-- Dialog Header -->
+        <div class="flex items-center justify-between border-b dark:border-primary-darker p-4 bg-white dark:bg-darker">
+            <h3 id="defaultModalTitle" class="font-semibold tracking-wide text-neutral-900 dark:text-white">Web App Tools</h3>
+            <button @click="modalTaskOpen = false" aria-label="close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <!-- Dialog Body -->
+        <div class="px-4 py-8"> 
+            <p>Tools and premium features for free to enjoy a seamless experience.</p>
+            <p>
+              <button @click="openWithSelfMain('./task/','XOOPSCube','960','720');">Open Task Window</button>
+            </p>
+            <div id="modal-content"></div>
+        </div>
+        <!-- Dialog Footer -->
+        <div class="flex p-2 border-t dark:border-primary-darker bg-white dark:bg-darker">
+          <button 
+            @click="modalTaskOpen = false" 
+            type="button" 
+            class="px-4 py-2 text-center text-sm transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark">
+            Upgrade Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- /modal -->
+
+    <span @click="modalInfoOpen = true" class="m-1 mb-2 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark">
       <i class="icon-notebook w-6 h-6"></i>
     </span>
+    <!-- Modal overlay -->
+    <div x-cloak x-show="modalInfoOpen" 
+    x-transition.opacity.duration.200ms 
+    @keydown.esc.window="modalInfoOpen = false" 
+    @click.self="modalInfoOpen = false" 
+    class="fixed z-20 inset-0 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="defaultModalTitle">
+      <!-- Modal Dialog -->
+      <div x-show="modalInfoOpen" 
+      x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity" 
+      x-transition:enter-start="opacity-0 scale-50" 
+      x-transition:enter-end="opacity-100 scale-100" 
+      class="flex max-w-xl flex-col gap-4 overflow-hidden rounded-md border-b dark:border-primary-darker text-primary-lighter bg-white dark:bg-darker">
+        <!-- Dialog Header -->
+        <div class="flex items-center justify-between border-b dark:border-primary-darker p-4 bg-white dark:bg-darker">
+            <h3 id="defaultModalTitle" class="font-semibold tracking-wide text-neutral-900 dark:text-white">Web App Tools</h3>
+            <button @click="modalInfoOpen = false" aria-label="close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" stroke="currentColor" fill="none" stroke-width="1.4" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <!-- Dialog Body -->
+        <div class="px-4 py-8"> 
+            <p>Tools and premium features for free to enjoy a seamless experience.</p>
+            <p>
+              <button @click="openWithSelfMain('./task/','XOOPSCube','960','720');">Open Task Window</button>
+            </p>
+            <div id="modal-content"></div>
+        </div>
+        <!-- Dialog Footer -->
+        <div class="flex p-2 border-t dark:border-primary-darker bg-white dark:bg-darker">
+          <button 
+          @click="modalIsOpen = false" 
+          type="button" 
+          class="px-4 py-2 text-center text-sm transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark">
+          Upgrade Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- /modal -->
+
+    </div>
   </aside>
 
 <!-- Main footer -->
 <footer class="flex items-center justify-between p-2 bg-white dark:bg-darker text-gray-400 text-xs">
   <div class="m-2">
-    <a href="{{giturl}}" target="_blank" class="hover:underline">Codemo — Github Web File Browser</a> — Auto generated {{buildtime}}
+    <a href="{{giturl}}" target="_blank" class="hover:underline">Codemo Digital Nomad—Web File Browser</a> — {{giturl}} Auto generated {{buildtime}}
   </div>
   <div class="m-2">Made by
   <a href="https://github.com/gigamaster" target="_blank" class="hover:underline"> {{author}}</a>
@@ -56,7 +149,7 @@ x-transition:leave-start="opacity-100"
 x-transition:leave-end="opacity-0"
 x-show="isSettingsPanelOpen"
 @click="isSettingsPanelOpen = false"
-class="fixed inset-0 z-10 overlay"
+class="fixed inset-0 z-10 bg-black/60 backdrop-blur-sm"
 style="opacity: 0.7"
 aria-hidden="true"
 ></div>
@@ -109,7 +202,7 @@ aria-labelledby="settinsPanelLabel"
   </h2>
 </div>
 <!-- Content -->
-<div class="flex-1 overflow-hidden hover:overflow-y-auto">
+<div class="flex-1 overflow-y-auto scroll-gutter">
   <!-- logo -->
   <div class="logo p-4 space-y-4 md:p-8">
     <img src="https://gigamaster.github.io/codemo/asset/img/codemo-logo-256.webp" width="256" height="256" alt="Codemo logo">
@@ -327,6 +420,7 @@ aria-labelledby="settinsPanelLabel"
   }
   #lca, #sca{
   min-width:60px;
+  justify-content: flex-end;
   }
   #localStorageList > div {padding:4px;}
   .txt-r {text-align:right;}
@@ -366,7 +460,7 @@ x-transition:leave-start="opacity-100"
 x-transition:leave-end="opacity-0"
 x-show="isNotificationsPanelOpen"
 @click="isNotificationsPanelOpen = false"
-class="fixed inset-0 z-10 overlay"
+class="fixed inset-0 z-10 bg-black/60 backdrop-blur-sm"
 style="opacity: 0.7"
 aria-hidden="true"
 ></div>

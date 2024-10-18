@@ -134,8 +134,8 @@ h1,h2,h3,h4,h5,h6{font-weight:600;}
 h5,h6 {font-weight:200;text-transform: uppercase;}
 a.download{cursor:pointer;}
 .loader {width:27vmin;height:27vmin;}
-
-.bg-key{background: var(--key-gradient);}
+.cursor-pointer{cursor: pointer;}
+.key-bg{background: var(--key-gradient);}
 .key {
 align-items: center;
 background: var(--key-gradient);
@@ -176,6 +176,9 @@ mask-size:100% 100%;
 vertical-align:-.175em;}
 .icon-alert{
 --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='m21.73 18l-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3M12 9v4m0 4h.01'/%3E%3C/svg%3E");
+}
+.icon-app{
+--svg:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Crect width='9' height='9' x='2' y='2' fill='%23000' rx='1'/%3E%3Crect width='9' height='9' x='2' y='13' fill='%23000' opacity='0.5' rx='1'/%3E%3Crect width='9' height='9' x='13' y='2' fill='%23000' opacity='0.5' rx='1'/%3E%3Crect width='9' height='9' x='13' y='13' fill='%23000' opacity='0.5' rx='1'/%3E%3C/svg%3E");
 }
 .icon-bookmark{
 --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linejoin='round' stroke-width='1' d='M6 20V5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v15l-6-3z'/%3E%3C/svg%3E");
@@ -364,6 +367,7 @@ vertical-align:-.175em;}
 .max-h-96{max-height: 24rem;} /* 384px */
 .max-w-xs{max-width:18rem}
 .max-w-xl{max-width: 36rem;} /* 576px */
+.max-w-5xl{max-width: 64rem;} /* 1024px */
 .w-3\/4 {width: 75%;}
 .w-4{width:1rem}
 .w-5{width:1.25rem}
@@ -417,9 +421,10 @@ vertical-align:-.175em;}
 .font-normal{font-weight:400}
 .uppercase{text-transform:uppercase}
 .tracking-wider{letter-spacing:.05em}
-.text-center{text-align:center}
 .text-base{font-size:1rem;line-height:1.5rem} /* no */
 .text-sm{font-size:.875rem;line-height:1.25rem}
+.text-center{text-align:center}
+.text-right{text-align: right;}
 .time,.size{font-size:.75rem;text-align:center}
 .text-xs{font-size:.75rem;line-height:1rem}
 .text-lg{font-size: 1.125rem;line-height:1.75rem;}

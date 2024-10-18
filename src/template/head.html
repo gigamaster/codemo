@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Directory - {{foldername}}</title>
+  <meta name="description" content="Codemo Digital Nomad—Web File Browser - Directory Index" />
+  <meta name="keywords" content="web app, browser, free, online, applications, code, editor, playground graphics, vector, make, create, social media, studio, design" />
   <meta name="application-name" content="{{repo}}" />
   <meta name="author" content="{{owner}}" />
+  <meta name="designer" content="Nuno Luciano" />
+  <meta name='copyright' content='2024 NunoLuciano'>
   <meta name="generator" content="{{repo}}" />
-  <meta name="description" content="Codemo GitHub Web File Browser - Directory Index Listing" />
+  <meta name="distribution" content="Global" />
+  <meta name="rating" content="General" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name='robots' content='index,follow'>
   <!-- Theme color -->
   <meta name="theme-color" content="#111213" />
   <!-- Favicon --- -->
@@ -23,8 +30,8 @@
   <!-- social media -->
   <meta name="twitter:card" content="summary_large_image" inertia="">
   <meta name="twitter:site" content="{{url}}" inertia="">
-  <meta name="twitter:title" content="Gigamaster GitHub Web File Browser - Directory Index Listing" inertia="">
-  <meta name="twitter:description" content="Live code editor UI components playground and templates Open Source." inertia="">
+  <meta name="twitter:title" content="Codemo Digital Nomad — Web File Browser - Directory Index Listing" inertia="">
+  <meta name="twitter:description" content="Web Apps and live code editor UI components playground and templates Open Source." inertia="">
   <meta name="twitter:image" content="{{url}}codemo-screen.jpg" inertia="">
   <meta name="twitter:creator" content="@nunoluciano" inertia="">
   <!-- font, style, script -->
@@ -76,6 +83,7 @@
         </svg>
       </div>
       <h1 class="text-2xl uppercase">CODEMO</h1>
+      <h3>Digital Nomad</h3>
       <p>— Loading —</p>
     </div>
     
@@ -447,7 +455,7 @@
           <a
             href="https://gigamaster.github.io/codemo/"
             class="hidden lg:block text-1xl tracking-wider text-primary-dark dark:text-light">
-            Github Web File Browser 
+            Digital Nomad — Web File Browser 
           </a>
           </span>
           <!-- Desktop Right buttons -->
@@ -456,7 +464,7 @@
             <!-- Toggle dark theme button -->
             <button aria-hidden="true" class="relative mt-2 m-2 mr-4 focus:outline-none" x-cloak @click="toggleTheme">
               <div
-                class="w-12 h-4 transition rounded-full outline-none bg-key"
+                class="w-12 h-4 transition rounded-full outline-none key-bg"
               ></div>
               <div
                 class="absolute -top-1 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-150 transform scale-110 rounded-full shadow-sm"
@@ -685,7 +693,7 @@
             <div class="px-px">
               <!-- ToggleTheme button -->
               <button aria-hidden="true" class="relative -top-1 m-2 focus:outline-none" x-cloak @click="toggleTheme">
-                <div class="w-12 h-4 transition rounded-full outline-none bg-key"></div>
+                <div class="w-12 h-4 transition rounded-full outline-none key-bg"></div>
                 <div
                   class="absolute -top-1 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-500 transform scale-110 rounded-full shadow-sm"
                   :class="{ 'translate-x-0 -translate-y-px bg-primary-50 text-primary-dark': !isDark, 'translate-x-6 text-primary-100 bg-primary-darker': isDark }"
