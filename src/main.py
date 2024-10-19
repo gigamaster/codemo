@@ -71,11 +71,7 @@ def main():
                         subdirname + "</a>" + 
                         "</th><td></td><td></td>")
                 
-                if dirname == ".":
-                  f.write("<td></td></tr>")
-
-                else:
-                  f.write("<td class=\"text-center\">" +
+                f.write("<td class=\"text-center\">" +
                           "<a class=\"download m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" @click=\"GitZip.zipRepo('" + uFolder + folderZip + "'); await $nextTick(); $notify('Downloading folder...')\" title=\"Download Folder\">" +
                           "<span class=\"icon-download w-4 h-4 mx-2\"></span></a>" + 
                           "</td></tr>\n")
