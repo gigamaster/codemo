@@ -73,7 +73,7 @@ def main():
                           subdirname + "</a>" + 
                           "</th><td></td><td></td>")
                   
-                  if os.path.dirname("."):
+                  if os.path.dirname == ".":
                     f.write("<td></td></tr>\n")
                   else:  
                     f.write("<td class=\"text-center\">" +
