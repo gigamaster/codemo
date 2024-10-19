@@ -95,7 +95,7 @@ def main():
                           "<td class=\"size\">" + get_file_size(path) + "</td>" + 
                           "<td class=\"time\">" + get_file_modified_time(path) + "</td>")
                   
-                  if dirname == droot:
+                  if droot:
                     f.write("<td></td></tr>\n")
                   else:  
                     # File Preview - filename relative path
