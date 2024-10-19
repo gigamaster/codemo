@@ -1,23 +1,22 @@
-[![HTML CSS JS](html-css-javascript.svg)](https://github.com/gigamaster/codemo) [![CODEMO powered-by-electricity](http://ForTheBadge.com/images/badges/powered-by-electricity.svg)](https://github.com/gigamaster/codemo)  
+<p align="center">  
+  <a href="https://github.com/gigamaster/codemo">
+  <img src="html-css-javascript.svg" width="auto" alt="Codemo Digital Nomad"></a>
+  <img src="http://ForTheBadge.com/images/badges/powered-by-electricity.svg">
+</p>
 
------
-
-<h1 align="center">
-<br />
+<h2 align="center">
 <br />
 ///// — CODEMO DIGITAL NOMAD — \\\\\
 <br /><br />
 </h1>
 
 
-GitHub repository with Web apps, code playground, vector graphic creator and editor,  
-file browser to preview, edit and download individual files or a directory as a zip archive  
-to a (local) computer.
+<p align="center">GitHub repository with Web apps, code playground, vector graphic creator and editor,<br>  
+file browser to preview, edit and download individual files or a directory as a zip archive.</p>
 
-
+--- 
+  
 [![HCodemo Screenshot](codemo-screen.jpg)](https://gigamaster.github.io/codemo/)
-
-
   
 --- 
 
