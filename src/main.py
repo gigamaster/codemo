@@ -89,7 +89,7 @@ def main():
                           filename + "</a></th>" + 
                           "<td class=\"size\">" + get_file_size(path) + "</td>" + 
                           "<td class=\"time\">" + get_file_modified_time(path) + "</td>")
-                if path == (dirname == '.' and filename):
+                if dirname == '.':
                   f.write("<td></td></tr>")
                   # File Preview - filename relative path
                 else:  
