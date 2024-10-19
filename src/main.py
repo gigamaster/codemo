@@ -73,7 +73,7 @@ def main():
                           subdirname + "</a>" + 
                           "</th><td></td><td></td>")
                   
-                  if os.path.dirname == ".":
+                  if dirname == ".":
                     f.write("<td></td></tr>\n")
                   else:  
                     f.write("<td class=\"text-center\">" +
@@ -86,17 +86,21 @@ def main():
               for filename in filenames:
                   
                   # File Icon - Link - Size - Time
+                  droot = (dirname == '.' and filename)
                   path = (dirname == '.' and filename or dirname + '/' + filename)
                   f.write("<tr class=\"w-1/4 border-b dark:border-primary-darker hover:bg-primary-100 dark:hover:bg-primary-dark\">" +
                           "<th scope=\"row\" class=\"p-2 lg:px-6 font-medium whitespace-nowrap flex align-middle\">\n" +
                           "<a class=\"flex flex-nowrap items-center my-auto dark:text-light\" href=\"" + filename + "\" target=\"_blank\">" +
-                          "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" +
-                          filename + "</a></th><td class=\"size\">" +
-                          get_file_size(path) + "</td><td class=\"time\">" + get_file_modified_time(path) + "</td>" +
-                          "<td class=\"flex flex-nowrap items-center justify-center\">")
+                          "<img style=\"max-width:23px; margin-right:5px\" src=\"" + get_icon_base64(filename) + "\"/>" + filename + "</a></th>" +
+                          "<td class=\"size\">" + get_file_size(path) + "</td>" + 
+                          "<td class=\"time\">" + get_file_modified_time(path) + "</td>")
                   
-                  # File Preview - filename relative path
-                  f.write("<a class=\"preview m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
+                  if dirname == droot:
+                    f.write("<td></td></tr>\n")
+                  else:  
+                    # File Preview - filename relative path
+                    f.write("<td class=\"flex flex-nowrap items-center justify-center\">" + 
+                          "<a class=\"preview m-1 mb-1 py-1 bg-gray-100 rounded-md hover:text-light hover:bg-primary dark:bg-dark dark:hover:bg-dark dark:hover:text-light\" title=\"Preview File\" x-on:click=\"openWithSelfMain('" + filename + "','codemo','960','540')\">" +
                           "<span class=\"icon-view w-4 h-4 mx-2\"></span></a>")
                   
                   # Join Parent Directory and File Name with extension
