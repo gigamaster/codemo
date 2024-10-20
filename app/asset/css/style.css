@@ -83,8 +83,6 @@ button,input,optgroup,select,textarea{color:inherit;font:inherit;padding:0;line-
 button,select{text-transform:none}
 [type=button],[type=reset],[type=submit],
 button{-webkit-appearance:button;background-color:initial;background-image:none;cursor:pointer}
-::-moz-focus-inner{border-style:none;padding:0}
-:-moz-focusring{outline:1px dotted ButtonText}
 input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}
 input:-ms-input-placeholder,textarea:-ms-input-placeholder{opacity:1;color:#9ca3af}
 input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
@@ -287,6 +285,7 @@ vertical-align:-.175em;}
 .items-center{align-items:center}
 .justify-center{justify-content:center}
 .justify-between{justify-content:space-between}
+.place-items-center{place-items: center;}
 /* margin - padding */
 .m-1{margin:0.25rem;}
 .m-2{margin:0.5rem;}
