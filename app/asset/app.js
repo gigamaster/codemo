@@ -92,7 +92,7 @@ document.addEventListener('alpine:init', () => {
     currentIndex: -1,
     init() {
       // Initialize data
-      fetch('./search.json')
+      fetch('https://gigamaster.github.io/codemo/asset/search.json')
         .then(res => res.json())
         .then(data => this.data = data.data);
     },

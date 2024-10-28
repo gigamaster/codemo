@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000" />
+
+    <title>Codemo Task Manager</title>
+    <meta
+      name="description"
+      content="Codemo Kaban Task Manager"
+    />
+
+    <link rel="preconnect" href="https://api.iconify.design" />
+
+    <link rel="icon" type="image/x-icon" href="images/icon.svg" />
+
+    <link rel="modulepreload" href="scripts/AppCollapsible.js" />
+    <link rel="modulepreload" href="scripts/AppDatePicker.js" />
+    <link rel="modulepreload" href="scripts/AppDraggable.js" />
+    <link rel="modulepreload" href="scripts/AppFlip.js" />
+    <link rel="modulepreload" href="scripts/AppIcon.js" />
+    <link rel="modulepreload" href="scripts/AppSortable.js" />
+    <link rel="modulepreload" href="scripts/TodoApp.js" />
+    <link rel="modulepreload" href="scripts/TodoController.js" />
+    <link rel="modulepreload" href="scripts/TodoCustomList.js" />
+    <link rel="modulepreload" href="scripts/TodoDay.js" />
+    <link rel="modulepreload" href="scripts/TodoFrameCustom.js" />
+    <link rel="modulepreload" href="scripts/TodoFrameDays.js" />
+    <link rel="modulepreload" href="scripts/TodoItem.js" />
+    <link rel="modulepreload" href="scripts/TodoItemInput.js" />
+    <link rel="modulepreload" href="scripts/TodoList.js" />
+    <link rel="modulepreload" href="scripts/TodoLogic.js" />
+    <link rel="modulepreload" href="scripts/util.js" />
+    <link rel="modulepreload" href="scripts/uuid.js" />
+
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/app-tasks.css" />
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+  </head>
+  <body>
+    <div class="todo-app"></div>
+
+    <script type="module">
+      import { TodoApp } from './scripts/TodoApp.js';
+
+      TodoApp(document.querySelector('.todo-app'));
+    </script>
+  </body>
+</html>

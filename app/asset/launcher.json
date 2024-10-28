@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "url": "https://gigamaster.github.io/codemo/web-app/dpaint/",
+    "name": "DPaint",
+    "author": "Author",
+    "desc": "Web app graphic image editor modeled after the legendary Deluxe Paint",
+    "cat": "Graphics",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/dpaint.webp"
+  },
+  {
+    "id": 2,
+    "url": "https://gigamaster.github.io/codemo/web-app/drawio/",
+    "name": "Draw.io",
+    "author": "Author",
+    "desc": "Web app to make flowcharts, process and network diagrams, org charts, UML, ER.",
+    "cat": "Diagram",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/drawio.webp"
+  },
+  {
+    "id": 3,
+    "url": "https://gigamaster.github.io/codemo/web-app/encrypt/",
+    "name": "Encrypt",
+    "author": "Author",
+    "desc": "Static HTML Encryption for public host",
+    "cat": "Security Privacy",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/encrypt.webp"
+  },
+  {
+    "id": 4,
+    "url": "https://gigamaster.github.io/codemo/web-app/erd-editor/",
+    "name": "ERD-editor",
+    "author": "Author",
+    "desc": "Entity-Relationship Diagram Editor",
+    "cat": "Database",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/erp-editor.webp"
+  },
+  {
+    "id": 5,
+    "url": "https://gigamaster.github.io/codemo/web-app/fuxa-hmi-scada/",
+    "name": "Fuxa",
+    "author": "Author",
+    "desc": "Web app SCADA/HMI/Dashboard to create modern process visualizations with individual designs",
+    "cat": "Dashboard",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/fuxa.webp"
+  },
+  {
+    "id": 6,
+    "url": "https://gigamaster.github.io/codemo/web-app/grapesjs/",
+    "name": "Grapesjs",
+    "author": "Author",
+    "desc": "Web app drag and drop website builder",
+    "cat": "Web Design",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/grapesjs.webp"
+  },
+  {
+    "id": 7,
+    "url": "https://gigamaster.github.io/codemo/web-app/graphite/",
+    "name": "Graphite",
+    "author": "Author",
+    "desc": "Web app to create, compose and edit vector images and graphics",
+    "cat": "Graphics",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/graphite.webp"
+  },
+  {
+    "id": 8,
+    "url": "https://gigamaster.github.io/codemo/web-app/livecodes/",
+    "name": "Livecodes",
+    "author": "Author",
+    "desc": "Web app code editor with support for 90+ languages & frameworks, embedded playgrounds and AI code assistant",
+    "cat": "Code Editor",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/livecodes.webp"
+  },
+  {
+    "id": 9,
+    "url": "https://gigamaster.github.io/codemo/web-app/mermaid-editor/",
+    "name": "Mermaid editor",
+    "author": "Author",
+    "desc": "Web app editor to create and modify complex charts and diagrams",
+    "cat": "Diagram",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/mermaid.webp"
+  },
+  {
+    "id": 10,
+    "url": "https://gigamaster.github.io/codemo/web-app/studio/",
+    "name": "Studio",
+    "author": "Author",
+    "desc": "Web app to create designs and templates for social media",
+    "cat": "Graphics",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/studio.webp"
+  },
+  {
+    "id": 11,
+    "url": "https://gigamaster.github.io/codemo/web-app/tldraw/",
+    "name": "Tldraw",
+    "author": "Author",
+    "desc": "Web app to draw and write on the canvas, add images and video",
+    "cat": "Drawing 2D",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/tldraw.webp"
+  },
+  {
+    "id": 12,
+    "url": "https://gigamaster.github.io/codemo/web-app/voxel-builder/",
+    "name": "Voxel-builder",
+    "author": "Author",
+    "desc": "Web app to create 3D voxel art, modeling art game graphics",
+    "cat": "3D graphics",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/voxel-builder.webp"
+  },
+  {
+    "id": 13,
+    "url": "https://gigamaster.github.io/codemo/web-app/vvvebjs/",
+    "name": "Vvvebjs",
+    "author": "Author",
+    "desc": "Drag and drop web page builder",
+    "cat": "Web Design",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/vvveb.webp"
+  }
+]

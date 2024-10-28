@@ -1,0 +1,53 @@
+<!-- Default layout: grid or list -->
+<div class="mx-auto h-full" x-data="{'layout': 'grid'}">
+<section class="flex flex-wrap" 
+  x-data="alpineInstance()"
+  x-init="fetch('https://gigamaster.github.io/codemo/asset/launcher.json')
+          .then(response => response.json())
+          .then(data => apps = data)"
+  x-bind:class="{'p-2': layout === 'list', 'p-2': layout === 'grid'}"
+>
+<nav class="flex flex-row w-full items-center justify-between px-2">
+  <div>
+    <h1 class="w-full" x-html="intro"><!-- title text --></h1>
+  </div>
+  <div>
+    <button type="button" class="m-1 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark" x-on:click="layout = 'list'" x-bind:class="{'bg-primary dark:bg-primary-dark': layout === 'list'}"><i class="icon-layout-list h-6 w-6"></i></button>
+    <button type="button" class="m-1 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark" x-on:click="layout = 'grid'" x-bind:class="{'bg-primary dark:bg-primary-dark': layout === 'grid'}"><i class="icon-layout-grid h-6 w-6"></i></button>
+  </div>
+</nav>
+<template x-for="app in apps" :key="app.id">
+  <div class="" x-bind:class="{'w-full p-2': layout === 'list', 'w-1/5 p-2': layout === 'grid'}">
+  <article class="p-1 rounded-md text-gray-400 bg-gray-100 hover:bg-primary hover:text-light dark:bg-dark dark:hover:bg-primary-dark dark:hover:text-light transition-colors duration-500">
+    <div class="flex flex-row">
+      <a :href="app.url" alt="app.name">
+        <img :src="app.image" class="w-48 rounded-md" />        
+        <div class="flex items-center justify-between text-sm" 
+          x-show="layout === 'grid'" 
+          x-cloak
+        >
+          <span class="text-xs"><i :class="app.icon"></i> <span x-text="app.cat"></span></span>
+          <span x-text="app.name"></span>
+        </div>
+      </a>
+      <div 
+        class="flex-1 flex flex-col justify-between ml-4" 
+        x-show="layout === 'list'" 
+        x-cloak
+      >
+      <a x-bind:href="app.url" target="_blank">
+        <h2 class="mb-2 text-xl uppercase" x-text="app.name"></h2>
+        <p x-text="app.desc"></p>
+        <p x-text="app.author"></p>
+        <div class="flex flex-1 justify-between">
+          <div><i :class="app.icon"></i> <span x-text="app.cat"></span></div>
+          <span class="text-sm text-right ml-auto px-2">Open <i>↗</i></span>
+        </div>
+      </a>
+      </div>
+    </div>
+  </article>
+  </div>
+</template>
+</section>
+</div>

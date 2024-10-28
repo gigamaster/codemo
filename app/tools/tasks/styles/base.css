@@ -1,0 +1,491 @@
+:root {
+  /* Named color scheme */
+  --white: #fefefe;
+  --black: #0a0a0b;
+  --grey1: #545e75;
+  --grey2: #b0b0b8;
+  --grey3: #607D8B;
+  --grey4: #e4ecf0;
+  --blue: #2597f4;
+  --red: #ce2d4f;
+  --bar: #263238;
+
+  /* UI color mapping */
+  --scrollbar-color-thumb : var(--grey1);
+  --scrollbar-color-track : transparent;
+  --scrollbar-width : thin;
+  --scrollbar-width-legacy : 8px;
+  
+  --main-text: var(--white);
+  --main-bg: var(--black);
+  --main-border: var(--grey1);
+  --main-border-light: var(--grey3);
+  --header-text: var(--grey2);
+  --header-bg: var(--bar);
+  --highlight-text: var(--blue);
+  --disabled-text: var(--grey2);
+  --aside-text: var(--grey3);
+  --button-text: var(--grey3);
+  --button-bg: transparent;
+  --button-active-text: var(--white);
+  --button-active-bg: #1b2429; /* var(--grey2); */
+  --button-highlight-text: var(--blue);
+  --bar-active-bg: var(--bar);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+/* Modern browsers with `scrollbar-*` support */
+@supports (scrollbar-width: auto) {
+  * {
+      scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+      scrollbar-width: var(--scrollbar-width);
+  }
+}
+/* Legacy browsers with `::-webkit-scrollbar-*` support */
+@supports selector(::-webkit-scrollbar) {
+  * ::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-color-thumb);
+  }
+  * ::-webkit-scrollbar-track {
+      background: var(--scrollbar-color-track);
+  }
+  * ::-webkit-scrollbar {
+      max-width: var(--scrollbar-width-legacy);
+      max-height: var(--scrollbar-width-legacy);
+  }
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--main-bg);
+  color: var(--main-text);
+}
+
+body {
+  font: normal 16px/1.5 system-ui, sans-serif;
+}
+
+
+
+/* Todo app */
+
+.todo-app {
+  overflow: hidden;
+}
+/* Todo day */
+
+.todo-day {
+  padding: 0 0.5em;
+}
+
+.todo-day > .header {
+  text-align: center;
+  padding: 2em 0;
+}
+
+.todo-day > .header > .dayofweek {
+  text-transform: uppercase;
+  margin: 0 0 0.25em;
+  font-size: 1.5em;
+}
+
+.todo-day > .header > .date {
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0.25em 0 0;
+  font-size: 0.8em;
+  color: var(--aside-text);
+}
+
+.todo-day.-past {
+  color: var(--disabled-text);
+}
+
+.todo-day.-past > .header > .date {
+  color: var(--disabled-text);
+}
+
+.todo-day.-today > .header > .dayofweek {
+  color: var(--highlight-text);
+}
+
+.todo-day.-today > .header > .date {
+  color: var(--highlight-text);
+}
+
+
+/* Todo frame */
+
+.todo-frame {
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.todo-frame > .leftcontrols,
+.todo-frame > .rightcontrols {
+  position: absolute;
+  top: 0;
+  width: 52px;
+  padding: 1.5em 0;
+  text-align: center;
+}
+
+.todo-frame > .leftcontrols {
+  left: 0;
+}
+
+.todo-frame > .rightcontrols {
+  right: 0;
+}
+
+.todo-frame > .leftcontrols > p,
+.todo-frame > .rightcontrols > p {
+  margin: 0 0 0.5em;
+}
+
+.todo-frame > .rightcontrols > .datepicker {
+  position: absolute;
+  right: 10px;
+}
+
+.todo-frame > .container {
+  position: absolute;
+  overflow: hidden;
+  inset: 0 52px;
+}
+
+.todo-frame > .container > .card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition:
+    transform 0.2s ease-out,
+    opacity 0.2s ease-out;
+}
+
+.todo-frame.-animated {
+  transition: height 0.2s ease-out;
+}
+
+@media (width >= 600px) {
+  .todo-frame > .container {
+    right: 70px;
+    left: 70px;
+  }
+
+  .todo-frame > .leftcontrols,
+  .todo-frame > .rightcontrols {
+    width: 70px;
+  }
+
+  .todo-frame > .container > .card {
+    width: 50%;
+  }
+}
+
+@media (width >= 768px) {
+  .todo-frame > .container > .card {
+    width: 33.333%;
+  }
+}
+
+@media (width >= 1024px) {
+  .todo-frame > .container > .card {
+    width: 25%;
+  }
+}
+
+@media (width >= 1280px) {
+  .todo-frame > .container > .card {
+    width: 20%;
+  }
+}
+
+
+/* Todo item */
+
+.todo-list {
+  border:1px dotted var(--grey1);
+  border-radius: 5px;  
+  max-height: 25vh;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: .5em 0;
+  scrollbar-gutter: stable;
+}
+.todo-item {
+  position: relative;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0.25em 0;
+  background: var(--main-bg);
+  transition:
+    transform 0.2s ease-out,
+    opacity 0.2s ease-out;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+.todo-item .label {
+  cursor: 
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m13.478 11.832l-.46-2.757a2.573 2.573 0 0 0-2.961-2.114l-2.171.362l-.683-4.09a1.194 1.194 0 0 0-1.374-.98v0c-.65.108-1.09.723-.98 1.374l.894 5.36l-.363.133a1.715 1.715 0 0 0-.643 2.803l.184.19l.954.988M1.75.5L.5 1.75L1.75 3M.5 1.75h3M10.25.5l1.25 1.25L10.25 3m1.25-1.25h-3'/%3E%3C/svg%3E") 
+  16 16, pointer;
+}
+
+.todo-item > .checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 2em;
+  line-height: 2em;
+}
+
+.todo-item > .checkbox > input {
+  vertical-align: middle;
+  cursor: pointer;
+  appearance: none;
+  border: 1px solid #1b2429;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 1px solid #607D8B;
+  border-radius: 0.15em;
+  /* transform: translateY(0.5em); */
+  margin: .5em 0 0 .5em;
+  display: grid;
+  place-content: center;
+}
+.todo-item > .checkbox > input::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.todo-item.-done > .checkbox > input::before {
+  background: var(--blue);
+  border-color:var(--blue);
+  transform: translateY(1px) scale(1);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.todo-item > .checkbox > input:hover {
+}
+
+.todo-item > .label {
+  margin: 0 0 0 30px;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid var(--main-border-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.todo-item > .form {
+  display: none;
+  margin: 0 0 0 30px;
+  padding-right: 24px;
+  border-bottom: 1px solid var(--main-border);
+}
+
+.todo-item > .form > .input {
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  padding: 0 0 0.25em;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.5em;
+  background: transparent;
+}
+
+.todo-item > .form > .save {
+  position: absolute;
+  top: 0.5em;
+  right: 0;
+}
+
+.todo-item.-done > .label {
+  color: var(--disabled-text);
+  text-decoration: line-through;
+}
+
+.todo-item.-editing > .label {
+  display: none;
+}
+
+.todo-item.-editing > .form {
+  display: block;
+  background:var(--grey1);
+  color: var(--highlight-text);
+}
+
+
+
+.todo-item.-dragging {
+  opacity: 0.7;
+  background:var(--blue);
+  color: var(--highlight-text);
+}
+
+.todo-item.-placeholder {
+  transition: none !important;
+  visibility: hidden;
+}
+
+/* Todo item input */
+
+.todo-item-input {
+  position: relative;
+  margin: 0 0 0 30px;
+  padding: 0 30px 0 0;
+  border-bottom: 1px solid var(--main-border-light);
+  font-size: 0.8em;
+  line-height: 1.5em;
+  transition: transform 0.2s ease-out;
+}
+
+.todo-item-input > .input {
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  padding: 0.25em 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.5em;
+  background: transparent;
+  color: var(--grey1);
+}
+.todo-item-input:focus-within{
+  background: #263238;
+  /* box-shadow: 0px 1px 4px 0px #607D8B, 1px 0px 4px 0px #607D8B; */
+}
+.todo-item-input:focus-within > .input:focus-visible {
+  background: #37474f;
+  color: #ccc;
+  outline-offset: 0px;
+  
+}
+
+.todo-item-input > .save {
+  position: absolute;
+  top: 0.25em;
+  right: 0;
+}
+.todo-item.-editing._nodrag > .form > input[type="text"]:focus {
+  background: #263238; /* var(--grey1); */
+  color: var(--white);
+}
+
+
+/* Todo custom list */
+
+.todo-custom-list {
+  padding: 0 0.5em;
+  transition:
+    transform 0.2s ease-out,
+    opacity 0.2s ease-out,
+    box-shadow 0.2s ease-out;
+}
+
+.todo-custom-list > .header {
+  text-align: center;
+  padding: 2em 0;
+}
+
+.todo-custom-list > .header > .title {
+  margin: 0 0 10px;
+  font-size: 1.25em;
+  font-weight: 300;
+  line-height: normal;
+  cursor: 
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 14 14'%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m13.478 11.832l-.46-2.757a2.573 2.573 0 0 0-2.961-2.114l-2.171.362l-.683-4.09a1.194 1.194 0 0 0-1.374-.98v0c-.65.108-1.09.723-.98 1.374l.894 5.36l-.363.133a1.715 1.715 0 0 0-.643 2.803l.184.19l.954.988M1.75.5L.5 1.75L1.75 3M.5 1.75h3M10.25.5l1.25 1.25L10.25 3m1.25-1.25h-3'/%3E%3C/svg%3E") 
+  16 16, pointer;
+}
+
+.todo-custom-list > .header > .form {
+  display: none;
+  margin: 0 0 10px;
+  font-size: 1em;
+  line-height: 1em;
+}
+
+.todo-custom-list > .header > .form > .input {
+  border: 0;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: normal;
+  outline: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 70%;
+}
+
+.todo-custom-list > .header > .form > .delete {
+  position: absolute;
+  right: 0.5em;
+  top: 2.5em;
+}
+
+.todo-custom-list.-editing > .header > .title {
+  display: none;
+}
+
+.todo-custom-list.-editing > .header > .form {
+  display: block;
+}
+.todo-custom-list.-editing > .header > .form > input[type="text"]:focus {
+  background: #263238; /* var(--bar-active-bg); */
+  color: var(--main-text);
+}
+
+.todo-custom-list.-editing input[type=text]:focus {
+  background: var(--bar-active-bg);
+  color: var(--main-text);
+}
+
+
+.todo-custom-list.-dragging {
+  box-shadow:
+    10px 0 12px -14px rgb(0 0 0 / 30%),
+    -10px 0 12px -14px rgb(0 0 0 / 30%);
+  background: var(--blue);
+  opacity: 0.8;
+}
+
+.todo-custom-list.-placeholder {
+  transition: none !important;
+  visibility: hidden;
+}
+
+
