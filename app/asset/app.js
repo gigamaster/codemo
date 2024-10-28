@@ -199,7 +199,7 @@ function alpineInstance() {
   }
 }
 document.addEventListener('DOMContentLoaded', function(event) {
-  fetch('./modal-launcher.html')
+  fetch('https://gigamaster.github.io/codemo/asset/modal-launcher.html')
   .then(function (response) {
       return response.text()
   })

@@ -5,7 +5,7 @@
   x-init="fetch('https://gigamaster.github.io/codemo/asset/launcher.json')
           .then(response => response.json())
           .then(data => apps = data)"
-  x-bind:class="{'p-2': layout === 'list', 'p-2': layout === 'grid'}"
+  x-bind:class="{'app-list': layout === 'list', 'app-grid': layout === 'grid'}"
 >
 <nav class="flex flex-row w-full items-center justify-between px-2">
   <div>
