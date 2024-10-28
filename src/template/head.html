@@ -36,8 +36,13 @@
   <meta name="twitter:creator" content="@nunoluciano" inertia="">
   <!-- font, style, script -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..800&display=swap" rel="stylesheet">
+  <link href="https://gigamaster.github.io/codemo/asset/css/icons.css" rel="stylesheet" />
   <link href="https://gigamaster.github.io/codemo/asset/css/style.css" rel="stylesheet" />
   <script defer src='https://gigamaster.github.io/codemo/asset/lib/notifications.min.js'></script>
+  <script
+  defer
+  src="./lib/component.min.js"
+  ></script>
   <script defer src="https://gigamaster.github.io/codemo/asset/lib/alpinejs.min.js"></script>
   <script type="module">
   const lib = await import('https://gigamaster.github.io/codemo/asset/lib/lib.module.js');
@@ -56,7 +61,7 @@
 <body>
 <div x-data="setup()" x-init="setColors(color);" :class="{ 'dark': isDark};">
   <div id="notificationWrapper" class="fixed top-4 w-64 right-4 space-y-2"></div>
-
+  <!-- Screen -->
   <div class="flex h-screen antialiased text-gray-900 bg-white dark:bg-darker dark:text-light">
 
     <!-- Loading -->
@@ -90,9 +95,9 @@
     <!-- Sidebar -->
     <aside class="flex-shrink-0 hidden w-64 bg-white dark:bg-darker md:block">
       <div class="flex flex-col h-full">
-        <!-- Sidebar links -->
+        <!-- Sidebar Nav -->
         <nav aria-label="main" class="flex-1 px-2 py-4 space-y-2 overflow-y-hidden hover:overflow-y-auto">
-          <!-- Dashboard links -->
+          <!-- Dashboard -->
           <div x-data="{ isActive: true, open: true}">
             <a
               href="#"
@@ -104,20 +109,11 @@
               :aria-expanded="(open || isActive) ? 'true' : 'false'"
             >
               <span aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0h-.079c-1.66 0-3.239.349-4.667.978l.074-.029A12.269 12.269 0 0 0 3.52 3.523A12.219 12.219 0 0 0 .978 7.251l-.031.079A11.398 11.398 0 0 0 0 11.919v.086v-.004v.079c0 1.66.349 3.239.978 4.667l-.029-.074a12.276 12.276 0 0 0 2.572 3.807a12.224 12.224 0 0 0 3.729 2.542l.079.031c1.354.6 2.933.949 4.593.949h.083h-.004h.079c1.66 0 3.239-.349 4.667-.978l-.074.029a12.276 12.276 0 0 0 3.809-2.573a12.219 12.219 0 0 0 2.542-3.728l.031-.079c.6-1.354.949-2.932.949-4.593v-.158c0-1.66-.349-3.239-.978-4.667l.029.074a12.286 12.286 0 0 0-2.573-3.806A12.219 12.219 0 0 0 16.754.981L16.675.95C15.321.35 13.741 0 12.08 0h-.083zm.64 22.79v-2.087l5.193-2.633a.421.421 0 0 0 .154-.129l.001-.001a.335.335 0 0 0 .059-.191v-.011v.001v-1.186c.225-.082.412-.226.543-.412l.002-.004c.133-.179.214-.404.214-.648v-.118a1.146 1.146 0 0 0-.366-.746l-.001-.001a1.09 1.09 0 0 0-.75-.297h-.022h.001h-.02c-.308 0-.587.127-.786.332c-.205.2-.332.478-.332.787v.021v-.001v.059c.002.03.011.057.024.081v-.001c.013.222.096.423.227.583l-.001-.002c.133.163.304.289.501.364l.008.003v.949l-4.649 2.372v-1.942l2.039-.949a.533.533 0 0 0 .166-.13l.001-.001a.3.3 0 0 0 .071-.194v-3.233l3.793-2.134a.318.318 0 0 0 .142-.141l.001-.002a.407.407 0 0 0 .047-.189v-.901c.223-.079.409-.218.543-.397l.002-.003c.133-.177.214-.401.214-.644v-.04c0-.308-.127-.587-.332-.786a1.066 1.066 0 0 0-.775-.332H18.4a1.082 1.082 0 0 0-.71.366l-.001.001a1.113 1.113 0 0 0-.285.746v.025v-.001v.02c0 .243.08.466.216.646l-.002-.003c.137.182.322.321.538.397l.008.003v.688l-3.818 2.134a.51.51 0 0 0-.129.129l-.001.002a.338.338 0 0 0-.055.184v.017v-.001v3.2l-1.52.711v-6.972l3.2-1.566a.379.379 0 0 0 .153-.141l.001-.002a.347.347 0 0 0 .059-.189V7.04c.223-.079.409-.218.543-.397l.002-.003c.133-.177.214-.401.214-.644v-.021v.001v-.061a.078.078 0 0 0-.024-.057a1.127 1.127 0 0 0-.366-.719l-.001-.001a1.06 1.06 0 0 0-.738-.297h-.128a1.108 1.108 0 0 0-.719.378l-.001.001a1.103 1.103 0 0 0-.297.754v.123c.032.227.12.428.251.596l-.002-.003c.127.167.301.291.502.354l.007.002v.972l-2.656 1.304V5.288c.225-.082.412-.226.543-.412l.002-.004c.133-.179.214-.404.214-.648V4.2c0-.308-.127-.587-.332-.786a1.095 1.095 0 0 0-.787-.332h-.021h.001h-.02c-.308 0-.587.127-.786.332c-.205.2-.332.478-.332.787v.021v-.001v.118c.03.223.119.421.25.583l-.002-.002c.133.163.304.289.501.364l.008.003v6.569l-1.874-.996V7.865a.292.292 0 0 0-.048-.16l.001.001a.87.87 0 0 0-.095-.119l-1.306-.998a.825.825 0 0 0 .07-.196l.001-.006c.015-.067.024-.143.024-.222v-.024c0-.308-.127-.587-.332-.786a1.097 1.097 0 0 0-.786-.331H7.52h.001h-.02c-.308 0-.587.127-.786.332c-.205.2-.332.478-.332.787v.021v-.001v.024c0 .305.125.581.326.78c.2.205.478.332.787.332h.021h-.001h.015a.858.858 0 0 0 .288-.049l-.006.002c.11-.041.2-.081.287-.125l-.015.007l1.162.925v3.035a.29.29 0 0 0 .06.178l-.001-.001a.42.42 0 0 0 .152.129l.002.001l2.419 1.28V15.1l-4.055-1.874l.071-1.47v-.024a.29.29 0 0 0-.06-.178l.001.001a.42.42 0 0 0-.152-.129l-.002-.001l-1.851-.97a.522.522 0 0 0 .024-.157v-.2a1.127 1.127 0 0 0-.366-.719l-.001-.001a1.093 1.093 0 0 0-.752-.299h-.018h.001h-.007c-.305 0-.58.127-.775.332c-.208.2-.338.481-.338.792v.015v-.001v.118c.029.285.164.534.366.71l.001.001c.193.177.451.285.735.285h.131a1.45 1.45 0 0 0 .33-.083l-.01.003c.104-.04.195-.092.275-.156l-.002.002l1.707.88l-.047 1.47v.008c0 .075.017.145.048.208l-.001-.003a.305.305 0 0 0 .164.142l.002.001l4.577 2.134v6.869q-.308 0-.605-.024l-.605-.047l.071-4.364a.349.349 0 0 0-.06-.191l.001.001a.364.364 0 0 0-.175-.142l-.002-.001l-2.87-1.328v-.125c0-.305-.127-.58-.332-.775a1.095 1.095 0 0 0-.787-.332H6.49h.001h-.114a1.082 1.082 0 0 0-.71.366l-.001.001a1.113 1.113 0 0 0-.285.746v.025v-.001v.007c0 .305.127.58.332.775c.195.205.47.332.775.332h.039c.156 0 .305-.033.439-.094l-.007.003c.14-.067.261-.147.369-.242l-.002.002l2.656 1.21v4.008a10.611 10.611 0 0 1-3.534-1.343l.048.027a10.85 10.85 0 0 1-2.773-2.354l-.014-.017a11.1 11.1 0 0 1-1.824-3.112l-.026-.076a10.267 10.267 0 0 1-.676-3.699v-.111c0-1.494.314-2.915.88-4.201l-.026.067a11.06 11.06 0 0 1 2.324-3.44A11.019 11.019 0 0 1 7.73 2.065l.071-.028a10.269 10.269 0 0 1 4.139-.856h.061h-.003h.064c1.494 0 2.915.314 4.201.88l-.067-.026a11.078 11.078 0 0 1 3.44 2.32a11 11 0 0 1 2.296 3.369l.028.071c.54 1.218.854 2.639.854 4.134v.067v-.003v.064c0 1.444-.292 2.82-.82 4.072l.026-.069a11.1 11.1 0 0 1-2.175 3.373l.005-.006a10.852 10.852 0 0 1-3.172 2.32l-.065.028c-1.16.568-2.516.932-3.948 1.009l-.026.001z"/></svg>
+                <i class="icon-codemo w-6 h-6"></i>
               </span>
               <span class="ml-2"> Codemo </span>
-              <span class="ml-auto" aria-hidden="true">
-                <svg
-                  class="w-4 h-4 transition-transform transform"
-                  :class="{ 'rotate-180': open }"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
+              <span aria-hidden="true" class="ml-auto">
+                <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
               </span>
             </a>
             <div role="menu" x-show="open" class="mt-2 space-y-2" aria-label="Dashboard">
@@ -126,7 +122,7 @@
               role="menuitem"
               class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" color="currentColor"><path d="M4 12c0-3.771 0-5.657 1.172-6.828S8.229 4 12 4s5.657 0 6.828 1.172S20 8.229 20 12s0 5.657-1.172 6.828S15.771 20 12 20s-5.657 0-6.828-1.172S4 15.771 4 12"/><path d="m7.5 15l1.842-5.526a.694.694 0 0 1 1.316 0L12.5 15m-4-2h3m4-4v6M8 2v2m8-2v2m-4-2v2M8 20v2m4-2v2m4-2v2m6-6h-2M4 8H2m2 8H2m2-4H2m20-4h-2m2 4h-2"/></g></svg>
+                <i class="icon-ai w-6 h-6"></i>
                 <span class="ml-2"> Artificial Intelligence </span>
               </a>
               <a
@@ -134,7 +130,7 @@
               role="menuitem"
               class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M3 3v18h18"/><rect width="12" height="4" x="7" y="5" rx="1"/><rect width="7" height="4" x="7" y="13" rx="1"/></g></svg>
+                <i class="icon-dataviz2 w-6 h-6"></i>
                 <span class="ml-2"> Data Visualization </span>
               </a>
               <a
@@ -142,7 +138,7 @@
               role="menuitem"
               class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="8" height="18" x="3" y="3" rx="1"/><path d="M7 3v18m13.4-2.1c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z"/></g></svg>
+                <i class="icon-elearn w-6 h-6"></i>
                 <span class="ml-2"> Elearning </span>
               </a>
 
@@ -151,7 +147,7 @@
               role="menuitem"
               class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2m4 7h4m-4 5h4m-8-5h.01M8 16h.01"/></g></svg>
+                <i class="icon-project w-6 h-6"></i>
                 <span class="ml-2"> Project Mangement </span>     
               </a>
               <a
@@ -159,87 +155,8 @@
               role="menuitem"
               class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M12 5a3 3 0 1 0-5.997.125a4 4 0 0 0-2.526 5.77a4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4M6.003 5.125A3 3 0 0 0 6.401 6.5m-2.924 4.396a4 4 0 0 1 .585-.396M6 18a4 4 0 0 1-1.967-.516M12 13h4m-4 5h6a2 2 0 0 1 2 2v1M12 8h8m-4 0V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></g></svg>
+                <i class="icon-rd w-6 h-6"></i>
                 <span class="ml-2"> R&D — RTD </span>
-              </a>
-            </div>
-          </div>
-          <!-- Components links -->
-          <div x-data="{ isActive: false, open: false }">
-            <a
-              href="#"
-              @click="$event.preventDefault(); open = !open"
-              class="flex items-center p-2 bg-gray-100 text-primary rounded-md hover:bg-primary hover:text-light dark:bg-dark dark:text-light dark:hover:bg-primary-dark transition-colors duration-500"
-              :class="{ 'active:bg-primary active:text-light dark:bg-primary-darker': isActive || open }"
-              role="button"
-              aria-haspopup="true"
-              :aria-expanded="(open || isActive) ? 'true' : 'false'"
-            >
-              <span aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/></g></svg>
-              </span>
-              <span class="ml-2"> Components </span>
-              <span aria-hidden="true" class="ml-auto">
-                <svg
-                  class="w-4 h-4 transition-transform transform"
-                  :class="{ 'rotate-180': open }"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </a>
-            <div x-show="open" class="mt-2 space-y-2" role="menu" arial-label="Components">
-              <a
-                href="https://gigamaster.github.io/codemo/components/animation/"
-                role="menuitem"
-                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2m0 12c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2"/><rect width="8" height="8" x="14" y="14" rx="2"/></g></svg> 
-                <span class="ml-2"> Animation </span>
-              </a>
-              <a
-                href="https://gigamaster.github.io/codemo/components/color/"
-                role="menuitem"
-                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z"></path><path d="M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7m0-4h.01"></path><path d="m11 8l2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8"></path></g></svg>
-                <span class="ml-2"> Color scheme </span>
-              </a>
-              <a
-                href="https://gigamaster.github.io/codemo/components/css/"
-                role="menuitem"
-                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m20 4l-2 14.5l-6 2l-6-2L4 4z"/><path d="M8.5 8h7L11 12h4l-.5 3.5l-2.5.75l-2.5-.75l-.1-.5"/></g></svg>
-              <span class="ml-2"> CSS librairies </span>
-              </a>
-              <a
-                href="https://gigamaster.github.io/codemo/components/javascript/"
-                role="menuitem"
-                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m20 4l-2 14.5l-6 2l-6-2L4 4z"/><path d="M7.5 8h3v8l-2-1m8-7H14a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h1.423a.5.5 0 0 1 .495.57L15.5 15.5l-2 .5"/></g></svg>
-              <span class="ml-2"> JS librairies </span>
-              </a>
-              <a
-                href="https://gigamaster.github.io/codemo/components/native/"
-                role="menuitem"
-                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m20 4l-2 14.5l-6 2l-6-2L4 4z"/><path d="M15.5 8h-7l.5 4h6l-.5 3.5l-2.5.75l-2.5-.75l-.1-.5"/></g></svg>
-                <span class="ml-2"> Web Components </span>
-              </a>
-              <a
-                href="https://gigamaster.github.io/codemo/components/typography/"
-                role="menuitem"
-                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
-                <span class="ml-2"> Typography </span>
               </a>
             </div>
           </div>
@@ -254,19 +171,10 @@
               aria-haspopup="true"
               :aria-expanded="(open || isActive) ? 'true' : 'false'"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M2.008 15.81c.223-3.494.88-6.05 1.435-7.535c.281-.75.885-1.308 1.658-1.495c4.3-1.04 9.498-1.04 13.798 0c.773.187 1.377.745 1.658 1.495c.556 1.485 1.212 4.041 1.435 7.534c.133 2.09-1.377 3.241-3.05 4.083c-1.064.537-1.883-1.046-2.427-2.272a1.82 1.82 0 0 0-1.687-1.084H9.172c-.739 0-1.39.415-1.687 1.084c-.544 1.226-1.363 2.809-2.428 2.272c-1.655-.833-3.183-1.976-3.049-4.083M5 4.5L6.963 4M19 4.5L17 4m-8 9l-1.5-1.5m0 0L6 10m1.5 1.5L6 13m1.5-1.5L9 10m6.988 0h.01m1.99 3h.01" color="currentColor"/></svg>
+              <i class="icon-game w-6 h-6"></i>
               <span class="ml-2"> Game </span>
               <span aria-hidden="true" class="ml-auto">
-                <svg
-                  class="w-4 h-4 transition-transform transform"
-                  :class="{ 'rotate-180': open }"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
+              <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
               </span>
             </a>
             <div x-show="open" class="mt-2 space-y-2" role="menu" arial-label="game">
@@ -274,29 +182,29 @@
                 href="https://gigamaster.github.io/codemo/game/play/"
                 role="menuitem"
                 class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14l3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6M6 18h.01M10 14h.01M15 6h.01M18 9h.01"/></g></svg>
-              <span class="ml-2"> Play Web Games </span>
+              >
+                <i class="icon-game-play w-6 h-6"></i>
+                <span class="ml-2"> Play Web Games </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/game/tools/"
                 role="menuitem"
                 class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m10.05 10.607l-7.07 7.07a2 2 0 0 0 0 2.83v0a2 2 0 0 0 2.828 0l7.07-7.072m4.315.365l3.878 3.878a2 2 0 0 1 0 2.828v0a2 2 0 0 1-2.828 0l-6.209-6.208M6.733 5.904L4.61 6.61L2.49 3.075l1.414-1.414L7.44 3.782zm0 0l2.83 2.83"/><path d="M10.05 10.607c-.844-2.153-.679-4.978 1.061-6.718s4.95-2.121 6.717-1.06l-3.04 3.04l-.283 3.111l3.111-.282l3.04-3.041c1.062 1.768.68 4.978-1.06 6.717c-1.74 1.74-4.564 1.905-6.717 1.061"/></g></svg>
-              <span class="ml-2"> Game Dev Tools </span>
+              >
+                <i class="icon-game-dev w-6 h-6"></i>
+                <span class="ml-2"> Game Dev Tools </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/game/engine/"
                 role="menuitem"
                 class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 10v6m9-11v3m-2-3h4m-9 8H3m3-3h2l2-2h3.382a1 1 0 0 1 .894.553l1.448 2.894a1 1 0 0 0 .894.553H18v-2h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2v-2h-3v2a1 1 0 0 1-1 1h-3.465a1 1 0 0 1-.832-.445L8 16H6z"/></svg>
-              <span class="ml-2"> Game Engine </span>
+              >
+                <i class="icon-game-engine w-6 h-6"></i>
+                <span class="ml-2"> Game Engine </span>
               </a>
             </div>
           </div>
-          <!-- Multimedia links -->
+          <!-- Multimedia -->
           <div x-data="{ isActive: false, open: false}">
             <a
               href="#"
@@ -307,19 +215,10 @@
               aria-haspopup="true"
               :aria-expanded="(open || isActive) ? 'true' : 'false'"
             >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 14V3h11v11zm1-1h9V4H4zm4-1.25L6.8 10.1L5.385 12h6.23L9.7 9.5zM16.502 21q-1.04 0-1.771-.728T14 18.502t.73-1.771T16.5 16q.448 0 .82.146t.68.413V11h3v1h-2v6.5q0 1.042-.728 1.77q-.729.73-1.77.73M4 13V4z"/></svg>
-            <span class="ml-2"> Multimedia </span>
+              <i class="icon-media w-6 h-6"></i>
+              <span class="ml-2"> Multimedia </span>
               <span aria-hidden="true" class="ml-auto">
-                <svg
-                  class="w-4 h-4 transition-transform transform"
-                  :class="{ 'rotate-180': open }"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
+                <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
               </span>
             </a>
             <div x-show="open" class="mt-2 space-y-2" role="menu" aria-label="Multimedia">
@@ -328,36 +227,36 @@
               role="menuitem"
               class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></g></svg>
-              <span class="ml-2"> Audio </span>
+                <i class="icon-audio w-6 h-6"></i>
+                <span class="ml-2"> Audio </span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/multimedia/graphic/"
               role="menuitem"
               class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></g></svg>
-              <span class="ml-2"> Graphic </span>
+                <i class="icon-graphic w-6 h-6"></i> 
+                <span class="ml-2"> Graphic </span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/multimedia/photography/"
               role="menuitem"
               class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></g></svg>
-              <span class="ml-2"> Photography </span>
+                <i class="icon-photo w-6 h-6"></i>
+                <span class="ml-2"> Photography </span>
               </a>
               <a
               href="https://gigamaster.github.io/codemo/multimedia/video/"
               role="menuitem"
               class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="m16 13l5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect width="14" height="12" x="2" y="6" rx="2"/></g></svg>
-              <span class="ml-2"> Video </span>
+                <i class="icon-video w-6 h-6"></i>
+                <span class="ml-2"> Video </span>
               </a>
             </div>
           </div>
-          <!-- Template links -->
+          <!-- Template -->
           <div x-data="{ isActive: false, open: false}">
             <a
               href="#"
@@ -368,20 +267,10 @@
               aria-haspopup="true"
               :aria-expanded="(open || isActive) ? 'true' : 'false'"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></g></svg>
-              <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><rect width="18" height="7" x="3" y="3" rx="1"/><rect width="9" height="7" x="3" y="14" rx="1"/><rect width="5" height="7" x="16" y="14" rx="1"/></g></svg> -->
+              <i class="icon-template w-6 h-6"></i>
               <span class="ml-2"> Template </span>
               <span aria-hidden="true" class="ml-auto">
-                <svg
-                  class="w-4 h-4 transition-transform transform"
-                  :class="{ 'rotate-180': open }"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
+                <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
               </span>
             </a>
             <div x-show="open" class="mt-2 space-y-2" role="menu" aria-label="Template">
@@ -389,43 +278,112 @@
                 href="https://gigamaster.github.io/codemo/template/adaptive/"
                 role="menuitem"
                 class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8m-2 4v-3.96v3.15M7 19h5"/><rect width="6" height="10" x="16" y="12" rx="2"/></g></svg>
-              <span class="ml-2"> Adaptive design </span>
+              >
+                <i class="icon-adaptative w-6 h-6"></i>
+                <span class="ml-2"> Adaptive design </span>
               </a>
               <a
                 href="https://gigamaster.github.io/codemo/template/responsive/"
                 role="menuitem"
                 class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 13.6V21H3.6a.6.6 0 0 1-.6-.6V13h7.4a.6.6 0 0 1 .6.6m0 7.4h3M3 13v-3m3-7H3.6a.6.6 0 0 0-.6.6V6m11-3h-4m11 7v4M18 3h2.4a.6.6 0 0 1 .6.6V6m-3 15h2.4a.6.6 0 0 0 .6-.6V18m-10-8h3v3"/></svg>
-              <span class="ml-2"> Responsive Layout </span>
+              >
+                <i class="icon-responsive w-6 h-6"></i>
+                <span class="ml-2"> Responsive Layout </span>
               </a>
               <a
-              href="https://gigamaster.github.io/codemo/template/layout/"
-              role="menuitem"
-              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+                href="https://gigamaster.github.io/codemo/template/layout/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="currentColor" d="M4.5 4.5H12A1.5 1.5 0 0 1 13.5 6v.5m-7.5 7H2A1.5 1.5 0 0 1 .5 12V3.5a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v1"/><path stroke="currentColor" d="M9 8.5h6a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H9a.5.5 0 0 1-.5-.5V9a.5.5 0 0 1 .5-.5m-.5 2h7m-5 .5v4"/></g></svg>              <span class="ml-2"> Theme Layouts </span>
+                <i class="icon-themes w-6 h-6"></i>
+                <span class="ml-2"> Theme Layouts </span>
             </a>
             </div>
           </div>
+          <!-- Web Design -->
+          <div x-data="{ isActive: false, open: false }">
+            <a
+              href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 bg-gray-100 text-primary rounded-md hover:bg-primary hover:text-light dark:bg-dark dark:text-light dark:hover:bg-primary-dark transition-colors duration-500"
+              :class="{ 'active:bg-primary active:text-light dark:bg-primary-darker': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'"
+            >
+              <i class="icon-design-tools w-6 h-6"></i>
+              <span class="ml-2"> Web Design </span>
+              <span aria-hidden="true" class="ml-auto">
+                <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
+              </span>
+            </a>
+            <div x-show="open" class="mt-2 space-y-2" role="menu" arial-label="Components">
+              <a
+                href="https://gigamaster.github.io/codemo/components/animation/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-animation w-6 h-6"></i>
+                <span class="ml-2"> Animation </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/color/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-color w-6 h-6"></i>
+                <span class="ml-2"> Color scheme </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/css/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-css w-6 h-6"></i>
+                <span class="ml-2"> CSS librairies </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/javascript/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-js w-6 h-6"></i>
+                <span class="ml-2"> JS librairies </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/native/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-html w-6 h-6"></i>
+                <span class="ml-2"> Web Components </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/typography/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-typo w-6 h-6"></i>
+                <span class="ml-2"> Typography </span>
+              </a>
+            </div>
+          </div>
         </nav>
-        <!-- Sidebar footer -->
-        <div class="flex-shrink-0 px-4 py-3">
-          <a href="https://gigamaster.github.io/codemo/web-app/" 
+        <!-- Sidebar footer - Apps Launcher -->
+        <div x-data="{}" class="flex-shrink-0 px-4 py-3">
+          <a @click="$dispatch('toggle')"
             class="flex gap-4 items-center w-full p-2
             rounded-md bg-gray-100 text-gray-700 hover:bg-primary hover:text-white dark:bg-dark dark:text-light dark:hover:bg-primary-dark transition-colors duration-500"
           >
           <span aria-hidden="true">
-            <i class="icon-design-tools w-6 h-6"></i>
+            <i class="icon-apps w-6 h-6"></i>
           </span>
-          <span class="text-sm">Web Apps</span>
+          <span class="text-sm">Web Apps Launcher</span>
           </a>
         </div>
       </div>
     </aside>
-    <!-- header navbar - desktop - mobile-->  
+    <!-- h-full - header navbar - desktop - mobile-->  
     <div class="flex flex-1 flex-col h-full overflow-x-hidden overflow-y-auto">
 
       <!-- Navbar -->
@@ -434,7 +392,7 @@
           <!-- Mobile button MainMenu -->
           <button
             @click="isMobileMainMenuOpen = !isMobileMainMenuOpen"
-            class="p-1 transition-colors duration-500 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark md:hidden focus:outline-none focus:ring"
+            class="ml-2 p-1 transition-colors duration-500 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark md:hidden focus:outline-none focus:ring"
           >
             <span class="sr-only">Open mainmenu</span>
             <span aria-hidden="true">
@@ -449,12 +407,11 @@
               </svg>
             </span>
           </button>
-
-          <!-- Desktop Codemo Title -->
+          <!-- Codemo Slogan -->
           <span class="flex flex-nowrap mx-4">
           <a
             href="https://gigamaster.github.io/codemo/"
-            class="hidden lg:block text-1xl tracking-wider text-primary-dark dark:text-light">
+            class="text-1xl tracking-wider text-primary-dark dark:text-light">
             Digital Nomad — Web File Browser 
           </a>
           </span>
@@ -691,7 +648,7 @@
             aria-label="Secondary"
           >
             <div class="px-px">
-              <!-- ToggleTheme button -->
+              <!-- Mobile ToggleTheme button -->
               <button aria-hidden="true" class="relative -top-1 m-2 focus:outline-none" x-cloak @click="toggleTheme">
                 <div class="w-12 h-4 transition rounded-full outline-none key-bg"></div>
                 <div
@@ -716,7 +673,7 @@
                   <svg x-show="isDark" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4V1h2v3zm0 19v-3h2v3zm9-10v-2h3v2zM1 13v-2h3v2zm17.7-6.3l-1.4-1.4l1.75-1.8l1.45 1.45zM4.95 20.5L3.5 19.05l1.8-1.75l1.4 1.4zm14.1 0l-1.75-1.8l1.4-1.4l1.8 1.75zM5.3 6.7L3.5 4.95L4.95 3.5L6.7 5.3zM12 18q-2.5 0-4.25-1.75T6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18"/></svg>
                 </div>
               </button>
-              <!--  GitHub Notification -->
+              <!-- Mobile GitHub Notification -->
               <button
                 @click="openNotificationsPanel(); $nextTick(() => { isMobileSubMenuOpen = false })"
                 class="p-2 transition-colors duration-500 rounded-md text-primary-light bg-primary-100 hover:text-white hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
@@ -724,7 +681,7 @@
                 <span class="sr-only">Open github notifications panel</span>
                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path d="M15 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0m-4-4a1 1 0 1 0 2 0a1 1 0 1 0-2 0m0 8a1 1 0 1 0 2 0a1 1 0 1 0-2 0m1-1V9m3 2l-2-2m-2-2L9.1 5.1"/><path d="m13.446 2.6l7.955 7.954a2.045 2.045 0 0 1 0 2.892l-7.955 7.955a2.045 2.045 0 0 1-2.892 0l-7.955-7.955a2.045 2.045 0 0 1 0-2.892l7.955-7.955a2.045 2.045 0 0 1 2.892 0z"/></g></svg>
               </button>
-              <!-- Settings button -->
+              <!-- Mobile Settings button -->
               <button
                 @click="openSettingsPanel(); $nextTick(() => { isMobileSubMenuOpen = false })"
                 class="p-2 transition-colors duration-500 rounded-md text-primary-light bg-primary-100 hover:text-white hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker"
@@ -793,379 +750,279 @@
           x-show="isMobileMainMenuOpen"
           @click.away="isMobileMainMenuOpen = false"
         >
-          <nav aria-label="Main" class="px-2 py-4 space-y-2">
-            <!-- Main links -->
-            <div x-data="{ isActive: true, open: true}">
-              <a
-                href="#"
-                @click="$event.preventDefault(); open = !open"
-                class="flex items-center p-2 bg-gray-100 text-gray-500 rounded-md hover:text-white hover:bg-primary dark:bg-dark dark:text-light dark:hover:bg-primary transition-colors"
-                :class="{'active:bg-primary active:text-light dark:bg-primary': isActive || open}"
-                role="button"
-                aria-haspopup="true"
-                :aria-expanded="(open || isActive) ? 'true' : 'false'"
-              >
-                <span aria-hidden="true">
-                  <svg
-                    class="w-5 h-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                    />
-                  </svg>
-                </span>
-                <span class="ml-2"> Codemo </span>
-                <span class="ml-auto" aria-hidden="true">
-                  <svg
-                    class="w-4 h-4 transition-transform transform"
-                    :class="{ 'rotate-180': open }"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-              </a>
-              <div role="menu" x-show="open" class="mt-2 space-y-2 px-7" aria-label="Dashboard">
-              <a
-                href="https://gigamaster.github.io/codemo/gen-ai/"
-                role="menuitem"
-                class="flex items-center ml-2 p-2 rounded-md text-gray-500 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-                Artificial Intelligence
-              </a>
-              <a
-                href="https://gigamaster.github.io/codemo/dataviz/"
-                role="menuitem"
-                class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-              >
-              Data Visualization
-              </a>
-              <a
-                href="https://gigamaster.github.io/codemo/elearning/"
-                role="menuitem"
-                class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-              >
-              Elearning
-              </a>
-              <a
-                href="https://gigamaster.github.io/codemo/project/"
-                role="menuitem"
-                class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-              >
-              Project Mangement
-              </a>
-              <a
-                href="https://gigamaster.github.io/codemo/rd/"
-                role="menuitem"
-                class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-              >
-              R&D — RTD
-              </a>
-              </div>
-            </div>
-
-            <!-- Components links -->
-            <div x-data="{ isActive: false, open: false }">
-              <a
-                href="#"
-                @click="$event.preventDefault(); open = !open"
-                class="flex items-center p-2 bg-gray-100 text-gray-500 rounded-md hover:text-white hover:bg-primary dark:bg-dark dark:text-light dark:hover:bg-primary transition-colors"
-                :class="{'active:bg-primary active:text-light dark:bg-primary': isActive || open}"
-                role="button"
-                aria-haspopup="true"
-                :aria-expanded="(open || isActive) ? 'true' : 'false'"
-              >
+        <nav aria-label="Main" class="px-2 py-4 space-y-2">
+          <!-- Mobile Codemo -->
+          <div x-data="{ isActive: true, open: false}">
+            <a
+              href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 bg-gray-100 text-primary rounded-md hover:bg-primary hover:text-light dark:text-light dark:hover:bg-primary-dark transition-colors duration-500"
+              :class="{ 'active:bg-primary active:text-light dark:bg-primary-dark': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'"
+            >
               <span aria-hidden="true">
-                <svg
-                  class="w-5 h-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
-                  />
-                </svg>
+                <i class="icon-codemo w-6 h-6"></i>
               </span>
-                <span class="ml-2"> Components </span>
-                <span aria-hidden="true" class="ml-auto">
-                  <svg
-                    class="w-4 h-4 transition-transform transform"
-                    :class="{ 'rotate-180': open }"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-              </a>
-              <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" arial-label="Components">
-                <a
-                  href="https://gigamaster.github.io/codemo/components/animation/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                Animation 
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/components/color/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                Color scheme 
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/components/css/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                CSS librairies 
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/components/javascript/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                JS librairies 
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/components/native/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                Web Components
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/components/typography/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                Typography 
-                </a>
-              </div>
-            </div>
-
-            <!-- Game links -->
-            <div x-data="{ isActive: false, open: false }">
+              <span class="ml-2"> Codemo </span>
+              <span aria-hidden="true" class="ml-auto">
+                <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
+              </span>
+            </a>
+            <div role="menu" x-show="open" class="mt-2 space-y-2" aria-label="Dashboard">
               <a
-                href="#"
-                @click="$event.preventDefault(); open = !open"
-                class="flex items-center p-2 bg-gray-100 text-gray-500 rounded-md hover:text-white hover:bg-primary dark:bg-dark dark:text-light dark:hover:bg-primary transition-colors"
-                :class="{'active:bg-primary active:text-light dark:bg-primary': isActive || open}"
-                role="button"
-                aria-haspopup="true"
-                :aria-expanded="(open || isActive) ? 'true' : 'false'"
+              href="https://gigamaster.github.io/codemo/gen-ai/"
+              role="menuitem"
+              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-                <span aria-hidden="true">
-                  <svg
-                    class="w-5 h-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-                    />
-                  </svg>
-                </span>
-                <span class="ml-2"> Game </span>
-                <span aria-hidden="true" class="ml-auto">
-                  <svg
-                    class="w-4 h-4 transition-transform transform"
-                    :class="{ 'rotate-180': open }"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
+                <i class="icon-ai w-6 h-6"></i>
+                <span class="ml-2"> Artificial Intelligence </span>
               </a>
-              <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" arial-label="Game">
-                <a
-                  href="https://gigamaster.github.io/codemo/game/play/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                Play Web Games
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/game/tools/"
-                  role="menuitem"
-                  class="flex items-center p-2 ml-2 text-gray-400 transition-colors duration-500 rounded-md dark:text-gray-400 dark:hover:text-light hover:text-gray-700"
-                >
-                Game Dev Tools 
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/game/engine/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                Game Engine 
-                </a>
-              </div>
-            </div>
-
-            <!-- Multimedia links -->
-            <div x-data="{ isActive: false, open: false}">
               <a
-                href="#"
-                @click="$event.preventDefault(); open = !open"
-                class="flex items-center p-2 bg-gray-100 text-gray-500 rounded-md hover:text-white hover:bg-primary dark:bg-dark dark:text-light dark:hover:bg-primary transition-colors"
-                :class="{'active:bg-primary active:text-light dark:bg-primary': isActive || open}"
-                role="button"
-                aria-haspopup="true"
-                :aria-expanded="(open || isActive) ? 'true' : 'false'"
+              href="https://gigamaster.github.io/codemo/dataviz/"
+              role="menuitem"
+              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-                <span aria-hidden="true">
-                  <svg
-                    class="w-5 h-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </span>
-                <span class="ml-2"> Multimedia </span>
-                <span aria-hidden="true" class="ml-auto">
-                  <svg
-                    class="w-4 h-4 transition-transform transform"
-                    :class="{ 'rotate-180': open }"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
+                <i class="icon-dataviz2 w-6 h-6"></i>
+                <span class="ml-2"> Data Visualization </span>
               </a>
-              <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" aria-label="Multimedia">
-                <a
-                  href="https://gigamaster.github.io/codemo/multimedia/audio/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                  Audio
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/multimedia/graphic/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                  Graphic
-                </a>
-                <a
-                href="https://gigamaster.github.io/codemo/multimedia/photography/"
+              <a
+              href="https://gigamaster.github.io/codemo/elearning/"
+              role="menuitem"
+              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-elearn w-6 h-6"></i>
+                <span class="ml-2"> Elearning </span>
+              </a>
+
+              <a
+              href="https://gigamaster.github.io/codemo/project/"
+              role="menuitem"
+              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-project w-6 h-6"></i>
+                <span class="ml-2"> Project Mangement </span>     
+              </a>
+              <a
+              href="https://gigamaster.github.io/codemo/rd/"
+              role="menuitem"
+              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-rd w-6 h-6"></i>
+                <span class="ml-2"> R&D — RTD </span>
+              </a>
+            </div>
+          </div>
+          <!-- Game -->
+          <div x-data="{ isActive: false, open: false }">
+            <a
+              href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 bg-gray-100 text-primary rounded-md hover:bg-primary hover:text-light dark:bg-dark dark:text-light dark:hover:bg-primary-dark transition-colors duration-500"
+              :class="{ 'active:bg-primary active:text-light dark:bg-primary-darker': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'"
+            >
+              <i class="icon-game w-6 h-6"></i>
+              <span class="ml-2"> Game </span>
+              <span aria-hidden="true" class="ml-auto">
+              <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
+              </span>
+            </a>
+            <div x-show="open" class="mt-2 space-y-2" role="menu" arial-label="game">
+              <a
+                href="https://gigamaster.github.io/codemo/game/play/"
                 role="menuitem"
-                class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                >
-                  Photography 
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/multimedia/video/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                  Video 
-                </a>
-              </div>
-            </div>
-
-            <!-- Theme Layouts links -->
-            <div x-data="{ isActive: false, open: false}">
-              <a
-                href="#"
-                @click="$event.preventDefault(); open = !open"
-                class="flex items-center p-2 bg-gray-100 text-gray-500 rounded-md hover:text-white hover:bg-primary dark:bg-dark dark:text-light dark:hover:bg-primary transition-colors"
-                :class="{'active:bg-primary active:text-light dark:bg-primary': isActive || open}"
-                role="button"
-                aria-haspopup="true"
-                :aria-expanded="(open || isActive) ? 'true' : 'false'"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
               >
-                <span aria-hidden="true">
-                  <svg
-                    class="w-5 h-5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-                    />
-                  </svg>
-                </span>
-                <span class="ml-2"> Template </span>
-                <span aria-hidden="true" class="ml-auto">
-                  <svg
-                    class="w-4 h-4 transition-transform transform"
-                    :class="{ 'rotate-180': open }"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
+                <i class="icon-game-play w-6 h-6"></i>
+                <span class="ml-2"> Play Web Games </span>
               </a>
-              <div x-show="open" class="mt-2 space-y-2 px-7" role="menu" aria-label="Template">
-                <a
-                  href="https://gigamaster.github.io/codemo/template/adaptive/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                Adaptive design 
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/template/responsive/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                Responsive Layout 
-                </a>
-                <a
-                  href="https://gigamaster.github.io/codemo/template/layout/"
-                  role="menuitem"
-                  class="flex items-center ml-2 p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
-                  >
-                Theme Layouts 
-                </a>
-              </div>
+              <a
+                href="https://gigamaster.github.io/codemo/game/tools/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-game-dev w-6 h-6"></i>
+                <span class="ml-2"> Game Dev Tools </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/game/engine/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-game-engine w-6 h-6"></i>
+                <span class="ml-2"> Game Engine </span>
+              </a>
             </div>
-          </nav>
+          </div>
+          <!-- Multimedia -->
+          <div x-data="{ isActive: false, open: false}">
+            <a
+              href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 bg-gray-100 text-primary rounded-md hover:bg-primary hover:text-light dark:bg-dark dark:text-light dark:hover:bg-primary-dark transition-colors duration-500"
+              :class="{ 'active:bg-primary active:text-light dark:bg-primary-darker': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'"
+            >
+              <i class="icon-media w-6 h-6"></i>
+              <span class="ml-2"> Multimedia </span>
+              <span aria-hidden="true" class="ml-auto">
+                <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
+              </span>
+            </a>
+            <div x-show="open" class="mt-2 space-y-2" role="menu" aria-label="Multimedia">
+              <a
+              href="https://gigamaster.github.io/codemo/multimedia/audio/"
+              role="menuitem"
+              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-audio w-6 h-6"></i>
+                <span class="ml-2"> Audio </span>
+              </a>
+              <a
+              href="https://gigamaster.github.io/codemo/multimedia/graphic/"
+              role="menuitem"
+              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-graphic w-6 h-6"></i> 
+                <span class="ml-2"> Graphic </span>
+              </a>
+              <a
+              href="https://gigamaster.github.io/codemo/multimedia/photography/"
+              role="menuitem"
+              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-photo w-6 h-6"></i>
+                <span class="ml-2"> Photography </span>
+              </a>
+              <a
+              href="https://gigamaster.github.io/codemo/multimedia/video/"
+              role="menuitem"
+              class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-video w-6 h-6"></i>
+                <span class="ml-2"> Video </span>
+              </a>
+            </div>
+          </div>
+          <!-- Template -->
+          <div x-data="{ isActive: false, open: false}">
+            <a
+              href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 bg-gray-100 text-primary rounded-md hover:bg-primary hover:text-light dark:bg-dark dark:text-light dark:hover:bg-primary-dark transition-colors duration-500"
+              :class="{ 'active:bg-primary active:text-light dark:bg-primary-darker': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'"
+            >
+              <i class="icon-template w-6 h-6"></i>
+              <span class="ml-2"> Template </span>
+              <span aria-hidden="true" class="ml-auto">
+                <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
+              </span>
+            </a>
+            <div x-show="open" class="mt-2 space-y-2" role="menu" aria-label="Template">
+              <a
+                href="https://gigamaster.github.io/codemo/template/adaptive/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-adaptative w-6 h-6"></i>
+                <span class="ml-2"> Adaptive design </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/template/responsive/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-responsive w-6 h-6"></i>
+                <span class="ml-2"> Responsive Layout </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/template/layout/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-themes w-6 h-6"></i>
+                <span class="ml-2"> Theme Layouts </span>
+            </a>
+            </div>
+          </div>
+          <!-- Web Design -->
+          <div x-data="{ isActive: false, open: false }">
+            <a
+              href="#"
+              @click="$event.preventDefault(); open = !open"
+              class="flex items-center p-2 bg-gray-100 text-primary rounded-md hover:bg-primary hover:text-light dark:bg-dark dark:text-light dark:hover:bg-primary-dark transition-colors duration-500"
+              :class="{ 'active:bg-primary active:text-light dark:bg-primary-darker': isActive || open }"
+              role="button"
+              aria-haspopup="true"
+              :aria-expanded="(open || isActive) ? 'true' : 'false'"
+            >
+              <i class="icon-design-tools w-6 h-6"></i>
+              <span class="ml-2"> Web Design </span>
+              <span aria-hidden="true" class="ml-auto">
+                <i class="icon-chevron w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"></i>
+              </span>
+            </a>
+            <div x-show="open" class="mt-2 space-y-2" role="menu" arial-label="Components">
+              <a
+                href="https://gigamaster.github.io/codemo/components/animation/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-animation w-6 h-6"></i>
+                <span class="ml-2"> Animation </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/color/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-color w-6 h-6"></i>
+                <span class="ml-2"> Color scheme </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/css/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-css w-6 h-6"></i>
+                <span class="ml-2"> CSS librairies </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/javascript/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-js w-6 h-6"></i>
+                <span class="ml-2"> JS librairies </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/native/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-html w-6 h-6"></i>
+                <span class="ml-2"> Web Components </span>
+              </a>
+              <a
+                href="https://gigamaster.github.io/codemo/components/typography/"
+                role="menuitem"
+                class="flex items-center p-2 rounded-md text-gray-400 hover:text-primary dark:text-gray-500 dark:hover:text-primary transition-colors duration-500"
+              >
+                <i class="icon-typo w-6 h-6"></i>
+                <span class="ml-2"> Typography </span>
+              </a>
+            </div>
+          </div>
+        </nav>
         </div>
       </header>
     
@@ -1180,7 +1037,8 @@
           </a> <span>{{foldername}}</span>
         </span>
       </nav>
-              
+
+      <!-- Directory Index Listing -->        
       <div class="relative mb-4 shadow-md rounded-lg">
         <table class="w-full bg-white text-gray-500 outline outline-2 outline-gray-100 dark:outline-darker dark:bg-darker dark:text-light text-sm text-left rounded-lg">
           <thead class="text-xs dark:text-light uppercase">

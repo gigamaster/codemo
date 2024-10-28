@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/codemo/tools/notes/static/css/main.516d29e3.css",
+    "main.js": "/codemo/tools/notes/static/js/main.c976fe41.js",
+    "static/media/error404.png": "/codemo/tools/notes/static/media/error404.9884765d176951ea97fa.png",
+    "static/media/nomadenotes.png": "/codemo/tools/notes/static/media/nomadenotes.9884765d176951ea97fa.png",
+    "index.html": "/codemo/tools/notes/index.html",
+    "main.516d29e3.css.map": "/codemo/tools/notes/static/css/main.516d29e3.css.map",
+    "main.c976fe41.js.map": "/codemo/tools/notes/static/js/main.c976fe41.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.516d29e3.css",
+    "static/js/main.c976fe41.js"
+  ]
+}

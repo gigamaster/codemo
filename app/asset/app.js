@@ -92,9 +92,9 @@ document.addEventListener('alpine:init', () => {
     currentIndex: -1,
     init() {
       // Initialize data
-      fetch('https://gigamaster.github.io/codemo/asset/sourceData.json')
-          .then(res => res.json())
-          .then(data => this.data = data.data);
+      fetch('./search.json')
+        .then(res => res.json())
+        .then(data => this.data = data.data);
     },
     showSearchBar() {
       this.show = true;
@@ -113,8 +113,10 @@ document.addEventListener('alpine:init', () => {
       // Return filtered items if query is not empty
       // then return the items which includes query string
       return this.query && this.data.filter(item => {
-          const page_name = item.page_title + "—" + item.page_desc
-          return page_name.toLowerCase().includes(this.query.toLowerCase())
+          const page_name = item.page_title + "—" + item.page_desc + item.page_cat
+          return page_name
+          .toLowerCase()
+          .includes(this.query.toLowerCase())
       })
     },
     previous() {
@@ -190,7 +192,26 @@ document.addEventListener('alpine:init', () => {
     }
   }))
 })
-
+function alpineInstance() {
+  return {
+    intro: 'Available Web applications and <b class="text-gray-400">tools</b> that run in the browser',
+    apps: [],
+  }
+}
+document.addEventListener('DOMContentLoaded', function(event) {
+  fetch('./modal-launcher.html')
+  .then(function (response) {
+      return response.text()
+  })
+  .then(function (html) {
+      console.info('Modal content has been fetched');
+      loadData(html, '#modal-launcher').then(function (html) {
+        //console.info('Pin content callback');
+      })
+  }).catch((error) => {
+      console.log(error);
+  })
+});
 /*
   Usage Example:
   openWithSelfMain('https://example.com','Example Title','960','540');
@@ -220,8 +241,19 @@ function openWithSelfMain(url, title, w, h) {
 }
 
 /* global LinkPreviewer */
-const linkPreviewer = new LinkPreviewer();
-linkPreviewer.attach('td a.preview');
+document.addEventListener("DOMContentLoaded", function() {
+function tester() {
+  if (solved) {
+    let linkPreviewer = new LinkPreviewer();
+    linkPreviewer.attach('td a.preview');
+    alert('it worked');
+  } else {
+    alert('Did not work');
+  }
+}
+});
+var solved = true;
+
 
 /* GitHub Fetch Repo Commits */
 function commitsData() {

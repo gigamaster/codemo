@@ -1,0 +1,268 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/",
+      "page_title": "web applications (web apps)",
+      "page_desc": "Web Apps that run in a web browser",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 2,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/dpaint/",
+      "page_title": "DPaint Image editor",
+      "page_desc": "Web app graphic image editor modeled after the legendary Deluxe Paint",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 3,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/drawio/",
+      "page_title": "Draw.io Flowchart & Diagram Maker",
+      "page_desc": "Web app to make flowcharts, process and network diagrams, org charts, UML, ER.",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 4,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/encrypt/",
+      "page_title": "encrypt",
+      "page_desc": "Static HTML Encryption for public host",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 5,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/erd-editor/",
+      "page_title": "erd-editor",
+      "page_desc": "Entity-Relationship Diagram Editor",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 6,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/fuxa-hmi-scada/",
+      "page_title": "fuxa-hmi-scada",
+      "page_desc": "Web app SCADA/HMI/Dashboard to create modern process visualizations with individual designs",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 7,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/livecodes/",
+      "page_title": "livecodes",
+      "page_desc": "Web app code editor with support for 90+ languages & frameworks, embedded playgrounds and AI code assistant",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 8,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/grapesjs/",
+      "page_title": "grapesjs",
+      "page_desc": "WYSIWYG web page builder",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 9,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/graphite/",
+      "page_title": "graphite",
+      "page_desc": "Web app to create, compose and edit vector images and graphics",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 10,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/mermaid-editor/",
+      "page_title": "mermaid editor",
+      "page_desc": "Web app editor to create and modify complex charts and diagrams",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 11,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/studio/",
+      "page_title": "studio",
+      "page_desc": "Web app to create designs and templates for social media",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 12,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/tldraw/",
+      "page_title": "tldraw",
+      "page_desc": "Web app to draw and write on the canvas, add images and video",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 13,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/voxel-builder/",
+      "page_title": "voxel-builder",
+      "page_desc": "Web app to create 3D voxel art, modeling art game graphics",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 14,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/vvvebjs/",
+      "page_title": "vvvebjs",
+      "page_desc": "Drag and drop web page builder ",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 15,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/notification/",
+      "page_title": "Notification",
+      "page_desc": "Toast, inline, actionable, non-intrusive messages and updates",
+      "page_cat": "web-app",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 21,
+      "page_url": "https://gigamaster.github.io/codemo/components/",
+      "page_title": "Components CSS and JavaScript",
+      "page_desc": "UI components include buttons, forms, menus, navigation bars, and modals",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 22,
+      "page_url": "https://gigamaster.github.io/codemo/components/alert/",
+      "page_title": "Alert component",
+      "page_desc": "Messages to users such as success or error messages",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 23,
+      "page_url": "https://gigamaster.github.io/codemo/components/animation/",
+      "page_title": "Animation component",
+      "page_desc": "Animate elements position and transform using keyframes",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 24,
+      "page_url": "https://gigamaster.github.io/codemo/components/button/",
+      "page_title": "Button Component",
+      "page_desc": "Style actions with animated buttons, micro-interactions",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 25,
+      "page_url": "https://gigamaster.github.io/codemo/components/card/",
+      "page_title": "Card Component",
+      "page_desc": "Visually rich alternative to enhance design layouts",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 26,
+      "page_url": "https://gigamaster.github.io/codemo/components/codeblock/",
+      "page_title": "Code blocks",
+      "page_desc": "Display formatted code snippets with syntax highlighting",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 27,
+      "page_url": "https://gigamaster.github.io/codemo/components/color/",
+      "page_title": "Components Color Schemes",
+      "page_desc": "Color palette generator to help design a user interface",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 28,
+      "page_url": "https://gigamaster.github.io/codemo/components/design-system/",
+      "page_title": "Design system",
+      "page_desc": "Collection of repeatable, reusable components and guidelines",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 29,
+      "page_url": "https://gigamaster.github.io/codemo/components/dropdown/",
+      "page_title": "Dropdown Component",
+      "page_desc": "Menu navigation element to display a list of choices",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 30,
+      "page_url": "https://gigamaster.github.io/codemo/components/form/",
+      "page_title": "Form elements",
+      "page_desc": "Optimize forms to gather information efficiently",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 31,
+      "page_url": "https://gigamaster.github.io/codemo/components/list/",
+      "page_title": "List Component",
+      "page_desc": "Examples of structured and organized items",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 32,
+      "page_url": "https://gigamaster.github.io/codemo/components/menu/",
+      "page_title": "Menu ",
+      "page_desc": "Interactive UI element such as an icon, button or text",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 33,
+      "page_url": "https://gigamaster.github.io/codemo/components/modal/",
+      "page_title": "Modal",
+      "page_desc": "Dialog UI pattern that pops up above the parent page",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 34,
+      "page_url": "https://gigamaster.github.io/codemo/components/navigation/",
+      "page_title": "Navigation",
+      "page_desc": "Patterns to help orient users, breadcrumbs, pagination, tags",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 35,
+      "page_url": "https://gigamaster.github.io/codemo/components/notification/",
+      "page_title": "Notification",
+      "page_desc": "Toast, inline, actionable, non-intrusive messages and updates",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 36,
+      "page_url": "https://gigamaster.github.io/codemo/components/panel/",
+      "page_title": "Panel",
+      "page_desc": "Side panel UI overlays that provide contextual app information",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 37,
+      "page_url": "https://gigamaster.github.io/codemo/components/report/",
+      "page_title": "Charts, Records, Reports",
+      "page_desc": "Feature-rich, interactive charts for exploring data over time",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    },
+    {
+      "id": 38,
+      "page_url": "https://gigamaster.github.io/codemo/components/typography/",
+      "page_title": "Typography",
+      "page_desc": "Legible, readable, and scalable fonts",
+      "page_cat": "components",
+      "page_icon": "icon-design-tools"
+    }
+  ]
+}
