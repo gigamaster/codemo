@@ -116,7 +116,6 @@ canvas,img,picture,svg,video{display:block;max-width:100%;height:auto}
       max-height: var(--scrollbar-width-legacy, 9px);
   }
 }
-
 /* Font <uniquifier>: class name. <weight>: a value from 200 to 1000 */
 .nunito {
 font-family: "Nunito", sans-serif;
