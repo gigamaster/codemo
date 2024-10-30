@@ -241,18 +241,8 @@ function openWithSelfMain(url, title, w, h) {
 }
 
 /* global LinkPreviewer */
-document.addEventListener("DOMContentLoaded", function() {
-function tester() {
-  if (solved) {
-    let linkPreviewer = new LinkPreviewer();
-    linkPreviewer.attach('td a.preview');
-    alert('it worked');
-  } else {
-    alert('Did not work');
-  }
-}
-});
-var solved = true;
+const linkPreviewer = new LinkPreviewer();
+linkPreviewer.attach('td a.preview');
 
 
 /* GitHub Fetch Repo Commits */

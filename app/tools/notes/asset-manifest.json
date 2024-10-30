@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/codemo/tools/notes/static/css/main.516d29e3.css",
-    "main.js": "/codemo/tools/notes/static/js/main.5915b474.js",
-    "static/media/error404.png": "/codemo/tools/notes/static/media/error404.9884765d176951ea97fa.png",
-    "static/media/nomadenotes.png": "/codemo/tools/notes/static/media/nomadenotes.9884765d176951ea97fa.png",
+    "main.css": "/codemo/tools/notes/static/css/main.82700277.css",
+    "main.js": "/codemo/tools/notes/static/js/main.c27244a5.js",
+    "static/media/nomadenotes.svg": "/codemo/tools/notes/static/media/nomadenotes.445f17559b46e2b1a2bb45aaa6049fe5.svg",
+    "static/media/error404.svg": "/codemo/tools/notes/static/media/error404.63666b3c3f3dce1721b4e1bc5f4d807e.svg",
     "index.html": "/codemo/tools/notes/index.html",
-    "main.516d29e3.css.map": "/codemo/tools/notes/static/css/main.516d29e3.css.map",
-    "main.5915b474.js.map": "/codemo/tools/notes/static/js/main.5915b474.js.map"
+    "main.82700277.css.map": "/codemo/tools/notes/static/css/main.82700277.css.map",
+    "main.c27244a5.js.map": "/codemo/tools/notes/static/js/main.c27244a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.516d29e3.css",
-    "static/js/main.5915b474.js"
+    "static/css/main.82700277.css",
+    "static/js/main.c27244a5.js"
   ]
 }
