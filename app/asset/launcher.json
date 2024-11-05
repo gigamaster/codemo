@@ -111,6 +111,26 @@
   },
   {
     "id": 12,
+    "url": "https://gigamaster.github.io/codemo/web-app/vixel/",
+    "name": "Vixel",
+    "author": "Author",
+    "desc": "Web app A WebGL path tracing voxel renderer built with regl",
+    "cat": "3D graphics",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/vixel.webp"
+  },
+  {
+    "id": 13,
+    "url": "https://gigamaster.github.io/codemo/web-app/voxedit/",
+    "name": "Voxedit",
+    "author": "Author",
+    "desc": "Web app Voxel editor with animation support, a collection of voxel tools and volume formats",
+    "cat": "3D graphics",
+    "icon": "icon-apps",
+    "image": "https://gigamaster.github.io/codemo/web-app/voxedit.webp"
+  },
+  {
+    "id": 14,
     "url": "https://gigamaster.github.io/codemo/web-app/voxel-builder/",
     "name": "Voxel-builder",
     "author": "Author",
@@ -120,7 +140,7 @@
     "image": "https://gigamaster.github.io/codemo/web-app/voxel-builder.webp"
   },
   {
-    "id": 13,
+    "id": 15,
     "url": "https://gigamaster.github.io/codemo/web-app/vvvebjs/",
     "name": "Vvvebjs",
     "author": "Author",

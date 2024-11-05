@@ -98,14 +98,30 @@
     },
     {
       "id": 13,
-      "page_url": "https://gigamaster.github.io/codemo/web-app/voxel-builder/",
-      "page_title": "voxel-builder",
-      "page_desc": "Web app to create 3D voxel art, modeling art game graphics",
+      "page_url": "https://gigamaster.github.io/codemo/web-app/vixel/",
+      "page_title": "vixel",
+      "page_desc": "Web app A WebGL path tracing voxel renderer built with regl",
       "page_cat": "web-app",
       "page_icon": "icon-apps"
     },
     {
       "id": 14,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/voxedit/",
+      "page_title": "Voxedit",
+      "page_desc": "Web app Voxel editor, animation, tools and volume formats",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 15,
+      "page_url": "https://gigamaster.github.io/codemo/web-app/voxel-builder/",
+      "page_title": "Voxel-builder",
+      "page_desc": "Web app to create 3D voxel art, modeling art game graphics",
+      "page_cat": "web-app",
+      "page_icon": "icon-apps"
+    },
+    {
+      "id": 16,
       "page_url": "https://gigamaster.github.io/codemo/web-app/vvvebjs/",
       "page_title": "vvvebjs",
       "page_desc": "Drag and drop web page builder ",
@@ -113,7 +129,7 @@
       "page_icon": "icon-apps"
     },
     {
-      "id": 15,
+      "id": 20,
       "page_url": "https://gigamaster.github.io/codemo/web-app/notification/",
       "page_title": "Notification",
       "page_desc": "Toast, inline, actionable, non-intrusive messages and updates",
