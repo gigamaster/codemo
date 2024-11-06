@@ -1,0 +1,171 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: hsl(200, 8%, 14%);
+    color: hsl(210, 25%, 73%);
+    min-width: 280px;
+    line-height: 1.5;
+    font-family: system-ui, sans-serif;
+    font-size: 16px;
+}
+
+.error {
+    text-align: center;
+}
+
+#notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+}
+
+#notification.information {
+    background-color: hsl(120, 73%, 75%);
+}
+
+#notification-content {
+    color: initial;
+}
+
+#controls, #content, #article-title {
+    margin: 0.5em auto;
+    width: 80%;
+    max-width: 1000px;
+}
+
+#content {
+    text-align: left;
+}
+
+h1 {
+    text-align: center;
+}
+h1 > a, h1 > a:visited {
+    background-clip: text;
+    background-color: hsl(200, 8%, 14%);
+    color: transparent;
+    font-family: 'Squada One', sans-serif;
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 0.5em;
+    margin: 0 auto;
+    text-decoration: none;
+    text-shadow: 0px 1px 2px hsl(200, 80%, 50%);
+}
+
+h2 {
+    padding: 0.2em;
+    background: hsl(202, 9%, 18%);
+    border-radius: 0.25em;
+    overflow: auto;
+}
+
+form input {
+    background: hsl(195, 7%, 11%);
+    border: 1px solid hsl(203, 8%, 20%);
+    border-radius: .25rem;
+    color: hsl(200, 20%, 70%);
+    margin: 0.25rem;
+    padding: .3rem .5rem;
+}
+
+form input:focus {
+    outline: 2px solid hsla(200, 80%, 50%, 0.25);
+}
+
+form input::placeholder {
+    color: hsl(200, 10%, 50%);
+}
+
+#language {
+    width: 4em;
+}
+
+#loading-spinner {
+    display: block;
+    margin: 2.5em auto;
+    width: 4em;
+}
+
+a {
+    color: hsl(200, 80%, 50%);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: hsl(245, 35%, 35%);
+}
+
+a:active {
+    outline: none; /* don't show the dotted border on a clicked link */
+}
+
+a.actionlink {
+    display: inline-block;
+    padding: 0.5em 1em;
+    line-height: 0.5;
+    background: linear-gradient(to bottom, hsl(200, 8%, 18%) 0%, hsl(100, 8%, 11%) 100%);
+    border: 1px solid hsl(200, 8%, 11%);
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 0 hsl(200, 8%, 18%);
+    color: hsl(0, 0%, 80%);
+    font-weight: normal;
+    text-shadow: 0 -1px 0 #2196F3;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}
+
+a.actionlink:hover {
+    background: linear-gradient(to bottom, hsl(100, 8%, 11%) 0%, hsl(200, 8%, 18%) 100%);
+
+    box-shadow: inset 0 1px 0 0 hsl(200, 8%, 14%);
+    text-decoration: none;
+}
+
+a.actionlink:active {
+    border: 1px solid hsl(200, 8%, 11%);
+    border-bottom: 1px solid hsl(200, 8%, 18%);
+    box-shadow: inset 0 0 8px 4px hsl(94, 55%, 35%), 0 1px 0 0 hsl(0, 0%, 93%);
+}
+
+div.actionlink-container {
+    float: right;
+}
+
+input[type=search], input[type=submit], input[type=button], input[type=text] {
+    font-size: inherit;
+}
+
+#footer a:hover {
+    text-decoration: none;
+}
+
+object {
+    pointer-events: none; /* allow clicking on the link that wraps the svg */
+}
+
+.error {
+    font-size: small;
+    color: hsl(0, 0%, 50%);
+}
+
+a#copysharelink {
+    cursor: pointer;
+}
+
+@media (min-width: 600px) {
+    html {
+        font-size: calc(13px + 0.5vw);
+    }
+}
