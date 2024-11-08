@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <title>Directory - {{foldername}}</title>
-  <meta name="description" content="Codemo Digital Nomad—Web File Browser - Directory Index" />
+  <meta name="description" content="Codemo Digital Nomad — Web File Browser & Web Apps" />
   <meta name="keywords" content="web app, browser, free, online, applications, code, editor, playground graphics, vector, make, create, social media, studio, design" />
   <meta name="application-name" content="{{repo}}" />
   <meta name="author" content="{{owner}}" />
@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="https://gigamaster.github.io/codemo/asset/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://gigamaster.github.io/codemo/asset/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://gigamaster.github.io/codemo/asset/favicon/favicon-16x16.png">
-  <link rel="manifest" href="https://gigamaster.github.io/codemo/asset/favicon/site.webmanifest">
+  <link rel="manifest" href="https://gigamaster.github.io/codemo/asset/manifest.json">
   <link rel="mask-icon" href="https://gigamaster.github.io/codemo/asset/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="shortcut icon" href="https://gigamaster.github.io/codemo/asset/favicon/favicon.ico">
   <meta name="msapplication-TileColor" content="#111213">
@@ -34,15 +34,17 @@
   <meta name="twitter:description" content="Web Apps and live code editor UI components playground and templates Open Source." inertia="">
   <meta name="twitter:image" content="{{url}}codemo-screen.jpg" inertia="">
   <meta name="twitter:creator" content="@nunoluciano" inertia="">
-  <!-- font, style, script -->
+  <!-- font, styles -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..800&display=swap" rel="stylesheet">
   <link href="https://gigamaster.github.io/codemo/asset/css/icons.css" rel="stylesheet" />
   <link href="https://gigamaster.github.io/codemo/asset/css/style.css" rel="stylesheet" />
+  <!-- add-to-homescreen -->
+  <link rel="stylesheet" href="https://gigamaster.github.io/codemo/asset/add-to-homescreen.min.css" />
+  <script defer src="https://gigamaster.github.io/codemo/asset/add-to-homescreen_en.min.js"></script>
+  <!-- /add-to-homescreen -->
+  <!-- scripts -->
   <script defer src='https://gigamaster.github.io/codemo/asset/lib/notifications.min.js'></script>
-  <script
-  defer
-  src="./lib/component.min.js"
-  ></script>
+  <script defer src="https://gigamaster.github.io/codemo/asset/lib/component.min.js"></script>
   <script defer src="https://gigamaster.github.io/codemo/asset/lib/alpinejs.min.js"></script>
   <script type="module">
   const lib = await import('https://gigamaster.github.io/codemo/asset/lib/lib.module.js');

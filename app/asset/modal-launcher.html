@@ -2,21 +2,20 @@
 <div class="mx-auto h-full" x-data="{'layout': 'grid'}">
 <section class="flex flex-wrap" 
   x-data="alpineInstance()"
-  x-init="fetch('https://gigamaster.github.io/codemo/asset/launcher.json')
-          .then(response => response.json())
-          .then(data => apps = data)"
+
   x-bind:class="{'app-list': layout === 'list', 'app-grid': layout === 'grid'}"
 >
 <nav class="flex flex-row w-full items-center justify-between px-2">
   <div>
-    <h1 class="w-full" x-html="intro"><!-- title text --></h1>
+    <div class="w-full" aria-label="Select a page" x-html="pagination">
+    </div>
   </div>
   <div>
     <button type="button" class="m-1 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark" x-on:click="layout = 'list'" x-bind:class="{'bg-primary dark:bg-primary-dark': layout === 'list'}"><i class="icon-layout-list h-6 w-6"></i></button>
     <button type="button" class="m-1 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark" x-on:click="layout = 'grid'" x-bind:class="{'bg-primary dark:bg-primary-dark': layout === 'grid'}"><i class="icon-layout-grid h-6 w-6"></i></button>
   </div>
 </nav>
-<template x-for="app in apps" :key="app.id">
+<template x-for="app in page">
   <div class="" x-bind:class="{'w-full p-2': layout === 'list', 'w-1/5 p-2': layout === 'grid'}">
   <article class="p-1 rounded-md text-gray-400 bg-gray-100 hover:bg-primary hover:text-light dark:bg-dark dark:hover:bg-primary-dark dark:hover:text-light transition-colors duration-500">
     <div class="flex flex-row">
@@ -49,5 +48,8 @@
   </article>
   </div>
 </template>
+  <nav class="flex flex-row w-full items-center justify-between px-2 py-2">
+    <div class="w-full aria-label="Select a page" x-html="pagination"></div>
+  </nav>
 </section>
 </div>

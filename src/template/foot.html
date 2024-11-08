@@ -30,7 +30,7 @@
     <!-- Nomad Notes -->
     <button 
       class="m-1 mb-2 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark"
-      x-on:click.prevent="openWithSelfMain('https://gigamaster.github.io/codemo/tools/notes/index.html','Codemo Digital Nomad—Notes','960','540')" 
+      x-on:click.prevent="openWithSelfMain('https://gigamaster.github.io/codemo/tools/notes/','Codemo Digital Nomad—Notes','960','540')" 
       type="button"
       title="Notes"
     >
@@ -40,7 +40,7 @@
     <!-- localStorage -->
     <button
     class="m-1 mb-2 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none" 
-    x-on:click.prevent="openWithSelfMain('localmanager.html','codemo','960','540')" 
+    x-on:click.prevent="openWithSelfMain('https://gigamaster.github.io/codemo/tools/storage/','codemo','960','540')" 
     title="Bookmarks" 
     type="button"
     >
@@ -49,6 +49,7 @@
 
     <button
     class="m-1 mb-2 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark focus:outline-none focus:bg-primary-100 dark:focus:bg-primary-dark focus:ring-primary-darker" 
+    x-on:click.prevent="openWithSelfMain('https://gigamaster.github.io/codemo/tools/bookmarks/','codemo','960','540')"
     title="Bookmarks" 
     type="button"
     >
@@ -108,7 +109,7 @@
   x-transition:enter-end="opacity-100 scale-100" 
   class="flex h-3/4 w-full max-w-5xl flex-col gap-4 overflow-hidden rounded-md border-b dark:border-primary-darker text-primary-lighter bg-white dark:bg-darker">
     <!-- Dialog Header -->
-    <div class="flex items-center justify-between border-b dark:border-primary-darker p-4 bg-white dark:bg-darker">
+    <div class="flex items-center justify-between bg-white border-b dark:bg-darker dark:border-primary-darker px-4 py-2">
         <h3 
         id="modalLauncherTitle" 
         class="font-semibold tracking-wide text-gray-400 dark:text-white"
@@ -426,7 +427,21 @@ class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-black dark:text-lig
  
   </div><!-- flex h-screen -->
 </div><!-- setup -->
-
+<!-- add-to-homescreen -->
+<script>
+  window.addEventListener("load", function () {
+    window.AddToHomeScreenInstance = window.AddToHomeScreen({
+      appName: "Codemo", // Name [Required]
+      appNameDisplay: "standalone", // Display position of the app name [Optional]
+      appIconUrl: "https://gigamaster.github.io/codemo/asset/favicon/codemo-logo-80.png", // App icon (square, min. 40 x 40 pixels) [Required]
+      assetUrl: "https://gigamaster.github.io/codemo/asset/favicon/", // assets images [Required]
+      maxModalDisplayCount: -1, // modal display times [Optional. Default: -1 (no limit).]
+      // (Debugging: Use this.clearModalDisplayCount() to reset the count)
+    });
+    window.AddToHomeScreenInstance.show(); // popup is only shown if not already added to homescreen
+  });
+</script>
+<!-- /add-to-homescreen -->
 <script src="https://gigamaster.github.io/codemo/asset/lib/link-previewer.min.js"></script>
 <script src="https://gigamaster.github.io/codemo/asset/app.js"></script>
 </body>

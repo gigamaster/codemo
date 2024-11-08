@@ -192,12 +192,8 @@ document.addEventListener('alpine:init', () => {
     }
   }))
 })
-function alpineInstance() {
-  return {
-    intro: 'Available Web applications and <b class="text-gray-400">tools</b> that run in the browser',
-    apps: [],
-  }
-}
+
+// Launcher
 document.addEventListener('DOMContentLoaded', function(event) {
   fetch('https://gigamaster.github.io/codemo/asset/modal-launcher.html')
   .then(function (response) {
@@ -212,6 +208,31 @@ document.addEventListener('DOMContentLoaded', function(event) {
       console.log(error);
   })
 });
+//Web applications and Tools
+function alpineInstance() {
+  return {
+    pagination: '<template x-for="idx in numOfPages"><a :href="`/${idx}`" x-text="`${idx}`" :aria-current="idx === currentPage + 1 ? \'page\' : false" x-bind:class="idx === currentPage + 1 && \'bg-primary text-light\'" @click.prevent="currentPage = idx - 1" class="h-6 w-6 bg-gray-100 text-gray-40 hover:bg-primary hover:text-light dark:bg-dark dark:hover:bg-primary-dark dark:hover:text-light transition-colors duration-500 rounded-md m-1 px-3 py-1"></a></template>',
+    intro: 'Available Web applications and <b class="text-gray-400">tools</b> that run in the browser',
+    app: [],
+    itemsPerPage: 10,
+    currentPage: 0,
+    numOfPages() {
+      return Math.ceil(this.app.length / this.itemsPerPage)
+    },
+    page() {
+      return this.app.slice(this.currentPage * this.itemsPerPage, (this.currentPage + 1) * this.itemsPerPage)
+    },
+    async getApps() {
+      this.app = await (await fetch('https://gigamaster.github.io/codemo/asset/launcher.json')).json();
+      //document.documentElement.classList.add('alpine');
+    },
+    init() {
+      this.getApps();
+      }
+  }
+}
+
+
 /*
   Usage Example:
   openWithSelfMain('https://example.com','Example Title','960','540');
