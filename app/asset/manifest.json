@@ -3,7 +3,7 @@
   "name": "Codemo Digital Nomad",
   "icons": [
     {
-      "src": "apple-touch-icon.png",
+      "src": "https://gigamaster.github.io/codemo/asset/favicon/apple-touch-icon.png",
       "sizes": "any",
       "type": "image/png",
       "purpose": "any"
