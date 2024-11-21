@@ -1,6 +1,7 @@
 {
   "short_name": "Codemo",
   "name": "Codemo Digital Nomad",
+  "lang": "en-US",
   "icons": [
     {
       "src": "https://gigamaster.github.io/codemo/asset/favicon/apple-touch-icon.png",

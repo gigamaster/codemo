@@ -435,7 +435,7 @@ class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-black dark:text-lig
       appNameDisplay: "standalone", // Display position of the app name [Optional]
       appIconUrl: "https://gigamaster.github.io/codemo/asset/favicon/codemo-logo-80.png", // App icon (square, min. 40 x 40 pixels) [Required]
       assetUrl: "https://gigamaster.github.io/codemo/asset/favicon/", // assets images [Required]
-      maxModalDisplayCount: -1, // modal display times [Optional. Default: -1 (no limit).]
+      maxModalDisplayCount: 1, // modal display times [Optional. Default: -1 (no limit).]
       // (Debugging: Use this.clearModalDisplayCount() to reset the count)
     });
     window.AddToHomeScreenInstance.show(); // popup is only shown if not already added to homescreen
@@ -444,5 +444,6 @@ class="fixed inset-y-0 z-20 w-full max-w-xs bg-white dark:bg-black dark:text-lig
 <!-- /add-to-homescreen -->
 <script src="https://gigamaster.github.io/codemo/asset/lib/link-previewer.min.js"></script>
 <script src="https://gigamaster.github.io/codemo/asset/app.js"></script>
+<script src="https://gigamaster.github.io/codemo/asset/sw-registration.js"></script>
 </body>
 </html>
