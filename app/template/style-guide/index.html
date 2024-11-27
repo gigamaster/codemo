@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Codemo Digital Nomad - Style Guide</title>
+  <meta name="description" content="Codemo Digital Nomad — Style Guide" />
+  <meta name="keywords" content="web app, browser, style guide, colors, palette, iconography, typography, css, texture, pattern, svg, icons, graphics, vector" />
+  <meta name="application-name" content="codemo" />
+  <meta name="author" content="Nuno Luciano" />
+  <meta name="designer" content="Nuno Luciano" />
+  <meta name='copyright' content='2024 NunoLuciano'>
+  <meta name="generator" content="codemo" />
+  <meta name="distribution" content="Global" />
+  <meta name="rating" content="General" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name='robots' content='index,follow'>
+  <!-- Theme color -->
+  <meta name="theme-color" content="#101010" />
+  <!-- Favicon --- -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/manifest.json">
+  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#111213">
+  <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml">
+  <!-- social media -->
+  <meta name="twitter:card" content="summary_large_image" inertia="">
+  <meta name="twitter:site" content="codemo" inertia="">
+  <meta name="twitter:title" content="Codemo Digital Nomad — Style Guide" inertia="">
+  <meta name="twitter:description" content="web app, CSS, style guide, colors, palette, iconography, typography." inertia="">
+  <meta name="twitter:image" content="{{url}}codemo-screen.jpg" inertia="">
+  <meta name="twitter:creator" content="@nunoluciano" inertia="">
+
+
+<link rel="stylesheet" href="./assets/root.css">
+<link rel="stylesheet" href="./assets/style.css">
+<link rel="stylesheet" href="./assets/icons.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <span class="brand"><a href="./" title="Codemo Style Guide"><i class="icon-codemo"></i> Codemo Digital Nomad</a></span> 
+  <span class="version">version 0.7.4</span>
+</header>
+
+<aside>
+  <nav class="menu">
+    <div class="category">
+      <a href="#colors">Color Palette</a>
+      <p>Logo and brand colors</p>
+    </div>
+    <div class="category">
+      <a href="#gradients">Gradients</a>
+      <p>CSS gradients, linear and radial</p>
+    </div>
+    <div class="category">
+      <a href="#textures">Textures</a>
+      <p>CSS background patterns</p>
+    </div>
+    <div class="category">
+      <a href="#layout">Layouts</a>
+      <p>Responsive grid layout sections</p>
+    </div>
+    <div class="category">
+      <a href="#component">Components</a>
+      <p>Modular elements</p>
+    </div>
+    <div class="category">
+      <a href="#icons">Iconography</a>
+      <p>Scalable vectors Icons</p>
+    </div>
+    <div class="category">
+      <a href="#typo">Typography</a>
+      <ul role="list">
+        <li>Fonts</li>
+        <li>HTML Text Formatting</li>
+        <li>Highlight source code</li>
+      </ul>
+    </div>
+    <div class="category">
+      <a href="#form">Form elements</a>
+      <p>Forms and control elements</p>
+    </div>
+  </nav>
+</aside>
+
+<main>
+
+  <section id="intro">
+    <h1><img src="assets/codemo-light.svg" width="auto" alt="Codemo Digital Nomad"></h1>
+    <h1>Style Guide</h1>
+    <h2>Codemo Digital Nomad</h2>
+    <p>The purpose of this style guide is to provide a set of rules for Codemo web site.<br>
+      <em>This guide does not include any extensions, just the default items.</em>
+    </p>
+    <hr>
+  </section>
+
+  <section id="colors">
+    <h2 class="section-title">Color Palette</h2>
+    <p>Brand colors with HSL lightness default value 50% and subtracted values for darker colors.</p>
+
+    <article class="flex col-3 opacity swatches">
+
+      <div class="card logo primary light-text">
+        <h1><img src="assets/codemo-light.svg" width="32" alt="Codemo Digital Nomad"> Codemo</h1>
+      </div>
+      <div class="card logo light dark-text">
+        <h1><img src="assets/codemo-dark.svg" width="32" alt="Codemo Digital Nomad"> Codemo</h1>
+      </div>
+      <div class="card logo dark light-text">
+        <h1><img src="assets/codemo-light.svg" width="32" alt="Codemo Digital Nomad"> Codemo</h1>
+      </div>
+
+      <div class="card">
+        <ul class="swatch primary">
+          <li class="color">
+            <div class="core">
+              <h5 class="name primary-text">primary</h5>
+              <h5 class="value">#9a8b60</h5>
+            </div>
+            <div class="shade clear"><span class="shade--depth primary-text">50%</span><span class="shade--depth primary-text">25%</span></div>
+          </li>
+          <li class="shade"><span class="shade--depth primary-text">35%</span><span class="shade--depth primary-text">20%</span></li>
+          <li class="shade"><span class="shade--depth primary-text">25%</span><span class="shade--depth primary-text">12%</span></li>
+          <li class="shade"><span class="shade--depth primary-text">12%</span><span class="shade--depth primary-text">0%</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch secondary">
+          <li class="color">
+            <div class="core">
+              <h5 class="name secondary-text">secondary</h5>
+              <h5 class="value">#858585</h5>
+            </div>
+            <div class="shade clear"><span class="shade--depth secondary-text">50%</span><span class="shade--depth secondary-text">25%</span></div>
+          </li>
+          <li class="shade"><span class="shade--depth secondary-text">35%</span><span class="shade--depth secondary-text">20%</span></li>
+          <li class="shade"><span class="shade--depth secondary-text">25%</span><span class="shade--depth secondary-text">12%</span></li>
+          <li class="shade"><span class="shade--depth secondary-text">12%</span><span class="shade--depth secondary-text">0%</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch dark">
+          <li class="color">
+            <div class="core">
+              <h5 class="name dark-text">dark</h5>
+              <h5 class="value">#131313</h5>
+            </div>
+            <div class="shade clear"><span class="shade--depth dark-text">50%</span><span class="shade--depth dark-text">75%</span></div>
+          </li>
+          <li class="shade"><span class="shade--depth dark-text">35%</span><span class="shade--depth dark-text">50%</span></li>
+          <li class="shade"><span class="shade--depth dark-text">25%</span><span class="shade--depth dark-text">25%</span></li>
+          <li class="shade"><span class="shade--depth dark-text">12%</span><span class="shade--depth dark-text">0%</span></li>
+        </ul>
+      </div>
+
+    </article>
+  </section>
+
+  <section id="gradients">
+    <h2 class="section-title">Gradients</h2>
+    <p>Transitions between two or more specified colors.</p>
+
+    <div class="flex col-3 gradient swatches">
+
+      <div class="card">
+        <ul class="swatch bg-linear">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-linear</h5>
+              <h5 class="value">#9a8b60</h5>
+            </div>
+            <h5 class="value">#4d4630</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch bg-linear-dark">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-linear</h5>
+              <h5 class="value">#9a8b60</h5>
+            </div>
+            <h5 class="value">#4d4630</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch bg-radial">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-radial</h5>
+              <h5 class="value">#858585</h5>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch bg-secondary">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-secondary</h5>
+              <h5 class="value">#858585</h5>
+            </div>
+            <h5 class="value">#131313</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch bg-linear2">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-linear2</h5>
+              <h5 class="value">#858585</h5>
+            </div>
+            <h5 class="value">#131313</h5>
+          </li>
+        </ul>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <section id="textures">
+    <h2 class="section-title">Textures</h2>
+    <p>Re-usable image file or repeating patterns.</p>
+
+    <div class="flex col-3 gradient swatches">
+
+      <div class="card">
+        <ul class="swatch bg-dots">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-dots</h5>
+              <h5 class="value">#858585</h5>
+            </div>
+            <h5 class="value">#131313</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch bg-dots-10">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-dots</h5>
+              <h5 class="value">#858585</h5>
+            </div>
+            <h5 class="value">#131313</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch bg-grid-5">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-grid-5</h5>
+              <h5 class="value">#9a8b60</h5>
+            </div>
+            <h5 class="value">#4d4630</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch bg-grid-10">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-grid-10</h5>
+              <h5 class="value">#858585</h5>
+            </div>
+            <h5 class="value">#131313</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch bg-lines">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-lines</h5>
+              <h5 class="value">#858585</h5>
+            </div>
+            <h5 class="value">#131313</h5>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <ul class="swatch bg-stripes">
+          <li class="color">
+            <div class="core">
+              <h5 class="name">bg-stripes</h5>
+              <h5 class="value">#858585</h5>
+            </div>
+            <h5 class="value">#131313</h5>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="layout">
+    <h2 class="section-title">Layouts</h2>
+    <p>Containers, sections, grid and flex, tables.</p>
+
+    <article>
+      <h3>Grid</h3> 
+      <p><code>class=&quot;grid&quot;</code></p>
+      <div class="grid resize">
+        <div>div 1</div>
+        <div>div 2</div>
+        <div>div 3</div>
+        <div>div 4</div>
+      </div>
+
+      <p><code>class=&quot;grid container&quot;</code></p>
+      <div class="grid container resize">
+        <div>div 1</div>
+        <div>div 2</div>
+        <div>div 3</div>
+        <div>div 4</div>
+      </div>
+
+      <p><code>class=&quot;grid space&quot;</code></p>
+      <div class="grid space resize">
+        <div>div 1</div>
+        <div>div 2</div>
+        <div>div 3</div>
+        <div>div 4</div>
+      </div>
+    </article>
+
+    <article>
+      <h3>Flexbox Grid</h3>
+      <div class="flexbox-grid resize">
+        <div> flexbox grid block </div>
+        <div> flexbox grid block </div>
+        <div> flexbox grid block </div>
+      </div>
+    </article>
+
+    <article>
+      <h3>Responsive Table</h3>
+      <div class="resize">
+        <table class="table-grid">
+          <tr class="table-row table-grid-header">
+            <th>Browser</th>
+            <th>Sessions</th>
+            <th>Percentage</th>
+          </tr>
+          <tr class="table-row">
+            <td>Chrome</td>
+            <td class="data-cell">9,562</td>
+            <td class="data-alt">68.81%</td>
+          </tr>
+          <tr class="table-row">
+            <td>Firefox</td>
+            <td class="data-cell">2,403</td>
+            <td class="data-alt">17.29%</td>
+          </tr>
+          <tr class="table-row">
+            <td>Safari</td>
+            <td class="data-cell">1,089</td>
+            <td class="data-alt">2.63%</td>
+          </tr>
+        </table>
+      </div>
+    </article>
+
+  </section>
+
+  <section id="component">
+    <h2 class="section-title">Components</h2>
+    <p>Accordion, card, carousel, notification, pagination.</p>
+
+    <article id="aspect-ratio">
+      <h3>Aspect-Ratio</h3>
+      <p>Example of aspect-ratio property that affects only the height of the elements.</p>
+      <div>1/1</div>
+      <div>0.5</div>
+      <div>1</div>
+      <div>1/0.5</div>
+      <div>16/9</div>
+    </article>
+
+    <article>
+      <h3>Tabs</h3>
+      <div class="tabs">
+        <div tabindex="0">
+          <div class="tab-cover">Content for Tab Cover</div>
+        </div>
+        <div tabindex="0">
+          <button>Tab 1</button>
+          <div class="tab-content">Content for Tab #1</div>
+        </div>
+        <div tabindex="0">
+          <button>Tab 2</button>
+          <div class="tab-content">Content for Tab #2</div>
+        </div>
+        <div tabindex="0">
+          <button>Tab 3</button>
+          <div class="tab-content">Content for Tab #3</div>
+        </div>
+     </div>
+    </article>
+
+    <article id="notification">
+      <h3>Notifications</h3>
+      <div class="info">
+        <h4>Information</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et tenetur cupiditate provident repellendus suscipit soluta omnis ratione a autem ex laudantium facilis voluptatum dolorem error nemo consequatur facere veniam.</p>
+      </div>
+
+      <div class="error">
+        <h4>Error</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et tenetur cupiditate provident repellendus suscipit soluta omnis ratione a autem ex laudantium facilis voluptatum dolorem error nemo consequatur facere veniam.</p>
+      </div>
+
+      <div class="success">
+        <h4>Success</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et tenetur cupiditate provident repellendus suscipit soluta omnis ratione a autem ex laudantium facilis voluptatum dolorem error nemo consequatur facere veniam.</p>
+      </div>
+
+      <div class="warning">
+        <h4>Warning</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et tenetur cupiditate provident repellendus suscipit soluta omnis ratione a autem ex laudantium facilis voluptatum dolorem error nemo consequatur facere veniam.</p>
+      </div>
+    </article>
+
+  </section>
+
+  <section id="icons">
+    <h2 class="section-title">Iconography</h2>
+    <p>Scalable vectors Icons that can be customized with CSS</p>
+
+    <article class="grid space">
+      <div><i class="icon-card"></i><span>icon-card</span></div>
+      <div><i class="icon-chevron"></i><span>icon-chevron</span></div>
+      <div><i class="icon-code"></i><span>icon-code</span></div>
+      <div><i class="icon-color"></i><span>icon-color</span></div>
+      <div><i class="icon-build"></i><span>icon-build</span></div>
+      <div><i class="icon-css"></i><span>icon-css</span></div>
+      <div><i class="icon-edit"></i><span>icon-edit</span></div>
+      <div><i class="icon-git"></i><span>icon-git</span></div>
+      <div><i class="icon-graphic"></i><span>icon-graphic</span></div>
+      <div><i class="icon-html"></i><span>icon-html</span></div>
+      <div><i class="icon-js"></i><span>icon-js</span></div>
+      <div><i class="icon-layout-grid"></i><span>icon-layout-grid</span></div>
+      <div><i class="icon-layout-list"></i><span>icon-layout-list</span></div>
+      <div><i class="icon-responsive"></i><span>icon-responsive</span></div>
+      <div><i class="icon-search"></i><span>icon-search</span></div>
+      <div><i class="icon-settings"></i><span>icon-settings</span></div>
+      <div><i class="icon-share"></i><span>icon-share</span></div>
+      <div><i class="icon-table"></i><span>icon-table</span></div>
+      <div><i class="icon-template"></i><span>icon-template</span></div>
+      <div><i class="icon-themes"></i><span>icon-themes</span></div>
+      <div><i class="icon-tree"></i><span>icon-tree</span></div>
+      <div><i class="icon-typo"></i><span>icon-typo</span></div>
+      <div><i class="icon-updir"></i><span>icon-updir</span></div>
+      <div><i class="icon-video"></i><span>icon-video</span></div>
+      <div><i class="icon-view2"></i><span>icon-view2</span></div>
+      <div><i class="icon-view"></i><span>icon-view</span></div>
+    </article>
+  </section>
+
+  <section id="typo">
+    <h2 class="section-title">Typography</h2>
+    <p>Typeface and fonts used for text elements.</p>
+
+    <article class="flex col-3">
+
+      <div class="font nunito">
+        <h1>Aa</h1>
+        <h3>Nunito-Sans</h3>
+        <div>Font-weight 300</div>
+        <div><strong>bold 16px</strong></div>
+        <div><em>Text for your project</em></div>
+        <div><small>Regular 16px</small></div>
+        <div>Some text for your project</div>
+        <div>Light 16px</div>
+      </div>
+
+      <div class="font system-ui">
+        <h1>Aa</h1>
+        <h3>system-ui</h3>
+        <div>Simple regular text paragraph</div>
+        <div><strong>bold 16px</strong></div>
+        <div><em>Text for your project</em></div>
+        <div><small>Regular 16px</small></div>
+        <div>Some text for your project</div>
+        <div>Light 16px</div>
+      </div>
+
+      <div class="font serif">
+        <h1>Aa</h1>
+        <h3>serif</h3>
+        <div>Simple regular text paragraph</div>
+        <div><strong>bold 16px</strong></div>
+        <div><em>Text for your project</em></div>
+        <div><small>Regular 16px</small></div>
+        <div>Some text for your project</div>
+        <div>Light 16px</div>
+      </div>
+
+      <div class="font monospace">
+        <h1>Aa</h1>
+        <h3>monospace</h3>
+        <div>Simple regular text paragraph</div>
+        <div><strong>bold 16px</strong></div>
+        <div><em>Text for your project</em></div>
+        <div><small>Regular 16px</small></div>
+        <div>Some text for your project</div>
+        <div>Light 16px</div>
+      </div>
+
+      <div class="font emoji">
+        <h1>Aa</h1>
+        <h3>emoji</h3>
+        <div>Using font-variant-emoji</div>
+        <div>size 16px</div>
+        <div class="var-normal">Normal: ☎📧📅📁📝📑&#9749;</div>
+        <div class="var-text">Text: 💡🎨📷🖼📋🔔&#9685;&#9719; &#10565;</div>
+        <div class="var-emoji">Emoji: 🔒📱🖥🎮🎲🎯&#9729;&#9728; </div>
+        <div class="var-unicode">Unicode: &#9745; &#9746; &#11199; &#11197; &#11198; &#11217; &#129130; &#129133;</div>
+      </div>
+
+    </article>
+
+    <article class="flex col-3">
+
+      <div>
+        <h1>Heading 1 <a href="#!">Link</a></h1>
+        <h2>Heading 2 <a href="#!">Link</a></h2>
+        <h3>Heading 3 <a href="#!">Link</a></h3>
+        <h4>Heading 4 <a href="#!">Link</a></h4>
+        <h5>Heading 5 <a href="#!">Link</a></h5>
+        <h6>Heading 6 <a href="#!">Link</a></h6>
+      </div>
+
+      <div>
+        <p>A <a href="#">Link</a> inside a paragraph.</p>
+        <p><code>&lt;em&gt;</code> <em>Emphasized Text</em> <i>italic</i></p>
+        <p><code>"light-text"</code> <span class="light-text"> class light text</span></p>
+        <p><code>"muted"</code> <span class="muted"> class muted text</span></li>
+        <p><code>&lt;abbr&gt;</code> <abbr title="Abbreviation">Abbreviation</abbr></p>
+        <p><code>&lt;address&gt;</code> contact information.</p>
+        <p><code>&lt;code&gt;</code> fragment of computer code</p>
+        <p><code>&lt;dfn&gt;</code> a term to be <dfn>defined</dfn></p>
+        <p><code>&lt;del&gt;</code> text <del>deleted</del> from a document.</p>
+        <p><code>&lt;ins&gt;</code> text <ins>inserted</ins> into a document.</p>
+        <p><code>&lt;kbd&gt;</code> keyboard <kbd>k</kbd> or any other entry device.</p>
+        <p><code>&lt;samp&gt;</code> a <samp>sample output</samp> from a computer program.</p>
+      </div>
+
+      <div>
+        <p><code>&lt;small&gt;</code> <small>Small text</small></p>
+        <p><code>&lt;strong&gt;</code> <strong>Strong Text</strong> <b>bold</b></p>
+        <p><code>&lt;sub&gt;</code> subscript <sub>-1 sub</sub></p>
+        <p><code>&lt;sup&gt;</code> superscript <sup>+1 sup</sup></p>
+        <p><code>&lt;time&gt;</code> include the datetime attribute e.g. <time datetime="20:00">20:00</time></p>
+        <p><code>&lt;mark&gt;</code> text <mark>marked</mark> or highlighted for reference or notation.</p>
+        <p><code>&lt;rt&gt;</code> explanation or pronunciation of characters (for East Asian typography) in a ruby annotation.</p>
+        <p><code>&lt;var&gt;</code> a <var>variable</var> 
+            in programming or mathematical expression.</p>
+        <p><code>&lt;var&gt;</code> <u>underline</u></p>
+      </div>
+    </article>
+
+    <article>
+      <p><code>&lt;blockquote&gt;</code> Blockquote a longer quotation</p>
+      <blockquote cite="https://www.huxley.net/bnw/four.html">
+        <p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
+        <p>—Aldous Huxley, <cite>Brave New World</cite></p>
+      </blockquote>
+
+      <p><code>&lt;q&gt;</code> short quotation<br>
+        <q>Build a future where people live in harmony with nature.</q>
+      </p>
+    </article>
+
+    <article>
+      <p><code>&lt;pre&gt;</code> Preformatted Text element</p>
+<pre>&lt;article&gt; 
+&lt;h3&gt;Flexbox Grid&lt;/h3&gt; 
+&lt;div class=&quot;flexbox-grid&quot;&gt; 
+  &lt;div&gt; flexbox grid block &lt;/div&gt; 
+  &lt;div&gt; flexbox grid block &lt;/div&gt; 
+  &lt;div&gt; flexbox grid block &lt;/div&gt; 
+  &lt;/div&gt; 
+&lt;/article&gt;</pre>
+      <p>If you have to display reserved characters such as <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, and <code>"</code> within the <code>&lt;pre&gt;</code> tag, 
+        the characters must be escaped using their respective 
+        <a href="https://developer.mozilla.org/en-US/docs/Glossary/Character_reference" target="_blank" rel="nofollow">character references</a>.
+      </p>
+
+    </article>
+
+  </section>
+
+  <section id="form">
+    <h2 class="section-title">Form elements</h2>
+    <p>Style common form elements with CSS.</p>
+
+    <article>
+      <label>
+        <select name="select-title">
+          <option>Title</option>
+          <option value="mr.">Mr.</option>
+          <option value="ms.">Ms.</option>
+          <option value="mrs.">Mrs.</option>
+        </select>
+      </label>
+      <label>
+        <input type="text" placeholder="Input type text">
+      </label>
+      <label>Phone e.g. 123-456-7890<br>
+        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Input type tel">
+      </label>
+      <label>
+        <input type="email" pattern=".+@example\.com" size="20" placeholder="Input type email">
+      </label>
+      <label for="url">
+        <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" required />
+      </label>
+      <label>
+        <input type="search" placeholder="Input type search">
+      </label>
+    </article>
+
+    <article>
+      <label>
+        <input type="date" placeholder="input type date">
+      </label>
+      <label>
+        <input type="datetime-local" placeholder="input type datetime-local">
+      </label>
+      <label>
+        <input type="month" placeholder="input type month">
+      </label>
+      <label>
+        <input type="week" placeholder="input type week">
+      </label>
+      <label for="appointment-time">Choose an appointment time:
+      <br />
+      <input 
+      id="appointment-time" 
+      type="time" 
+      name="appointment-time"
+      min="11:00"
+      max="19:00"
+      step="3"
+      required />
+      <br />
+      <small>Opening hours 12:00 to 19:00</small>
+      </label>
+    </article>
+
+    <article>
+      <label>
+        <input type="number" placeholder="Input type number">
+      </label>
+      <label>
+        <input type="range" title="input type range">
+      </label>
+      <label>
+        <input type="color" title="input type color">
+      </label>
+
+      <label for="comment">
+        <textarea id="comment" name="comment" rows="5" cols="20" wrap="soft" placeholder="Textarea 7rows 20cols wrap soft..."></textarea>
+      </label>
+    </article>
+
+    <article>
+      <fieldset>
+        <legend>Input Radio</legend>
+        <label for="radio_one">
+          <input type="radio" name="radio" value="one" id="radio_one"> Option One
+        </label>
+        <label for="radio_two">
+          <input type="radio" name="radio" value="two" id="radio_two" checked> Option two
+        </label>
+      </fieldset>
+  
+      <fieldset>
+        <legend>Input checkbox</legend>
+        
+        <label for="check_one">
+          <input type="checkbox" name="checkone" value="true" id="check_one" checked> checkbox one
+        </label>
+        <label for="check_two">
+          <input type="checkbox" name="checktwo" value="false" id="check_two"> check two
+        </label>
+      </fieldset>
+  
+      <fieldset>
+        <legend>Input Switch</legend>
+        <label>
+          <input type="checkbox" role="switch" /> Switch
+        </label>
+        <label>
+          <input type="checkbox" role="switch" checked /> Checked
+        </label>
+        <label>
+          <input type="checkbox" role="switch" disabled /> Disabled
+        </label>
+        <label>
+          <input type="checkbox" role="switch" disabled checked /> Disabled checked
+        </label>
+      </fieldset>
+
+    </article>
+
+    <article>
+      <h3>Buttons</h3>
+      <p>
+        <button type="button">Type Button</button>
+        <button type="button" class="hover">Button Hover</button>
+        <button type="button" class="focus">Button Focus</button>
+      </p>
+    </article>
+      
+    <article>
+      <h3>Responsive Form</h3>
+      <div class="responsive resize">
+        <form class="responsive resize">
+          <input type="text" placeholder="Name">
+          <input type="email" placeholder="Email Address">
+          <input type="submit" value="Subscribe">
+        </form>
+        <p>
+          <input type="button" value="Input Button">
+          <input type="reset" value="Input Reset">
+          <input type="submit" value="Input Submit">
+        </p>
+      </div>
+    </article>
+
+  </section>
+  
+</main>
+<footer>
+  <hr />
+  <p>© Nuno Luciano aka <a href="https://github.com/gigamaster" target="_blank" rel="author">@gigamaster</a> 2024 </p>
+</footer>
+<div class="blur bottom"></div>
+<script  src="./script.js"></script>
+</body>
+</html>

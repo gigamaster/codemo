@@ -1,0 +1,265 @@
+:root {
+    --bg-body: hsl(0, 0%, 10%);
+  
+    --color: hsl(44, 24%, 50%);
+    --color75: hsla(44, 24%, 50%, 0.75);
+    --color50: hsla(44, 24%, 50%, 0.50);
+    --color25: hsla(44, 24%, 50%, 0.25);
+ 
+    --blue: hsl(214, 42%, 42%);
+    --blue10: hsl(214, 42%, 12%);
+    --blue20: hsl(214, 42%, 22%);
+    --blue30: hsl(214, 42%, 32%);
+
+    --dark: hsl(0, 0%, 8%);
+    --dark10: hsl(44, 24%, 10%);
+    --dark20: hsl(44, 24%, 20%);
+    --dark30: hsl(44, 24%, 30%);
+    --dark40: hsl(44, 24%, 40%);
+
+    --light: hsl(0, 0%, 94%);
+    --primary: hsl(44, 24%, 50%);
+    --secondary: hsl(0, 0%, 50%);
+  
+    --dot-bg: var(--bg-body);
+    --dot-color: var(--color25);
+    --dot-size: 1px;
+    --dot-space: 20px;
+  
+    --dot-var: linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+          linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+          var(--dot-color);
+    --bg-dots: radial-gradient(circle, var(--color50) 1px, var(--bg-body) 1px) 50% 50% / 10px 10px;
+    --bg-dots-10: radial-gradient(var(--color50) 0.5px, var(--color25) 0.5px) 50% 50% / 10px 10px;
+    --bg-grid-5: repeating-linear-gradient(0deg, var(--color25), var(--bg-body) 4px, transparent 1px, transparent 5px), 
+      repeating-linear-gradient(-90deg, var(--color25), var(--bg-body), 4px, transparent 1px, transparent 5px) 5px 5px;
+    --bg-grid-10: linear-gradient(90deg, var(--color25) 1px, transparent 1px 10px) 50% 50% / 10px 10px, 
+      linear-gradient(var(--color25) 1px, transparent 1px 10px) 50% 50% / 10px 10px;
+    --bg-lines: repeating-linear-gradient(45deg, var(--color25) 0 1px, transparent 0 5px) var(--bg-body);
+    --bg-linear: linear-gradient(120deg, hsl(44, 23%, 49%), hsl(46, 23%, 25%));
+    --bg-linear-dark: linear-gradient(120deg, hsl(44 24% 25% / 1), hsl(0, 0%, 7%));
+    --bg-secondary: linear-gradient(120deg, hsl(0 0% 25% / 1), hsl(0 0% 8% / 1));
+    --bg-stripes: repeating-linear-gradient(45deg, var(--bg-body), var(--primary) 1px, transparent 1px, transparent 5px), 
+      repeating-linear-gradient(-45deg, var(--primary), var(--bg-body), 1px, transparent 1px, transparent 5px) 5px 5px;
+    --bg-radial: radial-gradient(75% 75% at center, var(--color25), #00000010);
+  
+    /* Fluid Type - default size */
+    --min-font-size: 16;
+    --max-font-size: 30;
+    --fluid-type: var(--min-font-size) * 1px + (var(--max-font-size) - var(--min-font-size)) * ((100vw - 420px) / (1200 - 420));
+
+    --scrollbar-color-thumb: var(--color25);
+    --scrollbar-color-track: var(--bg-body);
+    --scrollbar-width: thin;
+  }
+
+  /* modern-normalize v3.0.1, MIT License, https://github.com/sindresorhus/modern-normalize */
+  *,::after,::before{box-sizing:border-box}
+  html{font-family:system-ui,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji';line-height:1.15;-webkit-text-size-adjust:100%;tab-size:4}
+  body{margin:0}
+  b,strong{font-weight:bolder}
+  code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',Menlo,monospace;font-size:1em}
+  small{font-size:80%}
+  sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+  sub{bottom:-.25em}
+  sup{top:-.5em}
+  table{border-color:currentcolor}
+  button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}
+  [type=button],[type=reset],[type=submit],button{-webkit-appearance:button}
+  legend{padding:0}
+  progress{vertical-align:baseline}
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button{height:auto}
+  [type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+  ::-webkit-search-decoration{-webkit-appearance:none}
+  ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+  summary{display:list-item}
+
+  /* Custom normalise */
+  *, *::before, *::after {box-sizing:border-box;}
+  h1,h2,h3,h4,h5,h6,figure,p,ol,ul{margin:0;}
+  ol[role="list"],ul[role="list"]{list-style:none;padding-inline:0;}/* safari */
+  h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+  img {display:block;max-inline-size:100%;} /* device dpi */
+  /* Text Selection */
+  ::-moz-selection{background-color:transparent;color:var(--primary)}
+  ::selection {background-color:var(--primary);color: var(--dark);}
+  /* Scrollbar Modern browsers */
+  @supports (scrollbar-width: auto) {
+    * {
+      scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+      scrollbar-width: var(--scrollbar-width);
+    }
+  }
+  /* Google Font */
+  .nunito {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+  }
+
+  /* CSS gradients & patterns */
+  .bg-dots {background: var(--bg-dots)}
+  .bg-dots-10 {background: var(--bg-dots-10)}
+  .bg-grid-5 {background: var(--bg-grid-5)}
+  .bg-grid-10 {background: var(--bg-grid-10)}
+  .bg-lines {background: var(--bg-lines)}
+  .bg-linear {background: var(--bg-linear)}
+  .bg-linear-dark {background: var(--bg-linear-dark)}
+  .bg-linear2 {background: linear-gradient(120deg, hsl(0, 0%, 52%), hsl(0, 0%, 7%))}
+  .bg-radial {background: var(--bg-radial)}
+  .bg-secondary{background: var(--bg-secondary)}
+  .bg-stripes {background: var(--bg-stripes)}
+  .blur {
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    inset: 0 0 auto;
+    height: 10vh;
+    backdrop-filter: blur(8px);
+    mask-image: linear-gradient(rgba(0 0 0 / 0), rgb(0 0 0));
+    bottom: 0;
+    margin-top: auto;
+  }
+  /* CSS color palette */
+  .dark {background: var(--dark)}
+  .light {background: var(--light)}
+  .secondary {background: var(--secondary)}
+  .primary {background: var(--primary)}
+
+  .dark-text {color: var(--dark)}
+  .light-text {color: var(--light)}
+  .secondary-text {color: var(--secondary)}
+  .primary-text {color: var(--primary)}
+  
+  /* HTML default elements */
+  html,
+  body {
+    background: var(--bg-body);
+    counter-reset: component section;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    width: 100%;
+  }
+  
+  a:link, a:visited {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  a:active, a:hover {
+    color: var(--secondary);
+  }
+  
+  abbr {
+    border-bottom: dotted 1px var(--secondary);
+    cursor: help;
+  }
+  address {
+    display: inline-block;
+  }
+  blockquote {
+    display: block;
+    font-style: italic;
+    width: 100%;
+  }
+  cite {
+    font-size: 0.875rem;
+  }
+  code, del, ins, mark, pre, samp, var {
+    background: hsl(0, 0%, 15%);
+    border-radius: 0.25em;
+    font-size: 0.75rem;
+    padding: 0.25em 0.5em;
+  }
+pre {
+    display: block;
+    /* margin: 1rem 0; */
+    overflow-x: auto;
+    padding: 0.5em;
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+  del {
+    background: hsl(0, 25%, 25%);
+    color: hsl(0, 80%, 55%);
+  }
+  h1, h2, h3, h4 {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  h2 {font-size: 1.75rem;}
+  h3 {font-size: 1.5rem;}
+  h4 {font-size: 1.25rem;}
+  h5 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+    text-transform: uppercase;
+  }
+  h6 {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+    text-transform: uppercase;
+  }
+  hr {
+    margin: 2.5rem 0;
+    display: block;
+    border: none;
+    height: 1px;
+    background: var(--primary);
+    background: linear-gradient(to right, hsl(0, 0%, 10%), var(--primary), hsl(0, 0%, 10%));
+    width: 100%;
+  }
+  ins {
+    background: hsl(142, 35%, 20%);
+    color: hsl(142, 70%, 50%);
+  }
+  kbd {
+    align-items: center;
+    background: var(--bg-linear-dark);
+    border: 1px solid var(--color25);
+    border-radius: 3px;
+    box-shadow: var(--color25);
+    color: var(--primary);
+    display: inline-flex;
+    font-size: 10px;
+    justify-content: center;
+    padding: 0 4px;
+    margin: auto 2px;
+    position: relative;
+    width: 24px;
+    height: 22px;
+  }
+  mark {
+    background: hsl(40, 70%, 50%);
+  }
+  .muted {
+    color: var(--secondary);
+  }
+  q {
+    font-style: italic;
+  }
+  samp {
+    font-family: monospace;
+  }
+  ul {
+    list-style: none;
+    padding-left: 1rem;
+  }
+  var {
+    font-style: italic;
+  }
