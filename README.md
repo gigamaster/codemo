@@ -8,11 +8,11 @@
 <br />
 ///// — CODEMO DIGITAL NOMAD — \\\\\
 <br /><br />
-</h1>
+</h2>
 
 
-<p align="center">GitHub repository with Web apps, code playground, vector graphic creator and editor,<br>  
-file browser to preview, edit and download individual files or a directory as a zip archive.</p>
+<p>
+A versatile collection of web apps designed for developers and creatives on the go. Features include a live code playground, vector graphic creator and editor, and a powerful file browser to preview, edit, and download individual files or entire directories as ZIP archives. Built with offline-first capabilities using localStorage for user-configurable settings, enabling full customization and portability. Ideal for local development, demos, and lightweight desktop-like experiences — all running entirely in the browser.</p>
 
 --- 
   
