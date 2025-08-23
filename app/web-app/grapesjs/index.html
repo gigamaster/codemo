@@ -16,6 +16,7 @@
     <script src="js/toastr.min.js"></script>
     <!-- update scripts 2024-11-04 -->
     <script src="https://unpkg.com/grapesjs@0.22.2"></script>
+    <script src="https://unpkg.com/grapesjs-indexeddb@1.0.5/dist/index.js"></script>
     <script src="https://unpkg.com/grapesjs-preset-webpage@1.0.2"></script>
     <script src="https://unpkg.com/grapesjs-blocks-basic@1.0.1"></script>
     <script src="https://unpkg.com/grapesjs-plugin-forms@2.0.5"></script>
@@ -992,6 +993,7 @@
           embedAsBase64: true,
           assets: images
         },
+        storageManager: { type: 'indexeddb' },
         selectorManager: { componentFirst: true },
         styleManager: {
           sectors: [{
@@ -1236,6 +1238,7 @@
             ],
         },
         plugins: [
+          'grapesjs-indexeddb',
           'gjs-blocks-basic',
           'grapesjs-plugin-forms',
           'grapesjs-component-countdown',
@@ -1251,6 +1254,16 @@
           'grapesjs-preset-webpage',
         ],
         pluginsOpts: {
+          'grapesjs-indexeddb': {
+            options: {
+              // In case of multiple projects on the same page indicate an id to
+              // prevent collisions
+              key: 'gjs-project-id',
+              // Update IndexedDB name for the DB and the table containing project data
+              dbName: 'codemoGrapesjsLocalData',
+              objectStoreName: 'projects',
+            }
+          },
           'gjs-blocks-basic': { flexGrid: true },
           'grapesjs-tui-image-editor': {
             script: [
@@ -1342,7 +1355,6 @@
         },
       });
 
-
       // Simple warn notifier
       var origWarn = console.warn;
       toastr.options = {
@@ -1357,7 +1369,6 @@
         }
         origWarn(msg);
       };
-
 
       // Add and beautify tooltips
       [['sw-visibility', 'Show Borders'], ['preview', 'Preview'], ['fullscreen', 'Fullscreen'],
@@ -1382,11 +1393,9 @@
         el.setAttribute('title', '');
       }
 
-
       // Store and load events
       editor.on('storage:load', function(e) { console.log('Loaded ', e) });
       editor.on('storage:store', function(e) { console.log('Stored ', e) });
-
 
       // Do stuff on load
       editor.on('load', function() {
