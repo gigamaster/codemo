@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>AI Models and Prompt Manager - Codemo Digital Nomad</title>
+  <meta name="description" content="Codemo Digital Nomad — Web File Browser &amp; Web Apps">
+  <meta name="keywords" content="web app, browser, free, online, applications, code, editor, playground graphics, vector, make, create, social media, studio, design">
+  <meta name="application-name" content="gigamaster/codemo">
+  <meta name="author" content="gigamaster">
+  <meta name="designer" content="Nuno Luciano">
+  <meta name="copyright" content="2024 NunoLuciano">
+  <meta name="generator" content="gigamaster/codemo">
+  <meta name="distribution" content="Global">
+  <meta name="rating" content="General">
+  <meta name="revisit-after" content="7 days">
+  <meta name="robots" content="index,follow">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- Prism.js core and GitHub Dark Default theme -->
+  <link href="https://cdn.jsdelivr.net/gh/jongwooo/prism-theme-github@main/themes/prism-github-default-dark.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
+  <!-- Prism.js language components -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-markup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-php.min.js"></script>
+  <style>
+  @layer base {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0px 1000px hsl(215deg 27.91% 16.86%) inset !important;
+      -webkit-text-fill-color: white;
+    }
+  }
+
+  :is(body, #chat-area, section)::-webkit-scrollbar {
+    width: 5px;
+  }
+  :is(body, #chat-area, section)::-webkit-scrollbar-track {
+    background: #1a1f26;
+  }
+  :is(body, #chat-area, section)::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 6px;
+  }
+  :is(body, #chat-area, section)::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+  }
+
+  body {
+    background-color: #181a1c;
+    color: #e5e7eb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+  }
+  [class^="icon"] {
+    background-color: currentColor;
+    display: inline-block;
+    height: 1em;
+    mask-image: var(--svg);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    vertical-align: -.175em;
+    width: 1em;
+  }
+  .icon-add {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M8 12h8m-4-4v8'/%3E%3C/g%3E%3C/svg%3E")
+  }
+  .icon-ai {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1' color='currentColor'%3E%3Cpath d='M4 12c0-3.771 0-5.657 1.172-6.828S8.229 4 12 4s5.657 0 6.828 1.172S20 8.229 20 12s0 5.657-1.172 6.828S15.771 20 12 20s-5.657 0-6.828-1.172S4 15.771 4 12'%3E%3C/path%3E%3Cpath d='m7.5 15l1.842-5.526a.694.694 0 0 1 1.316 0L12.5 15m-4-2h3m4-4v6M8 2v2m8-2v2m-4-2v2M8 20v2m4-2v2m4-2v2m6-6h-2M4 8H2m2 8H2m2-4H2m20-4h-2m2 4h-2'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  }
+  .icon-app {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'%3E%3Crect width='20' height='16' x='2' y='4' rx='2'/%3E%3Cpath d='M10 4v4M2 8h20M6 4v4'/%3E%3C/g%3E%3C/svg%3E")
+  }
+  .icon-chat {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'%3E%3Cpath d='M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4m2-2h-4'/%3E%3Ccircle cx='4' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E")
+  }
+  .icon-code {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m18 16l4-4l-4-4M6 8l-4 4l4 4m8.5-12l-5 16'/%3E%3C/svg%3E")
+  }
+  .icon-codemo {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M12 0h-.079c-1.66 0-3.239.349-4.667.978l.074-.029A12.269 12.269 0 0 0 3.52 3.523A12.219 12.219 0 0 0 .978 7.251l-.031.079A11.398 11.398 0 0 0 0 11.919v.086v-.004v.079c0 1.66.349 3.239.978 4.667l-.029-.074a12.276 12.276 0 0 0 2.572 3.807a12.224 12.224 0 0 0 3.729 2.542l.079.031c1.354.6 2.933.949 4.593.949h.083h-.004h.079c1.66 0 3.239-.349 4.667-.978l-.074.029a12.276 12.276 0 0 0 3.809-2.573a12.219 12.219 0 0 0 2.542-3.728l.031-.079c.6-1.354.949-2.932.949-4.593v-.158c0-1.66-.349-3.239-.978-4.667l.029.074a12.286 12.286 0 0 0-2.573-3.806A12.219 12.219 0 0 0 16.754.981L16.675.95C15.321.35 13.741 0 12.08 0h-.083zm.64 22.79v-2.087l5.193-2.633a.421.421 0 0 0 .154-.129l.001-.001a.335.335 0 0 0 .059-.191v-.011v.001v-1.186c.225-.082.412-.226.543-.412l.002-.004c.133-.179.214-.404.214-.648v-.118a1.146 1.146 0 0 0-.366-.746l-.001-.001a1.09 1.09 0 0 0-.75-.297h-.022h.001h-.02c-.308 0-.587.127-.786.332c-.205.2-.332.478-.332.787v.021v-.001v.059c.002.03.011.057.024.081v-.001c.013.222.096.423.227.583l-.001-.002c.133.163.304.289.501.364l.008.003v.949l-4.649 2.372v-1.942l2.039-.949a.533.533 0 0 0 .166-.13l.001-.001a.3.3 0 0 0 .071-.194v-3.233l3.793-2.134a.318.318 0 0 0 .142-.141l.001-.002a.407.407 0 0 0 .047-.189v-.901c.223-.079.409-.218.543-.397l.002-.003c.133-.177.214-.401.214-.644v-.04c0-.308-.127-.587-.332-.786a1.066 1.066 0 0 0-.775-.332H18.4a1.082 1.082 0 0 0-.71.366l-.001.001a1.113 1.113 0 0 0-.285.746v.025v-.001v.02c0 .243.08.466.216.646l-.002-.003c.137.182.322.321.538.397l.008.003v.688l-3.818 2.134a.51.51 0 0 0-.129.129l-.001.002a.338.338 0 0 0-.055.184v.017v-.001v3.2l-1.52.711v-6.972l3.2-1.566a.379.379 0 0 0 .153-.141l.001-.002a.347.347 0 0 0 .059-.189V7.04c.223-.079.409-.218.543-.397l.002-.003c.133-.177.214-.401.214-.644v-.021v.001v-.061a.078.078 0 0 0-.024-.057a1.127 1.127 0 0 0-.366-.719l-.001-.001a1.06 1.06 0 0 0-.738-.297h-.128a1.108 1.108 0 0 0-.719.378l-.001.001a1.103 1.103 0 0 0-.297.754v.123c.032.227.12.428.251.596l-.002-.003c.127.167.301.291.502.354l.007.002v.972l-2.656 1.304V5.288c.225-.082.412-.226.543-.412l.002-.004c.133-.179.214-.404.214-.648V4.2c0-.308-.127-.587-.332-.786a1.095 1.095 0 0 0-.787-.332h-.021h.001h-.02c-.308 0-.587.127-.786.332c-.205.2-.332.478-.332.787v.021v-.001v.118c.03.223.119.421.25.583l-.002-.002c.133.163.304.289.501.364l.008.003v6.569l-1.874-.996V7.865a.292.292 0 0 0-.048-.16l.001.001a.87.87 0 0 0-.095-.119l-1.306-.998a.825.825 0 0 0 .07-.196l.001-.006c.015-.067.024-.143.024-.222v-.024c0-.308-.127-.587-.332-.786a1.097 1.097 0 0 0-.786-.331H7.52h.001h-.02c-.308 0-.587.127-.786.332c-.205.2-.332.478-.332.787v.021v-.001v.024c0 .305.125.581.326.78c.2.205.478.332.787.332h.021h-.001h.015a.858.858 0 0 0 .288-.049l-.006.002c.11-.041.2-.081.287-.125l-.015.007l1.162.925v3.035a.29.29 0 0 0 .06.178l-.001-.001a.42.42 0 0 0 .152.129l.002.001l2.419 1.28V15.1l-4.055-1.874l.071-1.47v-.024a.29.29 0 0 0-.06-.178l.001.001a.42.42 0 0 0-.152-.129l-.002-.001l-1.851-.97a.522.522 0 0 0 .024-.157v-.2a1.127 1.127 0 0 0-.366-.719l-.001-.001a1.093 1.093 0 0 0-.752-.299h-.018h.001h-.007c-.305 0-.58.127-.775.332c-.208.2-.338.481-.338.792v.015v-.001v.118c.029.285.164.534.366.71l.001.001c.193.177.451.285.735.285h.131a1.45 1.45 0 0 0 .33-.083l-.01.003c.104-.04.195-.092.275-.156l-.002.002l1.707.88l-.047 1.47v.008c0 .075.017.145.048.208l-.001-.003a.305.305 0 0 0 .164.142l.002.001l4.577 2.134v6.869q-.308 0-.605-.024l-.605-.047l.071-4.364a.349.349 0 0 0-.06-.191l.001.001a.364.364 0 0 0-.175-.142l-.002-.001l-2.87-1.328v-.125c0-.305-.127-.58-.332-.775a1.095 1.095 0 0 0-.787-.332H6.49h.001h-.114a1.082 1.082 0 0 0-.71.366l-.001.001a1.113 1.113 0 0 0-.285.746v.025v-.001v.007c0 .305.127.58.332.775c.195.205.47.332.775.332h.039c.156 0 .305-.033.439-.094l-.007.003c.14-.067.261-.147.369-.242l-.002.002l2.656 1.21v4.008a10.611 10.611 0 0 1-3.534-1.343l.048.027a10.85 10.85 0 0 1-2.773-2.354l-.014-.017a11.1 11.1 0 0 1-1.824-3.112l-.026-.076a10.267 10.267 0 0 1-.676-3.699v-.111c0-1.494.314-2.915.88-4.201l-.026.067a11.06 11.06 0 0 1 2.324-3.44A11.019 11.019 0 0 1 7.73 2.065l.071-.028a10.269 10.269 0 0 1 4.139-.856h.061h-.003h.064c1.494 0 2.915.314 4.201.88l-.067-.026a11.078 11.078 0 0 1 3.44 2.32a11 11 0 0 1 2.296 3.369l.028.071c.54 1.218.854 2.639.854 4.134v.067v-.003v.064c0 1.444-.292 2.82-.82 4.072l.026-.069a11.1 11.1 0 0 1-2.175 3.373l.005-.006a10.852 10.852 0 0 1-3.172 2.32l-.065.028c-1.16.568-2.516.932-3.948 1.009l-.026.001z'%3E%3C/path%3E%3C/svg%3E")
+  }
+  .icon-copy {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M4 4.085V10.5a2.5 2.5 0 0 0 2.336 2.495L6.5 13h4.414A1.5 1.5 0 0 1 9.5 14H6a3 3 0 0 1-3-3V5.5a1.5 1.5 0 0 1 1-1.415M11.5 2A1.5 1.5 0 0 1 13 3.5v7a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 5 10.5v-7A1.5 1.5 0 0 1 6.5 2zm0 1h-5a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.5-.5'/%3E%3C/svg%3E")
+  }
+  .icon-delete {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M7 3h2a1 1 0 0 0-2 0M6 3a2 2 0 1 1 4 0h4a.5.5 0 0 1 0 1h-.564l-1.205 8.838A2.5 2.5 0 0 1 9.754 15H6.246a2.5 2.5 0 0 1-2.477-2.162L2.564 4H2a.5.5 0 0 1 0-1zm1 3.5a.5.5 0 0 0-1 0v5a.5.5 0 0 0 1 0zM9.5 6a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-1 0v-5a.5.5 0 0 1 .5-.5m-4.74 6.703A1.5 1.5 0 0 0 6.246 14h3.508a1.5 1.5 0 0 0 1.487-1.297L12.427 4H3.573z'/%3E%3C/svg%3E")
+  }
+  .icon-edit {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M14.236 1.764a2.62 2.62 0 0 0-3.707 0L2.657 9.636a2.96 2.96 0 0 0-.772 1.354l-.87 3.386a.5.5 0 0 0 .61.608l3.385-.869a2.95 2.95 0 0 0 1.354-.772l7.872-7.872a2.62 2.62 0 0 0 0-3.707m-3 .707a1.621 1.621 0 1 1 2.293 2.293l-.779.779l-2.293-2.293zM9.75 3.957l2.293 2.293l-6.386 6.386a1.95 1.95 0 0 1-.896.51l-2.567.66l.66-2.567a1.94 1.94 0 0 1 .51-.896z'/%3E%3C/svg%3E");
+  }
+  .icon-help {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3m.08 4h.01'/%3E%3C/g%3E%3C/svg%3E")
+  }
+  .icon-prompt {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M14 1.5a.5.5 0 0 0-1 0V2h-.5a.5.5 0 0 0 0 1h.5v.5a.5.5 0 0 0 1 0V3h.5a.5.5 0 0 0 0-1H14zm-9.588.426C4.51 1.453 4.924 1 5.5 1s.99.453 1.089.926a3.2 3.2 0 0 0 .864 1.62a3.2 3.2 0 0 0 1.62.865c.473.098.926.512.926 1.09c0 .576-.453.99-.926 1.088a3.2 3.2 0 0 0-1.62.865a3.2 3.2 0 0 0-.864 1.62c-.098.472-.512.926-1.09.926c-.576 0-.99-.453-1.088-.926a3.2 3.2 0 0 0-.865-1.621a3.2 3.2 0 0 0-1.62-.864c-.472-.098-.925-.511-.926-1.087c-.001-.578.453-.993.926-1.091a3.2 3.2 0 0 0 1.62-.864a3.2 3.2 0 0 0 .865-1.62M11 5.5q0-.264-.06-.5h.56A2.5 2.5 0 0 1 14 7.5v4a2.5 2.5 0 0 1-2.5 2.5h-4A2.5 2.5 0 0 1 5 11.5v-.56a2.1 2.1 0 0 0 1 0v.56A1.5 1.5 0 0 0 7.5 13h4a1.5 1.5 0 0 0 1.5-1.5v-4A1.5 1.5 0 0 0 11.5 6h-.56q.06-.236.06-.5m-3 3a.5.5 0 0 1 .5-.5H11a.5.5 0 0 1 0 1H8.5a.5.5 0 0 1-.5-.5m.5 1.5a.5.5 0 0 0 0 1H10a.5.5 0 0 0 0-1zm-6 2a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 0 1H3v.5a.5.5 0 0 1-1 0V14h-.5a.5.5 0 0 1 0-1H2v-.5a.5.5 0 0 1 .5-.5'/%3E%3C/svg%3E");
+  }
+  .icon-send {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='M7.5 13.5a.5.5 0 0 0 1 0V3.803l3.628 4.031a.5.5 0 0 0 .744-.668l-4.5-5a.5.5 0 0 0-.744 0l-4.5 5a.5.5 0 0 0 .744.668L7.5 3.803z'/%3E%3C/svg%3E")
+  }
+  .icon-settings {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'%3E%3Cpath d='M9.671 4.136a2.34 2.34 0 0 1 4.659 0a2.34 2.34 0 0 0 3.319 1.915a2.34 2.34 0 0 1 2.33 4.033a2.34 2.34 0 0 0 0 3.831a2.34 2.34 0 0 1-2.33 4.033a2.34 2.34 0 0 0-3.319 1.915a2.34 2.34 0 0 1-4.659 0a2.34 2.34 0 0 0-3.32-1.915a2.34 2.34 0 0 1-2.33-4.033a2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/g%3E%3C/svg%3E")
+  }
+  .icon-spark  {
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5'%3E%3Cpath d='M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4m2-2h-4'/%3E%3Ccircle cx='4' cy='20' r='2'/%3E%3C/g%3E%3C/svg%3E")
+  }
+ 
+  blockquote {
+    border-color:hsl(217deg 19% 27%);
+    padding: .5rem;
+    margin: .5rem;
+
+  }
+
+  hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px;
+      border-color: #2b3340;
+      margin: 1.5rem auto !important;
+  }
+
+  .sidebar {
+    transition: transform 0.3s ease-in-out;
+  }
+  @media (max-width: 768px) {
+    .sidebar {
+      transform: translateX(-100%);
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 0 2px; 
+    margin-top: -2px; /* offset border spacing */
+  }
+  th {
+    background-color: #1c222c80;
+  }
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border: transparent;
+    border-style: solid none;
+    padding: 8px;
+  }
+  th:first-child,
+  td:first-child {
+      border-left-style: solid;
+      border-top-left-radius: 10px; 
+      border-bottom-left-radius: 10px;
+  }
+  th:last-child,
+  td:last-child {
+      border-right-style: solid;
+      border-bottom-right-radius: 10px; 
+      border-top-right-radius: 10px; 
+  }
+  tbody tr:hover {
+    background-color: #2d374850;
+  }
+
+  .tip-block {
+    background-color: #191d22; /* #2d3748;*/
+    border-left: 4px solid #1e40af;
+    padding: 12px;
+    border-radius: 0.5rem;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    position: relative;
+    background-color: #0d1117;
+    background-color: var(--color-bg-code-block); /* Prism Theme*/
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1.5rem auto!important;
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+  }
+  
+  pre code {
+    white-space: pre-wrap!important;
+    word-wrap: break-word!important;
+    word-break: break-word!important;
+    overflow-wrap: break-word;
+    display: block;
+    max-width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  
+  /* Chat messages container */
+  #chat-messages {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Message content containers */
+  #chat-messages > div {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+  
+  .copy-pre-btn, .livecode-btn {
+    position: absolute;
+    bottom: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .copy-pre-btn {
+    left: 8px;
+  }
+  .livecode-btn {
+    left: 40px;
+  }
+  pre:hover .copy-pre-btn, pre:hover .livecode-btn {
+    opacity: 1; /* Show buttons on hover */
+  }
+  #loading-indicator {
+    display: none;
+    border: 1px solid #1e40af;
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  #loading-spinner {
+    border: 2px solid #ffffff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Tooltip Styles */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: max-content;
+    max-width: 200px;
+    background-color: #1f2937;
+    color: #e5e7eb;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 1000;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    font-size: 12px;
+    font-weight: normal;
+    border: 1px solid #374151;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+  }
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #1f2937 transparent transparent transparent;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  /* Tooltip variants */
+  .tooltip-right .tooltiptext {
+    bottom: auto;
+    top: 50%;
+    left: 125%;
+    transform: translateY(-50%);
+  }
+  .tooltip-right .tooltiptext::after {
+    top: 50%;
+    left: -10px;
+    margin-top: -5px;
+    margin-left: 0;
+    border-color: transparent #1f2937 transparent transparent;
+  }
+  .tooltip-left .tooltiptext {
+    bottom: auto;
+    top: 50%;
+    right: 125%;
+    left: auto;
+    transform: translateY(-50%);
+  }
+  .tooltip-left .tooltiptext::after {
+    top: 50%;
+    right: -10px;
+    left: auto;
+    margin-top: -5px;
+    margin-left: 0;
+    border-color: transparent transparent transparent #1f2937;
+  }
+  </style>
+</head>
+<body class="flex flex-col h-screen overflow-hidden">
+  
+<!-- Header -->
+<header class="w-full bg-black/80 border-b border-gray-800 py-3 px-7 flex justify-between items-center shrink-0">
+  <div class="flex items-center">
+    <h1 class="text-xl font-light text-white"><i class="icon-ai h-6 w-6 mr-2"></i> <span>Codemo — AI</span></h1>
+    <div class="tooltip md:hidden ml-4">
+      <button id="open-sidebar" class="text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <span class="tooltiptext">Open Menu</span>
+    </div>
+  </div>
+  <div class="flex items-center">
+    <h2 id="header-title" class="text-xl font-light text-white">Application</h2>
+    <div id="dropdown-container" class="relative ml-4">
+      <select id="api-dropdown" class="bg-gray-800 text-white text-sm px-2 p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-700">
+        <option value="">Select API</option>
+        <!-- Options populated dynamically -->
+      </select>
+    </div>
+  </div>
+</header>
+
+  <!-- Content Area with Sidebar and Main -->
+  <div class="flex flex-1 overflow-hidden">
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar w-auto bg-[#1d212780] border-r border-black/80 flex flex-col py-2 px-4 md:static fixed top-0 left-0 h-full z-20">
+      <nav class="flex-1 flex flex-col justify-between">
+        <ul class="space-y-2">
+          <li>
+            <a href="#" id="ai-app-btn" class="block text-gray-300 hover:bg-gray-800 hover:text-white rounded">
+            <div class="tooltip tooltip-right px-4 py-2"><i class="icon-app"></i><span class="tooltiptext">Application</span></div>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="lm-studio-btn" class="block text-gray-300 hover:bg-gray-800 hover:text-white rounded">
+            <div class="tooltip tooltip-right px-4 py-2"><i class="icon-chat"></i><span class="tooltiptext">LM Studio</span></div>
+            </a>
+          </li>
+          <li>
+            <a href="https://gigamaster.github.io/codemo/" target="_blank" class="block text-gray-300 hover:bg-gray-800 hover:text-white rounded">
+            <div class="tooltip tooltip-right px-4 py-2"><i class="icon-codemo"></i><span class="tooltiptext">Codemo</span></div>
+            </a>
+          </li>
+          <li>
+            <a href="https://gigamaster.github.io/livecodes/" target="_blank" class="block text-gray-300 hover:bg-gray-800 hover:text-white rounded">
+            <div class="tooltip tooltip-right px-4 py-2"><i class="icon-code"></i><span class="tooltiptext">Livecode</span></div>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="prompts-btn" class="block text-gray-300 hover:bg-gray-800 hover:text-white rounded">
+            <div class="tooltip tooltip-right px-4 py-2"><i class="icon-prompt"></i><span class="tooltiptext">Prompts</span></div>
+            </a>
+          </li>
+        </ul>
+        <ul class="space-y-2">
+          <li>
+            <a href="#" id="help-btn" class="block text-gray-300 hover:bg-gray-800 hover:text-white rounded">
+            <div class="tooltip tooltip-right px-4 py-2"><i class="icon-help"></i><span class="tooltiptext">Help</span></div>
+            </a>
+          </li>
+          <li>
+            <a href="#" id="settings-btn" class="block text-gray-300 hover:bg-gray-800 hover:text-white rounded">
+            <div class="tooltip tooltip-right px-4 py-2"><i class="icon-settings"></i><span class="tooltiptext">Settings</span></div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col overflow-y-auto">
+
+    <!-- Chat Area -->
+    <div id="chat-area" class="flex-1 p-8 hidden max-w-4xl mx-auto">
+      <div id="loading-indicator"><span id="loading-spinner"></span><span>Loading model, please wait...</span></div>
+      <div id="chat-messages" class="w-full space-y-4 pb-16">
+        <!-- Messages added here -->
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <footer id="input-area" class="fixed bottom-2 left-0 md:left-12 right-0 hidden">
+      <div class="bg-black/80 bg-blu-sm border border-gray-800 hover:border-gray-700 rounded-xl mx-auto p-6 flex items-center gap-2 max-w-4xl">
+        <div class="tooltip">
+          <button id="new-chat-btn" class="text-base text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white p-2"><i class="icon-chat h-6 w-6"></i></button>
+          <span class="tooltiptext">Start a new conversation</span>
+        </div>
+        <input id="chat-input" type="text" placeholder="Type your message..." class="flex-1 bg-black/80 rounded-lg text-white border border-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-700 focus:bg-gray-900 focus:text-white focus:border-blue-700 placeholder-gray-400 appearance-none p-2">
+        <div class="tooltip">
+          <button id="send-btn" class="text-base text-white rounded-lg hover:bg-blue-800 p-2"><i class="icon-send h-6 w-6"></i></button>
+          <span class="tooltiptext">Send prompt (Enter)</span>
+        </div>
+        <div class="tooltip">
+          <button id="prompts-btn-input" class="text-base text-gray-400 rounded-lg hover:bg-gray-800 hover:text-white p-2"><i class="icon-prompt h-6 w-6"></i></button>
+          <span class="tooltiptext">Prompts library</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Iframe for API Content -->
+    <div id="iframe-container" class="flex-1 p-4">
+      <iframe id="api-iframe" class="w-full h-full rounded-lg border-none" src=""></iframe>
+      <p id="iframe-error" class="text-red-400 hidden">Failed to load API URL. The site may block iframe embedding.</p>
+    </div>
+    </main>
+  </div>
+
+  <!-- Modal Help -->
+  <div id="help-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center hidden z-30">
+    <div class="bg-[#171819] border border-gray-800 rounded-lg w-full max-w-4xl max-h-[80vh] relative flex flex-col">
+      <header class="absolute top-0 left-0 right-0 z-10 bg-black/50 backdrop-blur-sm rounded-t-lg border-b border-gray-800 px-6 py-2">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-white">About - Help</h3>
+          <button id="close-help-modal-btn" class="bg-gray-800 text-white rounded-lg hover:bg-gray-700 px-2 py-2" title="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </header>
+      <section class="overflow-y-auto my-4 pt-16 p-6 flex-1 text-sm">
+        <h3 class="text-xl font-semibold text-white mb-4">AI Models and Prompt Manager</h3>
+        
+        <div class="mb-6">
+          <p class="text-gray-300 mb-4">
+            This web application serves as a unified hub for managing AI tools and local language models. 
+            Users can add and organize web-based AI applications by URL (note: applications must support CORS for proper iframe embedding). 
+            The app seamlessly connects to local LLM instances running on LM Studio, allowing you to chat with your own models nd open code blocks in Livecodes.
+          </p>
+          
+          <p class="text-gray-300 mb-4">
+            Features include a built-in prompt library for saving and reusing frequently used prompts, and comprehensive settings 
+            management for API endpoints and model configurations. All settings and data are stored locally in your browser's 
+            localStorage, ensuring privacy and persistence across sessions. You can export and import your settings and prompts.
+          </p>
+        </div>
+
+        <h4 class="text-lg font-semibold text-white mb-3">Key Features</h4>
+        <ul class="list-disc pl-6 text-gray-300 mb-6 space-y-2">
+          <li><strong>Web AI Applications:</strong> Add and manage web-based AI application URLs with iframe integration</li>
+          <li><strong>Local LLM Support:</strong> Connect to local LM Studio instances for private AI conversations</li>
+          <li><strong>Prompt Management:</strong> Built-in library for saving and organizing frequently used prompts</li>
+          <li><strong>Settings Persistence:</strong> All configurations saved locally in browser localStorage</li>
+          <li><strong>Responsive Design:</strong> Mobile-friendly interface with collapsible sidebar navigation</li>
+          <li><strong>Multiple Endpoints:</strong> Support for various AI model APIs and services</li>
+        </ul>
+
+        <div class="tip-block mb-6">
+          <div class="flex items-center mb-2">
+            <svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h5 class="text-md font-medium text-white">Important Notes</h5>
+          </div>
+          <ul class="list-disc pl-6 text-gray-300 text-sm space-y-1">
+            <li><strong>CORS Requirement:</strong> Web applications must support Cross-Origin Resource Sharing (CORS) to load properly in iframes</li>
+            <li><strong>Local Storage:</strong> All data is stored locally - clearing browser data will remove your settings and prompts</li>
+            <li><strong>LM Studio Connection:</strong> Ensure LM Studio is running and accessible at the configured URL for local AI features</li>
+            <li><strong>Privacy:</strong> No data is sent to external servers - everything runs locally in your browser</li>
+          </ul>
+        </div>
+
+        <h4 class="text-lg font-semibold text-white mb-3">Getting Started</h4>
+        <ol class="list-decimal pl-6 text-gray-300 space-y-2">
+          <li>Configure your LM Studio URL in Settings if using local AI models</li>
+          <li>Add web AI applications through the Settings panel</li>
+          <li>Create and organize prompts in the Prompts library</li>
+          <li>Switch between different AI tools using the dropdown in the header</li>
+          <li>Backup your settings and prompts (export and import json)</li>
+        </ol>
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal Settings -->
+  <div id="settings-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center hidden z-30">
+    <div class="bg-[#171819] border border-gray-800 rounded-lg w-full max-w-4xl max-h-[80vh] relative flex flex-col">
+      <header class="absolute top-0 left-0 right-0 z-10 bg-black/50 backdrop-blur-sm rounded-t-lg border-b border-gray-800 px-6 py-2">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-white">Settings - Manage APIs</h3>
+          <button id="close-modal-btn" class="bg-gray-800 text-white rounded-lg hover:bg-gray-700 px-2 py-2" title="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </header>
+      <section class="overflow-y-auto my-4 pt-16 p-6 flex-1 text-sm">
+
+        <!-- LM Studio Server -->
+        <div class="mb-8">
+          <h4 class="text-lg font-light text-white mb-2">LM Studio Server</h4>
+          <p class="block text-gray-300 mb-4">The local server is reachable at this address</p>
+
+          <div class="flex flex-row justify-between items-center gap-4">
+            <input id="lm-studio-url" type="text" placeholder="http://192.168.1.101:1234" class="flex-grow rounded-md bg-gray-800 text-white border-none outline-none focus:ring-1 focus:ring-blue-700 p-2">
+            <button id="save-lm-url-btn" class="bg-gray-800 text-white rounded-md hover:bg-blue-800 px-4 py-2">Save URL</button>
+          </div>
+        </div>
+
+        <!-- LM Studio Models -->
+        <div class="mb-8">
+          <h4 class="text-lg font-light text-white mb-2">LM Studio Models</h4>  
+          <p class="text-gray-300 mb-4"> Switching models may load a new model, increasing memory usage and causing a delay. Models unload after 60 minutes of inactivity (Idle TTL) unless Auto-Evict unloads prior models first.</p>
+
+          <div class="flex flex-row justify-between items-center gap-4">
+            <button id="fetch-models-btn" class="bg-gray-800 text-white rounded-md hover:bg-blue-800 px-4 py-2">Fetch AI Models</button>
+            <select id="lm-model-select" class="flex-grow bg-gray-800 text-white border-none rounded-md outline-none focus:ring-1 focus:ring-blue-700 p-2">
+            <option value="">Select Model</option>
+            </select>
+            <button id="save-lm-model-btn" class="bg-gray-800 text-white rounded-md hover:bg-blue-800 px-4 py-2">Save Model</button>
+          </div>
+
+        </div>
+
+        <!-- Tip Block -->
+        <div class="tip-block mb-8">
+          <div class="flex items-center mb-2">
+            <svg class="w-5 h-5 text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <h5 class="text-md font-medium text-white">Supported API Endpoints</h5>
+          </div>
+          <ul class="list-disc pl-6 text-gray-300 text-xs">
+            <li>GET /api/v0/models - List available models</li>
+            <li>GET /api/v0/models/{model} - Get info about a specific model</li>
+            <li>POST /api/v0/chat/completions - Chat Completions (messages → assistant response)</li>
+            <li>POST /api/v0/completions - Text Completions (prompt → completion)</li>
+            <li>POST /api/v0/embeddings - Text Embeddings (text → embedding)</li>
+          </ul>
+        </div>
+
+        <!-- Add New API Form (for AI App) -->
+        <div class="mb-8">
+          <h4 class="text-lg font-light text-white mb-2">New Application</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <input id="api-name" type="text" placeholder="API Name" class="bg-gray-800 text-white border-none rounded-md outline-none focus:ring-1 focus:ring-blue-700 p-2">
+            <input id="api-url" type="text" placeholder="API URL" class="col-span-2 bg-gray-800 text-white border-none rounded-md outline-none focus:ring-1 focus:ring-blue-700 p-2">
+            <select id="api-category" class="bg-gray-800 text-white border-none rounded-md outline-none focus:ring-1 focus:ring-blue-700 p-2">
+              <option value="text">Text</option>
+              <option value="image">Image</option>
+              <option value="code">Code</option>
+              <option value="other">Other</option>
+            </select>
+            <div><button id="add-api-btn" class="bg-gray-800 text-white rounded-md hover:bg-blue-800 px-4 py-2"><i class="icon-add mr-4"></i> Add New App</button></div>
+          </div>
+        </div>
+
+        <!-- API Table (for AI App) -->
+        <table class="text-gray-300 mb-8">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>URL</th>
+              <th class="text-center">Category</th>
+              <th class="text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="api-table-body"></tbody>
+        </table>
+
+        <div class="flex justify-start gap-2">
+          <button id="export-apis-btn" class="bg-gray-800 text-white text-sm rounded-md hover:bg-blue-800 px-4 py-2">Export JSON</button>
+          <button id="import-apis-btn" class="bg-gray-800 text-white text-sm rounded-md hover:bg-blue-800 px-4 py-2">Import JSON</button>
+          <input id="import-apis-file" type="file" accept=".json" class="hidden">
+        </div>
+        
+      </section>
+    </div>
+  </div>
+
+  <!-- Modal Prompts -->
+  <div id="prompts-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center hidden z-30">
+    <div class="bg-[#171819] border border-gray-800 rounded-lg w-full max-w-4xl max-h-[80vh] relative flex flex-col">
+      <header class="absolute top-0 left-0 right-0 z-10 bg-black/50 backdrop-blur-sm px-6 py-2 rounded-t-lg border-b border-gray-700">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold text-white">Saved Prompts</h3>
+          <button id="close-prompts-modal-btn"  class="bg-gray-800 text-white px-2 py-2 rounded-lg hover:bg-gray-700" title="Close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </header>
+      <section class="overflow-y-auto my-4 pt-16 p-6 flex-1 text-sm">
+        <div class="flex flex-col gap-2 mb-6">
+          <div class="flex gap-2 mb-4">
+            <select id="prompt-category-filter" class="flex-1 bg-gray-800 text-white border-none rounded-md outline-none focus:ring-1 focus:ring-blue-700 p-2">
+              <option value="">All Categories</option>
+              <option value="Base">Base</option>
+              <option value="Code">Code</option>
+              <option value="Reasoning">Reasoning</option>
+              <option value="Agent-role">Agent-role</option>
+              <option value="Self-Improvement">Self-Improvement</option>
+              <option value="Retrieval">Retrieval</option>
+              <option value="Optimization">Optimization</option>
+              <option value="Multimodal">Multimodal</option>
+              <option value="Multi-Agent">Multi-Agent</option>
+              <option value="Secure-Agent">Secure-Agent</option>
+            </select>
+            <input id="prompt-search" type="text" placeholder="Search prompts..." class="flex-1 bg-gray-800 text-white border-none rounded-md outline-none focus:ring-1 focus:ring-blue-700 p-2">
+            <button id="save-prompt-btn" class="flex-none bg-gray-800 text-white rounded-md hover:bg-blue-800 px-4 py-2">New Prompt</button>
+          </div>
+        </div>
+        <ul id="prompts-list" class="text-gray-300 space-y-2 mb-8"></ul>
+        <!-- json -->
+          <div class="flex gap-2">
+            <button id="export-prompts-btn" class="bg-gray-800 text-white text-sm rounded-md hover:bg-blue-800 px-4 py-2">Export Prompts</button>
+            <button id="import-prompts-btn" class="bg-gray-800 text-white text-sm rounded-md hover:bg-blue-800 px-4 py-2">Import Prompts</button>
+            <input id="import-prompts-file" type="file" accept=".json" class="hidden">
+          </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Save prompt -->
+  <div id="save-prompt-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-40">
+    <div class="bg-gray-800 p-6 rounded-lg w-full max-w-lg">
+      <h3 class="text-lg font-semibold text-white mb-4">New Prompt</h3>
+      <textarea id="new-prompt-text" class="p-2 rounded-md bg-gray-700 text-white border-none focus:ring-2 focus:ring-blue-700 w-full mb-2" rows="4" placeholder="Enter your prompt..."></textarea>
+      <select id="new-prompt-category" class="p-2 rounded-md bg-gray-700 text-white border-none focus:ring-2 focus:ring-blue-700 w-full mb-2">
+        <option value="Base">Base</option>
+        <option value="Code">Code</option>
+        <option value="Reasoning">Reasoning</option>
+        <option value="Agent-role">Agent-role</option>
+        <option value="Self-Improvement">Self-Improvement</option>
+        <option value="Retrieval">Retrieval</option>
+        <option value="Optimization">Optimization</option>
+        <option value="Multimodal">Multimodal</option>
+        <option value="Multi-Agent">Multi-Agent</option>
+        <option value="Secure-Agent">Secure-Agent</option>
+      </select>
+      <div class="flex justify-end gap-2">
+        <button id="save-new-prompt-btn" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-500">Save</button>
+        <button id="cancel-save-prompt-btn" class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let messages = [];
+
+    const PROMPT_CATEGORIES = [
+      'Base',
+      'Code',
+      'Reasoning',
+      'Agent-role',
+      'Self-Improvement',
+      'Retrieval',
+      'Optimization',
+      'Multimodal',
+      'Multi-Agent',
+      'Secure-Agent'
+    ];
+
+    const API_CATEGORIES = ['text', 'image', 'code', 'other'];
+
+    // Reusable function to add copy and livecode buttons to code blocks
+    function addCodeBlockButtons(pre, codeTag, language, useIcons = false) {
+      // Add Copy Code button if not already present
+      if (!pre.querySelector('.copy-pre-btn')) {
+        const copyPreBtn = document.createElement('button');
+        copyPreBtn.classList.add('copy-pre-btn', 'bg-gray-700', 'text-white', 'px-2', 'py-1', 'rounded', useIcons ? 'hover:bg-gray-600' : 'text-sm');
+        copyPreBtn.innerHTML = useIcons ? '<i class="icon-copy"></i>' : 'Copy Code';
+        copyPreBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(codeTag.textContent).then(() => {
+            copyPreBtn.innerHTML = 'Copied!';
+            setTimeout(() => { 
+              copyPreBtn.innerHTML = useIcons ? '<i class="icon-copy"></i>' : 'Copy Code'; 
+            }, 2000);
+          }).catch(err => console.error('Failed to copy code:', err));
+        });
+        pre.appendChild(copyPreBtn);
+      }
+      
+      // Add Livecode button if not already present
+      if (!pre.querySelector('.livecode-btn')) {
+        const livecodeBtn = document.createElement('button');
+        livecodeBtn.classList.add('livecode-btn', 'bg-green-700', 'text-white', 'px-2', 'py-1', 'rounded', useIcons ? 'hover:bg-green-600' : 'text-sm');
+        livecodeBtn.innerHTML = useIcons ? '<i class="icon-code"></i>' : 'Livecode';
+        livecodeBtn.addEventListener('click', () => {
+          const code = codeTag.textContent.trim();
+          if (!code) {
+            alert('No code to open in LiveCodes.');
+            return;
+          }
+          const encodedCode = encodeURIComponent(code);
+          const url = `https://livecodes.io?${language}=${encodedCode}&console=open`;
+          window.open(url, '_blank');
+        });
+        pre.appendChild(livecodeBtn);
+      }
+    }
+
+    function checkStorageLimit() {
+      const used = JSON.stringify(localStorage).length / 1024 / 1024;
+      if (used > 4.5) alert('Storage nearing limit (5MB). Consider exporting APIs or prompts to free up space.');
+    }
+
+    const dbRequest = indexedDB.open('PromptsDB', 2);
+    dbRequest.onupgradeneeded = (event) => {
+      const db = event.target.result;
+      if (!db.objectStoreNames.contains('prompts')) {
+        db.createObjectStore('prompts', { keyPath: 'id', autoIncrement: true });
+      }
+    };
+
+    async function openDb() {
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open('PromptsDB', 2);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    }
+
+    async function savePrompt(prompt, category) {
+      try {
+        const db = await openDb();
+        const tx = db.transaction('prompts', 'readwrite');
+        const store = tx.objectStore('prompts');
+        const request = store.add({ prompt, category: category || 'Base', date: new Date().toISOString() });
+        await new Promise((resolve, reject) => {
+          request.onsuccess = resolve;
+          request.onerror = () => reject(request.error);
+        });
+        db.close();
+      } catch (e) {
+        console.error('Error saving prompt:', e);
+        let prompts = JSON.parse(localStorage.getItem('prompts') || '[]');
+        prompts.push({ id: Date.now(), prompt, category: category || 'Base', date: new Date().toISOString() });
+        localStorage.setItem('prompts', JSON.stringify(prompts));
+        checkStorageLimit();
+      }
+    }
+
+    async function loadPrompts() {
+      try {
+        const db = await openDb();
+        const tx = db.transaction('prompts', 'readonly');
+        const store = tx.objectStore('prompts');
+        const request = store.getAll();
+        const prompts = await new Promise((resolve, reject) => {
+          request.onsuccess = () => resolve(request.result || []);
+          request.onerror = () => reject(request.error);
+        });
+        db.close();
+        return prompts.map(p => ({ ...p, category: p.category || 'Base' }));
+      } catch (e) {
+        console.error('Error loading prompts:', e);
+        let prompts = JSON.parse(localStorage.getItem('prompts') || '[]');
+        return prompts.map(p => ({ ...p, category: p.category || 'Base' }));
+      }
+    }
+
+    async function updatePrompt(id, newPrompt, newCategory) {
+      try {
+        const db = await openDb();
+        const tx = db.transaction('prompts', 'readwrite');
+        const store = tx.objectStore('prompts');
+        const prompt = await new Promise((resolve, reject) => {
+          const request = store.get(id);
+          request.onsuccess = () => resolve(request.result);
+          request.onerror = () => reject(request.error);
+        });
+        if (prompt) {
+          prompt.prompt = newPrompt;
+          prompt.category = newCategory || 'Base';
+          await new Promise((resolve, reject) => {
+            const request = store.put(prompt);
+            request.onsuccess = resolve;
+            request.onerror = () => reject(request.error);
+          });
+        }
+        db.close();
+      } catch (e) {
+        console.error('Error updating prompt:', e);
+        let prompts = JSON.parse(localStorage.getItem('prompts') || '[]');
+        prompts = prompts.map(p => p.id === id ? { ...p, prompt: newPrompt, category: newCategory || 'Base' } : p);
+        localStorage.setItem('prompts', JSON.stringify(prompts));
+        checkStorageLimit();
+      }
+    }
+
+    async function deletePrompt(id) {
+      try {
+        const db = await openDb();
+        const tx = db.transaction('prompts', 'readwrite');
+        const store = tx.objectStore('prompts');
+        await new Promise((resolve, reject) => {
+          const request = store.delete(id);
+          request.onsuccess = resolve;
+          request.onerror = () => reject(request.error);
+        });
+        db.close();
+      } catch (e) {
+        console.error('Error deleting prompt:', e);
+        let prompts = JSON.parse(localStorage.getItem('prompts') || '[]');
+        prompts = prompts.filter(p => p.id !== id);
+        localStorage.setItem('prompts', JSON.stringify(prompts));
+        checkStorageLimit();
+      }
+    }
+
+    async function populatePromptsList(searchTerm = '', categoryFilter = '') {
+      const promptsList = document.getElementById('prompts-list');
+      promptsList.innerHTML = '';
+      try {
+        let prompts = await loadPrompts();
+        if (!Array.isArray(prompts)) {
+          console.error('loadPrompts did not return an array:', prompts);
+          prompts = [];
+        }
+        if (categoryFilter) {
+          prompts = prompts.filter(p => p.category === categoryFilter);
+        }
+        if (searchTerm) {
+          prompts = prompts.filter(p => p.prompt && p.prompt.toLowerCase().includes(searchTerm.toLowerCase()));
+        }
+        if (prompts.length === 0) {
+          promptsList.innerHTML = '<li class="text-gray-400">No prompts found.</li>';
+          return;
+        }
+        prompts.forEach(prompt => {
+          if (!prompt.id || !prompt.prompt) return;
+          const li = document.createElement('li');
+          li.classList.add('flex', 'justify-between', 'items-center', 'p-2', 'bg-[#1c222c80]', 'hover:bg-[#181a1c]', 'rounded-lg');
+          li.innerHTML = `
+            <span class="flex-1 truncate"><span class="bg-black/50 text-blue-500">${prompt.category}</span> ${prompt.prompt}</span>
+            <div class="flex gap-2">
+              <button class="insert-prompt-btn bg-green-900/30 text-green-300 rounded-md hover:bg-green-800 hover:text-white px-2 py-1" data-id="${prompt.id}">Insert</button>
+              <button class="edit-prompt-btn bg-blue-900/30 text-blue-300 rounded-md hover:bg-blue-800 hover:text-white px-2 py-1" data-id="${prompt.id}">Edit</button>
+              <button class="delete-prompt-btn bg-red-900/30 text-red-300 rounded-md hover:bg-red-800 hover:text-white px-2 py-1" data-id="${prompt.id}">Delete</button>
+            </div>
+          `;
+          promptsList.appendChild(li);
+        });
+
+        document.querySelectorAll('.insert-prompt-btn').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const id = parseInt(btn.dataset.id);
+            const prompts = await loadPrompts();
+            const prompt = prompts.find(p => p.id === id);
+            if (prompt) {
+              document.getElementById('chat-input').value = prompt.prompt;
+              document.getElementById('prompts-modal').classList.add('hidden');
+            }
+          });
+        });
+
+        document.querySelectorAll('.edit-prompt-btn').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const id = parseInt(btn.dataset.id);
+            const li = btn.closest('li');
+            const prompts = await loadPrompts();
+            const prompt = prompts.find(p => p.id === id);
+            if (prompt) {
+              li.innerHTML = `
+                <div class="flex-1 flex flex-col gap-4">
+                <div>
+                  <input type="text" value="${prompt.prompt}" class="edit-prompt-input flex-1 bg-gray-800 text-white border-none rounded-md outline-none focus:ring-1 focus:ring-blue-700 p-2 w-full">
+                </div>
+                <div class="flex gap-2">
+                  <select class="edit-prompt-category bg-gray-800 text-white border-none rounded-md outline-none focus:ring-1 focus:ring-blue-700 p-2 mr-4">
+                    ${PROMPT_CATEGORIES.map(cat => `<option value="${cat}" ${prompt.category === cat ? 'selected' : ''}>${cat}</option>`).join('')}
+                  </select>
+                  <button class="save-prompt-btn bg-green-900/30 border border-green-700 text-green-300 rounded-md hover:bg-green-600 hover:text-white px-2 py-1" data-id="${prompt.id}">Save</button>
+                  <button class="cancel-prompt-btn bg-gray-900/30 border border-gray-700 text-gray-300 rounded-md hover:bg-gray-600 hover:text-white px-2 py-1">Cancel</button>
+                </div>
+                </div>
+              `;
+              li.querySelector('.save-prompt-btn').addEventListener('click', async () => {
+                const newPrompt = li.querySelector('.edit-prompt-input').value.trim();
+                const newCategory = li.querySelector('.edit-prompt-category').value;
+                if (newPrompt) {
+                  await updatePrompt(id, newPrompt, newCategory);
+                  await populatePromptsList(searchTerm, categoryFilter);
+                }
+              });
+              li.querySelector('.cancel-prompt-btn').addEventListener('click', () => populatePromptsList(searchTerm, categoryFilter));
+            }
+          });
+        });
+
+        document.querySelectorAll('.delete-prompt-btn').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            if (confirm('Delete this prompt?')) {
+              const id = parseInt(btn.dataset.id);
+              await deletePrompt(id);
+              await populatePromptsList(searchTerm, categoryFilter);
+            }
+          });
+        });
+      } catch (e) {
+        console.error('Error in populatePromptsList:', e);
+        promptsList.innerHTML = `<li class="text-red-400">Error loading prompts: ${e.message}</li>`;
+      }
+    }
+
+    marked.setOptions({
+      highlight: function(code, lang) {
+        const language = Prism.languages[lang] ? lang : 'none';
+        return `<pre class="language-${language}"><code class="language-${language}">${code}</code></pre>`;
+      }
+    });
+
+    function getApis() {
+      return JSON.parse(localStorage.getItem('apis') || '[]');
+    }
+
+    function saveApis(apis) {
+      localStorage.setItem('apis', JSON.stringify(apis));
+      checkStorageLimit();
+    }
+
+    function getLmStudioUrl() {
+      return localStorage.getItem('lmStudioUrl') || 'http://192.168.1.101:1234';
+    }
+
+    function saveLmStudioUrl(url) {
+      localStorage.setItem('lmStudioUrl', url);
+      checkStorageLimit();
+    }
+
+    function getLmStudioModel() {
+      return localStorage.getItem('lmStudioModel') || '';
+    }
+
+    function saveLmStudioModel(model) {
+      localStorage.setItem('lmStudioModel', model);
+      checkStorageLimit();
+    }
+
+    async function isModelLoaded(modelId) {
+      const url = getLmStudioUrl();
+      try {
+        const res = await fetch(`${url}/api/v0/models/${modelId}`);
+        if (!res.ok) return false;
+        const data = await res.json();
+        return data.state === 'loaded';
+      } catch (e) {
+        console.error('Failed to check model state:', e);
+        return false;
+      }
+    }
+
+    async function isLmStudioAccessible() {
+      const url = getLmStudioUrl();
+      console.log(`Checking LM Studio accessibility at: ${url}`);
+      try {
+        // Create timeout controller for compatibility
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
+        
+        const res = await fetch(`${url}/api/v0/models`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+          signal: controller.signal
+        });
+        
+        clearTimeout(timeoutId);
+        console.log(`LM Studio response status: ${res.status}`);
+        return res.ok;
+      } catch (e) {
+        console.error('LM Studio connection failed:', e.message || e);
+        return false;
+      }
+    }
+
+    function updateLoadingIndicator(message, show = true) {
+      const loadingIndicator = document.getElementById('loading-indicator');
+      if (!loadingIndicator) {
+        console.error('Loading indicator element not found');
+        return;
+      }
+      
+      let textElement = loadingIndicator.querySelector('span:not(#loading-spinner)');
+      
+      if (!textElement) {
+        // Create text span if it doesn't exist
+        textElement = document.createElement('span');
+        loadingIndicator.appendChild(textElement);
+        console.log('Created new text span for loading indicator');
+      }
+      
+      textElement.textContent = message;
+      loadingIndicator.style.display = show ? 'flex' : 'none';
+      console.log(`Loading indicator updated: "${message}", visible: ${show}`);
+    }
+
+    function resetChat() {
+      messages = [];
+      localStorage.removeItem('lmMessages');
+      const chatMessages = document.getElementById('chat-messages');
+      chatMessages.innerHTML = '';
+      const initialMessage = 'Hello! How can I help you today? Use **markdown** in responses.';
+      addMessage(initialMessage, false);
+      messages.push({ role: 'assistant', content: initialMessage });
+      localStorage.setItem('lmMessages', JSON.stringify(messages));
+      checkStorageLimit();
+      Prism.highlightAll();
+    }
+
+    function populateDropdown() {
+      const dropdown = document.getElementById('api-dropdown');
+      dropdown.innerHTML = '<option value="">Select API</option>';
+      const apis = getApis();
+      apis.forEach(api => {
+        const option = document.createElement('option');
+        option.value = api.id;
+        option.textContent = api.name;
+        if (api.active) option.selected = true;
+        dropdown.appendChild(option);
+      });
+    }
+
+    function loadIframe() {
+      const apis = getApis();
+      const activeApi = apis.find(api => api.active) || (apis.length > 0 ? apis[0] : { url: 'https://example.com' });
+      const iframe = document.getElementById('api-iframe');
+      const errorMsg = document.getElementById('iframe-error');
+      iframe.src = activeApi.url;
+      iframe.onerror = () => errorMsg.classList.remove('hidden');
+      iframe.onload = () => errorMsg.classList.add('hidden');
+    }
+
+    function populateTable() {
+      const tbody = document.getElementById('api-table-body');
+      tbody.innerHTML = '';
+      const apis = getApis();
+      apis.forEach(api => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${api.name}</td>
+          <td>${api.url}</td>
+          <td class="text-center">${api.category}</td>
+          <td class="text-center text-xs">
+            <button class="select-api-btn bg-green-900/30 text-green-300 rounded-md hover:bg-green-800 hover:text-white px-2 py-1" data-id="${api.id}">${api.active ? 'Active' : 'Select'}</button>
+            <button class="edit-api-btn bg-blue-900/30 text-blue-300 rounded-md hover:bg-blue-800 hover:text-white px-2 py-1 mx-2" data-id="${api.id}">Edit</button>
+            <button class="delete-api-btn bg-red-900/30 text-red-300 rounded-md hover:bg-red-800 hover:text-white px-2 py-1" data-id="${api.id}">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+
+      document.querySelectorAll('.select-api-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          let apis = getApis();
+          apis = apis.map(api => ({ ...api, active: api.id == id }));
+          saveApis(apis);
+          populateTable();
+          populateDropdown();
+          loadIframe();
+        });
+      });
+
+      document.querySelectorAll('.edit-api-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          const apis = getApis();
+          const api = apis.find(a => a.id == id);
+          const row = btn.closest('tr');
+          row.innerHTML = `
+            <td><input type="text" value="${api.name}" class="edit-name p-1 w-full bg-gray-700 text-white rounded"></td>
+            <td><input type="text" value="${api.url}" class="edit-url p-1 w-full bg-gray-700 text-white rounded"></td>
+            <td>
+              <select class="edit-category p-1 w-full bg-gray-700 text-white rounded">
+                <option value="text" ${api.category === 'text' ? 'selected' : ''}>Text</option>
+                <option value="image" ${api.category === 'image' ? 'selected' : ''}>Image</option>
+                <option value="code" ${api.category === 'code' ? 'selected' : ''}>Code</option>
+                <option value="other" ${api.category === 'other' ? 'selected' : ''}>Other</option>
+              </select>
+            </td>
+            <td>
+              <button class="save-edit-btn text-green-400 hover:text-green-300 mr-2" data-id="${api.id}">Save</button>
+              <button class="cancel-edit-btn text-gray-400 hover:text-gray-300">Cancel</button>
+            </td>
+          `;
+          row.querySelector('.save-edit-btn').addEventListener('click', () => {
+            const newName = row.querySelector('.edit-name').value.trim();
+            const newUrl = row.querySelector('.edit-url').value.trim();
+            const newCategory = row.querySelector('.edit-category').value;
+            if (newName && newUrl) {
+              let apis = getApis();
+              apis = apis.map(a => a.id == id ? { ...a, name: newName, url: newUrl, category: newCategory } : a);
+              saveApis(apis);
+              populateTable();
+              populateDropdown();
+              loadIframe();
+            }
+          });
+          row.querySelector('.cancel-edit-btn').addEventListener('click', populateTable);
+        });
+      });
+
+      document.querySelectorAll('.delete-api-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          let apis = getApis();
+          apis = apis.filter(api => api.id != id);
+          if (apis.length > 0 && !apis.some(api => api.active)) {
+            apis[0].active = true;
+          }
+          saveApis(apis);
+          populateTable();
+          populateDropdown();
+          loadIframe();
+        });
+      });
+    }
+
+    async function setMode(mode) {
+      localStorage.setItem('activeMode', mode);
+      checkStorageLimit();
+      const headerTitle = document.getElementById('header-title');
+      const chatArea = document.getElementById('chat-area');
+      const inputArea = document.getElementById('input-area');
+      const iframeContainer = document.getElementById('iframe-container');
+      const dropdownContainer = document.getElementById('dropdown-container');
+      const chatMessages = document.getElementById('chat-messages');
+      if (mode === 'lmStudio') {
+        headerTitle.textContent = 'LM Studio';
+        chatArea.classList.remove('hidden');
+        inputArea.classList.remove('hidden');
+        iframeContainer.classList.add('hidden');
+        dropdownContainer.classList.add('hidden');
+        
+        // Check LM Studio connectivity when switching to this mode
+        try {
+          const isAccessible = await isLmStudioAccessible();
+          if (!isAccessible) {
+            console.log('LM Studio not accessible, showing error message');
+            updateLoadingIndicator('LMStudio Not Found - Check connection and URL in settings');
+            setTimeout(() => updateLoadingIndicator('', false), 5000);
+          }
+        } catch (error) {
+          console.error('Error checking LM Studio accessibility:', error);
+          updateLoadingIndicator('LMStudio Not Found - Check connection and URL in settings');
+          setTimeout(() => updateLoadingIndicator('', false), 5000);
+        }
+        
+        messages = JSON.parse(localStorage.getItem('lmMessages') || '[]');
+        chatMessages.innerHTML = '';
+        messages.forEach(msg => addMessage(msg.content, msg.role === 'user'));
+        if (messages.length === 0) {
+          const initialMessage = 'Hello! How can I help you today? Use **markdown** in responses.';
+          addMessage(initialMessage, false);
+          messages.push({ role: 'assistant', content: initialMessage });
+          localStorage.setItem('lmMessages', JSON.stringify(messages));
+          checkStorageLimit();
+        }
+        Prism.highlightAll();
+      } else {
+        headerTitle.textContent = 'Application';
+        chatArea.classList.add('hidden');
+        inputArea.classList.add('hidden');
+        iframeContainer.classList.remove('hidden');
+        dropdownContainer.classList.remove('hidden');
+      }
+    }
+
+    function addMessage(text, isUser) {
+      const messagesDiv = document.getElementById('chat-messages');
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('flex', isUser ? 'justify-end' : 'justify-start');
+      const contentDiv = document.createElement('div');
+      contentDiv.classList.add(isUser ? 'bg-blue-900' : 'bg-transparent', 'text-white', 'p-3', 'rounded-lg', 'max-w-full', 'relative', 'group');
+      contentDiv.innerHTML = isUser ? text : marked.parse(text);
+      messageDiv.appendChild(contentDiv);
+      if (!isUser) {
+        const copyBtn = document.createElement('button');
+        copyBtn.classList.add('bg-gray-800', 'text-white', 'px-2', 'py-1', 'rounded', 'mt-2', 'hover:bg-gray-700');
+        copyBtn.innerHTML = '<i class="icon-copy"></i>';
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(contentDiv.textContent).then(() => {
+            copyBtn.innerHTML = 'Copied!';
+            setTimeout(() => { copyBtn.innerHTML = '<i class="icon-copy"></i>'; }, 2000);
+          }).catch(err => console.error('Failed to copy:', err));
+        });
+        contentDiv.appendChild(copyBtn);
+      }
+      if (!isUser) {
+        const preTags = contentDiv.querySelectorAll('pre');
+        preTags.forEach(pre => {
+          const codeTag = pre.querySelector('code');
+          if (codeTag) {
+            const langClass = pre.className.match(/language-(\w+)/) || codeTag.className.match(/language-(\w+)/);
+            let language = langClass ? langClass[1] : 'text';
+            // Map 'javascript' or 'js' to 'js' for LiveCodes
+            if (language === 'javascript' || language === 'js') language = 'js';
+            Prism.highlightElement(codeTag);
+            // Use reusable function to add buttons with icons
+            addCodeBlockButtons(pre, codeTag, language, true);
+          }
+        });
+      }
+      messagesDiv.appendChild(messageDiv);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      return contentDiv;
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (text) {
+        const userContentDiv = addMessage(text, true);
+        messages.push({ role: 'user', content: text });
+        input.value = '';
+        const url = getLmStudioUrl();
+        const model = getLmStudioModel();
+        if (!model) {
+          alert('Please select and save a model in settings.');
+          return;
+        }
+        
+        // Check if LM Studio is accessible first
+        const isAccessible = await isLmStudioAccessible();
+        if (!isAccessible) {
+          updateLoadingIndicator('LMStudio Not Found - Check connection and URL in settings');
+          setTimeout(() => updateLoadingIndicator('', false), 3000);
+          return;
+        }
+        
+        const isLoaded = await isModelLoaded(model);
+        if (!isLoaded) updateLoadingIndicator('Loading model, please wait...');
+        
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('flex', 'justify-start');
+        const contentDiv = document.createElement('div');
+        contentDiv.classList.add('bg-gray-800', 'text-white', 'p-4', 'rounded-lg', 'w-full', 'relative', 'group');
+        messageDiv.appendChild(contentDiv);
+        document.getElementById('chat-messages').appendChild(messageDiv);
+        let responseText = '';
+        try {
+          const res = await fetch(`${url}/api/v0/chat/completions`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              model,
+              messages,
+              temperature: 0.7,
+              max_tokens: -1,
+              stream: true
+            })
+          });
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+          updateLoadingIndicator('', false);
+          const reader = res.body.getReader();
+          const decoder = new TextDecoder();
+          let done = false;
+          while (!done) {
+            const { value, done: readerDone } = await reader.read();
+            done = readerDone;
+            if (value) {
+              const chunk = decoder.decode(value, { stream: true });
+              const lines = chunk.split('\n');
+              for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                  const data = line.slice(6);
+                  if (data === '[DONE]') {
+                    done = true;
+                    const copyBtn = document.createElement('button');
+                    copyBtn.classList.add('bg-gray-700', 'text-white', 'px-2', 'py-1', 'rounded', 'mt-2', 'hover:bg-gray-600');
+                    copyBtn.textContent = 'Copy';
+                    copyBtn.addEventListener('click', () => {
+                      navigator.clipboard.writeText(contentDiv.textContent).then(() => {
+                        copyBtn.textContent = 'Copied!';
+                        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+                      }).catch(err => console.error('Failed to copy:', err));
+                    });
+                    contentDiv.appendChild(copyBtn);
+                    const preTags = contentDiv.querySelectorAll('pre');
+                    preTags.forEach(pre => {
+                      const codeTag = pre.querySelector('code');
+                      if (codeTag) {
+                        const langClass = pre.className.match(/language-(\w+)/) || codeTag.className.match(/language-(\w+)/);
+                        let language = langClass ? langClass[1] : 'text';
+                        if (language === 'javascript' || language === 'js') language = 'js';
+                        Prism.highlightElement(codeTag);
+                        // Use reusable function to add buttons with icons
+                        addCodeBlockButtons(pre, codeTag, language, true);
+                      }
+                    });
+                    break;
+                  }
+                  try {
+                    const json = JSON.parse(data);
+                    const delta = json.choices[0].delta.content;
+                    if (delta) {
+                      responseText += delta;
+                      contentDiv.innerHTML = marked.parse(responseText);
+                      const preTags = contentDiv.querySelectorAll('pre');
+                      preTags.forEach(pre => {
+                        const codeTag = pre.querySelector('code');
+                        if (codeTag) {
+                          const langClass = pre.className.match(/language-(\w+)/) || codeTag.className.match(/language-(\w+)/);
+                          let language = langClass ? langClass[1] : 'text';
+                          if (language === 'javascript' || language === 'js') language = 'js';
+                          Prism.highlightElement(codeTag);
+                          // Use reusable function to add buttons with icons
+                          addCodeBlockButtons(pre, codeTag, language, true);
+                        }
+                      });
+                      document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+                    }
+                  } catch (e) {
+                    console.error('Parse error:', e);
+                  }
+                }
+              }
+            }
+          }
+          messages.push({ role: 'assistant', content: responseText });
+          localStorage.setItem('lmMessages', JSON.stringify(messages));
+          checkStorageLimit();
+        } catch (e) {
+          updateLoadingIndicator('', false);
+          contentDiv.innerHTML = `Error: ${e.message}`;
+          const copyBtn = document.createElement('button');
+          copyBtn.classList.add('bg-gray-700', 'text-white', 'px-2', 'py-1', 'rounded', 'mt-2', 'hover:bg-gray-600');
+          copyBtn.textContent = 'Copy';
+          copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(contentDiv.textContent).then(() => {
+              copyBtn.textContent = 'Copied!';
+              setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+            }).catch(err => console.error('Failed to copy:', err));
+          });
+          contentDiv.appendChild(copyBtn);
+        }
+      }
+    }
+
+    document.getElementById('help-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('help-modal').classList.remove('hidden');
+    });
+
+    document.getElementById('close-help-modal-btn').addEventListener('click', () => {
+      document.getElementById('help-modal').classList.add('hidden');
+    });
+
+    document.getElementById('ai-app-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      setMode('aiApp');
+    });
+
+    document.getElementById('lm-studio-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      setMode('lmStudio');
+    });
+
+    document.getElementById('prompts-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('prompts-modal').classList.remove('hidden');
+      populatePromptsList();
+    });
+
+    document.getElementById('prompts-btn-input').addEventListener('click', () => {
+      document.getElementById('prompts-modal').classList.remove('hidden');
+      populatePromptsList();
+    });
+
+    document.getElementById('close-prompts-modal-btn').addEventListener('click', () => {
+      document.getElementById('prompts-modal').classList.add('hidden');
+    });
+
+    document.getElementById('prompt-search').addEventListener('input', (e) => {
+      const categoryFilter = document.getElementById('prompt-category-filter').value;
+      populatePromptsList(e.target.value, categoryFilter);
+    });
+
+    document.getElementById('prompt-category-filter').addEventListener('change', (e) => {
+      const searchTerm = document.getElementById('prompt-search').value;
+      populatePromptsList(searchTerm, e.target.value);
+    });
+
+    document.getElementById('save-prompt-btn').addEventListener('click', () => {
+      const chatInput = document.getElementById('chat-input').value.trim();
+      document.getElementById('new-prompt-text').value = chatInput;
+      document.getElementById('save-prompt-modal').classList.remove('hidden');
+    });
+
+    document.getElementById('save-new-prompt-btn').addEventListener('click', async () => {
+      const prompt = document.getElementById('new-prompt-text').value.trim();
+      const category = document.getElementById('new-prompt-category').value;
+      if (prompt) {
+        await savePrompt(prompt, category);
+        document.getElementById('save-prompt-modal').classList.add('hidden');
+        document.getElementById('new-prompt-text').value = '';
+        const searchTerm = document.getElementById('prompt-search').value;
+        const categoryFilter = document.getElementById('prompt-category-filter').value;
+        await populatePromptsList(searchTerm, categoryFilter);
+        alert('Prompt saved!');
+      } else {
+        alert('Please enter a prompt to save.');
+      }
+    });
+
+    document.getElementById('cancel-save-prompt-btn').addEventListener('click', () => {
+      document.getElementById('save-prompt-modal').classList.add('hidden');
+      document.getElementById('new-prompt-text').value = '';
+    });
+
+    document.getElementById('export-prompts-btn').addEventListener('click', async () => {
+      try {
+        const prompts = await loadPrompts();
+        const blob = new Blob([JSON.stringify(prompts)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'prompts.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      } catch (e) {
+        alert(`Error exporting prompts: ${e.message}`);
+      }
+    });
+
+    document.getElementById('import-prompts-btn').addEventListener('click', () => {
+      document.getElementById('import-prompts-file').click();
+    });
+
+    document.getElementById('import-prompts-file').addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = async (event) => {
+          try {
+            const prompts = JSON.parse(event.target.result);
+            if (!Array.isArray(prompts)) throw new Error('Imported file must be an array');
+            try {
+              const db = await openDb();
+              const tx = db.transaction('prompts', 'readwrite');
+              const store = tx.objectStore('prompts');
+              await new Promise((resolve, reject) => {
+                const request = store.clear();
+                request.onsuccess = resolve;
+                request.onerror = () => reject(request.error);
+              });
+              for (const prompt of prompts) {
+                if (prompt.prompt && prompt.date && PROMPT_CATEGORIES.includes(prompt.category)) {
+                  await new Promise((resolve, reject) => {
+                    const request = store.add({ ...prompt, category: prompt.category || 'Base' });
+                    request.onsuccess = resolve;
+                    request.onerror = () => reject(request.error);
+                  });
+                }
+              }
+              await new Promise((resolve, reject) => {
+                tx.oncomplete = resolve;
+                tx.onerror = () => reject(tx.error);
+              });
+              db.close();
+            } catch (e) {
+              console.error('Error importing to IndexedDB:', e);
+              const validPrompts = prompts.map(p => ({
+                ...p,
+                category: PROMPT_CATEGORIES.includes(p.category) ? p.category : 'Base'
+              }));
+              localStorage.setItem('prompts', JSON.stringify(validPrompts));
+              checkStorageLimit();
+            }
+            const searchTerm = document.getElementById('prompt-search').value;
+            const categoryFilter = document.getElementById('prompt-category-filter').value;
+            await populatePromptsList(searchTerm, categoryFilter);
+          } catch (e) {
+            alert(`Error importing prompts: ${e.message}`);
+          }
+        };
+        reader.readAsText(file);
+      }
+    });
+
+    document.getElementById('settings-btn').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('settings-modal').classList.remove('hidden');
+      populateTable();
+      document.getElementById('lm-studio-url').value = getLmStudioUrl();
+      const savedModel = getLmStudioModel();
+      const select = document.getElementById('lm-model-select');
+      if (savedModel && [...select.options].some(opt => opt.value === savedModel)) {
+        select.value = savedModel;
+      }
+    });
+
+    document.getElementById('close-modal-btn').addEventListener('click', () => {
+      document.getElementById('settings-modal').classList.add('hidden');
+    });
+
+    document.getElementById('save-lm-url-btn').addEventListener('click', () => {
+      const url = document.getElementById('lm-studio-url').value.trim() || 'http://192.168.1.101:1234';
+      saveLmStudioUrl(url);
+      alert('LM Studio URL saved!');
+    });
+
+    document.getElementById('fetch-models-btn').addEventListener('click', async () => {
+      const url = getLmStudioUrl();
+      const select = document.getElementById('lm-model-select');
+      select.innerHTML = '<option value="">Select Model</option>';
+      try {
+        const res = await fetch(`${url}/api/v0/models`);
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        data.data.forEach(model => {
+          if (model.type === 'llm') {
+            const option = document.createElement('option');
+            option.value = model.id;
+            option.textContent = `${model.state === 'loaded' ? '🟢' : '🔴'} ${model.id}`;
+            select.appendChild(option);
+          }
+        });
+        const savedModel = getLmStudioModel();
+        if (savedModel) select.value = savedModel;
+      } catch (e) {
+        alert(`Failed to fetch models: ${e.message}`);
+      }
+    });
+
+    document.getElementById('save-lm-model-btn').addEventListener('click', () => {
+      const select = document.getElementById('lm-model-select');
+      const model = select.value;
+      if (model) {
+        saveLmStudioModel(model);
+        alert('LM Studio Model saved!');
+      } else {
+        alert('Please select a model first.');
+      }
+    });
+
+    document.getElementById('add-api-btn').addEventListener('click', () => {
+      const name = document.getElementById('api-name').value.trim();
+      const url = document.getElementById('api-url').value.trim();
+      const category = document.getElementById('api-category').value;
+      if (name && url && /^https?:\/\/.+/.test(url)) {
+        let apis = getApis();
+        const id = Date.now();
+        const newApi = { id, name, url, category, active: apis.length === 0 };
+        apis.push(newApi);
+        saveApis(apis);
+        populateTable();
+        populateDropdown();
+        loadIframe();
+        document.getElementById('api-name').value = '';
+        document.getElementById('api-url').value = '';
+      } else {
+        alert('Please enter a valid name and URL (must start with http:// or https://).');
+      }
+    });
+
+    document.getElementById('api-dropdown').addEventListener('change', (e) => {
+      const id = e.target.value;
+      if (id) {
+        let apis = getApis();
+        apis = apis.map(api => ({ ...api, active: api.id == id }));
+        saveApis(apis);
+        populateTable();
+        loadIframe();
+      }
+    });
+
+    document.getElementById('send-btn').addEventListener('click', sendMessage);
+    document.getElementById('new-chat-btn').addEventListener('click', resetChat);
+
+    document.getElementById('export-apis-btn').addEventListener('click', () => {
+      console.log('Exporting APIs...');
+      try {
+        const apis = getApis();
+        if (apis.length === 0) throw new Error('No APIs to export.');
+        const blob = new Blob([JSON.stringify(apis)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'apis.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        alert('APIs exported successfully!');
+      } catch (e) {
+        console.error('Error exporting APIs:', e);
+        alert(`Error exporting APIs: ${e.message}`);
+      }
+    });
+
+    document.getElementById('import-apis-btn').addEventListener('click', () => {
+      document.getElementById('import-apis-file').click();
+    });
+
+    document.getElementById('import-apis-file').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          try {
+            const importedApis = JSON.parse(event.target.result);
+            if (!Array.isArray(importedApis)) throw new Error('Imported file must be an array');
+            const validApis = importedApis.map((api, index) => {
+              if (!api.name || !api.url || !API_CATEGORIES.includes(api.category)) {
+                throw new Error(`Invalid API at index ${index}: missing name, URL, or invalid category`);
+              }
+              if (!/^https?:\/\/.+/.test(api.url)) {
+                throw new Error(`Invalid URL at index ${index}: ${api.url}`);
+              }
+              return {
+                id: api.id || Date.now() + index,
+                name: api.name,
+                url: api.url,
+                category: api.category,
+                active: api.active || false
+              };
+            });
+            let apis = getApis();
+            apis = [...apis, ...validApis];
+            if (!apis.some(api => api.active)) {
+              apis[0].active = true;
+            }
+            saveApis(apis);
+            populateTable();
+            populateDropdown();
+            loadIframe();
+            document.getElementById('import-apis-file').value = '';
+            alert('APIs imported successfully!');
+          } catch (e) {
+            alert(`Error importing APIs: ${e.message}`);
+          }
+        };
+        reader.readAsText(file);
+      }
+    });
+
+    window.addEventListener('load', () => {
+      let apis = getApis();
+      if (apis.length === 0) {
+        apis = [{ id: Date.now(), name: 'Default API', url: 'https://example.com', category: 'text', active: true }];
+        saveApis(apis);
+      }
+      if (!localStorage.getItem('lmStudioUrl')) {
+        saveLmStudioUrl('http://192.168.1.101:1234');
+      }
+      if (!localStorage.getItem('lmStudioModel')) {
+        saveLmStudioModel('llama-3.2-1b-instruct');
+      }
+      if (localStorage.getItem('prompts')) {
+        try {
+          const prompts = JSON.parse(localStorage.getItem('prompts'));
+          if (Array.isArray(prompts)) {
+            const db = indexedDB.open('PromptsDB', 2);
+            db.onsuccess = () => {
+              const tx = db.result.transaction('prompts', 'readwrite');
+              const store = tx.objectStore('prompts');
+              prompts.forEach(prompt => {
+                if (prompt.prompt && prompt.date) {
+                  store.add({ ...prompt, category: prompt.category || 'Base' });
+                }
+              });
+              tx.oncomplete = () => {
+                localStorage.removeItem('prompts');
+                db.result.close();
+              };
+            };
+          }
+        } catch (e) {
+          console.error('Error migrating prompts:', e);
+        }
+      }
+      try {
+        const db = indexedDB.open('PromptsDB', 2);
+        db.onsuccess = () => {
+          const tx = db.result.transaction('prompts', 'readwrite');
+          const store = tx.objectStore('prompts');
+          store.openCursor().onsuccess = (event) => {
+            const cursor = event.target.result;
+            if (cursor) {
+              if (!cursor.value.category) {
+                cursor.update({ ...cursor.value, category: 'Base' });
+              }
+              cursor.continue();
+            }
+          };
+          tx.oncomplete = () => db.result.close();
+        };
+      } catch (e) {
+        console.error('Error migrating IndexedDB prompts:', e);
+      }
+      populateDropdown();
+      loadIframe();
+      const activeMode = localStorage.getItem('activeMode') || 'aiApp';
+      setMode(activeMode);
+    });
+  </script>
+</body>
+</html>
