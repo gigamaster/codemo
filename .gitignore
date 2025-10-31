@@ -19,6 +19,7 @@ tests/*
 .nfs*
 # vscode
 .vscode*
+*.code-workspace
 ## Mac 
 # ignore general files
 .DS_Store

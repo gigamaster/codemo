@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codemo Config Manager</title>
+  <meta name="description" content="UI Management Tool for Codemo Launcher and Search Configurations">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- Icons local -->
+  <link rel="stylesheet" href="../../asset/css/icons.css">
+  <!-- Icons deploy -->
+  <!-- <link rel="stylesheet" href="https://gigamaster.github.io/codemo/asset/css/icons.cs"> -->
+  <style>
+    [x-cloak] { display: none !important; }
+    
+    body {
+      background-color: hsl(224, 22%, 10%);
+    }
+    .table-fixed {
+      table-layout: fixed;
+    }
+    .w-48 {
+      width: 12rem; /* 192px */
+    }
+    .w-32 {
+      width: 8rem; /* 128px */
+    }
+    .max-w-xs {
+      max-width: 20rem; /* 320px */
+    }
+    /* Truncate text with ellipsis */
+    .truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body class="text-gray-900 dark:text-gray-100">
+  <div x-data="configManager()" x-init="init()" class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow">
+      <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
+          <i class="icon-codemo w-8 h-8 inline-block mr-2"></i>
+          Codemo Config Manager
+        </h1>
+        <div class="flex space-x-1">
+          <button @click="switchMode('launcher')" 
+                  :class="{'bg-blue-500 text-white': mode === 'launcher', 'bg-gray-200 dark:bg-gray-700': mode !== 'launcher'}"
+                  class="px-4 py-2 rounded-md font-medium transition-colors">
+            Launcher
+          </button>
+          <button @click="switchMode('search')" 
+                  :class="{'bg-blue-500 text-white': mode === 'search', 'bg-gray-200 dark:bg-gray-700': mode !== 'search'}"
+                  class="px-4 py-2 rounded-md font-medium transition-colors">
+            Search
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      <!-- Loading State -->
+      <div x-show="loading" class="flex justify-center items-center h-64">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+      </div>
+
+      <!-- Error State -->
+      <div x-show="error" x-cloak class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+        <strong class="font-bold">Error!</strong>
+        <span class="block sm:inline" x-text="error"></span>
+      </div>
+
+      <!-- Main Content -->
+      <div x-show="!loading && !error" x-cloak>
+        <!-- Toolbar -->
+        <div class="mb-6 flex flex-wrap gap-2">
+          <button @click="createNew()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors">
+            <i class="icon-edit w-4 h-4 inline-block mr-1"></i>
+            New Entry
+          </button>
+          <button @click="saveToGitHub()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors">
+            <i class="icon-github w-4 h-4 inline-block mr-1"></i>
+            Save to GitHub
+          </button>
+          <button @click="backupConfig()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors">
+            <i class="icon-download w-4 h-4 inline-block mr-1"></i>
+            Backup
+          </button>
+          <button @click="refreshData()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors">
+            <i class="icon-refresh w-4 h-4 inline-block mr-1"></i>
+            Refresh
+          </button>
+        </div>
+
+        <!-- Launcher Mode -->
+        <div x-show="mode === 'launcher'" x-cloak>
+          <h2 class="text-2xl font-bold mb-4">Web App Launcher Configuration</h2>
+          
+          <!-- Launcher Table -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-gray-700">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-16">Icon</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-40">Name</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-32">Category</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider flex-1">URL</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-32">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                <template x-for="(item, index) in launcherData" :key="index">
+                  <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/50">
+                    <td class="px-6 py-4 whitespace-nowrap w-16">
+                      <i :class="item.icon + ' w-5 h-5'"></i>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap w-40">
+                      <div>
+                        <div class="text-sm font-medium text-gray-900 dark:text-white" x-text="item.name"></div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400" x-text="item.author"></div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 w-32" x-text="item.cat"></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 flex-1 truncate" x-text="item.url"></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium w-32">
+                      <button @click="editItem(index, 'launcher')" class="bg-blue-700/20 text-blue-500 hover:text-blue-200 rounded-md mr-2 px-3 py-1">Edit</button>
+                      <button @click="deleteItem(index, 'launcher')" class="bg-red-700/20 text-red-500 hover:text-red-200 rounded-md px-3 py-1">Delete</button>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Search Mode -->
+        <div x-show="mode === 'search'" x-cloak>
+          <h2 class="text-2xl font-bold mb-4">Search Configuration</h2>
+          
+          <!-- Search Table -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+              <thead class="bg-gray-50 dark:bg-gray-700">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-16">Icon</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-40">Title</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-32">Category</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider flex-1">URL</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider w-32">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                <template x-for="(item, index) in searchData.data" :key="index">
+                  <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <td class="px-6 py-4 whitespace-nowrap w-16">
+                      <i :class="item.page_icon + ' w-5 h-5'"></i>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap w-40">
+                      <div>
+                        <div class="text-sm font-medium text-gray-900 dark:text-white" x-text="item.page_title"></div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 truncate max-w-xs" x-text="item.page_desc"></div>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 w-32" x-text="item.page_cat"></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 flex-1 truncate" x-text="item.page_url"></td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium w-32">
+                      <button @click="editItem(index, 'search')" class="bg-blue-700/20 text-blue-500 hover:text-blue-200 rounded-md mr-2 px-3 py-1">Edit</button>
+                      <button @click="deleteItem(index, 'search')" class="bg-red-700/20 text-red-500 hover:text-red-200 rounded-md px-3 py-1">Delete</button>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Edit Modal -->
+        <div x-show="showModal" x-cloak class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white" x-text="modalTitle"></h3>
+            </div>
+            <div class="px-6 py-4">
+              <template x-if="mode === 'launcher'">
+                <div class="space-y-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">ID</label>
+                    <input type="number" x-model="currentItem.id" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white" readonly>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                    <input type="text" x-model="currentItem.name" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Author</label>
+                    <input type="text" x-model="currentItem.author" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Category</label>
+                    <input type="text" x-model="currentItem.cat" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">URL</label>
+                    <input type="text" x-model="currentItem.url" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Image URL</label>
+                    <input type="text" x-model="currentItem.image" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Icon</label>
+                    <select x-model="currentItem.icon" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                      <template x-for="icon in iconList" :key="icon.value">
+                        <option :value="icon.value" x-text="icon.label"></option>
+                      </template>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+                    <textarea x-model="currentItem.desc" rows="3" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"></textarea>
+                  </div>
+                </div>
+              </template>
+              
+              <template x-if="mode === 'search'">
+                <div class="space-y-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">ID</label>
+                    <input type="number" x-model="currentItem.id" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white" readonly>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Title</label>
+                    <input type="text" x-model="currentItem.page_title" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Category</label>
+                    <input type="text" x-model="currentItem.page_cat" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">URL</label>
+                    <input type="text" x-model="currentItem.page_url" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Icon</label>
+                    <select x-model="currentItem.page_icon" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                      <template x-for="icon in iconList" :key="icon.value">
+                        <option :value="icon.value" x-text="icon.label"></option>
+                      </template>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+                    <textarea x-model="currentItem.page_desc" rows="3" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"></textarea>
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div class="px-6 py-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 flex justify-end space-x-3">
+              <button @click="closeModal()" class="px-4 py-1 text-gray-700 dark:text-gray-300 bg-gray-200 dark:bg-gray-600 rounded-md hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors">
+                Cancel
+              </button>
+              <button @click="saveItem()" class="px-4 py-1 text-white bg-blue-500 rounded-md hover:bg-blue-600 transition-colors">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      function configManager() {
+        return {
+          mode: 'launcher', // 'launcher' or 'search'
+          loading: false,
+          error: null,
+          launcherData: [],
+          searchData: [],
+          showModal: false,
+          modalTitle: '',
+          currentItem: {},
+          currentIndex: -1,
+          isEditing: false,
+          
+          // Icon list for dropdown
+          iconList: [
+            { value: 'icon-adaptative', label: 'Adaptive' },
+            { value: 'icon-ai', label: 'AI' },
+            { value: 'icon-animation', label: 'Animation' },
+            { value: 'icon-apps', label: 'Apps' },
+            { value: 'icon-audio', label: 'Audio' },
+            { value: 'icon-color', label: 'Color' },
+            { value: 'icon-css', label: 'CSS' },
+            { value: 'icon-dataviz2', label: 'Data Visualization' },
+            { value: 'icon-design-tools', label: 'Design Tools' },
+            { value: 'icon-elearn', label: 'E-Learning' },
+            { value: 'icon-game', label: 'Game' },
+            { value: 'icon-game-dev', label: 'Game Dev' },
+            { value: 'icon-game-engine', label: 'Game Engine' },
+            { value: 'icon-game-play', label: 'Game Play' },
+            { value: 'icon-git', label: 'Git' },
+            { value: 'icon-graphic', label: 'Graphic' },
+            { value: 'icon-html', label: 'HTML' },
+            { value: 'icon-js', label: 'JavaScript' },
+            { value: 'icon-media', label: 'Media' },
+            { value: 'icon-photo', label: 'Photo' },
+            { value: 'icon-project', label: 'Project' },
+            { value: 'icon-rd', label: 'R&D' },
+            { value: 'icon-responsive', label: 'Responsive' },
+            { value: 'icon-search', label: 'Search' },
+            { value: 'icon-template', label: 'Template' },
+            { value: 'icon-themes', label: 'Themes' },
+            { value: 'icon-typo', label: 'Typography' },
+            { value: 'icon-video', label: 'Video' },
+          ],
+          
+          init() {
+            this.refreshData();
+          },
+          
+          switchMode(newMode) {
+            this.mode = newMode;
+          },
+          
+          async refreshData() {
+            this.loading = true;
+            this.error = null;
+            
+            try {
+              // Load launcher data
+              const launcherResponse = await fetch('../../asset/launcher.json');
+              if (launcherResponse.ok) {
+                this.launcherData = await launcherResponse.json();
+              } else {
+                throw new Error('Failed to load launcher.json');
+              }
+              
+              // Load search data
+              const searchResponse = await fetch('../../asset/search.json');
+              if (searchResponse.ok) {
+                this.searchData = await searchResponse.json();
+              } else {
+                throw new Error('Failed to load search.json');
+              }
+            } catch (err) {
+              this.error = err.message;
+            } finally {
+              this.loading = false;
+            }
+          },
+          
+          // Helper function to get the next available ID
+          getNextId(dataArray) {
+            if (!dataArray || dataArray.length === 0) {
+              return 1;
+            }
+            
+            // Find the highest ID and add 1
+            const maxId = Math.max(...dataArray.map(item => item.id || 0));
+            return maxId + 1;
+          },
+          
+          createNew() {
+            this.isEditing = false;
+            this.currentIndex = -1;
+            
+            if (this.mode === 'launcher') {
+              this.currentItem = {
+                id: this.getNextId(this.launcherData), // Generate incremental ID
+                url: '',
+                name: '',
+                author: '',
+                desc: '',
+                cat: '',
+                icon: '',
+                image: ''
+              };
+            } else {
+              this.currentItem = {
+                id: this.getNextId(this.searchData.data), // Generate incremental ID
+                page_url: '',
+                page_title: '',
+                page_desc: '',
+                page_cat: '',
+                page_icon: ''
+              };
+            }
+            
+            this.modalTitle = this.isEditing ? 'Edit Item' : 'Create New Item';
+            this.showModal = true;
+          },
+          
+          editItem(index, type) {
+            this.isEditing = true;
+            this.currentIndex = index;
+            
+            if (type === 'launcher') {
+              this.currentItem = {...this.launcherData[index]};
+            } else {
+              this.currentItem = {...this.searchData.data[index]};
+            }
+            
+            this.modalTitle = 'Edit Item';
+            this.showModal = true;
+          },
+          
+          deleteItem(index, type) {
+            if (confirm('Are you sure you want to delete this item?')) {
+              if (type === 'launcher') {
+                this.launcherData.splice(index, 1);
+              } else {
+                this.searchData.data.splice(index, 1);
+              }
+            }
+          },
+          
+          saveItem() {
+            if (this.mode === 'launcher') {
+              if (this.isEditing) {
+                this.launcherData[this.currentIndex] = {...this.currentItem};
+              } else {
+                this.launcherData.push({...this.currentItem});
+              }
+            } else {
+              if (this.isEditing) {
+                this.searchData.data[this.currentIndex] = {...this.currentItem};
+              } else {
+                this.searchData.data.push({...this.currentItem});
+              }
+            }
+            
+            this.closeModal();
+          },
+          
+          closeModal() {
+            this.showModal = false;
+            this.currentItem = {};
+            this.currentIndex = -1;
+          },
+          
+          backupConfig() {
+            let data;
+            if (this.mode === 'launcher') {
+              data = this.launcherData;
+            } else {
+              // For search data, we need to wrap it in the correct structure
+              data = {
+                data: this.searchData.data
+              };
+            }
+            
+            const filename = this.mode === 'launcher' 
+              ? `launcher.backup.${new Date().toISOString().replace(/[:.]/g, '-')}.json`
+              : `search.backup.${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            
+            setTimeout(() => {
+              document.body.removeChild(a);
+              URL.revokeObjectURL(url);
+            }, 100);
+          },
+          
+          saveToGitHub() {
+            // Prepare the data to save
+            let data;
+            if (this.mode === 'launcher') {
+              data = this.launcherData;
+            } else {
+              // For search data, we need to wrap it in the correct structure
+              data = {
+                data: this.searchData.data
+              };
+            }
+            
+            const filename = this.mode === 'launcher' ? 'launcher.json' : 'search.json';
+            const filepath = `app/asset/${filename}`;
+            
+            // Redirect to GitHub edit page
+            const editUrl = `https://github.com/gigamaster/codemo/edit/main/${filepath}`;
+            
+            // In a real implementation, you would:
+            // 1. Open a new tab with the edit URL
+            // 2. Provide instructions to the user on how to paste the updated content
+            // 3. For now, we'll just open the edit page
+            window.open(editUrl, '_blank');
+          }
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>

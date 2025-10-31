@@ -1,0 +1,21 @@
+{
+  "name": "Codemo Config Manager",
+  "short_name": "Config Manager",
+  "description": "UI Management Tool for Codemo Launcher and Search Configurations",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111213",
+  "theme_color": "#111213",
+  "icons": [
+    {
+      "src": "../../asset/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../../asset/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
