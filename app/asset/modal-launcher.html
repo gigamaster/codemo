@@ -11,8 +11,12 @@
     </div>
   </div>
   <div>
-    <button type="button" class="m-1 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark" x-on:click="layout = 'list'" x-bind:class="{'bg-primary dark:bg-primary-dark': layout === 'list'}"><i class="icon-layout-list h-6 w-6"></i></button>
-    <button type="button" class="m-1 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark" x-on:click="layout = 'grid'" x-bind:class="{'bg-primary dark:bg-primary-dark': layout === 'grid'}"><i class="icon-layout-grid h-6 w-6"></i></button>
+    <button type="button" class="m-1 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark" x-on:click="layout = 'list'" x-bind:class="{'bg-primary dark:bg-primary-dark': layout === 'list'}">
+      <i class="icon-layout-list h-6 w-6"></i>
+    </button>
+    <button type="button" class="m-1 p-1 transition-colors duration-500 rounded-md text-gray-400 bg-gray-100 hover:text-light hover:bg-primary dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark" x-on:click="layout = 'grid'" x-bind:class="{'bg-primary dark:bg-primary-dark': layout === 'grid'}">
+      <i class="icon-layout-grid h-6 w-6"></i>
+    </button>
   </div>
 </nav>
 <template x-for="app in page">

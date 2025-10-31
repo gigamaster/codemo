@@ -83,13 +83,17 @@
             <i class="icon-edit w-4 h-4 inline-block mr-1"></i>
             New Entry
           </button>
+          <button @click="copyJSONToClipboard()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors">
+            <i class="icon-copy w-4 h-4 inline-block mr-1"></i>
+            Copy JSON
+          </button>
           <button @click="saveToGitHub()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors">
             <i class="icon-github w-4 h-4 inline-block mr-1"></i>
-            Save to GitHub
+            Open GitHub
           </button>
           <button @click="backupConfig()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors">
             <i class="icon-download w-4 h-4 inline-block mr-1"></i>
-            Backup
+            Download
           </button>
           <button @click="refreshData()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-white rounded-md hover:bg-gray-600 transition-colors">
             <i class="icon-refresh w-4 h-4 inline-block mr-1"></i>
@@ -99,8 +103,8 @@
 
         <!-- Launcher Mode -->
         <div x-show="mode === 'launcher'" x-cloak>
-          <h2 class="text-2xl font-bold mb-4">Web App Launcher Configuration</h2>
-          
+          <h2 class="text-2xl font-bold">Web App Launcher Configuration</h2>
+          <p class="text-gray-500 dark:text-gray-400 mb-4">Edit web apps launcher. Copy JSON, open Github in browser to paste the changes.</p>
           <!-- Launcher Table -->
           <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
@@ -140,8 +144,9 @@
 
         <!-- Search Mode -->
         <div x-show="mode === 'search'" x-cloak>
-          <h2 class="text-2xl font-bold mb-4">Search Configuration</h2>
-          
+          <h2 class="text-2xl font-bold">Search Configuration</h2>
+          <p class="text-gray-500 dark:text-gray-400 mb-4">Edit search configuration. Copy JSON and open Github in browser to paste the changes.</p>
+   
           <!-- Search Table -->
           <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
@@ -496,6 +501,37 @@
             // 2. Provide instructions to the user on how to paste the updated content
             // 3. For now, we'll just open the edit page
             window.open(editUrl, '_blank');
+          },
+          
+          copyJSONToClipboard() {
+            // Prepare the data to copy
+            let data;
+            if (this.mode === 'launcher') {
+              data = this.launcherData;
+            } else {
+              // For search data, we need to wrap it in the correct structure
+              data = {
+                data: this.searchData.data
+              };
+            }
+            
+            // Convert to JSON string
+            const jsonString = JSON.stringify(data, null, 2);
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(jsonString).then(() => {
+              // Show success message
+              alert('JSON copied to clipboard! Now click "Open GitHub" and paste the content in the editor.');
+            }).catch(err => {
+              // Fallback for older browsers
+              const textArea = document.createElement('textarea');
+              textArea.value = jsonString;
+              document.body.appendChild(textArea);
+              textArea.select();
+              document.execCommand('copy');
+              document.body.removeChild(textArea);
+              alert('JSON copied to clipboard! Now click "Open GitHub" and paste the content in the editor.');
+            });
           }
         }
       }

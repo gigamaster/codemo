@@ -151,13 +151,13 @@
   },
   {
     "id": 20,
-    "url": "https://gigamaster.github.io/codemo/web-app/vvvebjs/",
-    "name": "Vvvebjs",
-    "author": "Author",
-    "desc": "Drag and drop web page builder",
-    "cat": "Web Design",
-    "icon": "icon-apps",
-    "image": "https://gigamaster.github.io/codemo/web-app/vvveb.webp"
+    "url": "https://gigamaster.github.io/ai-chatbot/",
+    "name": "AI-chatbot",
+    "author": "Gigamaster",
+    "desc": "AI Chatbot that runs entirely in your browser.",
+    "cat": "AI",
+    "icon": "icon-ai",
+    "image": "https://gigamaster.github.io/codemo/web-app/ai-chatbot.jpg"
   },
   {
     "id": 21,

@@ -200,7 +200,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
       return response.text()
   })
   .then(function (html) {
-      console.info('Modal content has been fetched');
       loadData(html, '#modal-launcher').then(function (html) {
         //console.info('Pin content callback');
       })
