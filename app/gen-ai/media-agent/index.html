@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Social Media Content Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0"
+  }
+}
+</script>
+  <script type="module" crossorigin src="./assets/index-CIAmpz7W.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D50dmbQW.css">
+</head>
+<body>
+  <div id="app-container">
+    <header>
+      <h1>AI Social Media Content Agent</h1>
+      <p>Generate optimized content for all your social media platforms in one click.</p>
+      <div class="header-buttons">
+        <button id="settings-btn" class="icon-button" aria-label="Settings">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+        <button id="help-btn" class="icon-button" aria-label="Help">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <div id="input-column">
+        <form id="content-form">
+          <section class="form-section">
+            <h2><span class="icon">📝</span> Content Details</h2>
+            <div class="form-group">
+              <label for="topic">Post Title / Topic (Required)</label>
+              <input type="text" id="topic" name="topic" placeholder="e.g., The future of AI in marketing" required>
+            </div>
+            <div class="form-group">
+              <label for="keywords">Keywords / Hashtags (Optional)</label>
+              <input type="text" id="keywords" name="keywords" placeholder="e.g., #AI, #Marketing, #Tech">
+            </div>
+            <div class="form-group">
+              <label for="link">Link (Optional)</label>
+              <input type="url" id="link" name="link" placeholder="e.g., https://your-blog-post.com">
+            </div>
+            <div class="form-group">
+              <label for="tone">Content Tone (Optional)</label>
+              <select id="tone" name="tone">
+                <option value="">Select a tone (default: platform-specific)</option>
+                <option value="professional">Professional</option>
+                <option value="casual">Casual</option>
+                <option value="enthusiastic">Enthusiastic</option>
+                <option value="informative">Informative</option>
+                <option value="humorous">Humorous</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="length">Content Length (Optional)</label>
+              <select id="length" name="length">
+                <option value="">Select length (default: platform-specific)</option>
+                <option value="short">Short</option>
+                <option value="medium">Medium</option>
+                <option value="long">Long</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="style">Content Style (Optional)</label>
+              <select id="style" name="style">
+                <option value="">Select style (default: platform-specific)</option>
+                <option value="storytelling">Storytelling</option>
+                <option value="listicle">Listicle</option>
+                <option value="question-answer">Question & Answer</option>
+                <option value="how-to">How-to Guide</option>
+                <option value="news">News Format</option>
+              </select>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h2><span class="icon">🎯</span> Target Platforms</h2>
+            <div class="platform-selector">
+              <div class="platform-option">
+                <input type="checkbox" id="linkedin" name="platform" value="LinkedIn">
+                <label for="linkedin">LinkedIn</label>
+              </div>
+              <div class="platform-option">
+                <input type="checkbox" id="x" name="platform" value="X">
+                <label for="x">X</label>
+              </div>
+              <div class="platform-option">
+                <input type="checkbox" id="telegram" name="platform" value="Telegram">
+                <label for="telegram">Telegram</label>
+              </div>
+              <div class="platform-option">
+                <input type="checkbox" id="instagram" name="platform" value="Instagram">
+                <label for="instagram">Instagram</label>
+              </div>
+              <div class="platform-option">
+                <input type="checkbox" id="facebook" name="platform" value="Facebook">
+                <label for="facebook">Facebook</label>
+              </div>
+               <div class="platform-option">
+                <input type="checkbox" id="medium" name="platform" value="Medium">
+                <label for="medium">Medium</label>
+              </div>
+            </div>
+          </section>
+
+          <section class="form-section">
+            <h2><span class="icon">🖼️</span> Add an Image (Optional)</h2>
+            <div id="drop-zone" class="drop-zone">
+              <div id="drop-zone-prompt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <p>Drag & drop an image here, or click to select</p>
+                <small>PNG, JPG, WEBP</small>
+              </div>
+              <img id="image-preview" src="#" alt="Image preview" class="hidden"/>
+              <button type="button" id="remove-image" class="hidden">&times;</button>
+              <input type="file" id="file-input" accept="image/png, image/jpeg, image/webp" hidden>
+            </div>
+          </section>
+
+          <button type="submit" id="generate-btn" class="generate-btn">
+            <span class="btn-text">Generate Content</span>
+            <div class="spinner hidden"></div>
+          </button>
+        </form>
+      </div>
+      <div id="output-column">
+        <div id="results-container">
+          <div id="placeholder" class="placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            <h2>Your AI-generated content will appear here</h2>
+            <p>Fill in the details on the left and let the magic happen!</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <section id="history-section">
+        <h2><span class="icon">🗂️</span> Content History</h2>
+        <div class="history-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title / Topic</th>
+                        <th>Platform</th>
+                        <th>Content</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table-body">
+                    <!-- History items will be injected here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <button class="close-button" id="close-settings-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="api-key-form">
+          <div class="form-group">
+            <label for="ai-provider">AI Provider</label>
+            <select id="ai-provider" name="ai-provider">
+              <option value="gemini">Google Gemini (Default)</option>
+              <option value="openai">OpenAI Compatible</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="api-key">API Key</label>
+            <input type="password" id="api-key" name="api-key" placeholder="Enter your API Key">
+            <small id="api-key-help">Get your API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></small>
+          </div>
+          
+          <div class="form-group hidden" id="endpoint-config">
+            <label for="api-endpoint">API Endpoint (Optional)</label>
+            <input type="url" id="api-endpoint" name="api-endpoint" placeholder="https://api.example.com/v1">
+            <small>Enter custom endpoint for self-hosted or compatible deployments</small>
+          </div>
+          
+          <div class="form-actions">
+            <button type="button" id="save-settings" class="primary-button">Save</button>
+            <button type="button" id="clear-settings" class="secondary-button">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help Modal -->
+  <div id="help-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Help</h2>
+        <button class="close-button" id="close-help-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="help-content">
+          <h3>How to Use This Application</h3>
+          <ol>
+            <li><strong>Get an API Key:</strong> Visit <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a> for Google Gemini or your OpenAI-compatible provider to generate an API key.</li>
+            <li><strong>Save to Local Storage:</strong> Click the settings icon (⚙️) in the top right corner and enter your API key. It will be securely stored in your browser's local storage.</li>
+            <li><strong>Start Creating Content:</strong> Fill in the content details, select target platforms, and click "Generate Content".</li>
+          </ol>
+          
+          <h3>Content Generation Tips</h3>
+          <ul>
+            <li>Be specific with your topic for better results</li>
+            <li>Use relevant hashtags to increase reach</li>
+            <li>Include a link to drive traffic to your content</li>
+            <li>Experiment with different tones and lengths</li>
+          </ul>
+          
+          <h3>Platform-Specific Notes</h3>
+          <ul>
+            <li><strong>X (Twitter):</strong> Content is automatically formatted to fit within 280 characters</li>
+            <li><strong>LinkedIn:</strong> Professional tone with industry hashtags</li>
+            <li><strong>Instagram:</strong> Caption with emojis and popular hashtags</li>
+            <li><strong>Facebook:</strong> Friendly tone that encourages engagement</li>
+            <li><strong>Medium:</strong> Title and introductory paragraph for articles</li>
+            <li><strong>Telegram:</strong> Direct and informative channel updates</li>
+          </ul>
+        </div>
+        <p><small>2025 Created by Nuno Luciano</small></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
