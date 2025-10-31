@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="." />
+    <title>Aice PS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Caveat:wght@700&family=Permanent+Marker&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://esm.sh/react-image-crop@^11.0.6/dist/ReactCrop.css" />
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #090A0F;
+    background: 
+        radial-gradient(ellipse at 20% 80%, rgba(150, 50, 100, 0.25) 0%, rgba(150, 50, 100, 0) 60%),
+        radial-gradient(ellipse at 80% 30%, rgba(80, 150, 120, 0.2) 0%, rgba(80, 150, 120, 0) 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(50, 80, 150, 0.3) 0%, rgba(50, 80, 150, 0) 70%),
+        radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    background-size: 250% 250%;
+    min-height: 100vh;
+    animation: move-nebula 200s ease-in-out infinite alternate;
+}
+
+@keyframes move-nebula {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes fly {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+@keyframes shooting-star {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(300vw);
+        opacity: 0;
+    }
+}
+
+#star-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#stars1, #stars2, #stars3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 2000px; /* Double the pattern height for seamless looping */
+    background-repeat: repeat;
+    background-size: 1000px 1000px;
+}
+
+/* Distant stars: small, dense, slow */
+#stars1 {
+    background-image: 
+        radial-gradient(1px 1px at 100px 200px, white, transparent),
+        radial-gradient(1px 1px at 250px 800px, white, transparent),
+        radial-gradient(1px 1px at 400px 500px, white, transparent),
+        radial-gradient(1px 1px at 620px 720px, white, transparent),
+        radial-gradient(1px 1px at 800px 100px, white, transparent),
+        radial-gradient(1px 1px at 950px 450px, white, transparent),
+        radial-gradient(1px 1px at 150px 950px, white, transparent),
+        radial-gradient(1px 1px at 500px 300px, white, transparent),
+        radial-gradient(1px 1px at 50px 50px, white, transparent),
+        radial-gradient(1px 1px at 180px 600px, white, transparent),
+        radial-gradient(1px 1px at 330px 400px, white, transparent),
+        radial-gradient(1px 1px at 470px 900px, white, transparent),
+        radial-gradient(1px 1px at 600px 150px, white, transparent),
+        radial-gradient(1px 1px at 750px 650px, white, transparent),
+        radial-gradient(1px 1px at 880px 880px, white, transparent),
+        radial-gradient(1px 1px at 920px 250px, white, transparent),
+        radial-gradient(1px 1px at 20px 700px, white, transparent),
+        radial-gradient(1px 1px at 550px 50px, white, transparent);
+    animation: fly 200s linear infinite;
+}
+
+/* Mid-ground stars: medium, less dense, faster */
+#stars2 {
+    background-image: 
+        radial-gradient(1.5px 1.5px at 50px 300px, white, transparent),
+        radial-gradient(1.5px 1.5px at 300px 100px, white, transparent),
+        radial-gradient(1.5px 1.5px at 550px 600px, white, transparent),
+        radial-gradient(1.5px 1.5px at 750px 250px, white, transparent),
+        radial-gradient(1.5px 1.5px at 900px 900px, white, transparent),
+        radial-gradient(1.5px 1.5px at 150px 700px, white, transparent),
+        radial-gradient(1.5px 1.5px at 400px 400px, white, transparent),
+        radial-gradient(1.5px 1.5px at 650px 850px, white, transparent),
+        radial-gradient(1.5px 1.5px at 850px 500px, white, transparent),
+        radial-gradient(1.5px 1.5px at 200px 50px, white, transparent);
+    animation: fly 120s linear infinite;
+}
+
+/* Foreground stars: large, sparse, fastest */
+#stars3 {
+    background-image: 
+        radial-gradient(2px 2px at 200px 400px, white, transparent),
+        radial-gradient(2px 2px at 700px 800px, white, transparent),
+        radial-gradient(2px 2px at 50px 900px, white, transparent),
+        radial-gradient(2px 2px at 950px 50px, white, transparent),
+        radial-gradient(2px 2px at 450px 150px, white, transparent),
+        radial-gradient(2px 2px at 850px 650px, white, transparent),
+        radial-gradient(2px 2px at 300px 750px, white, transparent);
+    animation: fly 70s linear infinite;
+}
+
+/* Shooting Stars */
+#shooting-stars {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    transform: rotateZ(-45deg);
+}
+
+#shooting-stars .star {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(-45deg, #59d1ff, rgba(0, 0, 255, 0));
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px #69e0ff);
+    animation: shooting-star 3s linear infinite;
+}
+
+#shooting-stars .star:nth-child(1) { top: 20%; left: 0; width: 300px; animation-delay: 0s; animation-duration: 2.8s; }
+#shooting-stars .star:nth-child(2) { top: 40%; left: 10%; width: 150px; animation-delay: 1.2s; animation-duration: 2.1s; }
+#shooting-stars .star:nth-child(3) { top: 60%; left: -20%; width: 200px; animation-delay: 2.5s; animation-duration: 3.5s; }
+#shooting-stars .star:nth-child(4) { top: 85%; left: 5%; width: 100px; animation-delay: 4.1s; animation-duration: 1.8s; }
+
+</style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.10.0",
+    "react-image-crop": "https://esm.sh/react-image-crop@^11.0.6",
+    "framer-motion": "https://esm.sh/framer-motion@^11.3.11"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-B_ooxQf5.js"></script>
+</head>
+  <body>
+    <div id="star-bg">
+        <div id="stars1"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="shooting-stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+    <div id="root"></div>
+</body>
+</html>
