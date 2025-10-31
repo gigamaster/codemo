@@ -107,7 +107,7 @@
   x-transition:enter="transition ease-out duration-200 delay-100 motion-reduce:transition-opacity" 
   x-transition:enter-start="opacity-0 scale-50" 
   x-transition:enter-end="opacity-100 scale-100" 
-  class="flex h-3/4 w-full max-w-5xl flex-col gap-4 overflow-hidden rounded-md border-b dark:border-primary-darker text-primary-lighter bg-white dark:bg-darker">
+  class="flex w-full max-w-5xl flex-col gap-4 overflow-hidden rounded-md border-b dark:border-primary-darker text-primary-lighter bg-white dark:bg-darker">
     <!-- Dialog Header -->
     <div class="flex items-center justify-between bg-white border-b dark:bg-darker dark:border-primary-darker px-4 py-2">
         <h3 
@@ -124,15 +124,6 @@
     <div class="px-2 overflow-y-auto h-full"> 
         <div id="modal-launcher"></div>
     </div>
-    <!-- Dialog Footer -->
-<!--     <div class="flex p-2 border-t dark:border-primary-darker bg-white dark:bg-darker">
-      <button 
-        @click="modalLauncher = false" 
-        type="button" 
-        class="px-4 py-2 text-center text-sm transition-colors duration-200 rounded-md text-primary-lighter bg-primary-50 hover:text-primary hover:bg-primary-100 dark:hover:text-light dark:hover:bg-primary-dark dark:bg-dark">
-        Close
-      </button>
-    </div> -->
   </div>
 </div>
 <!-- Panel Settings -->
@@ -220,7 +211,6 @@ aria-labelledby="settinsPanelLabel"
         </span>
         <span>Light</span>
       </button>
-
       <!-- Dark button -->
       <button
         @click="setDarkTheme"
