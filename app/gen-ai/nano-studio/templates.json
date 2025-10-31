@@ -1,0 +1,45 @@
+
+[
+  {
+    "id": "template-interior-design",
+    "name": "Interior Design",
+    "iconUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-interior.jpg",
+    "baseUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-interior.jpg",
+    "prompt": "Add modern furniture to this empty room, including a cozy gray sofa, a wooden coffee table, and some green plants."
+  },
+  {
+    "id": "template-comic-book",
+    "name": "Comic Book Cover",
+    "iconUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-cartoon.jpg",
+    "baseUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-cartoon.jpg",
+    "prompt": "Turn this photo into the style of a vintage comic book cover, with halftone dots, bold title text, and dramatic colors."
+  },
+  {
+    "id": "template-colorize",
+    "name": "Colorize Old Photo",
+    "iconUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-photo-old.jpg",
+    "baseUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-photo-old.jpg",
+    "prompt": "Colorize this black and white photo with realistic, natural colors to make it look like a modern color photograph."
+  },
+  {
+    "id": "template-photorealistic",
+    "name": "Photorealistic Portrait",
+    "iconUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-portrait.jpg",
+    "baseUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-portrait.jpg",
+    "prompt": "Transform this anime character into a photorealistic portrait with realistic skin texture, detailed hair, and lifelike lighting and shadows."
+  },
+  {
+    "id": "template-pixel-art",
+    "name": "Pixel Art Style",
+    "iconUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-pixel.jpg",
+    "baseUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-pixel.jpg",
+    "prompt": "Convert this image into a 16-bit pixel art style, characteristic of classic video games. Use a limited color palette and clearly defined pixel clusters."
+  },
+  {
+    "id": "template-sticker",
+    "name": "Die-Cut Sticker",
+    "iconUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-sticker.jpg",
+    "baseUrl": "https://raw.githubusercontent.com/gigamaster/codemo/b1a1a069d011f32dcf9c91653c6357f8ec598c56/app/asset/img/ai-sticker.jpg",
+    "prompt": "Turn the main subject of this image into a die-cut vinyl sticker with a thick white border and a subtle drop shadow. The background should be a clean, solid light gray."
+  }
+]
