@@ -22,9 +22,56 @@ const routes = [
   '/codemo/tools/notes/',
 ];
 
-// combine static files and routes to cache
+// exclude routes (use deployment paths). Use trailing '*' to indicate "prefix"
+const excludedRoutes = [
+  '/codemo/web-app/*',
+  '/codemo/web-app/',
+  '/web-app/*',
+];
+
+// helper: simple pattern matching supporting trailing '*' as a prefix wildcard
+const routeMatchesPattern = (pattern, pathname) => {
+  if (!pattern) return false;
+  const p = pattern.startsWith('/') ? pattern : '/' + pattern;
+  const path = pathname.startsWith('/') ? pathname : '/' + pathname;
+
+  if (p.endsWith('*')) {
+    const prefix = p.slice(0, -1);
+    return path.startsWith(prefix);
+  }
+  return path === p;
+};
+
+// flexible route exclusion checker:
+// - accepts full URL string (request.url), a Request, or a pathname
+// - uses prefix matching for patterns that end with '*'
+const isRouteExcluded = (input) => {
+  let pathname;
+  try {
+    if (typeof input === 'string') {
+      // could be full URL or pathname
+      pathname = (new URL(input, self.location.href)).pathname;
+    }
+    else if (input && typeof input.url === 'string') {
+      pathname = (new URL(input.url, self.location.href)).pathname;
+    }
+    else if (input && typeof input.pathname === 'string') {
+      pathname = input.pathname;
+    }
+    else {
+      return false;
+    }
+  } catch (e) {
+    // fallback: if parsing fails, do not exclude
+    return false;
+  }
+
+  return excludedRoutes.some(pattern => routeMatchesPattern(pattern, pathname));
+};
+
+// combine static files and routes to cache (filter using matcher)
 const filesToCache = [
-  ...routes,
+  ...routes.filter(route => !isRouteExcluded(route)),
   ...staticFiles,
 ];
 
@@ -43,6 +90,9 @@ const IDBConfig = {
 
 // returns if the app is offline
 const isOffline = () => !self.navigator.onLine;
+
+// (isRouteExcluded defined earlier above filesToCache)
+// The exclusion matcher is implemented above and used for both install and fetch-time checks.
 
 // return if a request should be retried when offline, in this example, all POST, PUT, DELETE requests
 // and requests that are listed in the requestsToRetryWhenOffline array
@@ -265,13 +315,19 @@ const fetchHandler = async e => {
   e.respondWith(
     (async () => {
       try {
+
+        // check if the current route is excluded from caching and handling
+        if (isRouteExcluded(request.url)) {
+          return fetch(request);
+        }
+
         // store requests to IndexedDB that are eligible for retry when offline and return the offline page
         // as response so no error is logged
         if(isOffline() && isRequestEligibleForRetry(request)) {
           console.log('storing request', request);
           await storeRequest(request);
 
-          return await caches.match('/offline.html');
+          return await caches.match('/codemo/asset/offline.html');
         }
 
         // try to get the response from the cache
@@ -287,8 +343,8 @@ const fetchHandler = async e => {
         }
       }
       catch(err) {
-        // a fetch error occurred, serve the offline page since we don't have a cached response
-        return await caches.match('/offline.html');
+  // a fetch error occurred, serve the offline page since we don't have a cached response
+  return await caches.match('/codemo/asset/offline.html');
       }
     })()
   );

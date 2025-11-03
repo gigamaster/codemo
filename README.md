@@ -29,17 +29,20 @@ A versatile collection of web apps designed for developers and creatives on the 
 
 <table>
 <tr><th width="30%">Web App</th><th>Description</th></tr>
+<tr><td width="30%"><img src="app/web-app/ai-chatbot.jpg" width="30%" height="auto" alt="AI-chatbot"></td><td>AI-chatbot<br>AI chatbot with local storage full-featured for Codemo</th></tr>
 <tr><td width="30%"><img src="app/web-app/dpaint.webp" width="30%" height="auto" alt="dpaint"></td><td>dpaint<br>Image editor modeled after the legendary Deluxe</td></tr>
-<tr><td width="30%"><img src="app/web-app/drawio.webp" width="30%" height="auto" alt="dpaint"></td><td>drawio<br>Diagram editor or whiteboard by JGraph Ltd and draw.io AG</th></tr>
-<tr><td width="30%"><img src="app/web-app/encrypt.webp" width="30%" height="auto" alt="dpaint"></td><td>encrypt<br>Static HTML Encryption for public host</th></tr>
-<tr><td width="30%"><img src="app/web-app/erd-editor.webp" width="30%" height="auto" alt="dpaint"></td><td>erd-editor<br>Entity-Relationship Diagram Editor by SeungHwan-Lee @dineug</th></tr>
-<tr><td width="30%"><img src="app/web-app/godsvg.webp" width="30%" height="auto" alt="dpaint"></td><td>godsvg<br>Editor for Scalable Vector Graphics (SVG) by @MewPurPur</th></tr>
-<tr><td width="30%"><img src="app/web-app/grapesjs.webp" width="30%" height="auto" alt="dpaint"></td><td>grapesjs<br>WYSIWYG eeb page builder</th></tr>
-<tr><td width="30%"><img src="app/web-app/livecodes.webp" width="30%" height="auto" alt="dpaint"></td><td>livecodes<br>Live code playground</th></tr>
-<tr><td width="30%"><img src="app/web-app/mermaid.webp" width="30%" height="auto" alt="dpaint"></td><td>mermaid<br>Charts and diagrams editor</th></tr>
-<tr><td width="30%"><img src="app/web-app/tldraw.webp" width="30%" height="auto" alt="dpaint"></td><td>tldraw<br>Canvas and whiteboard draw</th></tr>
-<tr><td width="30%"><img src="app/web-app/voxel-builder.webp" width="30%" height="auto" alt="dpaint"></td><td>voxel-builder<br>Voxel-based 3D Modeling Application  nimadez</th></tr>
-<tr><td width="30%"><img src="app/web-app/vvvebjs.webp" width="30%" height="auto" alt="dpaint"></td><td>vvvebjs<br>Drag and drop web page builder givanz</th></tr>
+<tr><td width="30%"><img src="app/web-app/drawio.webp" width="30%" height="auto" alt="drawio"></td><td>drawio<br>Diagram editor or whiteboard by JGraph Ltd and draw.io AG</th></tr>
+<tr><td width="30%"><img src="app/web-app/encrypt.webp" width="30%" height="auto" alt="encrypt"></td><td>encrypt<br>Static HTML Encryption for public host</th></tr>
+<tr><td width="30%"><img src="app/web-app/erp-editor.webp" width="30%" height="auto" alt="erd-editor"></td><td>erd-editor<br>Entity-Relationship Diagram Editor by SeungHwan-Lee @dineug</th></tr>
+<tr><td width="30%"><img src="app/web-app/grapesjs.webp" width="30%" height="auto" alt="grapesjs"></td><td>grapesjs<br>WYSIWYG eeb page builder</th></tr>
+<tr><td width="30%"><img src="app/web-app/image-converter.webp" width="30%" height="auto" alt="Image Converter"></td><td>Image Converter<br>Powered by web workers & jSquash image codecs</th></tr>
+<tr><td width="30%"><img src="app/web-app/image-optimize.webp" width="30%" height="auto" alt="Image Optimize"></td><td>Image Optimize<br>Optimize images using best-in-class codecs, right in the browser</th></tr>
+<tr><td width="30%"><img src="app/web-app/livecodes.webp" width="30%" height="auto" alt="livecodes"></td><td>livecodes<br>Live code playground</th></tr>
+<tr><td width="30%"><img src="app/web-app/mermaid.webp" width="30%" height="auto" alt="mermaid"></td><td>mermaid<br>Charts and diagrams editor</th></tr>
+<tr><td width="30%"><img src="app/web-app/social-media-agent.webp" width="30%" height="auto" alt="social-media"></td><td>social-media<br>Generate optimized content for all your social media platforms in one click</th></tr>
+<tr><td width="30%"><img src="app/web-app/tldraw.webp" width="30%" height="auto" alt="tldraw"></td><td>tldraw<br>Canvas and whiteboard draw</th></tr>
+<tr><td width="30%"><img src="app/web-app/voxel-builder.webp" width="30%" height="auto" alt="voxel-builder"></td><td>voxel-builder<br>Voxel-based 3D Modeling Application  nimadez</th></tr>
+<tr><td width="30%"><img src="app/web-app/vvveb.webp" width="30%" height="auto" alt="vvvebjs"></td><td>vvvebjs<br>Drag and drop web page builder givanz</th></tr>
 </table>
 
 
