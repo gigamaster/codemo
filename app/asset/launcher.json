@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "url": "https://gigamaster.github.io/codemo/web-app/dpaint/",
-    "name": "DPaint",
-    "author": "Author",
-    "desc": "Web app graphic image editor modeled after the legendary Deluxe Paint",
-    "cat": "Graphics",
+    "url": "https://gigamaster.github.io/notesdb/",
+    "name": "NotesDB",
+    "author": "Nuno Luciano",
+    "desc": "Notes and searchable knowledge base designed to work offline",
+    "cat": "Productivity ",
     "icon": "icon-apps",
-    "image": "https://gigamaster.github.io/codemo/web-app/dpaint.webp"
+    "image": "https://gigamaster.github.io/codemo/web-app/notesdb.webp"
   },
   {
     "id": 2,
     "url": "https://gigamaster.github.io/codemo/web-app/drawio/",
     "name": "Draw.io",
     "author": "Author",
-    "desc": "Web app to make flowcharts, process and network diagrams, org charts, UML, ER.",
+    "desc": "Web app to make flowcharts, process and network diagrams, UML, ER org charts",
     "cat": "Diagram",
     "icon": "icon-apps",
     "image": "https://gigamaster.github.io/codemo/web-app/drawio.webp"
@@ -161,13 +161,13 @@
   },
   {
     "id": 21,
-    "url": "https://gigamaster.github.io/codemo/web-app/vvvebjs/",
-    "name": "Vvvebjs",
+    "url": "https://gigamaster.github.io/codemo/web-app/dpaint/",
+    "name": "DPaint",
     "author": "Author",
-    "desc": "Drag and drop web page builder",
-    "cat": "Web Design",
+    "desc": "Web app graphic image editor modeled after the legendary Deluxe Paint",
+    "cat": "Graphics",
     "icon": "icon-apps",
-    "image": "https://gigamaster.github.io/codemo/web-app/vvveb.webp"
+    "image": "https://gigamaster.github.io/codemo/web-app/dpaint.webp"
   },
   {
     "id": 22,
